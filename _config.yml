@@ -1,0 +1,16 @@
+url: "https://edi-tool.github.io"
+baseurl: "/color-palette"
+
+# 開発用ファイルを公開ビルドから外す（Pages で CLAUDE.md などが配信されないように）
+exclude:
+  - CLAUDE.md
+  - AGENTS.md
+  - DESIGN.md
+  - REQUIREMENTS.md
+  - progress.md
+  - README.md
+  - CHANGELOG.md
+  - package.json
+  - scripts/
+  - tests/
+  - docs/

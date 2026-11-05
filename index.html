@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f8f6f2">
+
+    <title>印象から配色を探せるカラー提案ツール | 配色さん</title>
+    <meta name="description" content="「明るい」「知的」などの印象語から、方向性の違う配色を24案ずつ見比べ、好みの色を調整して、AIに渡す配色指示文をワンタップでコピーできます。ブラウザ内で完結し、入力は外部に送信しません。">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://edi-tool.github.io/color-palette/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="edi-tool">
+    <meta property="og:title" content="印象から配色を探せるカラー提案ツール | 配色さん">
+    <meta property="og:description" content="印象語から方向性の違う配色を見比べ、AIに渡す配色指示文をコピーできます。ブラウザ内で完結します。">
+    <meta property="og:url" content="https://edi-tool.github.io/color-palette/">
+    <meta property="og:locale" content="ja_JP">
+    <!-- TODO(公開前): ogp.png を scripts/ogp 方式で作成し og:image / twitter:card を追加する -->
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebApplication",
+            "@id": "https://edi-tool.github.io/color-palette/#app",
+            "name": "配色さん",
+            "alternateName": "印象から配色を探せるカラー提案ツール",
+            "url": "https://edi-tool.github.io/color-palette/",
+            "description": "印象語から方向性の違う配色を比較し、AIに渡す配色指示文をコピーできるツール。",
+            "applicationCategory": "DesignApplication",
+            "operatingSystem": "Web",
+            "browserRequirements": "Requires JavaScript",
+            "inLanguage": "ja",
+            "isAccessibleForFree": true,
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+            "isPartOf": { "@id": "https://edi-tool.github.io/#website" },
+            "publisher": { "@id": "https://edi-tool.github.io/#organization" }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "edi-tool", "item": "https://edi-tool.github.io/" },
+              { "@type": "ListItem", "position": 2, "name": "配色さん", "item": "https://edi-tool.github.io/color-palette/" }
+            ]
+          }
+        ]
+      }
+    </script>
+    <script type="module" src="src/app.js"></script>
+</head>
+<body>
+<div class="page">
+    <header class="site-header">
+        <a class="brand-link" href="https://edi-tool.github.io/">edi-tool</a>
+        <h1>配色さん</h1>
+        <p class="lead">印象語から、方向性の違う配色を見比べて、<strong>AIに渡す配色指示文</strong>までコピーできます。</p>
+    </header>
+
+    <noscript><p class="notice">このツールは JavaScript を使います。ブラウザの設定で有効にしてください。</p></noscript>
+
+    <section class="panel controls" aria-labelledby="h-mood">
+        <h2 id="h-mood">どんな印象にしたいですか？</h2>
+        <details id="mood-details" open>
+            <summary id="mood-summary">印象語を選ぶ（最大3つ）</summary>
+            <div id="mood-chips" class="chips" role="group" aria-label="印象語（最大3つまで選べます）"></div>
+        </details>
+
+        <div class="field">
+            <label for="mood-search">言葉で探す（任意）</label>
+            <input id="mood-search" type="search" autocomplete="off" placeholder="例: さわやか">
+            <div id="search-result" class="search-result" aria-live="polite"></div>
+        </div>
+
+        <div class="grid-2">
+            <div class="field">
+                <label for="usage">用途</label>
+                <select id="usage"></select>
+            </div>
+            <fieldset class="field seg">
+                <legend>出力想定</legend>
+                <label class="seg-opt"><input type="radio" name="mode" value="rgb" checked><span>画面（RGB）</span></label>
+                <label class="seg-opt"><input type="radio" name="mode" value="print"><span>印刷向け（参考）</span></label>
+            </fieldset>
+        </div>
+        <p id="print-notice" class="notice" hidden></p>
+        <div class="actions">
+            <button type="button" id="btn-regenerate" class="btn" disabled>別の案を出す</button>
+            <button type="button" id="btn-to-results" class="btn btn-ghost">候補を見る ↓</button>
+        </div>
+    </section>
+
+    <div class="workspace">
+        <section class="results" aria-labelledby="h-results">
+            <div class="results-head">
+                <h2 id="h-results">配色の候補 <span id="count" class="count"></span></h2>
+                <p id="deep-banner" class="deep-banner" hidden>
+                    選んだ配色に近い系統を表示中です。
+                    <button type="button" id="btn-wide" class="btn btn-small">幅広く探すに戻る</button>
+                </p>
+            </div>
+            <p id="empty" class="empty">印象語を選ぶと、ここに24案が並びます。暖色・寒色・無彩色など、方向性の違う案を意図的に混ぜています。</p>
+            <ul id="grid" class="grid"></ul>
+            <div class="more">
+                <button type="button" id="btn-more" class="btn" hidden>さらに24案（別の方向ももっと見る）</button>
+            </div>
+        </section>
+
+        <div id="backdrop" class="backdrop" hidden></div>
+        <aside id="detail" class="detail" aria-labelledby="detail-title" tabindex="-1">
+            <div class="detail-head">
+                <h2 id="detail-title">選んだ配色</h2>
+                <button type="button" id="btn-close" class="btn btn-small btn-close">閉じて一覧へ戻る</button>
+            </div>
+            <p id="detail-placeholder" class="empty">候補をタップすると、ここで色の調整とAI用コピーができます。</p>
+            <div id="detail-body" hidden>
+                <p id="detail-label" class="detail-label"></p>
+
+                <div class="copy-block">
+                    <button type="button" id="btn-copy" class="btn btn-primary btn-copy">AIに渡す配色指示をコピー</button>
+                    <div id="format-tabs" class="format-tabs" role="group" aria-label="コピーする形式"></div>
+                    <details class="preview-box">
+                        <summary>コピーされる内容を見る</summary>
+                        <pre id="export-preview" class="export-preview"></pre>
+                    </details>
+                    <div id="copy-fallback" class="copy-fallback" hidden>
+                        <label for="copy-text">自動コピーできませんでした。下の文を選んでコピーしてください。</label>
+                        <textarea id="copy-text" readonly rows="8"></textarea>
+                    </div>
+                </div>
+
+                <div id="mock" class="mock" aria-label="配色の見本（実際の成果物を保証する表示ではありません）">
+                    <div class="mock-band"></div>
+                    <p class="mock-title">見出しのサンプル</p>
+                    <p class="mock-body">本文のサンプルです。背景と文字の組み合わせを確認できます。</p>
+                    <span class="mock-btn">差し色の例</span>
+                </div>
+
+                <ul id="roles" class="roles"></ul>
+                <p id="contrast" class="contrast"></p>
+                <p id="msg" class="msg" role="alert"></p>
+
+                <div class="actions wrap">
+                    <button type="button" id="btn-repropose" class="btn">ロック以外を再提案</button>
+                    <button type="button" id="btn-undo" class="btn">直前の編集を戻す</button>
+                    <button type="button" id="btn-reset" class="btn">元の案に戻す</button>
+                    <button type="button" id="btn-deep" class="btn">この系統を深掘り</button>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="site-footer">
+        <p><a href="https://edi-tool.github.io/">← edi-tool ツール一覧</a> | &copy; 2026 ISHIKAWA, Natsuki | MIT License</p>
+        <p class="fine">試作版です。印象語と色の対応（語彙・数値）は評価前の目安です。入力・色・選択内容はブラウザ内だけで処理し、外部には送信しません。印象と色の対応は目安であり、画像生成AIや印刷での色再現を保証するものではありません。</p>
+    </footer>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

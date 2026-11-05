@@ -1,0 +1,6 @@
+# 開発用のローカル設定・生成物
+.claude/
+node_modules/
+test-results/
+playwright-report/
+.scratch/

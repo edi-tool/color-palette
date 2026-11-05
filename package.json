@@ -1,0 +1,12 @@
+{
+  "name": "color-palette",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "配色さん — 印象語から配色を探し、AIに渡す配色指示までコピーできるツール",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "check": "node scripts/check-static.mjs"
+  },
+  "engines": { "node": ">=22" }
+}
