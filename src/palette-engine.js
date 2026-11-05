@@ -64,11 +64,50 @@ function sampleHue(profile, temp, rng) {
 function bgColor(profile, h, rng, fixedBg) {
   if (fixedBg) return fixedBg;
   const L = rng.range(profile.bgL[0], profile.bgL[1]);
-  return oklchToHex(L, rng.range(0.004, 0.022), h);
+  return oklchToHex(L, rng.range(0.004, 0.018), h);
+}
+
+/** その明度・色相で sRGB に入る最大彩度。色相ごとの「出せる鮮やかさ」の上限。
+ * oklchToHex が色域外の彩度を上限まで下げるので、十分大きい彩度を渡して戻り値を測る。 */
+export function maxChroma(L, h) {
+  return hexToOklch(oklchToHex(L, 0.4, h)).C;
+}
+
+// 黄〜黄緑（OKLCH の色相 80〜125°）は、淡い地で読める濃さまで下げるとオリーブに濁る。
+// この色相はメインにせず、淡い面（サブ）で使い、メインは隣の暖色側へずらす。
+const isYellowZone = (h) => mod360(h) >= 80 && mod360(h) <= 125;
+
+// 役割ごとの品質の基準（docs/palette-analysis.md §3）。淡い地を前提にする（語彙の背景はすべて明るい）
+export const QUALITY = {
+  primaryOnBg: 3.2, // メインは見出しの大きさで読める濃さ（大きい文字の AA 3:1 に余裕）
+  accentOnBg: 2.2, // 差し色は小さな面でも背景から見分けられる
+  minPrimarySecondaryDE: 12, // メインとサブははっきり別の色
+  minSecondaryBgDL: 0.06, // サブの面が背景に溶けない
+  maxVivid: 2, // 高彩度（C>0.16）は2色まで
+};
+
+/**
+ * 配色の品質上の問題を返す（空配列なら合格）。印象の良し悪しではなく、
+ * 読みやすさと役割の区別がつくかだけを見る。純粋関数。
+ */
+export function qualityIssues(c) {
+  const o = Object.fromEntries(ROLES.map((r) => [r, hexToOklch(c[r])]));
+  const out = [];
+  if (contrastRatio(c.primary, c.background) < QUALITY.primaryOnBg) out.push('primary-weak');
+  if (contrastRatio(c.accent, c.background) < QUALITY.accentOnBg) out.push('accent-weak');
+  if (deltaE(c.primary, c.secondary) < QUALITY.minPrimarySecondaryDE) out.push('secondary-near-primary');
+  if (Math.abs(o.secondary.L - o.background.L) < QUALITY.minSecondaryBgDL) out.push('secondary-near-bg');
+  if (['primary', 'secondary', 'accent'].filter((r) => o[r].C > 0.16).length > QUALITY.maxVivid) out.push('too-vivid');
+  const muddy = ['primary', 'secondary', 'accent'].filter((r) => o[r].C > 0.03 && o[r].C < 0.075 && o[r].L > 0.42 && o[r].L < 0.72);
+  if (muddy.length >= 2) out.push('muddy');
+  return out;
 }
 
 /**
  * 1セルから1案を作る。fixed={role: hex} の役割は値をそのまま使う（ロック用）。
+ * 手順: 背景（淡い地）→ メイン（色相・彩度は印象から、明度は背景との差を確保）→
+ * サブ（淡い面か、メインより暗い締め色）→ 差し色（調和の関係は差し色にだけ効かせ、一番鮮やかに）→ 文字。
+ * 印象適合度は「読みやすさの補正をする前の主役色」で評価する（補正は可読性のためで、印象の向きは変えない）。
  * 失敗（その温度で使える色相が無い等）は null。
  */
 export function generatePalette(cell, profile, rng, { mode = 'rgb', fixed = {} } = {}) {
@@ -85,58 +124,64 @@ export function generatePalette(cell, profile, rng, { mode = 'rgb', fixed = {} }
   const Lp = fx ? fx.L : rng.range(profile.pL[0], profile.pL[1]);
   const Cp = fx ? fx.C : rng.range(cLo, cHi);
 
+  const background = bgColor(profile, h0, rng, fixed.background);
+  const bg = hexToOklch(background);
   const b = rng.pick([-1, 1]);
+  const capC = (L, C, h) => Math.min(C, maxChroma(L, h) * 0.92 * scale);
+
   let primary, secondary, accent, featured;
-  const sec = (hue, dL, kC) => oklchToHex(clamp(Lp + dL, 0.15, 0.95), Cp * kC, hue);
+  // 差し色の色相: 調和の関係はここにだけ使う
+  let hA;
+  if (cell.harm === 'neutralAccent' || cell.harm === 'mono') hA = h0 + rng.range(-12, 12);
+  else if (cell.harm === 'analogous') hA = h0 - b * rng.range(45, 65);
+  else if (cell.harm === 'complementary') hA = h0 + 180 + rng.range(-10, 10);
+  else if (cell.harm === 'split') hA = h0 + 150 * b + rng.range(-8, 8);
+  else hA = h0 - 120 * b; // triad
+  // サブの色相: メインと同系（トライアドだけは3つ目の色相を淡い面で使う）
+  const hS = cell.harm === 'triad' ? h0 + 120 * b : h0 + b * rng.range(cell.harm === 'mono' ? 0 : 8, cell.harm === 'mono' ? 6 : 28);
 
   if (cell.harm === 'neutralAccent') {
     // 無彩色寄りの基調に、印象色を差し色として載せる
     const nL = rng.range(0.28, 0.45);
-    primary = oklchToHex(nL, rng.range(0.01, 0.035), h0);
-    secondary = oklchToHex(clamp(nL + rng.range(0.2, 0.3), 0.5, 0.8), rng.range(0.008, 0.03), h0);
-    const aL = rng.range(profile.pL[0], profile.pL[1]);
-    accent = oklchToHex(aL, Math.max(Cp, cLo), h0);
-    featured = { L: aL, C: Math.max(Cp, cLo), h: h0 };
-    primary = fixed.primary ?? primary;
+    primary = fixed.primary ?? oklchToHex(nL, rng.range(0.008, 0.03), h0);
+    secondary = oklchToHex(clamp(bg.L - rng.range(0.12, 0.2), 0.62, 0.86), rng.range(0.006, 0.025), h0);
+    const aL = clamp(Lp, 0.5, 0.78);
+    accent = oklchToHex(aL, capC(aL, Math.max(Cp, cLo, 0.1), h0), h0);
+    featured = { L: Lp, C: Math.max(Cp, cLo), h: h0 };
   } else {
-    primary = fixed.primary ?? oklchToHex(Lp, Cp, h0);
     featured = { L: Lp, C: Cp, h: h0 };
-    const accC = clamp(Cp * 1.15 + 0.03, 0.08, Math.max(0.13, pC[1] + 0.04)) * scale;
-    const accL = clamp(rng.range(0.66, 0.84), 0.5, 0.9);
-    if (cell.harm === 'analogous') {
-      secondary = sec(h0 + b * rng.range(22, 36), rng.range(0.08, 0.18), 0.75);
-      accent = oklchToHex(accL, accC, h0 - b * rng.range(50, 70));
-    } else if (cell.harm === 'complementary') {
-      secondary = sec(h0 + b * rng.range(15, 30), rng.range(0.08, 0.18), 0.6);
-      accent = oklchToHex(accL, accC, h0 + 180 + rng.range(-8, 8));
-    } else if (cell.harm === 'split') {
-      secondary = sec(h0 - b * rng.range(25, 35), rng.range(0.08, 0.18), 0.7);
-      accent = oklchToHex(accL, accC, h0 + 150 * b + rng.range(-6, 6));
-    } else if (cell.harm === 'triad') {
-      secondary = sec(h0 + 120 * b, rng.range(0.06, 0.16), 0.7);
-      accent = oklchToHex(accL, accC, h0 - 120 * b);
+    const yellow = !fx && isYellowZone(h0);
+    // 黄系: メインは暖色側の隣（橙〜赤み）へずらし、黄は淡い面（サブ）に回す
+    const hP = yellow ? h0 - rng.range(35, 55) : h0;
+    primary = fixed.primary ?? oklchToHex(Lp, capC(Lp, Cp, hP), hP);
+    // サブ: 淡い面（帯・囲み）か、メインより暗い締め色。メインの「少し明るい版」は作らない
+    if (yellow) {
+      const sL = clamp(bg.L - rng.range(0.06, 0.12), 0.82, 0.92);
+      secondary = oklchToHex(sL, capC(sL, Math.max(Cp, 0.08), h0), h0);
+    } else if (rng.range(0, 1) < 0.7) {
+      const sL = clamp(bg.L - rng.range(0.09, 0.17), 0.74, 0.9);
+      secondary = oklchToHex(sL, capC(sL, Math.max(0.03, Cp * rng.range(0.35, 0.6)), hS), hS);
     } else {
-      // mono: 同系色の明度違い＋同系の差し色
-      secondary = sec(h0 + rng.range(-8, 8), rng.range(0.14, 0.24) * (Lp > 0.6 ? -1 : 1), 0.6);
-      accent = oklchToHex(accL, accC, h0 + rng.range(-14, 14));
+      const pLnow = hexToOklch(primary).L;
+      const sL = clamp(Math.min(pLnow, 0.55) - rng.range(0.12, 0.18), 0.3, 0.45);
+      secondary = oklchToHex(sL, capC(sL, Math.max(0.05, Cp * rng.range(0.6, 0.9)), hS), hS);
     }
+    // 差し色: 3色の中で一番鮮やかに（色域の上限まで）。黄系は濃くすると濁るので橙側へ
+    if (isYellowZone(hA)) hA = mod360(hA) - rng.range(25, 40);
+    const aL = rng.range(0.6, 0.78);
+    const want = Math.max(Cp * 1.15, cell.sat === 'muted' ? 0.09 : 0.13) * scale;
+    accent = oklchToHex(aL, capC(aL, want, hA), hA);
   }
   if (fixed.secondary) secondary = fixed.secondary;
-  if (fixed.accent) accent = fixed.accent;
 
-  const background = bgColor(profile, h0, rng, fixed.background);
-  const bgL = hexToOklch(background).L;
+  // メインと差し色を、背景から読み分けられる濃さにする（明度だけを動かす。ロックは触らない）
+  if (!fixed.primary) primary = ensureContrast(primary, background, QUALITY.primaryOnBg + 0.1);
+  accent = fixed.accent ?? ensureContrast(accent, background, QUALITY.accentOnBg + 0.1);
+
   let text = fixed.text;
-  if (!text) {
-    text = ensureContrast(oklchToHex(bgL > 0.5 ? 0.27 : 0.95, 0.02, h0), background, AA_NORMAL);
-  }
-  // 主役色が背景に埋もれないようにする（ロック時は触らない）
-  if (!fixed.primary && Math.abs(hexToOklch(primary).L - bgL) < 0.25) {
-    const L2 = bgL > 0.5 ? Math.min(Lp, bgL - 0.28) : Math.max(Lp, bgL + 0.28);
-    primary = oklchToHex(L2, cell.harm === 'neutralAccent' ? 0.02 : Cp, h0);
-  }
+  if (!text) text = ensureContrast(oklchToHex(bg.L > 0.5 ? 0.25 : 0.95, 0.02, h0), background, AA_NORMAL);
 
-  const fit = fitScore(profile, featured, bgL);
+  const fit = fitScore(profile, featured, bg.L);
   return { cell, colors: { primary, secondary, accent, background, text }, fit };
 }
 
@@ -228,7 +273,7 @@ export function generateWide({ index, moods, mode = 'rgb', seed, page = 0, count
       const pool = [];
       for (let k = 0; k < 12; k++) {
         const p = generatePalette(cell, profile, rng, { mode });
-        if (p && p.fit >= FIT_MIN) pool.push(p);
+        if (p && p.fit >= FIT_MIN && !qualityIssues(p.colors).length) pool.push(p);
       }
       const all = [...existing, ...chosen.map((c) => c.colors)];
       // 最遠点選抜: 既存全案から最も離れた候補を採る
@@ -278,7 +323,7 @@ export function generateDeep({ index, moods, mode = 'rgb', seed, base, count = 1
     col.background = oklchToHex(clamp(bg.L + rng.range(-0.015, 0.015), 0.05, 0.995), bg.C, bg.h);
     col.text = ensureContrast(base.colors.text, col.background, AA_NORMAL);
     const d = paletteDistance(col, base.colors);
-    if (d < minD || d > maxD) continue;
+    if (d < minD || d > maxD || qualityIssues(col).length) continue;
     const fit = fitScore(profile, base.cell.harm === 'neutralAccent' ? hexToOklch(col.accent) : hexToOklch(col.primary), hexToOklch(col.background).L);
     pool.push({ colors: col, fit });
   }
