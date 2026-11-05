@@ -1,7 +1,7 @@
 # Claude Design への依頼文（配色さん・デザイン指針と画面案）
 
 状態: 下書き。未送付。送る前に内容を確認してください。
-作成日: 2026-11-05 / 対象: `D:\My Documents\GitHub\color-palette`（ローカルのみ・未公開）
+作成日: 2026-11-05 / 対象: https://github.com/edi-tool/color-palette（ローカルは `D:\My Documents\GitHub\color-palette`）。公開URL: https://edi-tool.github.io/color-palette/（試作版 v0.1.0 公開済み）
 
 ---
 
@@ -68,4 +68,4 @@
 ## 未確定の点（回答があれば反映）
 
 - 語彙・数値は評価前の仮置き（画面には「目安」と明記）。
-- 公開は語彙評価と実機（iPhone Safari）確認の後。OGP画像は公開前に必要。
+- 試作版は公開済み。OGP画像（`og:image`）は未設定のため、成果物を受け取り次第追加する。

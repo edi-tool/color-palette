@@ -4,7 +4,7 @@
 
 ## 現在の状態
 
-- 試作版 **v0.1.0（Step 2: RGB MVP）** を GitHub（edi-tool/color-palette）に追加し、GitHub Pages で公開する作業を 2026-11-05 に実施。公開URL: https://edi-tool.github.io/color-palette/
+- 試作版 **v0.1.0（Step 2: RGB MVP）** を 2026-11-05 に GitHub（https://github.com/edi-tool/color-palette）へ追加し、GitHub Pages で公開済み。公開URL: https://edi-tool.github.io/color-palette/
 - 公開時の注記: 語彙・面積比・距離の閾値は**評価前の目安**。CMYK数値は**未提供**（Step 3 未着手）。
 - ポータル（edi-tool.github.io）・組織プロフィール（.github）への掲載は**未実施**（ユーザー合意待ち。Step 4）。
 - デザイン（指針・画面案・用途別プレビュー・OGP画像）は、ユーザーが別途 Claude Design に依頼する。依頼文の下書き: `docs/claude-design-brief.md`。
@@ -24,7 +24,7 @@
 
 ## 残課題（優先順）
 
-1. **公開後の確認**: 公開URLでの動作、CI（e2e ジョブは ubuntu の Chrome で初実行）。結果は下の「公開時の記録」に追記する。
+1. （完了）公開後の確認。結果は「公開時の記録」。
 2. **実機確認**: iPhone Safari（基準）・Android Chrome・Mac Safari。E2E は Windows Chrome のみ。スクリーンリーダー未確認。
 3. **語彙・数値の評価**: 評価セットの作成と採点（DESIGN.md §7）。語彙辞書・役割重み・面積比・距離閾値の調整。
 4. **ポータル掲載（Step 4）**: edi-tool.github.io の index.html / sitemap.xml / README.md / 404.html / OGP、.github の profile/README.md。ユーザー合意後に1コミットで。
@@ -44,4 +44,9 @@
 
 ## 公開時の記録
 
-（公開後に追記）
+2026-11-05 の公開作業:
+- リポジトリ **`edi-tool/color-palette`**（public、main）を作成して push（初回コミット `a62ad29`）。Pages は legacy・main・`/`（zukei-drafter と同じ設定）。
+- Pages ビルド `built`。公開URLは 200（HTML/CSS/JS/vocab.json）。開発用ファイル（REQUIREMENTS.md・AGENTS.md・DESIGN.md・progress.md・tests/・docs/・package.json）は 404（`_config.yml` の exclude が効いている）。
+- 公開ページ（Chromium）: 「明るい」→24案（暖色系／寒色・緑系／無彩色＋差し色）→詳細のコピー文プレビュー表示、横スクロール無し、コンソールエラー無し。
+- CI（push 時）: `test` と `e2e` の両ジョブ success（e2e は ubuntu の Chrome で初実行・成功）。
+- 未実施: ポータル掲載、og:image、実機確認。Search Console 登録などの運用設定もしていない。
