@@ -1,4 +1,4 @@
-/* 配色さん — スタイル。edi-tool 共通のデザイントークンに合わせる。 */
+/* 配色提案さん — スタイル。edi-tool 共通のデザイントークンに合わせる。 */
 :root {
   --bg: #f8f6f2;
   --surface: #fff;
@@ -184,3 +184,9 @@ fieldset.seg { border: 0; padding: 0; margin: 0.8rem 0; }
   :root { --card-min: 180px; }
   .workspace { grid-template-columns: minmax(0, 1fr) 24rem; }
 }
+
+/* 色覚の多様性のシミュレーション */
+.vision-block { margin: 0 0 0.6rem; }
+.vision-block .format-tabs { margin-top: 0; }
+.vision-note { font-size: 0.85rem; margin: 0.4rem 0 0; color: var(--text-sub); }
+.vision-note.warn { color: var(--danger); font-weight: 600; }

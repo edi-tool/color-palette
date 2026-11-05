@@ -43,7 +43,8 @@ export function reduce(state, action, ctx) {
   switch (action.type) {
     case 'setMoods': {
       const moods = [...new Set(action.moods)].slice(0, MAX_MOODS);
-      return regenerate({ ...state, moods }, ctx);
+      // seed を渡すと候補の組み合わせが変わる（同じ印象語を押し直しても別の24案）。渡さなければ今の seed で再現する
+      return regenerate({ ...state, moods, seed: Number.isInteger(action.seed) ? action.seed >>> 0 : state.seed }, ctx);
     }
     case 'setUsage':
       return USAGES[action.usage] ? { ...state, usage: action.usage, message: null } : state;

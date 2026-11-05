@@ -1,4 +1,4 @@
-# 配色さん — 要件定義（v0.3・検討用）
+# 配色提案さん — 要件定義（v0.3・検討用）
 
 - 対象: edi-tool の新規公開Webツール
 - リポジトリ案: `edi-tool/color-palette`（未作成）
@@ -7,7 +7,7 @@
 - v0.2重点: モバイル・PC両対応、候補の量と多様性、AIに渡す指示文を独自価値として最優先
 - ステータス: 要件提案。実装着手前に印刷モードと語彙の設計を確認すること。
 - **実装状況（2026-11-05追記）**: RGB MVP（Step 2）を実装し、試作版 v0.1.0 として公開。ICC-CMYK（Step 3）は未着手。用途区分は本文の6区分から5区分（SNSバナーをWebに統合）に決定。詳細は `DESIGN.md` §9 と `progress.md`。
-- 日本語の表示名: **配色さん**／英語リポジトリ・URLスラッグ: **`color-palette`**。
+- 日本語の表示名: **配色提案さん**（2026-11-05 に「配色さん」から改名）／英語リポジトリ・URLスラッグ: **`color-palette`**。
 - v0.3変更点: 日本語名と英語のリポジトリ名を分離。旧案 `haishoku-san` は採用しない。
 
 ## 1. プロダクト定義
@@ -238,7 +238,7 @@ CMYK出力時には`printProfile.id`、`renderingIntent`、5役割のCMYK数値�
 - 開発原則は [edi-tool/.github の PRINCIPLES.md](https://github.com/edi-tool/.github/blob/main/PRINCIPLES.md)。テンプレートの最新実体を参照する。
 - 公開時には `edi-tool/edi-tool.github.io` の `index.html`、`sitemap.xml`、`README.md`、`404.html`、OGPと、`edi-tool/.github` の `profile/README.md`を整合させる。ポータル側の静的チェック・テストを通す。
 - 各ツールに適用されるSEO契約（title/OGP/JSON-LD/パンくず、ハブへのリンク）を守る。
-- 初期ページのメタ案: `印象から配色を探せるカラー提案ツール | 配色さん`。検索語を不自然に詰め込まない。
+- 初期ページのメタ案: `印象から配色を探せるカラー提案ツール | 配色提案さん`。検索語を不自然に詰め込まない。
 
 ## 10. 受け入れ条件（テスト可能なDone）
 

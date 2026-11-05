@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { index } from './helpers-engine.js';
 import {
-  generateWide, generateDeep, reproposeUnlocked, paletteDistance, qualityIssues, FIT_MIN, MIN_DIST_FLOOR,
+  generateWide, generateDeep, reproposeUnlocked, paletteDistance, qualityIssues, FIT_MIN, MIN_DIST_FLOOR, HARMONY_MAX_SHARE,
 } from '../src/palette-engine.js';
 import { ROLES, contrastRatio, hexToOklch, normalizeHex } from '../src/color-utils.js';
 
@@ -125,6 +125,17 @@ test('品質: 全案がメイン3.2:1・差し色2.2:1以上などの基準（qu
       assert.deepEqual(qualityIssues(p.colors), [], `${moods} ${JSON.stringify(p.colors)}`);
       assert.ok(contrastRatio(p.colors.primary, p.colors.background) >= 3.2, 'primary');
       assert.ok(contrastRatio(p.colors.accent, p.colors.background) >= 2.2, 'accent');
+    }
+  }
+});
+
+test('トライアドは1ページ（24案）あたり上限まで。上限を守っても24案そろう', () => {
+  const max = Math.round(24 * HARMONY_MAX_SHARE.triad);
+  for (const moods of [['明るい'], ['ポップ'], ['明るい', '知的'], ['和風']]) {
+    for (const seed of [1, 14273, 4000000000]) {
+      const list = generateWide({ index, moods, seed, count: 24 });
+      assert.equal(list.length, 24, `${moods} ${seed}`);
+      assert.ok(list.filter((c) => c.cell.harm === 'triad').length <= max, `${moods} ${seed}`);
     }
   }
 });

@@ -182,3 +182,13 @@ test('深掘り→幅広くに戻る', () => {
   assert.equal(s.searchMode, 'wide');
   assert.equal(s.candidates.length, 24);
 });
+
+test('setMoods に seed を渡すと同じ印象語でも別の候補、渡さなければ今の seed のまま再現', () => {
+  const a = run(initialState(), { type: 'setMoods', moods: ['明るい'], seed: 1 });
+  const b = run(initialState(), { type: 'setMoods', moods: ['明るい'], seed: 2 });
+  assert.equal(a.seed, 1);
+  assert.notDeepEqual(a.candidates.map((c) => c.colors), b.candidates.map((c) => c.colors));
+  const again = run(a, { type: 'setMoods', moods: ['明るい'] });
+  assert.equal(again.seed, 1);
+  assert.deepEqual(again.candidates, a.candidates);
+});

@@ -188,17 +188,17 @@ export function generatePalette(cell, profile, rng, { mode = 'rgb', fixed = {} }
 /** パレット間距離。役割ごとの色差＋主役色相の差＋面積加重の見た目の差。 */
 export function paletteDistance(a, b) {
   let d = 0;
-  for (const r of ROLES) d += ROLE_WEIGHT[r] * deltaE(a[r], b[r]);
+  const ma = [0, 0, 0];
+  const mb = [0, 0, 0];
+  for (const r of ROLES) {
+    const la = hexToOklab(a[r]);
+    const lb = hexToOklab(b[r]);
+    d += ROLE_WEIGHT[r] * 100 * Math.hypot(la[0] - lb[0], la[1] - lb[1], la[2] - lb[2]); // = deltaE
+    for (let i = 0; i < 3; i++) { ma[i] += la[i] * AREA[r]; mb[i] += lb[i] * AREA[r]; }
+  }
   const ha = hexToOklch(a.primary);
   const hb = hexToOklch(b.primary);
   if (ha.C > 0.03 && hb.C > 0.03 && hueDiff(ha.h, hb.h) > 30) d += 8;
-  const mix = (p) => {
-    const v = [0, 0, 0];
-    for (const r of ROLES) hexToOklab(p[r]).forEach((x, i) => (v[i] += x * AREA[r]));
-    return v;
-  };
-  const ma = mix(a);
-  const mb = mix(b);
   d += 0.5 * 100 * Math.hypot(ma[0] - mb[0], ma[1] - mb[1], ma[2] - mb[2]);
   return d;
 }
@@ -215,9 +215,22 @@ function quotaByTemp(total, temps) {
   return q;
 }
 
+// 調和ごとの出やすさ。トライアドは3色相が散って派手になりやすく、しかも最遠点選抜で選ばれやすいため
+// 全調和の中で最も多く出ていた（30語×2seed で約22%）。試す順を後ろに寄せ、1ページあたりの上限も設ける。
+export const HARMONY_WEIGHT = { analogous: 1, complementary: 1, split: 1, triad: 0.35, mono: 1, neutralAccent: 1 };
+export const HARMONY_MAX_SHARE = { triad: 0.08 }; // 24案なら2案まで。他で埋まらないときだけ上限を外す
+
+/** 重み付きの並べ替え（重みが小さいほど後ろに来やすい。Efraimidis–Spirakis の鍵 u^(1/w)） */
+function weightedOrder(cells, rng) {
+  return cells
+    .map((c) => ({ c, k: rng.next() ** (1 / (HARMONY_WEIGHT[c.harm] ?? 1)) }))
+    .sort((a, b) => b.k - a.k)
+    .map((x) => x.c);
+}
+
 /** 彩度→調和の順に交互に並べ、連続する枠が似た系統にならないようにする */
 function interleave(cells, rng) {
-  const bySat = Object.fromEntries(SATS.map((s) => [s, rng.shuffle(cells.filter((c) => c.sat === s))]));
+  const bySat = Object.fromEntries(SATS.map((s) => [s, weightedOrder(cells.filter((c) => c.sat === s), rng)]));
   const out = [];
   while (SATS.some((s) => bySat[s].length)) {
     for (const s of SATS) if (bySat[s].length) out.push(bySat[s].shift());
@@ -267,9 +280,13 @@ export function generateWide({ index, moods, mode = 'rgb', seed, page = 0, count
   }
 
   const cursor = Object.fromEntries(eligibleTemps.map((t) => [t, 0]));
+  const harmMax = Object.fromEntries(Object.entries(HARMONY_MAX_SHARE).map(([h, r]) => [h, Math.round(count * r)]));
+  let capOn = true;
+  const capped = (harm) => capOn && harm in harmMax && chosen.filter((c) => c.cell.harm === harm).length >= harmMax[harm];
   const tryPlace = (t) => {
     for (let attempt = 0; attempt < queues[t].length; attempt++) {
       const cell = queues[t][cursor[t]++ % queues[t].length];
+      if (capped(cell.harm)) continue;
       const pool = [];
       for (let k = 0; k < 12; k++) {
         const p = generatePalette(cell, profile, rng, { mode });
@@ -297,6 +314,11 @@ export function generateWide({ index, moods, mode = 'rgb', seed, page = 0, count
   // 枠が埋まらなければ、距離の閾値を段階的に緩めて（下限 4.5）温度を交互に補充する
   for (let pass = 0; chosen.length < count && pass < 12; pass++) {
     minDist = Math.max(MIN_DIST_FLOOR, minDist * 0.85);
+    for (const t of eligibleTemps) if (chosen.length < count) tryPlace(t);
+  }
+  // それでも足りなければ、調和の上限を外して埋める（案数を優先）
+  capOn = false;
+  for (let pass = 0; chosen.length < count && pass < 4; pass++) {
     for (const t of eligibleTemps) if (chosen.length < count) tryPlace(t);
   }
   return chosen;

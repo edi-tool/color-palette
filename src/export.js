@@ -5,6 +5,7 @@
 // CMYK 数値は ICC 変換が実装されるまで出力しない（mode='print' でも HEX のみ）。
 
 import { ROLES, contrastRatio, AA_NORMAL } from './color-utils.js';
+import { visionIssues, VISION_TYPES } from './vision.js';
 
 export const SCHEMA_VERSION = 1;
 
@@ -68,6 +69,15 @@ export function contrastNote(colors) {
   return { ratio, ok: ratio >= AA_NORMAL };
 }
 
+/** 色覚の多様性の注意文（問題が無ければ null）。見え方を保証しない目安の表現にする。 */
+export function visionNote(colors) {
+  const issues = visionIssues(colors);
+  if (!issues.length) return null;
+  const types = issues.map((i) => VISION_TYPES[i.type].label).join('・');
+  const pairs = [...new Set(issues.flatMap((i) => i.pairs.map(([a, b]) => `${ROLE_LABEL[a]}と${ROLE_LABEL[b]}`)))].join('、');
+  return { types, pairs, text: `${types}の色覚では、${pairs}が見分けにくい可能性があります（シミュレーションによる目安）` };
+}
+
 function colorLines(state, withUse) {
   const u = usageOf(state);
   return ROLES.map((r) => `- ${ROLE_LABEL[r]}: ${state.colors[r]}${withUse ? `（${u.use[r]}）` : ''}`).join('\n');
@@ -110,6 +120,7 @@ export function formatDetailed(state) {
     `- 背景は ${state.colors.background}、本文・見出し以外の小さな文字は ${state.colors.text} を基本にしてください。`,
     `- 文字と背景のコントラスト比: ${c.ratio.toFixed(1)}:1（${c.ok ? '目安の 4.5:1 以上を満たしています' : '目安の 4.5:1 に届きません。小さな文字を避け、太さ・大きさで補ってください'}）。`,
     '- 明るい色の上に明るい色の文字を重ねないでください。',
+    ...visionLines(state.colors),
     '',
     '■ 守ってほしいこと',
     '- 指定したHEXを優先し、印象語（形容詞）だけから別の配色に置き換えないでください。',
@@ -122,6 +133,12 @@ export function formatDetailed(state) {
     NOTE_NO_GUARANTEE,
   ];
   return out.join('\n');
+}
+
+function visionLines(colors) {
+  const v = visionNote(colors);
+  if (!v) return [];
+  return [`- ${v.text}。色だけで区別させず、形・太さ・位置・文字でも区別できるようにしてください。`];
 }
 
 export function formatCodes(state) {
@@ -143,6 +160,7 @@ export function formatJson(state) {
     colors: Object.fromEntries(ROLES.map((r) => [r, state.colors[r]])),
     locks: state.locks ?? [],
     contrast: { textOnBackground: Math.round(c.ratio * 100) / 100, passesAA: c.ok },
+    visionSimulation: visionIssues(state.colors).map((i) => ({ type: i.type, hardToDistinguish: i.pairs })),
   };
   if (state.mode === 'print') obj.print = { cmyk: null, status: 'not-provided', reason: 'ICC変換が未実装のためCMYK数値は提供しません' };
   return JSON.stringify(obj, null, 2);

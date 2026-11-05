@@ -34,6 +34,16 @@ const fromLinear = (v) => {
   return c * 255;
 };
 
+/** HEX → 線形 sRGB（0〜1） */
+export function hexToLinearRgb(hex) {
+  return hexToRgb(hex).map(toLinear);
+}
+
+/** 線形 sRGB → HEX（範囲外は切り詰める） */
+export function linearRgbToHex(lin) {
+  return rgbToHex(lin.map((v) => fromLinear(clamp(v, 0, 1))));
+}
+
 export function linearToOklab([r, g, b]) {
   const l = Math.cbrt(0.4122214708 * r + 0.5363325363 * g + 0.0514459929 * b);
   const m = Math.cbrt(0.2119034982 * r + 0.6806995451 * g + 0.1073969566 * b);
@@ -56,8 +66,18 @@ export function oklabToLinear([L, a, b]) {
   ];
 }
 
+// 同じ HEX を何度も変換する（候補間の距離計算は案数の2乗で増える）ので結果を覚えておく。
+// 純粋関数なので出力は変わらない。返す配列は共有されるため凍結する。
+const LAB_CACHE = new Map();
+const LAB_CACHE_MAX = 20000;
+
 export function hexToOklab(hex) {
-  return linearToOklab(hexToRgb(hex).map(toLinear));
+  let lab = LAB_CACHE.get(hex);
+  if (lab) return lab;
+  lab = Object.freeze(linearToOklab(hexToRgb(hex).map(toLinear)));
+  if (LAB_CACHE.size >= LAB_CACHE_MAX) LAB_CACHE.clear();
+  LAB_CACHE.set(hex, lab);
+  return lab;
 }
 
 export function hexToOklch(hex) {

@@ -2,10 +2,12 @@
 // ここでは DOM の描画とイベントだけを扱う。
 
 import { buildIndex, resolveTerm, MAX_MOODS } from './semantic-model.js';
-import { initialState, reduce, exportView } from './state.js';
+import { initialState, reduce, exportView, PAGE_SIZE, DEEP_SIZE } from './state.js';
 import { FORMATS, USAGES, ROLE_LABEL, formatFor } from './export.js';
 import { ROLES, normalizeHex } from './color-utils.js';
 import { contrastInfo, suggestTextFix } from './palette-engine.js';
+import { VISION_TYPES, simulateColors } from './vision.js';
+import { visionNote } from './export.js';
 import { encodeState, decodeState } from './url-state.js';
 import { PRINT_NOTICE } from './print-profile.js';
 
@@ -15,8 +17,9 @@ const wideQuery = window.matchMedia('(min-width: 960px)');
 let ctx;
 let state = initialState();
 let format = 'simple';
+let vision = 'normal'; // 見本の見え方（表示だけ。色の正本は変えない）
 let sheetOpen = false;
-let rendered = []; // 描画済みカードの id
+let rendered = []; // 描画済みの候補（state.candidates の要素）
 let renderToken = 0;
 let lastFocusId = null;
 
@@ -39,6 +42,9 @@ async function init() {
   render();
 }
 
+// 印象語を押すたびに新しい seed にする（同じ語でも毎回違う候補）。seed は URL に残るので、共有・再読み込みでは再現できる
+const newSeed = () => Math.floor(Math.random() * 2 ** 32);
+
 function dispatch(action) {
   state = reduce(state, action, ctx);
   render();
@@ -53,6 +59,8 @@ function syncUrl() {
 /* ---------- 静的部品 ---------- */
 function buildStatic() {
   $('usage').innerHTML = Object.entries(USAGES).map(([k, u]) => `<option value="${k}">${u.label}</option>`).join('');
+  $('vision-tabs').innerHTML = [['normal', '一般的な色覚'], ...Object.entries(VISION_TYPES).map(([k, v]) => [k, v.label])]
+    .map(([k, label]) => `<button type="button" class="fmt" data-vision="${k}" aria-pressed="${k === vision}">${label}</button>`).join('');
   $('format-tabs').innerHTML = Object.entries(FORMATS)
     .map(([k, label]) => `<button type="button" class="fmt" data-format="${k}" aria-pressed="${k === format}">${label}</button>`).join('');
   $('roles').innerHTML = ROLES.map((r) => `
@@ -132,7 +140,8 @@ function renderGrid() {
   const list = state.candidates;
   const grid = $('grid');
   // 先頭から一致していなければ作り直し。追加分だけなら既存カードをそのまま残す。
-  const mismatch = rendered.length > list.length || rendered.some((id, i) => id !== list[i].id);
+  // id は (seed, page, 順番) なので、印象語や出力想定を変えても同じ id になる。id ではなく候補そのもので比べる。
+  const mismatch = rendered.length > list.length || rendered.some((cand, i) => cand !== list[i]);
   if (mismatch) {
     renderToken++;
     grid.innerHTML = '';
@@ -151,7 +160,7 @@ function renderGrid() {
     const frag = document.createDocumentFragment();
     for (const cand of pending.splice(0, 12)) {
       frag.appendChild(makeCard(cand));
-      rendered.push(cand.id);
+      rendered.push(cand);
     }
     grid.appendChild(frag);
     if (pending.length) requestAnimationFrame(step);
@@ -166,8 +175,10 @@ function renderDetail() {
   detail.classList.toggle('is-open', open);
   $('backdrop').hidden = !open;
   document.body.classList.toggle('sheet-open', open);
-  if (!wideQuery.matches) detail.setAttribute('role', open ? 'dialog' : 'complementary');
+  detail.setAttribute('role', open ? 'dialog' : 'complementary');
   detail.setAttribute('aria-modal', String(open));
+  // シートを開いている間は背後を操作・読み上げの対象から外す（Tab がシートの外へ出ないように）
+  for (const el of document.querySelectorAll('.site-header, .controls, .results, .site-footer')) el.inert = open;
   $('detail-placeholder').hidden = !!sel;
   $('detail-body').hidden = !sel;
   if (!sel) return;
@@ -188,7 +199,14 @@ function renderDetail() {
   }
   const mock = $('mock');
   const c = sel.colors;
-  mock.style.cssText = `--bg:${c.background};--p:${c.primary};--s:${c.secondary};--a:${c.accent};--t:${c.text}`;
+  const mc = simulateColors(c, vision);
+  mock.style.cssText = `--bg:${mc.background};--p:${mc.primary};--s:${mc.secondary};--a:${mc.accent};--t:${mc.text}`;
+  for (const b of $('vision-tabs').children) b.setAttribute('aria-pressed', String(b.dataset.vision === vision));
+  const vn = visionNote(c);
+  const ve = $('vision');
+  ve.className = 'vision-note' + (vn ? ' warn' : '');
+  ve.textContent = (vn ? `⚠ ${vn.text}。色だけで区別させない工夫を。` : '色覚の型のシミュレーションでは、主な色の組み合わせは見分けられます（目安）。')
+    + (vision === 'normal' ? '' : ` 見本は${VISION_TYPES[vision].label}のシミュレーション表示中です（HEXは変わりません）。`);
   mock.dataset.usage = state.usage;
 
   const ci = contrastInfo(c);
@@ -292,7 +310,7 @@ function renderSearch() {
 
 function addMood(name) {
   if (!name || state.moods.includes(name) || state.moods.length >= MAX_MOODS) return;
-  dispatch({ type: 'setMoods', moods: [...state.moods, name] });
+  dispatch({ type: 'setMoods', moods: [...state.moods, name], seed: newSeed() });
   $('mood-search').value = '';
   renderSearch();
 }
@@ -319,7 +337,7 @@ document.addEventListener('click', (e) => {
   if (chip) {
     const n = chip.dataset.mood;
     const moods = state.moods.includes(n) ? state.moods.filter((m) => m !== n) : [...state.moods, n];
-    dispatch({ type: 'setMoods', moods });
+    dispatch({ type: 'setMoods', moods, seed: newSeed() });
     renderSearch();
     return;
   }
@@ -332,6 +350,8 @@ document.addEventListener('click', (e) => {
     openSheet();
     return;
   }
+  const vis = t.closest('[data-vision]');
+  if (vis) { vision = vis.dataset.vision; renderDetail(); return; }
   const fmt = t.closest('[data-format]');
   if (fmt) { format = fmt.dataset.format; $('copy-fallback').hidden = true; renderDetail(); return; }
   const lock = t.closest('[data-lock]');
@@ -341,8 +361,15 @@ document.addEventListener('click', (e) => {
 $('btn-copy').addEventListener('click', copyNow);
 $('btn-close').addEventListener('click', closeSheet);
 $('backdrop').addEventListener('click', closeSheet);
-$('btn-regenerate').addEventListener('click', () => dispatch({ type: 'regenerate', seed: Math.floor(Math.random() * 2 ** 32) }));
-$('btn-more').addEventListener('click', () => dispatch({ type: 'loadMore' }));
+$('btn-regenerate').addEventListener('click', () => dispatch({ type: 'regenerate', seed: newSeed() }));
+$('btn-more').addEventListener('click', () => {
+  const before = state.candidates.length;
+  dispatch({ type: 'loadMore' });
+  const added = state.candidates.length - before;
+  // 似た案しか作れないときは増えない。黙って何も起きないように見せない
+  if (!added) toast('これ以上、十分に違う案は作れませんでした。印象語を変えるか「別の案を出す」を試してください');
+  else if (added < (state.searchMode === 'deep' ? DEEP_SIZE : PAGE_SIZE)) toast(`${added}案を追加しました（似た案を除いたため少なめです）`);
+});
 $('btn-to-results').addEventListener('click', () => $('h-results').scrollIntoView({ behavior: 'smooth', block: 'start' }));
 $('btn-repropose').addEventListener('click', () => dispatch({ type: 'repropose' }));
 $('btn-undo').addEventListener('click', () => dispatch({ type: 'undo' }));

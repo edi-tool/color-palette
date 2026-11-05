@@ -9,6 +9,17 @@
 - ポータル（edi-tool.github.io）・組織プロフィール（.github）へ 2026-11-05 に掲載済み（Step 4。詳細は「公開時の記録」）。`og:image` も設定済み。
 - デザイン（指針・画面案・用途別プレビュー・OGP画像）は、ユーザーが別途 Claude Design に依頼する。依頼文の下書き: `docs/claude-design-brief.md`。
 
+## 2026-11-05 点検・改善（ブランチ `claude/sonnet-code-review-00d382`、未コミット時点の記録）
+
+- 点検で直した不具合: ①印象語・出力想定を変えるとカードの系統ラベルが古いまま（id が seed・順番だけで決まるため、描画の差分判定を候補オブジェクトで行うよう変更）②スマホのシート表示中に Tab で背後へ出られた（背後を `inert`）③広い画面で詳細欄の role が dialog のまま残る ④「さらに24案」で増えないときに無反応（トースト表示）。
+- 性能: 「さらに24案」3回目が約6秒→約0.8秒（`hexToOklab` のキャッシュ。生成結果は不変）。DESIGN.md §3.8。
+- 先行ツール比較で追加: 色覚の多様性シミュレーション（`src/vision.js`、DESIGN.md §3.7）。
+- トライアドの頻度を下げ（約22%→約8%）、印象語を押すたびに seed を変える（DESIGN.md §3.9）。
+- 検証: `npm test` 51件 pass、`npm run check` エラー0、E2E 32件 pass（3回連続）。
+- 先行ツール比較で見送った候補: Adobe スウォッチ（.ase）書き出し（保留。残課題 8a）、近似の色名表示（色名データの出典・ライセンスが課題。nipponcolors 等の複写は不可）、用途別の見本を増やす（デザイン依頼と重なる）、配色技法名（トーン・オン・トーン、カマイユ等）での生成、Redo。
+- 表示名を「配色提案さん」に統一（ユーザー判断）。AGENTS.md・REQUIREMENTS.md・DESIGN.md・package.json・styles.css・docs・OGP 原本と `ogp.png`（ヘッドレス Chrome で再撮影、名前は 72px）を更新。過去の作業記録の旧名は残した。**ポータル（edi-tool.github.io）と組織プロフィール（.github）の表記「配色さん」は未変更**（掲載先の変更は合意後）。
+- 気づき: 公開後、ブラウザに古いモジュールが残ると新旧が混ざって起動に失敗しうる（ローカル確認で実際に発生）。Pages のキャッシュは約10分。
+
 ## 実装済み
 
 - `src/`: color-utils（OKLab/OKLCH・色域マッピング・WCAG）/ rng / semantic-model / vocab.json（30語）/ palette-engine（層別サンプリング・最遠点選抜・深掘り・ロック再提案）/ export（かんたん・くわしく・HEXのみ・CSS・JSON）/ state / url-state / print-profile（CMYK未提供スタブ）/ app.js
@@ -33,6 +44,7 @@
 6a. **配色エンジン刷新（2026-11-05）**: 役割ごとの明度の型＋品質の足切りに変更（docs/palette-analysis.md）。問題案 47% → 5%、npm test 44件（品質テスト追加）・E2E 28件合格。PR #1。
 7. **Step 3（ICC-CMYK）**: lcms-wasm（同梱は要承認）・Japan Color 2011 Coated の再配布条件の確認・変換実装。完了まで「CMYK対応」と宣伝しない。
 8. 未実装機能: シード配色（人の監修が必要）、詳細スライダー、シード色指定、近似色の差し替え、お気に入り保存、画像書き出し。
+8a. **保留（2026-11-05 ユーザー判断）: Adobe スウォッチ（.ase）書き出し。** InDesign・Illustrator に色見本として読み込める形式（Paletton 等にある）。実装する場合は RGB のみ（CMYK は ICC 変換まで出さない）、ブラウザ内でファイルを生成してダウンロード（外部送信なし・依存なし）。着手はユーザーの指示を待つ。
 9. 24案生成の実機計測（Node では約0.3秒）。
 10. `tests/helpers.js`（テンプレ複製・CommonJS）は未使用。`type: module` 下では読み込めない。テンプレ同期（check-template-sync）の扱いは要検討。
 
