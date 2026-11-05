@@ -6,6 +6,7 @@
 
 import { ROLES, contrastRatio, AA_NORMAL } from './color-utils.js';
 import { visionIssues, VISION_TYPES } from './vision.js';
+import { HUE_FAMILIES } from './semantic-model.js';
 
 export const SCHEMA_VERSION = 1;
 
@@ -55,7 +56,9 @@ function usageOf(state) {
 }
 
 function moodText(state) {
-  return state.moods?.length ? state.moods.join('、') : '指定なし';
+  const m = state.moods?.length ? state.moods.join('、') : '指定なし';
+  const f = HUE_FAMILIES[state.hue];
+  return f ? `${m}（色の系統: ${f.label}）` : m;
 }
 
 function modeLine(state) {
@@ -156,6 +159,7 @@ export function formatJson(state) {
     moods: state.moods ?? [],
     usage: state.usage,
     mode: state.mode,
+    hueFamily: HUE_FAMILIES[state.hue] ? state.hue : null,
     seed: state.seed,
     colors: Object.fromEntries(ROLES.map((r) => [r, state.colors[r]])),
     locks: state.locks ?? [],

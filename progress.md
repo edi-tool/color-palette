@@ -15,14 +15,15 @@
 - 性能: 「さらに24案」3回目が約6秒→約0.8秒（`hexToOklab` のキャッシュ。生成結果は不変）。DESIGN.md §3.8。
 - 先行ツール比較で追加: 色覚の多様性シミュレーション（`src/vision.js`、DESIGN.md §3.7）。
 - トライアドの頻度を下げ（約22%→約8%）、印象語を押すたびに seed を変える（DESIGN.md §3.9）。
-- 検証: `npm test` 51件 pass、`npm run check` エラー0、E2E 32件 pass（3回連続）。
+- 用途を生成に反映・色の系統の選択・印象語「鮮やか」「カラフル」・ボタンの大きさをそろえる・色覚の補助欄を操作の下へ移す・シートの固定部分を縮める（DESIGN.md §3.10）。
+- 検証: `npm test` 57件 pass、`npm run check` エラー0、E2E 33件 pass。
 - 先行ツール比較で見送った候補: Adobe スウォッチ（.ase）書き出し（保留。残課題 8a）、近似の色名表示（色名データの出典・ライセンスが課題。nipponcolors 等の複写は不可）、用途別の見本を増やす（デザイン依頼と重なる）、配色技法名（トーン・オン・トーン、カマイユ等）での生成、Redo。
 - 表示名を「配色提案さん」に統一（ユーザー判断）。AGENTS.md・REQUIREMENTS.md・DESIGN.md・package.json・styles.css・docs・OGP 原本と `ogp.png`（ヘッドレス Chrome で再撮影、名前は 72px）を更新。過去の作業記録の旧名は残した。**ポータル（edi-tool.github.io）と組織プロフィール（.github）の表記「配色さん」は未変更**（掲載先の変更は合意後）。
 - 気づき: 公開後、ブラウザに古いモジュールが残ると新旧が混ざって起動に失敗しうる（ローカル確認で実際に発生）。Pages のキャッシュは約10分。
 
 ## 実装済み
 
-- `src/`: color-utils（OKLab/OKLCH・色域マッピング・WCAG）/ rng / semantic-model / vocab.json（30語）/ palette-engine（層別サンプリング・最遠点選抜・深掘り・ロック再提案）/ export（かんたん・くわしく・HEXのみ・CSS・JSON）/ state / url-state / print-profile（CMYK未提供スタブ）/ app.js
+- `src/`: color-utils（OKLab/OKLCH・色域マッピング・WCAG）/ rng / semantic-model / vocab.json（32語）/ palette-engine（層別サンプリング・最遠点選抜・深掘り・ロック再提案）/ export（かんたん・くわしく・HEXのみ・CSS・JSON）/ state / url-state / print-profile（CMYK未提供スタブ）/ app.js
 - 用途は5区分（一般／書籍カバー／チラシ・ポスター／教材・学級通信／Web・SNS）。
 - UI: スマホは下から開くシート、PCは横並び。URLフラグメントで状態復帰。
 

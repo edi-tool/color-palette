@@ -192,3 +192,25 @@ test('setMoods に seed を渡すと同じ印象語でも別の候補、渡さ�
   assert.equal(again.seed, 1);
   assert.deepEqual(again.candidates, a.candidates);
 });
+
+test('色の系統: 選ぶと作り直し、URL に残って復帰し、コピー文に書く', () => {
+  const s = run(initialState(), { type: 'setMoods', moods: ['明るい'], seed: 4 }, { type: 'setHue', hue: 'blue' });
+  assert.equal(s.hue, 'blue');
+  const sel = run(s, { type: 'select', id: s.candidates[0].id });
+  const back = run(initialState(), { type: 'restore', ...decodeState('#' + encodeState(sel), { validMoods: index.names }) });
+  assert.equal(back.hue, 'blue');
+  assert.deepEqual(back.selected.colors, sel.selected.colors);
+  assert.match(formatSimple(exportView(sel)), /色の系統: 青系/);
+  assert.equal(JSON.parse(formatJson(exportView(sel))).hueFamily, 'blue');
+  assert.equal(run(s, { type: 'setHue', hue: 'unknown' }).hue, null);
+});
+
+test('用途の切り替え: 候補は作り直すが、選択中の配色と編集は残る', () => {
+  let s = run(initialState(), { type: 'setMoods', moods: ['明るい'], seed: 4 });
+  s = run(s, { type: 'select', id: s.candidates[1].id }, { type: 'editColor', role: 'accent', hex: '#123456' });
+  const before = s.candidates;
+  const t = run(s, { type: 'setUsage', usage: 'teaching-material' });
+  assert.equal(t.usage, 'teaching-material');
+  assert.notDeepEqual(t.candidates.map((c) => c.colors), before.map((c) => c.colors));
+  assert.equal(t.selected.colors.accent, '#123456');
+});

@@ -93,16 +93,23 @@ test('印象語を足すと、カードの系統ラベルも新しい候補に�
   await expect(page.locator('.card-label')).toHaveText(expected);
 });
 
-test('色覚の見え方を切り替えると見本だけが変わり、HEXとコピー内容は変わらない', async ({ page }) => {
+test('色覚の見え方は操作の下のたたんだ補助欄にあり、切り替えても見本・HEX・コピー内容は変わらない', async ({ page }) => {
   await pickMood(page);
   await page.locator('.card').first().click();
+  // 補助欄は既定で閉じていて、ロック・再提案より下にある
+  await expect(page.locator('#vision-box')).not.toHaveAttribute('open', '');
+  const y = async (sel) => (await page.locator(sel).boundingBox()).y;
+  expect(await y('#vision-box')).toBeGreaterThan(await y('#btn-repropose'));
   const hex0 = await roleHex(page, 'primary').inputValue();
   const copy0 = await page.locator('#export-preview').textContent();
   const mock0 = await page.locator('#mock').getAttribute('style');
+  const strip0 = await page.locator('#vision-strip').innerHTML();
+  await page.locator('#vision-summary').click();
   await page.locator('[data-vision="deutan"]').click();
   await expect(page.locator('[data-vision="deutan"]')).toHaveAttribute('aria-pressed', 'true');
-  await expect(page.locator('#vision')).toContainText('D型（2型）のシミュレーション表示中');
-  expect(await page.locator('#mock').getAttribute('style')).not.toBe(mock0);
+  await expect(page.locator('#vision')).toContainText('D型（2型）のシミュレーション');
+  expect(await page.locator('#vision-strip').innerHTML()).not.toBe(strip0);
+  expect(await page.locator('#mock').getAttribute('style')).toBe(mock0);
   await expect(roleHex(page, 'primary')).toHaveValue(hex0);
   await expect(page.locator('#export-preview')).toHaveText(copy0);
 });
@@ -117,6 +124,18 @@ test('同じ印象語を押し直すと、別の候補が並ぶ（seed は URL �
   await expect(page.locator('.card')).toHaveCount(24);
   expect(await seedOf()).not.toBe(s1);
   expect(await page.locator('.card').first().getAttribute('aria-label')).not.toBe(first);
+});
+
+test('印象語・色の系統のボタンは同じ大きさにそろい、色の系統を選ぶと URL に残る', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await pickMood(page);
+  const sizes = await page.evaluate(() => [...document.querySelectorAll('#mood-chips .chip, #hue-chips .chip')]
+    .map((b) => { const r = b.getBoundingClientRect(); return `${Math.round(r.width)}x${Math.round(r.height)}`; }));
+  expect(new Set(sizes).size).toBe(1);
+  await page.locator('[data-hue="green"]').click();
+  await expect(page.locator('[data-hue="green"]')).toHaveAttribute('aria-pressed', 'true');
+  expect(await page.evaluate(() => new URLSearchParams(location.hash.slice(1)).get('h'))).toBe('green');
+  await expect(page.locator('.card').first()).toBeVisible();
 });
 
 test('印象語は3つまで（4つ目は選べない）', async ({ page }) => {

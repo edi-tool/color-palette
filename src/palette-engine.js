@@ -6,7 +6,8 @@ import {
   ROLES, oklchToHex, hexToOklch, hexToOklab, deltaE, ensureContrast, contrastRatio, hueDiff, AA_NORMAL,
 } from './color-utils.js';
 import { createRng, mixSeed } from './rng.js';
-import { mergeProfile, fitScore } from './semantic-model.js';
+import { mergeProfile, fitScore, applyHueFamily } from './semantic-model.js';
+import { visionIssues } from './vision.js';
 
 export const TEMPS = ['warm', 'cool', 'neutral'];
 export const SATS = ['vivid', 'mid', 'muted'];
@@ -64,7 +65,8 @@ function sampleHue(profile, temp, rng) {
 function bgColor(profile, h, rng, fixedBg) {
   if (fixedBg) return fixedBg;
   const L = rng.range(profile.bgL[0], profile.bgL[1]);
-  return oklchToHex(L, rng.range(0.004, 0.018), h);
+  const [cLo, cHi] = tuningOf(profile.usage).bgC ?? [0.004, 0.018];
+  return oklchToHex(L, rng.range(cLo, cHi), h);
 }
 
 /** その明度・色相で sRGB に入る最大彩度。色相ごとの「出せる鮮やかさ」の上限。
@@ -87,14 +89,45 @@ export const QUALITY = {
 };
 
 /**
+ * 用途ごとの生成の調整（独自に決めた目安値。評価前）。キーは export.js の USAGES と同じ。
+ * chroma=主役色の彩度の倍率, bgL/bgC=背景の明度・彩度の範囲（印象語の範囲を置き換える）,
+ * sats=使う彩度の枠（省略時はすべて）, primaryOnBg/accentOnBg=背景とのコントラスト比の下限,
+ * textOnBg=本文の下限, cud=P型・D型で見分けにくい案を除く。
+ */
+export const USAGE_TUNING = {
+  general: {},
+  // カバーは色のついた地で面の印象をつくり、タイトル（メイン）は遠目でも読める濃さに
+  'book-cover': { chroma: 1.1, bgL: [0.84, 0.94], bgC: [0.02, 0.05], primaryOnBg: 4.0 },
+  // チラシ・ポスターは遠目に目立つ。彩度を上げ、差し色もはっきり
+  flyer: { chroma: 1.3, sats: ['vivid', 'mid'], primaryOnBg: 4.0, accentOnBg: 3.0 },
+  // 教材・学級通信は淡い紙面・本文 7:1（WCAG AAA の目安）・色覚の多様性に配慮
+  'teaching-material': { chroma: 0.8, bgL: [0.96, 0.995], bgC: [0.003, 0.012], textOnBg: 7, cud: true },
+  // Web・SNS は差し色をボタン等の部品に使うので、非テキストの 3:1（WCAG 1.4.11）を満たす
+  web: { accentOnBg: 3.0 },
+};
+const tuningOf = (usage) => USAGE_TUNING[usage] ?? USAGE_TUNING.general;
+
+/** 印象語・色の系統・用途から、生成に使うプロファイルを作る */
+export function buildProfile(index, moods, { usage = 'general', hue = null } = {}) {
+  const t = tuningOf(usage);
+  let p = applyHueFamily(mergeProfile(index, moods), hue);
+  if (t.chroma) p = { ...p, pC: [p.pC[0] * t.chroma, p.pC[1] * t.chroma] };
+  if (t.bgL) p = { ...p, bgL: t.bgL };
+  return { ...p, usage };
+}
+
+/**
  * 配色の品質上の問題を返す（空配列なら合格）。印象の良し悪しではなく、
  * 読みやすさと役割の区別がつくかだけを見る。純粋関数。
  */
-export function qualityIssues(c) {
+export function qualityIssues(c, usage = 'general') {
+  const t = tuningOf(usage);
   const o = Object.fromEntries(ROLES.map((r) => [r, hexToOklch(c[r])]));
   const out = [];
-  if (contrastRatio(c.primary, c.background) < QUALITY.primaryOnBg) out.push('primary-weak');
-  if (contrastRatio(c.accent, c.background) < QUALITY.accentOnBg) out.push('accent-weak');
+  if (contrastRatio(c.primary, c.background) < (t.primaryOnBg ?? QUALITY.primaryOnBg)) out.push('primary-weak');
+  if (contrastRatio(c.accent, c.background) < (t.accentOnBg ?? QUALITY.accentOnBg)) out.push('accent-weak');
+  if (t.textOnBg && contrastRatio(c.text, c.background) < t.textOnBg) out.push('text-weak');
+  if (t.cud && visionIssues(c).some((v) => v.type === 'protan' || v.type === 'deutan')) out.push('cvd-confusable');
   if (deltaE(c.primary, c.secondary) < QUALITY.minPrimarySecondaryDE) out.push('secondary-near-primary');
   if (Math.abs(o.secondary.L - o.background.L) < QUALITY.minSecondaryBgDL) out.push('secondary-near-bg');
   if (['primary', 'secondary', 'accent'].filter((r) => o[r].C > 0.16).length > QUALITY.maxVivid) out.push('too-vivid');
@@ -111,6 +144,7 @@ export function qualityIssues(c) {
  * 失敗（その温度で使える色相が無い等）は null。
  */
 export function generatePalette(cell, profile, rng, { mode = 'rgb', fixed = {} } = {}) {
+  const t = tuningOf(profile.usage);
   const scale = mode === 'print' ? PRINT_CHROMA_SCALE : 1;
   const pC = [profile.pC[0] * scale, profile.pC[1] * scale];
   const fx = fixed.primary ? hexToOklch(fixed.primary) : null;
@@ -150,9 +184,10 @@ export function generatePalette(cell, profile, rng, { mode = 'rgb', fixed = {} }
     featured = { L: Lp, C: Math.max(Cp, cLo), h: h0 };
   } else {
     featured = { L: Lp, C: Cp, h: h0 };
-    const yellow = !fx && isYellowZone(h0);
+    // 色の系統を指定したときは、その系統の外へはずらさない（黄系だけは、からし色寄りまで小さくずらす）
+    const yellow = !fx && isYellowZone(h0) && (!profile.family || profile.family === 'yellow');
     // 黄系: メインは暖色側の隣（橙〜赤み）へずらし、黄は淡い面（サブ）に回す
-    const hP = yellow ? h0 - rng.range(35, 55) : h0;
+    const hP = !yellow ? h0 : profile.family === 'yellow' ? h0 - rng.range(15, 25) : h0 - rng.range(35, 55);
     primary = fixed.primary ?? oklchToHex(Lp, capC(Lp, Cp, hP), hP);
     // サブ: 淡い面（帯・囲み）か、メインより暗い締め色。メインの「少し明るい版」は作らない
     if (yellow) {
@@ -169,17 +204,17 @@ export function generatePalette(cell, profile, rng, { mode = 'rgb', fixed = {} }
     // 差し色: 3色の中で一番鮮やかに（色域の上限まで）。黄系は濃くすると濁るので橙側へ
     if (isYellowZone(hA)) hA = mod360(hA) - rng.range(25, 40);
     const aL = rng.range(0.6, 0.78);
-    const want = Math.max(Cp * 1.15, cell.sat === 'muted' ? 0.09 : 0.13) * scale;
+    const want = Math.max(Cp * 1.15, (cell.sat === 'muted' ? 0.09 : 0.13) * (t.chroma ?? 1)) * scale;
     accent = oklchToHex(aL, capC(aL, want, hA), hA);
   }
   if (fixed.secondary) secondary = fixed.secondary;
 
   // メインと差し色を、背景から読み分けられる濃さにする（明度だけを動かす。ロックは触らない）
-  if (!fixed.primary) primary = ensureContrast(primary, background, QUALITY.primaryOnBg + 0.1);
-  accent = fixed.accent ?? ensureContrast(accent, background, QUALITY.accentOnBg + 0.1);
+  if (!fixed.primary) primary = ensureContrast(primary, background, (t.primaryOnBg ?? QUALITY.primaryOnBg) + 0.1);
+  accent = fixed.accent ?? ensureContrast(accent, background, (t.accentOnBg ?? QUALITY.accentOnBg) + 0.1);
 
   let text = fixed.text;
-  if (!text) text = ensureContrast(oklchToHex(bg.L > 0.5 ? 0.25 : 0.95, 0.02, h0), background, AA_NORMAL);
+  if (!text) text = ensureContrast(oklchToHex(bg.L > 0.5 ? 0.25 : 0.95, 0.02, h0), background, t.textOnBg ? t.textOnBg + 0.05 : AA_NORMAL);
 
   const fit = fitScore(profile, featured, bg.L);
   return { cell, colors: { primary, secondary, accent, background, text }, fit };
@@ -220,17 +255,20 @@ function quotaByTemp(total, temps) {
 export const HARMONY_WEIGHT = { analogous: 1, complementary: 1, split: 1, triad: 0.35, mono: 1, neutralAccent: 1 };
 export const HARMONY_MAX_SHARE = { triad: 0.08 }; // 24案なら2案まで。他で埋まらないときだけ上限を外す
 
+/** 調和の重み。印象語が指定した調和（例: カラフル）は語の値で置き換える */
+const harmWeight = (profile, harm) => profile.harm?.[harm] ?? HARMONY_WEIGHT[harm] ?? 1;
+
 /** 重み付きの並べ替え（重みが小さいほど後ろに来やすい。Efraimidis–Spirakis の鍵 u^(1/w)） */
-function weightedOrder(cells, rng) {
+function weightedOrder(cells, rng, profile) {
   return cells
-    .map((c) => ({ c, k: rng.next() ** (1 / (HARMONY_WEIGHT[c.harm] ?? 1)) }))
+    .map((c) => ({ c, k: rng.next() ** (1 / harmWeight(profile, c.harm)) }))
     .sort((a, b) => b.k - a.k)
     .map((x) => x.c);
 }
 
 /** 彩度→調和の順に交互に並べ、連続する枠が似た系統にならないようにする */
-function interleave(cells, rng) {
-  const bySat = Object.fromEntries(SATS.map((s) => [s, weightedOrder(cells.filter((c) => c.sat === s), rng)]));
+function interleave(cells, rng, profile) {
+  const bySat = Object.fromEntries(SATS.map((s) => [s, weightedOrder(cells.filter((c) => c.sat === s), rng, profile)]));
   const out = [];
   while (SATS.some((s) => bySat[s].length)) {
     for (const s of SATS) if (bySat[s].length) out.push(bySat[s].shift());
@@ -244,10 +282,11 @@ const makeId = (seed, page, n) => `p${seed.toString(36)}-${page}-${n}`;
  * 「幅広く探す」。count 案を返す。exclude に既存案を渡すと、それらと十分離れた案だけを返す。
  * @returns {Array<{id,seed,cell,label,colors,fit}>}
  */
-export function generateWide({ index, moods, mode = 'rgb', seed, page = 0, count = 24, exclude = [] }) {
-  const profile = mergeProfile(index, moods);
+export function generateWide({ index, moods, mode = 'rgb', usage = 'general', hue = null, seed, page = 0, count = 24, exclude = [] }) {
+  const profile = buildProfile(index, moods, { usage, hue });
   const rng = createRng(mixSeed(seed, page, 7919));
-  const cells = allCells();
+  const sats = tuningOf(usage).sats;
+  const cells = sats ? allCells().filter((c) => sats.includes(c.sat)) : allCells();
   // その印象語で作れる温度を探る（色相窓が一方の温度に偏る語がある）
   const probe = createRng(mixSeed(seed, 1));
   const eligibleTemps = TEMPS.filter((t) => cells.filter((c) => c.temp === t).some((c) => {
@@ -259,7 +298,7 @@ export function generateWide({ index, moods, mode = 'rgb', seed, page = 0, count
   }));
   if (!eligibleTemps.length) return [];
   const quota = quotaByTemp(count, eligibleTemps);
-  const queues = Object.fromEntries(eligibleTemps.map((t) => [t, interleave(cells.filter((c) => c.temp === t), rng)]));
+  const queues = Object.fromEntries(eligibleTemps.map((t) => [t, interleave(cells.filter((c) => c.temp === t), rng, profile)]));
 
   const chosen = [];
   const existing = exclude.map((p) => p.colors ?? p);
@@ -280,7 +319,8 @@ export function generateWide({ index, moods, mode = 'rgb', seed, page = 0, count
   }
 
   const cursor = Object.fromEntries(eligibleTemps.map((t) => [t, 0]));
-  const harmMax = Object.fromEntries(Object.entries(HARMONY_MAX_SHARE).map(([h, r]) => [h, Math.round(count * r)]));
+  // 印象語が調和を指定した場合（カラフル等）は、その調和の上限を外す
+  const harmMax = Object.fromEntries(Object.entries(HARMONY_MAX_SHARE).filter(([h]) => profile.harm?.[h] == null).map(([h, r]) => [h, Math.round(count * r)]));
   let capOn = true;
   const capped = (harm) => capOn && harm in harmMax && chosen.filter((c) => c.cell.harm === harm).length >= harmMax[harm];
   const tryPlace = (t) => {
@@ -290,7 +330,7 @@ export function generateWide({ index, moods, mode = 'rgb', seed, page = 0, count
       const pool = [];
       for (let k = 0; k < 12; k++) {
         const p = generatePalette(cell, profile, rng, { mode });
-        if (p && p.fit >= FIT_MIN && !qualityIssues(p.colors).length) pool.push(p);
+        if (p && p.fit >= FIT_MIN && !qualityIssues(p.colors, usage).length) pool.push(p);
       }
       const all = [...existing, ...chosen.map((c) => c.colors)];
       // 最遠点選抜: 既存全案から最も離れた候補を採る
@@ -325,9 +365,10 @@ export function generateWide({ index, moods, mode = 'rgb', seed, page = 0, count
 }
 
 /** 「この系統を深掘り」。基準案と同じセルで、近傍だけを小刻みに変える。 */
-export function generateDeep({ index, moods, mode = 'rgb', seed, base, count = 12, page = 0, exclude = [] }) {
+export function generateDeep({ index, moods, mode = 'rgb', usage = 'general', hue = null, seed, base, count = 12, page = 0, exclude = [] }) {
   const rng = createRng(mixSeed(seed, page, 104729));
-  const profile = mergeProfile(index, moods);
+  const profile = buildProfile(index, moods, { usage, hue });
+  const textTarget = tuningOf(usage).textOnBg ?? AA_NORMAL;
   const o = Object.fromEntries(['primary', 'secondary', 'accent'].map((r) => [r, hexToOklch(base.colors[r])]));
   const bg = hexToOklch(base.colors.background);
   const maxD = 14; // 幅広い探索の最小距離(6〜14)より近い範囲に収める
@@ -343,9 +384,9 @@ export function generateDeep({ index, moods, mode = 'rgb', seed, base, count = 1
       );
     }
     col.background = oklchToHex(clamp(bg.L + rng.range(-0.015, 0.015), 0.05, 0.995), bg.C, bg.h);
-    col.text = ensureContrast(base.colors.text, col.background, AA_NORMAL);
+    col.text = ensureContrast(base.colors.text, col.background, textTarget);
     const d = paletteDistance(col, base.colors);
-    if (d < minD || d > maxD || qualityIssues(col).length) continue;
+    if (d < minD || d > maxD || qualityIssues(col, usage).length) continue;
     const fit = fitScore(profile, base.cell.harm === 'neutralAccent' ? hexToOklch(col.accent) : hexToOklch(col.primary), hexToOklch(col.background).L);
     pool.push({ colors: col, fit });
   }
@@ -371,8 +412,8 @@ export function generateDeep({ index, moods, mode = 'rgb', seed, base, count = 1
  * ロック以外を再提案する。locked に含まれる役割の HEX は 1 桁も変えない。
  * 現在の値と十分違う案を優先する（変化が見えないと「再提案」にならない）。
  */
-export function reproposeUnlocked({ index, moods, mode = 'rgb', seed, current, locks = [] }) {
-  const profile = mergeProfile(index, moods);
+export function reproposeUnlocked({ index, moods, mode = 'rgb', usage = 'general', hue = null, seed, current, locks = [] }) {
+  const profile = buildProfile(index, moods, { usage, hue });
   const rng = createRng(mixSeed(seed, 31337));
   const fixed = Object.fromEntries(locks.filter((r) => ROLES.includes(r)).map((r) => [r, current.colors[r]]));
   const unlocked = ROLES.filter((r) => !fixed[r]);
@@ -384,7 +425,7 @@ export function reproposeUnlocked({ index, moods, mode = 'rgb', seed, current, l
     if (!p) continue;
     // 念のため: ロック色を最終的に上書きして不変を保証する
     for (const r of Object.keys(fixed)) p.colors[r] = fixed[r];
-    if (!fixed.text) p.colors.text = ensureContrast(p.colors.text, p.colors.background, AA_NORMAL);
+    if (!fixed.text) p.colors.text = ensureContrast(p.colors.text, p.colors.background, tuningOf(usage).textOnBg ?? AA_NORMAL);
     const d = unlocked.reduce((s, r) => s + deltaE(p.colors[r], current.colors[r]), 0);
     const score = d + (p.fit >= FIT_MIN ? 100 : 0);
     if (score > bestD) { bestD = score; best = p; }

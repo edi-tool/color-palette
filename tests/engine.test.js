@@ -139,3 +139,47 @@ test('トライアドは1ページ（24案）あたり上限まで。上限を�
     }
   }
 });
+
+test('用途で生成が変わる: 教材は本文7:1以上・P型/D型で見分けにくい案なし、カバーは色のついた地、チラシはくすみ枠なし', async () => {
+  const { visionIssues } = await import('../src/vision.js');
+  const { contrastRatio: cr } = await import('../src/color-utils.js');
+  for (const moods of [['明るい'], ['元気'], ['和風']]) {
+    const tm = generateWide({ index, moods, usage: 'teaching-material', seed: 5, count: 24 });
+    assert.ok(tm.length >= 20, `${moods} ${tm.length}`);
+    for (const p of tm) {
+      assert.ok(cr(p.colors.text, p.colors.background) >= 7, `${moods} text`);
+      assert.ok(!visionIssues(p.colors).some((v) => v.type !== 'tritan'), `${moods} cvd`);
+    }
+    const bc = generateWide({ index, moods, usage: 'book-cover', seed: 5, count: 24 });
+    const avgBgL = bc.reduce((s, p) => s + hexToOklch(p.colors.background).L, 0) / bc.length;
+    assert.ok(avgBgL < 0.94, `${moods} cover bgL ${avgBgL}`);
+    const fl = generateWide({ index, moods, usage: 'flyer', seed: 5, count: 24 });
+    assert.ok(fl.every((p) => p.cell.sat !== 'muted'), `${moods} flyer`);
+  }
+});
+
+test('用途「一般」は従来どおり（usage を省略したときと同じ結果）', () => {
+  const a = generateWide({ index, moods: ['明るい'], seed: 9, count: 24 });
+  const b = generateWide({ index, moods: ['明るい'], usage: 'general', seed: 9, count: 24 });
+  assert.deepEqual(a, b);
+});
+
+test('色の系統を選ぶと、無彩色基調以外のメインの色相がその範囲に入る', async () => {
+  const { HUE_FAMILIES } = await import('../src/semantic-model.js');
+  const { hueDiff } = await import('../src/color-utils.js');
+  for (const hue of ['red', 'green', 'blue', 'purple']) {
+    const [[c, w]] = HUE_FAMILIES[hue].hue;
+    const list = generateWide({ index, moods: ['明るい'], hue, seed: 3, count: 24 });
+    assert.ok(list.length >= 20, `${hue} ${list.length}`);
+    for (const p of list.filter((x) => x.cell.temp !== 'neutral')) {
+      const o = hexToOklch(p.colors.primary);
+      assert.ok(o.C < 0.03 || hueDiff(o.h, c) <= w + 3, `${hue} ${p.colors.primary} h=${o.h.toFixed(0)}`);
+    }
+  }
+});
+
+test('カラフルは多色相の調和（トライアド・分裂補色・補色）が単色階調より多い', () => {
+  const cnt = {};
+  for (const seed of [1, 2, 3]) for (const p of generateWide({ index, moods: ['カラフル'], seed, count: 24 })) cnt[p.cell.harm] = (cnt[p.cell.harm] ?? 0) + 1;
+  assert.ok((cnt.triad ?? 0) + (cnt.split ?? 0) + (cnt.complementary ?? 0) > 3 * (cnt.mono ?? 0), JSON.stringify(cnt));
+});
