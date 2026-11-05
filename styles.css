@@ -1,4 +1,4 @@
-/* 配色さん — スタイル。edi-tool 共通のデザイントークンに合わせる。 */
+/* 配色提案さん — スタイル。edi-tool 共通のデザイントークンに合わせる。 */
 :root {
   --bg: #f8f6f2;
   --surface: #fff;
@@ -60,14 +60,16 @@ h2 { font-size: 1.1rem; margin: 0 0 0.5rem; }
 .notice { background: var(--accent-soft); border: 1px solid var(--accent); border-radius: 8px; padding: 0.6rem 0.8rem; margin: 0.6rem 0; font-size: 0.9rem; }
 
 summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; font-weight: 600; }
-.chips { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0.25rem 0 0.5rem; }
+.chips { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 7.2em), 1fr)); gap: 0.5rem; padding: 0.25rem 0 0.5rem; }
+/* 印象語のボタンは文字数に関係なく同じ幅・高さにそろえる（押す位置を探しやすく） */
 .chip {
-  min-height: 44px; min-width: 44px; padding: 0 0.9rem;
-  border: 2px solid var(--border); border-radius: 999px;
-  background: var(--surface); color: var(--text); font: inherit; cursor: pointer;
+  position: relative; min-height: 44px; min-width: 44px; padding: 0.3rem 1.3em;
+  border: 2px solid var(--border); border-radius: 999px; line-height: 1.25;
+  background: var(--surface); color: var(--text); font: inherit; cursor: pointer; text-align: center;
 }
 .chip[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); font-weight: 700; }
-.chip[aria-pressed="true"]::before { content: "✓ "; }
+/* ✓ は左の余白に重ねて、選んでも幅が変わらないようにする */
+.chip[aria-pressed="true"]::before { content: "✓"; position: absolute; left: 0.55em; top: 50%; transform: translateY(-50%); }
 .chip:disabled { opacity: 0.45; cursor: not-allowed; }
 
 .field { margin: 0.8rem 0; min-width: 0; }
@@ -129,6 +131,7 @@ fieldset.seg { border: 0; padding: 0; margin: 0.8rem 0; }
 .detail-head { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; }
 .detail-label { margin: 0 0 0.6rem; color: var(--text-sub); font-size: 0.85rem; }
 .copy-block { position: sticky; top: -1rem; z-index: 2; background: var(--surface); padding: 0.4rem 0 0.6rem; }
+.copy-options { margin-bottom: 0.4rem; }
 .btn-copy { width: 100%; font-size: 1.05rem; }
 .format-tabs { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
 .fmt { min-height: 44px; padding: 0 0.8rem; border: 2px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--text); font: inherit; cursor: pointer; }
@@ -184,3 +187,34 @@ fieldset.seg { border: 0; padding: 0; margin: 0.8rem 0; }
   :root { --card-min: 180px; }
   .workspace { grid-template-columns: minmax(0, 1fr) 24rem; }
 }
+
+/* 色覚の多様性のシミュレーション */
+.aux-box { margin-top: 1rem; border-top: 1px solid var(--border); padding-top: 0.2rem; }
+.aux-box > summary { font-weight: 600; font-size: 0.9rem; color: var(--text-sub); }
+.aux-box > summary.warn { color: var(--danger); }
+.vision-strip { display: flex; height: 2.4rem; margin-top: 0.5rem; border-radius: 8px; overflow: hidden; border: 1px solid rgba(0,0,0,.15); }
+.vision-strip span { flex: 1; display: flex; align-items: flex-end; justify-content: center; }
+.vision-strip b { font-size: 0.65rem; font-weight: 600; background: rgba(255,255,255,.85); color: #222; padding: 0 0.25rem; border-radius: 3px 3px 0 0; }
+.vision-note { font-size: 0.85rem; margin: 0.4rem 0 0; color: var(--text-sub); }
+.vision-note.warn { color: var(--danger); font-weight: 600; }
+
+/* 色の系統・用途の説明 */
+.field-label { display: block; font-weight: 600; margin: 0 0 0.25rem; font-size: 0.9rem; }
+.field-note { margin: 0.3rem 0 0; font-size: 0.82rem; color: var(--text-sub); }
+.hue-chip { display: inline-flex; align-items: center; justify-content: center; gap: 0.35em; }
+.hue-dot { display: inline-block; width: 0.9em; height: 0.9em; border-radius: 50%; border: 1px solid rgba(0,0,0,.2); flex: none; }
+
+/* 用途別の見本: 同じ要素（帯・見出し・本文・差し色）の置き方を変えて、使われ方の違いを見せる */
+.mock[data-usage="flyer"] { padding-bottom: 1.1rem; }
+.mock[data-usage="flyer"] .mock-band { height: 2.6rem; background: var(--p); }
+.mock[data-usage="flyer"] .mock-title { font-size: 1.7rem; line-height: 1.25; }
+.mock[data-usage="flyer"] .mock-btn { font-size: 1rem; padding: 0.4rem 1.1rem; }
+.mock[data-usage="teaching-material"] { padding: 0.8rem 0.9rem; }
+.mock[data-usage="teaching-material"] .mock-band { display: none; }
+.mock[data-usage="teaching-material"] .mock-title { margin: 0 0 0.5rem; padding: 0.2rem 0 0.2rem 0.6rem; border-left: 0.4rem solid var(--p); font-size: 1.1rem; color: var(--t); }
+.mock[data-usage="teaching-material"] .mock-body { margin: 0 0 0.6rem; padding: 0.5rem 0.6rem; background: var(--s); border-radius: 6px; color: var(--t); }
+.mock[data-usage="teaching-material"] .mock-btn { margin-left: 0; background: transparent; border: 2px solid var(--a); color: var(--t); border-radius: 4px; }
+.mock[data-usage="web"] .mock-band { height: 2rem; background: var(--p); }
+.mock[data-usage="web"] .mock-title { color: var(--t); }
+.mock[data-usage="web"] .mock-body { padding: 0.4rem 0.6rem; margin: 0 0.9rem 0.6rem; background: var(--s); border-radius: 6px; }
+.mock[data-usage="web"] .mock-btn { border-radius: 6px; padding: 0.4rem 1rem; }

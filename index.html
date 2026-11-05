@@ -74,6 +74,11 @@
         </details>
 
         <div class="field">
+            <p class="field-label" id="h-hue">色の系統（任意）</p>
+            <div id="hue-chips" class="chips hue-chips" role="group" aria-labelledby="h-hue"></div>
+        </div>
+
+        <div class="field">
             <label for="mood-search">言葉で探す（任意）</label>
             <input id="mood-search" type="search" autocomplete="off" placeholder="例: さわやか">
             <div id="search-result" class="search-result" aria-live="polite"></div>
@@ -82,7 +87,8 @@
         <div class="grid-2">
             <div class="field">
                 <label for="usage">用途</label>
-                <select id="usage"></select>
+                <select id="usage" aria-describedby="usage-note"></select>
+                <p id="usage-note" class="field-note"></p>
             </div>
             <fieldset class="field seg">
                 <legend>出力想定</legend>
@@ -123,8 +129,11 @@
             <div id="detail-body" hidden>
                 <p id="detail-label" class="detail-label"></p>
 
+                <!-- 画面上部に固定するのはコピーボタンだけ（形式・プレビューまで固定すると、色の調整欄が狭くなる） -->
                 <div class="copy-block">
                     <button type="button" id="btn-copy" class="btn btn-primary btn-copy">AIに渡す配色指示をコピー</button>
+                </div>
+                <div class="copy-options">
                     <div id="format-tabs" class="format-tabs" role="group" aria-label="コピーする形式"></div>
                     <details class="preview-box">
                         <summary>コピーされる内容を見る</summary>
@@ -153,6 +162,14 @@
                     <button type="button" id="btn-reset" class="btn">元の案に戻す</button>
                     <button type="button" id="btn-deep" class="btn">この系統を深掘り</button>
                 </div>
+
+                <!-- 補助機能: 色の調整・ロック・再提案の邪魔にならないよう、操作の下にたたんで置く -->
+                <details id="vision-box" class="aux-box">
+                    <summary id="vision-summary">色覚の見え方を確かめる（補助）</summary>
+                    <div id="vision-tabs" class="format-tabs" role="group" aria-label="色の見え方（シミュレーション）"></div>
+                    <div id="vision-strip" class="vision-strip" aria-hidden="true"></div>
+                    <p id="vision" class="vision-note"></p>
+                </details>
             </div>
         </aside>
     </div>

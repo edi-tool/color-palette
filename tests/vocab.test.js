@@ -3,10 +3,10 @@ import assert from 'node:assert/strict';
 import { index } from './helpers-engine.js';
 import { resolveTerm, mergeProfile, MAX_MOODS } from '../src/semantic-model.js';
 
-const REQUIRED = ['明るい','元気','楽しい','ポップ','親しみやすい','やさしい','かわいい','ナチュラル','落ち着いた','シック','上品','高級感','まじめ','誠実','信頼感','知的','クール','かっこいい','モダン','力強い','爽やか','清潔','あたたかい','懐かしい','レトロ','華やか','シンプル','ミニマル','和風','未来的'];
+const REQUIRED = ['明るい','元気','楽しい','ポップ','親しみやすい','やさしい','かわいい','ナチュラル','落ち着いた','シック','上品','高級感','まじめ','誠実','信頼感','知的','クール','かっこいい','モダン','力強い','爽やか','清潔','あたたかい','懐かしい','レトロ','華やか','シンプル','ミニマル','和風','未来的','鮮やか','カラフル'];
 
-test('語彙は要件の30語ちょうど（件数を固定）', () => {
-  assert.equal(index.names.length, 30);
+test('語彙は要件の30語＋追加2語（鮮やか・カラフル）ちょうど（件数を固定）', () => {
+  assert.equal(index.names.length, 32);
   assert.deepEqual([...index.names].sort(), [...REQUIRED].sort());
 });
 

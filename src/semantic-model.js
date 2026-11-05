@@ -76,12 +76,45 @@ export function mergeProfile(index, moodNames) {
     return d;
   });
   if (!defs.length) throw new Error('印象語が選ばれていません');
+  // 調和の出やすさの上書き（語が指定したものだけ。複数語が同じ調和を指定したら平均）
+  const harm = {};
+  for (const d of defs) for (const [h, w] of Object.entries(d.harm ?? {})) (harm[h] ??= []).push(w);
   return {
     moods: moodNames.slice(0, MAX_MOODS),
     pL: mergeRange(defs.map((d) => d.pL)),
     pC: mergeRange(defs.map((d) => d.pC)),
     bgL: mergeRange(defs.map((d) => d.bgL)),
     hue: defs.flatMap((d) => d.hue),
+    harm: Object.fromEntries(Object.entries(harm).map(([h, ws]) => [h, ws.reduce((a, b) => a + b, 0) / ws.length])),
+  };
+}
+
+/**
+ * 色の系統（任意）。メインの色相を、印象語の色相窓の代わりにこの範囲へ絞る（ユーザーの明示指定を優先）。
+ * 色相は OKLCH。茶系は色相だけでは決まらないので、明度・彩度の範囲も持つ。独自に決めた目安値。
+ */
+export const HUE_FAMILIES = {
+  red: { label: '赤系', hue: [[27, 14]], swatch: '#D93A3A' },
+  orange: { label: '橙系', hue: [[58, 14]], swatch: '#EE8A1E' },
+  yellow: { label: '黄系', hue: [[95, 14]], swatch: '#E8C21C' },
+  green: { label: '緑系', hue: [[148, 32]], swatch: '#2E9E50' },
+  blue: { label: '青系', hue: [[245, 32]], swatch: '#2F6FD0' },
+  purple: { label: '紫系', hue: [[302, 20]], swatch: '#8A4FC8' },
+  pink: { label: 'ピンク系', hue: [[355, 14]], swatch: '#E5609E' },
+  brown: { label: '茶系', hue: [[55, 22]], pL: [0.32, 0.52], pC: [0.05, 0.12], swatch: '#8A5A3A' },
+};
+
+/** プロファイルに色の系統を重ねる。key が無い・未知なら元のまま。 */
+export function applyHueFamily(profile, key) {
+  const f = HUE_FAMILIES[key];
+  if (!f) return profile;
+  return {
+    ...profile,
+    family: key,
+    hue: f.hue,
+    // 茶系は明度・彩度で決まるので、印象語の範囲より系統の範囲を優先する
+    pL: f.pL ?? profile.pL,
+    pC: f.pC ?? profile.pC,
   };
 }
 

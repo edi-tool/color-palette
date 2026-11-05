@@ -1,11 +1,13 @@
 // 画面の配線。状態の更新は state.js の reduce、文面は export.js、生成は palette-engine.js に任せ、
 // ここでは DOM の描画とイベントだけを扱う。
 
-import { buildIndex, resolveTerm, MAX_MOODS } from './semantic-model.js';
-import { initialState, reduce, exportView } from './state.js';
+import { buildIndex, resolveTerm, MAX_MOODS, HUE_FAMILIES } from './semantic-model.js';
+import { initialState, reduce, exportView, PAGE_SIZE, DEEP_SIZE } from './state.js';
 import { FORMATS, USAGES, ROLE_LABEL, formatFor } from './export.js';
 import { ROLES, normalizeHex } from './color-utils.js';
 import { contrastInfo, suggestTextFix } from './palette-engine.js';
+import { VISION_TYPES, simulateColors } from './vision.js';
+import { visionNote } from './export.js';
 import { encodeState, decodeState } from './url-state.js';
 import { PRINT_NOTICE } from './print-profile.js';
 
@@ -15,8 +17,9 @@ const wideQuery = window.matchMedia('(min-width: 960px)');
 let ctx;
 let state = initialState();
 let format = 'simple';
+let vision = 'normal'; // 補助欄の色帯の見え方（表示だけ。色の正本も見本も変えない）
 let sheetOpen = false;
-let rendered = []; // 描画済みカードの id
+let rendered = []; // 描画済みの候補（state.candidates の要素）
 let renderToken = 0;
 let lastFocusId = null;
 
@@ -34,10 +37,14 @@ async function init() {
     return;
   }
   buildMoodChips();
+  buildHueChips();
   const d = decodeState(location.hash, { validMoods: ctx.index.names });
   if (d) state = reduce(initialState(), { type: 'restore', ...d }, ctx);
   render();
 }
+
+// 印象語を押すたびに新しい seed にする（同じ語でも毎回違う候補）。seed は URL に残るので、共有・再読み込みでは再現できる
+const newSeed = () => Math.floor(Math.random() * 2 ** 32);
 
 function dispatch(action) {
   state = reduce(state, action, ctx);
@@ -53,6 +60,8 @@ function syncUrl() {
 /* ---------- 静的部品 ---------- */
 function buildStatic() {
   $('usage').innerHTML = Object.entries(USAGES).map(([k, u]) => `<option value="${k}">${u.label}</option>`).join('');
+  $('vision-tabs').innerHTML = [['normal', '一般的な色覚'], ...Object.entries(VISION_TYPES).map(([k, v]) => [k, v.label])]
+    .map(([k, label]) => `<button type="button" class="fmt" data-vision="${k}" aria-pressed="${k === vision}">${label}</button>`).join('');
   $('format-tabs').innerHTML = Object.entries(FORMATS)
     .map(([k, label]) => `<button type="button" class="fmt" data-format="${k}" aria-pressed="${k === format}">${label}</button>`).join('');
   $('roles').innerHTML = ROLES.map((r) => `
@@ -65,6 +74,20 @@ function buildStatic() {
         <button type="button" class="lock" aria-pressed="false" data-lock aria-label="${ROLE_LABEL[r]}をロック">ロック</button>
       </span>
     </li>`).join('');
+}
+
+// 用途ごとに生成で何が変わるかの説明（palette-engine の USAGE_TUNING と対応）
+const USAGE_NOTE = {
+  general: '標準の設定で候補を作ります。',
+  'book-cover': '色のついた地（背景）を使い、タイトル用のメインを濃くします。',
+  flyer: '彩度を上げ、遠目でも目立つメイン・差し色にします。',
+  'teaching-material': '淡い紙面にし、本文のコントラスト 7:1 以上、P型・D型で見分けにくい案を除きます（目安）。',
+  web: '差し色をボタン等に使えるよう、背景とのコントラスト 3:1 以上にします。',
+};
+
+function buildHueChips() {
+  $('hue-chips').innerHTML = [['', '指定なし', null], ...Object.entries(HUE_FAMILIES).map(([k, f]) => [k, f.label, f.swatch])]
+    .map(([k, label, sw]) => `<button type="button" class="chip hue-chip" data-hue="${k}" aria-pressed="false">${sw ? `<span class="hue-dot" style="background:${sw}" aria-hidden="true"></span>` : ''}${label}</button>`).join('');
 }
 
 function buildMoodChips() {
@@ -90,6 +113,8 @@ function renderControls() {
     ? `選択中: ${state.moods.join('、')}（タップで変更）`
     : '印象語を選ぶ（最大3つ）';
   $('usage').value = state.usage;
+  $('usage-note').textContent = USAGE_NOTE[state.usage] ?? '';
+  for (const b of $('hue-chips').children) b.setAttribute('aria-pressed', String((b.dataset.hue || null) === state.hue));
   document.querySelectorAll('input[name="mode"]').forEach((r) => { r.checked = r.value === state.mode; });
   $('print-notice').hidden = state.mode !== 'print';
   $('print-notice').textContent = PRINT_NOTICE;
@@ -132,7 +157,8 @@ function renderGrid() {
   const list = state.candidates;
   const grid = $('grid');
   // 先頭から一致していなければ作り直し。追加分だけなら既存カードをそのまま残す。
-  const mismatch = rendered.length > list.length || rendered.some((id, i) => id !== list[i].id);
+  // id は (seed, page, 順番) なので、印象語や出力想定を変えても同じ id になる。id ではなく候補そのもので比べる。
+  const mismatch = rendered.length > list.length || rendered.some((cand, i) => cand !== list[i]);
   if (mismatch) {
     renderToken++;
     grid.innerHTML = '';
@@ -151,7 +177,7 @@ function renderGrid() {
     const frag = document.createDocumentFragment();
     for (const cand of pending.splice(0, 12)) {
       frag.appendChild(makeCard(cand));
-      rendered.push(cand.id);
+      rendered.push(cand);
     }
     grid.appendChild(frag);
     if (pending.length) requestAnimationFrame(step);
@@ -166,8 +192,10 @@ function renderDetail() {
   detail.classList.toggle('is-open', open);
   $('backdrop').hidden = !open;
   document.body.classList.toggle('sheet-open', open);
-  if (!wideQuery.matches) detail.setAttribute('role', open ? 'dialog' : 'complementary');
+  detail.setAttribute('role', open ? 'dialog' : 'complementary');
   detail.setAttribute('aria-modal', String(open));
+  // シートを開いている間は背後を操作・読み上げの対象から外す（Tab がシートの外へ出ないように）
+  for (const el of document.querySelectorAll('.site-header, .controls, .results, .site-footer')) el.inert = open;
   $('detail-placeholder').hidden = !!sel;
   $('detail-body').hidden = !sel;
   if (!sel) return;
@@ -189,6 +217,18 @@ function renderDetail() {
   const mock = $('mock');
   const c = sel.colors;
   mock.style.cssText = `--bg:${c.background};--p:${c.primary};--s:${c.secondary};--a:${c.accent};--t:${c.text}`;
+
+  // 補助: 色覚の見え方（たたんだ欄の中の色帯だけをシミュレーション表示する）
+  const vn = visionNote(c);
+  $('vision-summary').textContent = vn ? '色覚の見え方（補助）⚠ 見分けにくい組み合わせあり' : '色覚の見え方を確かめる（補助）';
+  $('vision-summary').classList.toggle('warn', !!vn);
+  for (const b of $('vision-tabs').children) b.setAttribute('aria-pressed', String(b.dataset.vision === vision));
+  const mc = simulateColors(c, vision);
+  $('vision-strip').innerHTML = ROLES.map((r) => `<span style="background:${mc[r]}"><b>${ROLE_LABEL[r]}</b></span>`).join('');
+  const ve = $('vision');
+  ve.className = 'vision-note' + (vn ? ' warn' : '');
+  ve.textContent = (vn ? `⚠ ${vn.text}。色だけで区別させない工夫を。` : 'シミュレーションでは、主な色の組み合わせは見分けられます（目安）。')
+    + (vision === 'normal' ? '' : ` 上の帯は${VISION_TYPES[vision].label}のシミュレーションです（HEXは変わりません）。`);
   mock.dataset.usage = state.usage;
 
   const ci = contrastInfo(c);
@@ -292,7 +332,7 @@ function renderSearch() {
 
 function addMood(name) {
   if (!name || state.moods.includes(name) || state.moods.length >= MAX_MOODS) return;
-  dispatch({ type: 'setMoods', moods: [...state.moods, name] });
+  dispatch({ type: 'setMoods', moods: [...state.moods, name], seed: newSeed() });
   $('mood-search').value = '';
   renderSearch();
 }
@@ -319,10 +359,12 @@ document.addEventListener('click', (e) => {
   if (chip) {
     const n = chip.dataset.mood;
     const moods = state.moods.includes(n) ? state.moods.filter((m) => m !== n) : [...state.moods, n];
-    dispatch({ type: 'setMoods', moods });
+    dispatch({ type: 'setMoods', moods, seed: newSeed() });
     renderSearch();
     return;
   }
+  const hueChip = t.closest('[data-hue]');
+  if (hueChip) return dispatch({ type: 'setHue', hue: hueChip.dataset.hue || null, seed: newSeed() });
   const add = t.closest('[data-add-mood]');
   if (add) return addMood(add.dataset.addMood);
   const card = t.closest('.card');
@@ -332,6 +374,8 @@ document.addEventListener('click', (e) => {
     openSheet();
     return;
   }
+  const vis = t.closest('[data-vision]');
+  if (vis) { vision = vis.dataset.vision; renderDetail(); return; }
   const fmt = t.closest('[data-format]');
   if (fmt) { format = fmt.dataset.format; $('copy-fallback').hidden = true; renderDetail(); return; }
   const lock = t.closest('[data-lock]');
@@ -341,15 +385,25 @@ document.addEventListener('click', (e) => {
 $('btn-copy').addEventListener('click', copyNow);
 $('btn-close').addEventListener('click', closeSheet);
 $('backdrop').addEventListener('click', closeSheet);
-$('btn-regenerate').addEventListener('click', () => dispatch({ type: 'regenerate', seed: Math.floor(Math.random() * 2 ** 32) }));
-$('btn-more').addEventListener('click', () => dispatch({ type: 'loadMore' }));
+$('btn-regenerate').addEventListener('click', () => dispatch({ type: 'regenerate', seed: newSeed() }));
+$('btn-more').addEventListener('click', () => {
+  const before = state.candidates.length;
+  dispatch({ type: 'loadMore' });
+  const added = state.candidates.length - before;
+  // 似た案しか作れないときは増えない。黙って何も起きないように見せない
+  if (!added) toast('これ以上、十分に違う案は作れませんでした。印象語を変えるか「別の案を出す」を試してください');
+  else if (added < (state.searchMode === 'deep' ? DEEP_SIZE : PAGE_SIZE)) toast(`${added}案を追加しました（似た案を除いたため少なめです）`);
+});
 $('btn-to-results').addEventListener('click', () => $('h-results').scrollIntoView({ behavior: 'smooth', block: 'start' }));
 $('btn-repropose').addEventListener('click', () => dispatch({ type: 'repropose' }));
 $('btn-undo').addEventListener('click', () => dispatch({ type: 'undo' }));
 $('btn-reset').addEventListener('click', () => dispatch({ type: 'resetToOriginal' }));
 $('btn-deep').addEventListener('click', () => { dispatch({ type: 'deepDive' }); toast('選んだ配色に近い系統を表示しました'); });
 $('btn-wide').addEventListener('click', () => dispatch({ type: 'backToWide' }));
-$('usage').addEventListener('change', (e) => dispatch({ type: 'setUsage', usage: e.target.value }));
+$('usage').addEventListener('change', (e) => {
+  dispatch({ type: 'setUsage', usage: e.target.value });
+  if (state.moods.length) toast(state.selected ? '用途に合わせて候補を作り直しました（選択中の配色はそのまま）' : '用途に合わせて候補を作り直しました');
+});
 document.querySelectorAll('input[name="mode"]').forEach((r) => r.addEventListener('change', (e) => { if (e.target.checked) dispatch({ type: 'setMode', mode: e.target.value }); }));
 
 // 日本語 IME の変換中は確定処理を走らせない

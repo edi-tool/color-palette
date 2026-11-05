@@ -11,6 +11,7 @@ export function encodeState(state) {
   if (state.moods.length) p.set('m', state.moods.join(','));
   p.set('u', state.usage);
   p.set('mode', state.mode);
+  if (state.hue) p.set('h', state.hue); // 色の系統（任意。無い URL は「指定なし」）
   p.set('s', String(state.seed));
   if (state.searchMode === 'wide' && state.pages > 1) p.set('pg', String(state.pages));
   // 深掘りは再現対象外（幅広い一覧と選択のみ保存）
@@ -31,6 +32,7 @@ export function decodeState(fragment, { validMoods } = {}) {
   out.moods = validMoods ? moods.filter((m) => validMoods.includes(m)) : moods;
   out.usage = p.get('u') ?? 'general';
   out.mode = p.get('mode') === 'print' ? 'print' : 'rgb';
+  if (p.get('h')) out.hue = p.get('h'); // 未知の値は reduce の restore で捨てる
   const seed = Number(p.get('s'));
   if (Number.isInteger(seed) && seed >= 0 && seed < 2 ** 32) out.seed = seed;
   const pg = Number(p.get('pg'));
