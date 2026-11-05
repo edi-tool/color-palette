@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { index } from './helpers-engine.js';
 import {
-  generateWide, generateDeep, reproposeUnlocked, paletteDistance, FIT_MIN, MIN_DIST_FLOOR,
+  generateWide, generateDeep, reproposeUnlocked, paletteDistance, qualityIssues, FIT_MIN, MIN_DIST_FLOOR,
 } from '../src/palette-engine.js';
 import { ROLES, contrastRatio, hexToOklch, normalizeHex } from '../src/color-utils.js';
 
@@ -116,5 +116,15 @@ test('印刷向けモードは高彩度を抑える（主役色・差し色の�
   for (const role of ['primary', 'accent']) {
     const mean = (list) => list.reduce((s, p) => s + hexToOklch(p.colors[role]).C, 0) / list.length;
     assert.ok(mean(gen(['ポップ'], { mode: 'print' })) < mean(gen(['ポップ'])), role);
+  }
+});
+
+test('品質: 全案がメイン3.2:1・差し色2.2:1以上などの基準（qualityIssues）に合格する', () => {
+  for (const moods of [...REP, ['かわいい'], ['高級感']]) {
+    for (const p of gen(moods)) {
+      assert.deepEqual(qualityIssues(p.colors), [], `${moods} ${JSON.stringify(p.colors)}`);
+      assert.ok(contrastRatio(p.colors.primary, p.colors.background) >= 3.2, 'primary');
+      assert.ok(contrastRatio(p.colors.accent, p.colors.background) >= 2.2, 'accent');
+    }
   }
 });

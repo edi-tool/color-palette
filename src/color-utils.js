@@ -129,11 +129,17 @@ export function ensureContrast(fgHex, bgHex, target = AA_NORMAL) {
   if (contrastRatio(fgHex, bgHex) >= target) return normalizeHex(fgHex);
   const { L, C, h } = hexToOklch(fgHex);
   const dir = relativeLuminance(bgHex) > 0.3 ? -1 : 1;
-  for (let step = 1; step <= 100; step++) {
-    const hex = oklchToHex(L + dir * step * 0.01, C, h);
-    if (contrastRatio(hex, bgHex) >= target) return hex;
+  const at = (step) => oklchToHex(L + dir * step * 0.01, C, h);
+  // 明度を背景から遠ざけるほどコントラストは上がるので、0.01 刻みで目標を満たす最小の段を二分探索する
+  if (contrastRatio(at(100), bgHex) < target) return dir < 0 ? '#000000' : '#FFFFFF';
+  let lo = 0;
+  let hi = 100;
+  while (hi - lo > 1) {
+    const mid = (lo + hi) >> 1;
+    if (contrastRatio(at(mid), bgHex) >= target) hi = mid;
+    else lo = mid;
   }
-  return dir < 0 ? '#000000' : '#FFFFFF';
+  return at(hi);
 }
 
 /** 角度 a, b の差（0〜180） */
