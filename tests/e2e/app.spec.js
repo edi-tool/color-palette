@@ -31,7 +31,10 @@ for (const width of WIDTHS) {
       cols: getComputedStyle(document.getElementById('grid')).gridTemplateColumns.split(' ').length,
     }));
     expect(m.sw).toBeLessThanOrEqual(m.cw);
-    if (width < 768) expect(m.cols).toBeLessThanOrEqual(2);
+    // スマホは 389px 以下で2列、390〜599px（幅の広いスマホ）で3列、それ以上の PC 未満は2〜3列
+    if (width < 390) expect(m.cols).toBe(2);
+    else if (width < 600) expect(m.cols).toBe(3);
+    else if (width < 768) expect(m.cols).toBeLessThanOrEqual(3);
     if (width >= 1024) expect(m.cols).toBeGreaterThanOrEqual(3);
     expect(m.cols).toBeLessThanOrEqual(5);
 
@@ -183,7 +186,7 @@ test.describe('スマホ(390px)の一連の操作', () => {
     const primary = await roleHex(page, 'primary').inputValue();
 
     await page.locator('#btn-copy').click();
-    await expect(page.locator('#toast')).toContainText('コピーしました');
+    await expect(page.locator('#btn-copy')).toContainText('コピーしました');
     const clip = await page.evaluate(() => navigator.clipboard.readText());
     expect(clip).toContain('#123456');
     expect(clip).toContain(primary);
@@ -370,7 +373,7 @@ test('コンソールエラーが出ない', async ({ page }) => {
 test('ダークモードでも操作できる', async ({ page }) => {
   await page.emulateMedia({ colorScheme: 'dark' });
   await pickMood(page);
-  await expect(page.locator('body')).toHaveCSS('background-color', 'rgb(28, 27, 25)');
+  await expect(page.locator('body')).toHaveCSS('background-color', 'rgb(11, 11, 12)');
 });
 
 test('キーボードだけで印象語を選び、候補を選択できる', async ({ page }) => {

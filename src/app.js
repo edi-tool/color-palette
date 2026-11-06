@@ -136,7 +136,9 @@ function paintCard(btn, cand) {
   btn.style.cssText = `--bg:${c.background};--p:${c.primary};--s:${c.secondary};--a:${c.accent};--t:${c.text}`;
   btn.setAttribute('aria-pressed', String(on));
   btn.setAttribute('aria-label', `${cand.label}。メイン${c.primary}、サブ${c.secondary}、差し色${c.accent}、背景${c.background}、文字${c.text}。${on ? '選択中' : '選ぶ'}`);
-  btn.querySelector('.card-state').textContent = on ? '✓ 選択中' : '';
+  const st = btn.querySelector('.card-state');
+  st.textContent = on ? '選択中' : '';
+  st.dataset.icon = on ? 'check' : '';
   const sw = btn.querySelectorAll('.card-sw span');
   [c.background, c.primary, c.secondary, c.accent, c.text].forEach((hex, i) => { sw[i].style.background = hex; });
 }
@@ -212,7 +214,8 @@ function renderDetail() {
     const locked = sel.locks.includes(r);
     const lock = li.querySelector('[data-lock]');
     lock.setAttribute('aria-pressed', String(locked));
-    lock.textContent = locked ? '🔒 ロック中' : 'ロック';
+    lock.textContent = locked ? 'ロック中' : 'ロック';
+    lock.dataset.icon = locked ? 'lock' : '';
   }
   const mock = $('mock');
   const c = sel.colors;
@@ -220,23 +223,26 @@ function renderDetail() {
 
   // 補助: 色覚の見え方（たたんだ欄の中の色帯だけをシミュレーション表示する）
   const vn = visionNote(c);
-  $('vision-summary').textContent = vn ? '色覚の見え方（補助）⚠ 見分けにくい組み合わせあり' : '色覚の見え方を確かめる（補助）';
+  $('vision-summary').textContent = vn ? '色覚の見え方（補助）: 見分けにくい組み合わせあり' : '色覚の見え方を確かめる（補助）';
+  $('vision-summary').dataset.icon = vn ? 'warn' : '';
   $('vision-summary').classList.toggle('warn', !!vn);
   for (const b of $('vision-tabs').children) b.setAttribute('aria-pressed', String(b.dataset.vision === vision));
   const mc = simulateColors(c, vision);
   $('vision-strip').innerHTML = ROLES.map((r) => `<span style="background:${mc[r]}"><b>${ROLE_LABEL[r]}</b></span>`).join('');
   const ve = $('vision');
   ve.className = 'vision-note' + (vn ? ' warn' : '');
-  ve.textContent = (vn ? `⚠ ${vn.text}。色だけで区別させない工夫を。` : 'シミュレーションでは、主な色の組み合わせは見分けられます（目安）。')
+  ve.dataset.icon = vn ? 'warn' : '';
+  ve.textContent = (vn ? `${vn.text}。色だけで区別させない工夫を。` : 'シミュレーションでは、主な色の組み合わせは見分けられます（目安）。')
     + (vision === 'normal' ? '' : ` 上の帯は${VISION_TYPES[vision].label}のシミュレーションです（HEXは変わりません）。`);
   mock.dataset.usage = state.usage;
 
   const ci = contrastInfo(c);
   const el = $('contrast');
   el.className = 'contrast' + (ci.passAA ? '' : ' warn');
+  el.dataset.icon = ci.passAA ? 'ok' : 'warn';
   el.textContent = ci.passAA
-    ? `文字と背景のコントラスト比 ${ci.ratio.toFixed(1)}:1（目安の 4.5:1 以上 ✓）`
-    : `⚠ 文字と背景のコントラスト比 ${ci.ratio.toFixed(1)}:1（目安 4.5:1 に届きません）`;
+    ? `文字と背景のコントラスト比 ${ci.ratio.toFixed(1)}:1（目安の 4.5:1 以上）`
+    : `文字と背景のコントラスト比 ${ci.ratio.toFixed(1)}:1（目安 4.5:1 に届きません）`;
   if (!ci.passAA) {
     const fix = document.createElement('button');
     fix.type = 'button';
@@ -270,6 +276,13 @@ function toast(text) {
   toastTimer = setTimeout(() => t.classList.remove('show'), 2200);
 }
 
+/** 読み上げだけの通知（押したボタンの中で結果を見せるときに使う） */
+function announce(text) {
+  let live = document.getElementById('et-live');
+  if (!live) { live = document.createElement('p'); live.id = 'et-live'; live.className = 'et-live'; live.setAttribute('role', 'status'); document.body.append(live); }
+  live.textContent = text;
+}
+
 async function copyNow() {
   const view = exportView(state);
   if (!view) return;
@@ -286,9 +299,9 @@ async function copyNow() {
   const btn = $('btn-copy');
   if (ok) {
     $('copy-fallback').hidden = true;
-    toast(`コピーしました（${FORMATS[format]}）`);
+    announce(`コピーしました（${FORMATS[format]}）`);
     btn.dataset.flash = '1';
-    btn.textContent = '✓ コピーしました';
+    btn.innerHTML = '<span class="et-i et-i-check" aria-hidden="true"></span>コピーしました';
     setTimeout(() => { delete btn.dataset.flash; renderDetail(); }, 1600);
   } else {
     const ta = $('copy-text');
