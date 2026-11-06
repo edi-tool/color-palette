@@ -56,6 +56,7 @@
   <div class="actions">
     <button class="btn" id="copy" type="button">結果をコピー（JSON）</button>
     <button class="btn" id="download" type="button">結果を保存（JSON）</button>
+    <select class="btn" id="snapshots" aria-label="控えから戻す"></select>
     <button class="btn" id="reset" type="button">評価を消す</button>
   </div>
 </header>
@@ -64,6 +65,7 @@
     <p>今の生成エンジンが出す案に、<strong>良い／微妙／悪い</strong>を付けてください。悪い・微妙には、当てはまる理由を選ぶと集計できます（複数可）。</p>
     <p>「★お手本」は、シード配色の候補にしたい案に付けます。各語の上の欄には、24案全体の感想（幅が狭い、印象とずれる等）を書けます。</p>
     <p>評価はこのブラウザに自動で保存されます。終わったら「結果を保存」で JSON を書き出し、<code>docs/eval/results/</code> に置いてください。案は固定の seed で作るので、毎回同じ案が出ます。</p>
+    <p>途中経過は約1分ごとに「控え」として別に残ります（最大30件）。消えたり間違えたりしたときは、右上の「控えから戻す」で選んでください。念のため、区切りのよいところで「結果を保存」もしておくと確実です。</p>
   </div>
   <div id="words"></div>
 </main>

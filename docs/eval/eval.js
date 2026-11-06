@@ -9,7 +9,13 @@ import { generateWide, cellLabel } from '../../src/palette-engine.js';
 export const EVAL_WORDS = ['明るい', 'やさしい', '誠実', '落ち着いた', '高級感', 'ナチュラル', '和風', 'ネオン'];
 export const EVAL_SEED = 20261106;
 const COUNT = 24;
-const STORE = 'color-palette-eval-v1';
+// 保存先。?store=名前 で別の保存先を使える（動作確認で本番の評価に触れないため）
+const STORE_SUFFIX = new URLSearchParams(location.search).get('store');
+const STORE = `color-palette-eval-v1${STORE_SUFFIX ? `-${STORE_SUFFIX}` : ''}`;
+// 控え: 評価の途中経過を別のキーに残す（誤って消しても戻せるように）。新しい順に最大 MAX_SNAPSHOTS 件
+const BACKUP = `${STORE}-backup`;
+const MAX_SNAPSHOTS = 30;
+const SNAPSHOT_EVERY_MS = 60 * 1000;
 
 const REASONS = [
   ['muddy', '濁る・くすむ'],
@@ -34,7 +40,34 @@ function load() {
 }
 function save() {
   localStorage.setItem(STORE, JSON.stringify(data));
+  snapshot();
   progress();
+}
+
+const ratedCount = (d) => Object.values(d.items ?? {}).filter((it) => it.rating).length;
+function loadSnapshots() {
+  try { return JSON.parse(localStorage.getItem(BACKUP)) ?? []; } catch { return []; }
+}
+/** 控えを取る。前の控えから1分たったか、評価数が5件以上変わったら新しい控えにし、それ以外は最新の控えを上書きする */
+function snapshot({ force = false } = {}) {
+  const list = loadSnapshots();
+  const n = ratedCount(data);
+  if (!n && !force) return;
+  const now = Date.now();
+  const last = list[0];
+  const entry = { at: now, count: n, data: structuredClone(data) };
+  if (!force && last && now - last.at < SNAPSHOT_EVERY_MS && Math.abs(last.count - n) < 5) list[0] = { ...entry, at: last.at };
+  else list.unshift(entry);
+  localStorage.setItem(BACKUP, JSON.stringify(list.slice(0, MAX_SNAPSHOTS)));
+  renderSnapshots();
+}
+
+function renderSnapshots() {
+  const sel = $('snapshots');
+  const list = loadSnapshots();
+  const t = (ms) => new Date(ms).toLocaleString('ja-JP', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' });
+  sel.innerHTML = `<option value="">控えから戻す…（${list.length}件）</option>`
+    + list.map((s, i) => `<option value="${i}">${t(s.at)}　${s.count}件評価済み</option>`).join('');
 }
 
 function progress() {
@@ -160,13 +193,33 @@ $('download').addEventListener('click', () => {
   a.download = `eval-${new Date().toISOString().slice(0, 10)}.json`;
   a.click();
   URL.revokeObjectURL(a.href);
+  localStorage.setItem(`${STORE}-exported`, String(ratedCount(data)));
 });
 $('reset').addEventListener('click', () => {
-  if (!confirm('このブラウザに保存した評価をすべて消します。よろしいですか？')) return;
+  if (!confirm('評価をすべて消します（消す直前の状態は控えに残すので、「控えから戻す」で戻せます）。よろしいですか？')) return;
+  snapshot({ force: true });
   data = { items: {}, overall: {} };
-  save();
+  localStorage.setItem(STORE, JSON.stringify(data));
   location.reload();
+});
+$('snapshots').addEventListener('change', (e) => {
+  const s = loadSnapshots()[Number(e.target.value)];
+  e.target.value = '';
+  if (!s) return;
+  if (!confirm(`${new Date(s.at).toLocaleString('ja-JP')} の状態（${s.count}件評価済み）に戻します。今の状態は控えに残します。よろしいですか？`)) return;
+  snapshot({ force: true });
+  data = structuredClone(s.data);
+  localStorage.setItem(STORE, JSON.stringify(data));
+  reloading = true;
+  location.reload();
+});
+// 書き出してから評価が増えたら、ページを閉じる前に知らせる
+let reloading = false;
+window.addEventListener('beforeunload', (e) => {
+  if (!reloading && ratedCount(data) > (Number(localStorage.getItem(`${STORE}-exported`)) || 0)) e.preventDefault();
 });
 
 const res = await fetch('../../src/vocab.json');
 render(buildIndex(await res.json()));
+renderSnapshots();
+if (STORE_SUFFIX) $('progress').insertAdjacentText('afterend', `（保存先: ${STORE_SUFFIX}）`);
