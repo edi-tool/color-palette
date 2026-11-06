@@ -1,8 +1,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { index } from './helpers-engine.js';
+import { index, proceduralIndex } from './helpers-engine.js';
 import {
-  generateWide, generateDeep, reproposeUnlocked, paletteDistance, qualityIssues, FIT_MIN, MIN_DIST_FLOOR, HARMONY_MAX_SHARE,
+  generateWide, generateDeep, reproposeUnlocked, paletteDistance, qualityIssues, seedIssues, FIT_MIN, MIN_DIST_FLOOR, HARMONY_MAX_SHARE,
 } from '../src/palette-engine.js';
 import { ROLES, contrastRatio, hexToOklch, normalizeHex } from '../src/color-utils.js';
 
@@ -41,14 +41,19 @@ test('方向性の幅: 語彙が許す温度（暖色系・寒色/緑系）と�
   assert.ok(allowsWarm(['明るい']) && !allowsWarm(['信頼感']));
 });
 
-test('調和タイプ・彩度も偏らない（3種以上の調和、3彩度すべて）', () => {
-  const list = gen(['明るい']);
+test('手続き的な生成: 調和タイプ・彩度も偏らない（3種以上の調和、3彩度すべて）', () => {
+  const list = generateWide({ index: proceduralIndex, moods: ['明るい'], seed: 14273, count: 24 });
   assert.ok(new Set(list.map((p) => p.cell.harm)).size >= 3);
   assert.equal(new Set(list.map((p) => p.cell.sat)).size, 3);
 });
 
-test('印象適合度の下限を全案が満たす', () => {
-  for (const moods of REP) for (const p of gen(moods)) assert.ok(p.fit >= FIT_MIN, `${moods}: ${p.fit}`);
+test('印象適合度: 手続き的に作った案は下限を満たし、シード配色の案は選んだ語のどれかに付いたもの', () => {
+  for (const moods of REP) {
+    for (const p of gen(moods)) {
+      if (p.seedId) assert.ok(index.seeds.find((s) => s.id === p.seedId).words.some((w) => moods.includes(w)), `${moods}: ${p.label}`);
+      else assert.ok(p.fit >= FIT_MIN, `${moods}: ${p.fit}`);
+    }
+  }
 });
 
 test('文字と背景は全案で AA（4.5:1）を満たす', () => {
@@ -122,18 +127,19 @@ test('印刷向けモードは高彩度を抑える（主役色・差し色の�
 test('品質: 全案がメイン3.2:1・差し色2.2:1以上などの基準（qualityIssues）に合格する', () => {
   for (const moods of [...REP, ['かわいい'], ['高級感']]) {
     for (const p of gen(moods)) {
-      assert.deepEqual(qualityIssues(p.colors), [], `${moods} ${JSON.stringify(p.colors)}`);
+      // シード配色は人が選んだ組み合わせなので、読みやすさ・役割の区別の基準だけ（派手さ・濁りの判定はかけない）
+      assert.deepEqual((p.seedId ? seedIssues : qualityIssues)(p.colors), [], `${moods} ${JSON.stringify(p.colors)}`);
       assert.ok(contrastRatio(p.colors.primary, p.colors.background) >= 3.2, 'primary');
       assert.ok(contrastRatio(p.colors.accent, p.colors.background) >= 2.2, 'accent');
     }
   }
 });
 
-test('トライアドは1ページ（24案）あたり上限まで。上限を守っても24案そろう', () => {
+test('手続き的な生成: トライアドは1ページ（24案）あたり上限まで。上限を守っても24案そろう', () => {
   const max = Math.round(24 * HARMONY_MAX_SHARE.triad);
   for (const moods of [['明るい'], ['ポップ'], ['明るい', '知的'], ['和風']]) {
     for (const seed of [1, 14273, 4000000000]) {
-      const list = generateWide({ index, moods, seed, count: 24 });
+      const list = generateWide({ index: proceduralIndex, moods, seed, count: 24 });
       assert.equal(list.length, 24, `${moods} ${seed}`);
       assert.ok(list.filter((c) => c.cell.harm === 'triad').length <= max, `${moods} ${seed}`);
     }
@@ -214,4 +220,18 @@ test('サブ（帯・囲みの面）の上の本文も 4.5:1 以上（全語。�
       assert.ok(contrastRatio(p.colors.text, p.colors.secondary) >= 4.5, `${w} ${Object.values(p.colors)}`);
     }
   }
+});
+
+test('配色データベース（seeds.json）: 全シードが読みやすさの基準を満たし、出典・作者・辞書にある語を持つ', () => {
+  assert.ok(index.seeds.length >= 300, `${index.seeds.length}`);
+  const ids = new Set();
+  for (const s of index.seeds) {
+    assert.ok(!ids.has(s.id), s.id);
+    ids.add(s.id);
+    assert.ok(s.name && s.src && s.author, s.id);
+    assert.ok(s.words.length && s.words.every((w) => index.words[w]), `${s.id} ${s.words}`);
+    assert.deepEqual(seedIssues(s.colors), [], `${s.id} ${s.name}`);
+  }
+  // どの語にも、初期24案の半分以上をまかなえるシードがある
+  for (const w of index.names) assert.ok(index.seeds.filter((s) => s.words.includes(w)).length >= 12, w);
 });

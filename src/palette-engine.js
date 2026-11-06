@@ -6,7 +6,7 @@ import {
   ROLES, oklchToHex, hexToOklch, hexToOklab, deltaE, ensureContrast, contrastRatio, hueDiff, AA_NORMAL,
 } from './color-utils.js';
 import { createRng, mixSeed } from './rng.js';
-import { mergeProfile, fitScore, applyHueFamily } from './semantic-model.js';
+import { mergeProfile, fitScore, applyHueFamily, HUE_FAMILIES } from './semantic-model.js';
 import { visionIssues } from './vision.js';
 
 export const TEMPS = ['warm', 'cool', 'neutral'];
@@ -347,12 +347,163 @@ function interleave(cells, rng, profile) {
 
 const makeId = (seed, page, n) => `p${seed.toString(36)}-${page}-${n}`;
 
+/* ---------- シード配色（監修する配色データベース、src/seeds.json） ----------
+ * 案の質を上げるため、生成はシード配色を先に出し、足りない分だけ手続き的な生成で補う（DESIGN.md §7.2）。
+ * シードは人が選んだ組み合わせなので、読みやすさ・役割の区別だけを確かめ、派手さ・濁りの判定はかけない。 */
+const SEED_CHECKS = new Set(['primary-weak', 'accent-weak', 'text-weak', 'text-on-secondary-weak', 'cvd-confusable', 'secondary-near-primary', 'secondary-near-bg']);
+export const seedIssues = (c, usage = 'general') => qualityIssues(c, usage).filter((q) => SEED_CHECKS.has(q));
+const MIN_SEED_FIT = 0.6; // 複数語のとき、一部の語だけに付いたシードを使う下限
+const featuredOf = (c) => (hexToOklch(c.primary).C < 0.035 ? hexToOklch(c.accent) : hexToOklch(c.primary));
+
+/** シードの見た目から、生成の枠（温度・彩度・調和）を推定する。ラベル・再提案・深掘りで使う */
+export function classifySeed(colors) {
+  const p = hexToOklch(colors.primary);
+  const a = hexToOklch(colors.accent);
+  const satOf = (C) => (C >= 0.12 ? 'vivid' : C >= 0.06 ? 'mid' : 'muted');
+  if (p.C < 0.035) return { temp: 'neutral', sat: satOf(a.C), harm: 'neutralAccent' };
+  const d = a.C < 0.035 ? 0 : hueDiff(p.h, a.h);
+  const harm = d < 20 ? 'mono' : d < 70 ? 'analogous' : d >= 150 ? 'complementary' : d >= 120 ? 'split' : 'triad';
+  return { temp: tempOfHue(p.h), sat: satOf(p.C), harm };
+}
+
+/** シードを用途・出力想定に合わせる（背景の範囲・コントラストの基準）。合わせられなければ null */
+export function adaptSeed(colors, { usage = 'general', mode = 'rgb' } = {}) {
+  const t = tuningOf(usage);
+  const c = { ...colors };
+  const bg = hexToOklch(c.background);
+  if (t.bgL) {
+    if (bg.L < 0.5) return null; // 濃い地のシードは、淡い地を指定する用途には使わない
+    const [cLo, cHi] = t.bgC ?? [0, 1];
+    const h = bg.C > 0.01 ? bg.h : hexToOklch(c.primary).h;
+    c.background = oklchToHex(clamp(bg.L, t.bgL[0], t.bgL[1]), clamp(bg.C, cLo, cHi), h);
+  }
+  if (mode === 'print') {
+    for (const r of ['primary', 'secondary', 'accent']) {
+      const o = hexToOklch(c[r]);
+      c[r] = oklchToHex(o.L, o.C * PRINT_CHROMA_SCALE, o.h);
+    }
+  }
+  c.primary = ensureContrast(c.primary, c.background, (t.primaryOnBg ?? QUALITY.primaryOnBg) + 0.05);
+  c.accent = ensureContrast(c.accent, c.background, (t.accentOnBg ?? QUALITY.accentOnBg) + 0.05);
+  c.text = ensureContrast(c.text, c.background, (t.textOnBg ?? AA_NORMAL) + 0.05);
+  c.secondary = ensureContrast(c.secondary, c.text, AA_NORMAL + 0.05);
+  // サブが地に溶けるときは、地から少しだけ離す（上の文字が読める範囲で）
+  const s = hexToOklch(c.secondary);
+  const b = hexToOklch(c.background);
+  if (Math.abs(s.L - b.L) < QUALITY.minSecondaryBgDL + 0.005) {
+    const away = b.L > 0.5 ? -1 : 1;
+    const moved = oklchToHex(b.L + away * (QUALITY.minSecondaryBgDL + 0.015), s.C, s.h);
+    if (contrastRatio(c.text, moved) >= AA_NORMAL + 0.05) c.secondary = moved;
+  }
+  return seedIssues(c, usage).length ? null : c;
+}
+
+/** シードの変化形。tone=色調を少し動かす、paper=地の色を変える、accent=同じ語の別シードの差し色に替える */
+function seedVariant(seed, kind, rng, others) {
+  const c = { ...seed.colors };
+  const o = (r) => hexToOklch(seed.colors[r]);
+  if (kind === 'paper') {
+    const b = o('background');
+    const hp = o('primary').h;
+    const dark = b.L < 0.5;
+    c.background = oklchToHex(clamp(b.L + rng.range(-0.03, dark ? 0.05 : 0.012), 0.05, 0.995), clamp(b.C + rng.range(0.004, 0.022), 0, 0.05), rng.range(0, 1) < 0.5 ? hp : b.h);
+    return { colors: c, label: `「${seed.name}」の地の色違い` };
+  }
+  if (kind === 'accent') {
+    if (!others.length) return null;
+    const pick = rng.pick(others);
+    c.accent = pick.colors.accent;
+    if (deltaE(c.accent, seed.colors.accent) < 15) return null;
+    return { colors: c, label: `「${seed.name}」に「${pick.name}」の差し色` };
+  }
+  for (const r of ['primary', 'secondary', 'accent']) {
+    const x = o(r);
+    c[r] = oklchToHex(clamp(x.L + rng.range(-0.05, 0.05), 0.08, 0.97), Math.max(0, x.C * rng.range(0.85, 1.12)), x.h + rng.range(-8, 8));
+  }
+  return { colors: c, label: `「${seed.name}」の色調違い` };
+}
+
+/** 色の系統（任意）にシードが合うか: メイン（無彩色のメインなら差し色）の色相が系統の範囲にある */
+function seedInFamily(colors, family) {
+  const f = family && HUE_FAMILIES[family];
+  if (!f) return true;
+  const o = featuredOf(colors);
+  if (o.C < 0.03) return false;
+  if (f.pL && (o.L < f.pL[0] - 0.05 || o.L > f.pL[1] + 0.05)) return false;
+  return f.hue.some(([cc, w]) => hueDiff(o.h, cc) <= w);
+}
+
+// 用途が彩度の枠を絞るとき（チラシ=鮮やか・中間だけ）は、シードも同じ枠に入るものだけ使う
+const satAllowed = (colors, usage) => { const s = tuningOf(usage).sats; return !s || s.includes(classifySeed(colors).sat); };
+
+/** 印象語に付いたシードと、その変化形を候補にする（順番: 元のシード → 変化形） */
+function seedCandidates(index, moods, profile, { usage, mode, hue, rng }) {
+  const matched = [];
+  for (const s of index.seeds ?? []) {
+    const m = s.words.filter((w) => moods.includes(w)).length;
+    if (!m || !seedInFamily(s.colors, hue)) continue;
+    const colors = adaptSeed(s.colors, { usage, mode });
+    if (!colors || !satAllowed(colors, usage)) continue;
+    const fit = fitScore(profile, featuredOf(colors), hexToOklch(colors.background).L);
+    // すべての語に付いたシードはそのまま。一部の語だけのシードは、合成した印象から外れすぎないものだけ
+    if (m < moods.length && fit < MIN_SEED_FIT) continue;
+    matched.push({ seed: s, colors, fit, m });
+  }
+  // 語に多く当てはまるシードを先に。同じ数なら seed ごとに並びを変える（押し直すたびに順番が変わる）
+  const order = matched.map((x) => ({ x, k: x.m + rng.next() })).sort((a, b) => b.k - a.k).map((y) => y.x);
+  const originals = order.map(({ seed, colors, fit }) => ({ colors, fit, label: `「${seed.name}」`, seedId: seed.id }));
+  const variants = [];
+  for (const kind of ['paper', 'accent', 'tone']) {
+    for (const { seed } of order) {
+      const others = order.filter((y) => y.seed !== seed).map((y) => y.seed);
+      const v = seedVariant(seed, kind, rng, others);
+      if (!v) continue;
+      const colors = adaptSeed(v.colors, { usage, mode });
+      if (!colors || !satAllowed(colors, usage) || !seedInFamily(colors, hue)) continue;
+      variants.push({ colors, fit: fitScore(profile, featuredOf(colors), hexToOklch(colors.background).L), label: v.label, seedId: seed.id });
+    }
+  }
+  return { originals, variants };
+}
+
 /**
  * 「幅広く探す」。count 案を返す。exclude に既存案を渡すと、それらと十分離れた案だけを返す。
  * @returns {Array<{id,seed,cell,label,colors,fit}>}
  */
 export function generateWide({ index, moods, mode = 'rgb', usage = 'general', hue = null, seed, page = 0, count = 24, exclude = [] }) {
   const profile = buildProfile(index, moods, { usage, hue });
+  // シード配色を先に置く（乱数は手続き的な生成と別系統にし、シードの有無で手続き側の結果が変わらないようにする）
+  const fromSeeds = pickSeedCandidates(index, moods, profile, { usage, mode, hue, seed, page, count, exclude });
+  if (fromSeeds.length >= count) return fromSeeds;
+  const rest = generateProcedural({ moods, mode, usage, seed, page, count: count - fromSeeds.length, exclude: [...exclude, ...fromSeeds], profile, idOffset: fromSeeds.length });
+  return [...fromSeeds, ...rest];
+}
+
+/** シード配色の候補から、既存案・互いに十分離れたものを count 案まで選ぶ（元のシードを先に、次に変化形） */
+function pickSeedCandidates(index, moods, profile, { usage, mode, hue, seed, page, count, exclude }) {
+  if (!index.seeds?.length) return [];
+  const rng = createRng(mixSeed(seed, page, 6151));
+  const { originals, variants } = seedCandidates(index, moods, profile, { usage, mode, hue, rng });
+  const chosen = [];
+  const existing = exclude.map((p) => p.colors ?? p);
+  const take = (list, minD) => {
+    for (const c of list) {
+      if (chosen.length >= count) return;
+      if (minDistTo(c.colors, [...existing, ...chosen.map((x) => x.colors)]) < minD) continue;
+      const cell = classifySeed(c.colors);
+      // カードには方向（暖色系など）も出す。シード由来は配色の名前を添える
+      chosen.push({ id: makeId(seed, page, chosen.length), seed, cell, label: `${TEMP_LABEL[cell.temp]} × ${c.label}`, colors: c.colors, fit: c.fit, seedId: c.seedId });
+    }
+  };
+  // 元のシードは人が選んだ別々の案なので、似た案を避ける下限だけで並べる。変化形は元から十分離れたものだけ
+  take(originals, MIN_DIST_FLOOR);
+  take(variants, 9);
+  take(variants, 6);
+  return chosen;
+}
+
+/** 手続き的な生成（シード配色で足りない分を補う）。以前の generateWide の本体 */
+function generateProcedural({ moods, mode, usage, seed, page, count, exclude, profile, idOffset = 0 }) {
   const rng = createRng(mixSeed(seed, page, 7919));
   const sats = tuningOf(usage).sats;
   const cells = sats ? allCells().filter((c) => sats.includes(c.sat)) : allCells();
@@ -411,7 +562,7 @@ export function generateWide({ index, moods, mode = 'rgb', usage = 'general', hu
       }
       if (best && bestD >= minDist) {
         chosen.push({
-          id: makeId(seed, page, chosen.length), seed, cell: best.cell, label: cellLabel(best.cell), colors: best.colors, fit: best.fit,
+          id: makeId(seed, page, idOffset + chosen.length), seed, cell: best.cell, label: cellLabel(best.cell), colors: best.colors, fit: best.fit,
         });
         return true;
       }

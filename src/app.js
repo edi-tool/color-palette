@@ -27,9 +27,10 @@ let lastFocusId = null;
 async function init() {
   buildStatic();
   try {
-    const res = await fetch('src/vocab.json');
+    const [res, seedRes] = await Promise.all([fetch('src/vocab.json'), fetch('src/seeds.json')]);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    ctx = { index: buildIndex(await res.json()) };
+    if (!seedRes.ok) throw new Error(`配色データベース HTTP ${seedRes.status}`);
+    ctx = { index: buildIndex(await res.json(), await seedRes.json()) };
   } catch (e) {
     // 取得失敗を「候補なし」と見せない
     $('empty').textContent = `語彙辞書を読み込めませんでした（${e.message}）。ページを再読み込みしてください。`;

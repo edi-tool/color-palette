@@ -230,7 +230,7 @@ window.addEventListener('beforeunload', (e) => {
   if (!reloading && ratedCount(data) > (Number(localStorage.getItem(`${STORE}-exported`)) || 0)) e.preventDefault();
 });
 
-const res = await fetch('../../src/vocab.json');
-render(buildIndex(await res.json()));
+const [res, seedRes] = await Promise.all([fetch('../../src/vocab.json'), fetch('../../src/seeds.json')]);
+render(buildIndex(await res.json(), await seedRes.json()));
 renderSnapshots();
 if (STORE_SUFFIX) $('progress').insertAdjacentText('afterend', `（保存先: ${STORE_SUFFIX}）`);

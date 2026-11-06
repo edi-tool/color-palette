@@ -14,14 +14,19 @@ export function toKey(s) {
     .replace(/[ァ-ヶ]/g, (c) => String.fromCharCode(c.charCodeAt(0) - 0x60));
 }
 
-export function buildIndex(vocab) {
+/** 語彙辞書（と任意でシード配色 src/seeds.json）から検索用のインデックスを作る */
+export function buildIndex(vocab, seedData = null) {
   const words = vocab.words;
   const lookup = new Map();
   for (const [name, def] of Object.entries(words)) {
     lookup.set(toKey(name), name);
     for (const s of def.syn ?? []) if (!lookup.has(toKey(s))) lookup.set(toKey(s), name);
   }
-  return { words, lookup, names: Object.keys(words) };
+  const ROLE_ORDER = ['primary', 'secondary', 'accent', 'background', 'text'];
+  const seeds = (seedData?.seeds ?? [])
+    .filter((x) => x.words.some((w) => w in words))
+    .map((x) => ({ ...x, colors: Object.fromEntries(ROLE_ORDER.map((r, i) => [r, x.c[i]])) }));
+  return { words, lookup, names: Object.keys(words), seeds };
 }
 
 function editDistance(a, b) {
