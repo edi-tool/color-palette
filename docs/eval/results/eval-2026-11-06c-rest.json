@@ -1,0 +1,6169 @@
+{
+  "schema": "color-palette-eval/1",
+  "exportedAt": "2026-11-06T09:07:45.236Z",
+  "seed": 20261106,
+  "set": "rest",
+  "count": 12,
+  "words": [
+    "元気",
+    "楽しい",
+    "ポップ",
+    "鮮やか",
+    "カラフル",
+    "親しみやすい",
+    "かわいい",
+    "シック",
+    "上品",
+    "まじめ",
+    "信頼感",
+    "知的",
+    "クール",
+    "かっこいい",
+    "モダン",
+    "力強い",
+    "爽やか",
+    "清潔",
+    "あたたかい",
+    "懐かしい",
+    "レトロ",
+    "華やか",
+    "シンプル",
+    "ミニマル",
+    "未来的"
+  ],
+  "overall": {},
+  "items": [
+    {
+      "key": "元気#0",
+      "word": "元気",
+      "index": 0,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "暖色系 × 「フルーツ」",
+      "seedId": "s-099",
+      "colors": {
+        "primary": "#E11D48",
+        "secondary": "#EEE3B8",
+        "accent": "#65A30D",
+        "background": "#FFFAFB",
+        "text": "#2B1D22"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "元気#1",
+      "word": "元気",
+      "index": 1,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「白とオレンジ」",
+      "seedId": "s-309",
+      "colors": {
+        "primary": "#2A2A2A",
+        "secondary": "#E6E6E6",
+        "accent": "#E8641E",
+        "background": "#FFFFFF",
+        "text": "#1E1E1E"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "元気#2",
+      "word": "元気",
+      "index": 2,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "split"
+      },
+      "label": "寒色・緑系 × 「ライムとネイビー」",
+      "seedId": "s-066",
+      "colors": {
+        "primary": "#1B2A4A",
+        "secondary": "#DCEDBB",
+        "accent": "#74B816",
+        "background": "#FCFFF7",
+        "text": "#1B2230"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "元気#3",
+      "word": "元気",
+      "index": 3,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "label": "暖色系 × 「コーラルと黄」",
+      "seedId": "s-067",
+      "colors": {
+        "primary": "#E8464F",
+        "secondary": "#F2E3A6",
+        "accent": "#E89700",
+        "background": "#FFFAF7",
+        "text": "#2E1F20"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "元気#4",
+      "word": "元気",
+      "index": 4,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "label": "暖色系 × 「スポーツの赤と紺」",
+      "seedId": "s-062",
+      "colors": {
+        "primary": "#D62828",
+        "secondary": "#DBE1ED",
+        "accent": "#1D3557",
+        "background": "#FAFAFA",
+        "text": "#1E2230"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "元気#5",
+      "word": "元気",
+      "index": 5,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "暖色系 × 「ビタミンオレンジ」",
+      "seedId": "s-045",
+      "colors": {
+        "primary": "#D9500F",
+        "secondary": "#FFDDB0",
+        "accent": "#23A447",
+        "background": "#FFFBF5",
+        "text": "#2B2018"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "元気#6",
+      "word": "元気",
+      "index": 6,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "complementary"
+      },
+      "label": "寒色・緑系 × 「紺とオレンジ」",
+      "seedId": "s-236",
+      "colors": {
+        "primary": "#14213D",
+        "secondary": "#F6DDBE",
+        "accent": "#EA9400",
+        "background": "#FBFAF8",
+        "text": "#161C2B"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "元気#7",
+      "word": "元気",
+      "index": 7,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "label": "暖色系 × 「みかん」",
+      "seedId": "s-110",
+      "colors": {
+        "primary": "#D46A12",
+        "secondary": "#F1E2C8",
+        "accent": "#2F7FB5",
+        "background": "#FFFCF7",
+        "text": "#2B2116"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "元気#8",
+      "word": "元気",
+      "index": 8,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「チャコールとイエロー」",
+      "seedId": "s-229",
+      "colors": {
+        "primary": "#2B2D2F",
+        "secondary": "#EDDFA4",
+        "accent": "#D19C00",
+        "background": "#F7F7F6",
+        "text": "#1F2022"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "元気#9",
+      "word": "元気",
+      "index": 9,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "label": "寒色・緑系 × 「青りんご」",
+      "seedId": "s-246",
+      "colors": {
+        "primary": "#3E8E1E",
+        "secondary": "#DDEAC5",
+        "accent": "#E89A00",
+        "background": "#FAFEF5",
+        "text": "#1D2A1A"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "元気#10",
+      "word": "元気",
+      "index": 10,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "label": "暖色系 × 「トマト」",
+      "seedId": "s-105",
+      "colors": {
+        "primary": "#D1423B",
+        "secondary": "#F7DCD1",
+        "accent": "#3B8E5A",
+        "background": "#FFFAF8",
+        "text": "#2B1F1C"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "元気#11",
+      "word": "元気",
+      "index": 11,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「ロイヤルブルーと黄色の面」",
+      "seedId": "s-092",
+      "colors": {
+        "primary": "#1A3FBF",
+        "secondary": "#FFE45C",
+        "accent": "#E8344A",
+        "background": "#FFFFFF",
+        "text": "#1A1F33"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "楽しい#0",
+      "word": "楽しい",
+      "index": 0,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "label": "寒色・緑系 × 「三色旗」",
+      "seedId": "s-093",
+      "colors": {
+        "primary": "#1D4ED8",
+        "secondary": "#FDE68A",
+        "accent": "#DC2626",
+        "background": "#FFFFFF",
+        "text": "#1E2230"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "楽しい#1",
+      "word": "楽しい",
+      "index": 1,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "label": "暖色系 × 「クレヨン」",
+      "seedId": "s-072",
+      "colors": {
+        "primary": "#E8590C",
+        "secondary": "#C9EFCE",
+        "accent": "#4263EB",
+        "background": "#FFFCF5",
+        "text": "#2A2118"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "楽しい#2",
+      "word": "楽しい",
+      "index": 2,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "complementary"
+      },
+      "label": "寒色・緑系 × 「ソーダとレモン」",
+      "seedId": "s-073",
+      "colors": {
+        "primary": "#0C8599",
+        "secondary": "#E9E3C6",
+        "accent": "#F76707",
+        "background": "#F5FDFF",
+        "text": "#13282C"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "楽しい#3",
+      "word": "楽しい",
+      "index": 3,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "label": "暖色系 × 「コーラルと黄」",
+      "seedId": "s-067",
+      "colors": {
+        "primary": "#E8464F",
+        "secondary": "#F2E3A6",
+        "accent": "#E89700",
+        "background": "#FFFAF7",
+        "text": "#2E1F20"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "楽しい#4",
+      "word": "楽しい",
+      "index": 4,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "label": "暖色系 × 「赤と水色」",
+      "seedId": "s-053",
+      "colors": {
+        "primary": "#E4322B",
+        "secondary": "#CCEBF7",
+        "accent": "#0098D6",
+        "background": "#FFFDFC",
+        "text": "#2A2220"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "楽しい#5",
+      "word": "楽しい",
+      "index": 5,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "complementary"
+      },
+      "label": "寒色・緑系 × 「ブリキのおもちゃ」",
+      "seedId": "s-280",
+      "colors": {
+        "primary": "#2D6E8E",
+        "secondary": "#ECDDB6",
+        "accent": "#D9452B",
+        "background": "#FBF6EA",
+        "text": "#1D2830"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "楽しい#6",
+      "word": "楽しい",
+      "index": 6,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "label": "寒色・緑系 × 「絵の具」",
+      "seedId": "s-100",
+      "colors": {
+        "primary": "#2563EB",
+        "secondary": "#FBCFE8",
+        "accent": "#D3A100",
+        "background": "#FAFCFF",
+        "text": "#1B2233"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "楽しい#7",
+      "word": "楽しい",
+      "index": 7,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "label": "暖色系 × 「駄菓子屋」",
+      "seedId": "s-277",
+      "colors": {
+        "primary": "#C23B32",
+        "secondary": "#F2E0AF",
+        "accent": "#2A7FA8",
+        "background": "#FFFAEC",
+        "text": "#2B1F1A"
+      },
+      "rating": "meh"
+    },
+    {
+      "key": "楽しい#8",
+      "word": "楽しい",
+      "index": 8,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "label": "寒色・緑系 × 「夏空とオレンジ」",
+      "seedId": "s-065",
+      "colors": {
+        "primary": "#1C7ED6",
+        "secondary": "#F9DEBD",
+        "accent": "#FD7E14",
+        "background": "#F8FCFF",
+        "text": "#1A2633"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "楽しい#9",
+      "word": "楽しい",
+      "index": 9,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "label": "暖色系 × 「ダイナー」",
+      "seedId": "s-286",
+      "colors": {
+        "primary": "#C8283B",
+        "secondary": "#CFE9E5",
+        "accent": "#1E8C84",
+        "background": "#FFFBF5",
+        "text": "#2A1D20"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "楽しい#10",
+      "word": "楽しい",
+      "index": 10,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「虹」",
+      "seedId": "s-094",
+      "colors": {
+        "primary": "#7C3AED",
+        "secondary": "#BBF7D0",
+        "accent": "#F97316",
+        "background": "#FFFDF9",
+        "text": "#221C33"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "楽しい#11",
+      "word": "楽しい",
+      "index": 11,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "暖色系 × 「お祭り」",
+      "seedId": "s-069",
+      "colors": {
+        "primary": "#D6336C",
+        "secondary": "#F6DFC3",
+        "accent": "#1971C2",
+        "background": "#FFFBF7",
+        "text": "#2B1D24"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "ポップ#0",
+      "word": "ポップ",
+      "index": 0,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "split"
+      },
+      "label": "寒色・緑系 × 「ソーダ水」",
+      "seedId": "s-251",
+      "colors": {
+        "primary": "#0A84B5",
+        "secondary": "#CBE9ED",
+        "accent": "#FF7A85",
+        "background": "#F6FDFF",
+        "text": "#14283A"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "ポップ#1",
+      "word": "ポップ",
+      "index": 1,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「青とピンク」",
+      "seedId": "s-081",
+      "colors": {
+        "primary": "#2F54EB",
+        "secondary": "#FFD6E7",
+        "accent": "#EB2F96",
+        "background": "#FAFBFF",
+        "text": "#1C2233"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "ポップ#2",
+      "word": "ポップ",
+      "index": 2,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "label": "暖色系 × 「オレンジと水色」",
+      "seedId": "s-082",
+      "colors": {
+        "primary": "#E8590C",
+        "secondary": "#CAEAF8",
+        "accent": "#1C7ED6",
+        "background": "#FFFCF8",
+        "text": "#2A2118"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "ポップ#3",
+      "word": "ポップ",
+      "index": 3,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "label": "暖色系 × 「ピンクと黄色」",
+      "seedId": "s-077",
+      "colors": {
+        "primary": "#E0287A",
+        "secondary": "#F3E794",
+        "accent": "#00A3D9",
+        "background": "#FFFDF8",
+        "text": "#2A1C24"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "ポップ#4",
+      "word": "ポップ",
+      "index": 4,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "label": "寒色・緑系 × 「青・黄・赤の原色」",
+      "seedId": "s-048",
+      "colors": {
+        "primary": "#1F4FD1",
+        "secondary": "#FFE24A",
+        "accent": "#E83A2C",
+        "background": "#FEFEFE",
+        "text": "#1E1F26"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "ポップ#5",
+      "word": "ポップ",
+      "index": 5,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「モノトーンと黄」",
+      "seedId": "s-313",
+      "colors": {
+        "primary": "#1A1A1A",
+        "secondary": "#E6E6E6",
+        "accent": "#D5A600",
+        "background": "#FFFFFF",
+        "text": "#1A1A1A"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "ポップ#6",
+      "word": "ポップ",
+      "index": 6,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "label": "寒色・緑系 × 「ゲーム」",
+      "seedId": "s-075",
+      "colors": {
+        "primary": "#5F3DC4",
+        "secondary": "#BAEBEF",
+        "accent": "#F08C00",
+        "background": "#F9F8FF",
+        "text": "#211C32"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "ポップ#7",
+      "word": "ポップ",
+      "index": 7,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "label": "暖色系 × 「ダイナー」",
+      "seedId": "s-286",
+      "colors": {
+        "primary": "#C8283B",
+        "secondary": "#CFE9E5",
+        "accent": "#1E8C84",
+        "background": "#FFFBF5",
+        "text": "#2A1D20"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "ポップ#8",
+      "word": "ポップ",
+      "index": 8,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「黒線と三原色」",
+      "seedId": "s-078",
+      "colors": {
+        "primary": "#111111",
+        "secondary": "#FFD43B",
+        "accent": "#E03131",
+        "background": "#FFFFFF",
+        "text": "#111111"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "ポップ#9",
+      "word": "ポップ",
+      "index": 9,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "mono"
+      },
+      "label": "暖色系 × 「黒と黄色」",
+      "seedId": "s-218",
+      "colors": {
+        "primary": "#FFD21F",
+        "secondary": "#2B2B2B",
+        "accent": "#E8E8E8",
+        "background": "#121212",
+        "text": "#F0F0F0"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "ポップ#10",
+      "word": "ポップ",
+      "index": 10,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "暖色系 × 「キャンディ」",
+      "seedId": "s-070",
+      "colors": {
+        "primary": "#E64980",
+        "secondary": "#CBE6FA",
+        "accent": "#DE9C00",
+        "background": "#FFF8FB",
+        "text": "#2B1F27"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "ポップ#11",
+      "word": "ポップ",
+      "index": 11,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「ゴールデンイエローと黒」",
+      "seedId": "s-068",
+      "colors": {
+        "primary": "#212121",
+        "secondary": "#FFE066",
+        "accent": "#E8590C",
+        "background": "#FFFDF2",
+        "text": "#212121"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "鮮やか#0",
+      "word": "鮮やか",
+      "index": 0,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "split"
+      },
+      "label": "寒色・緑系 × 「孔雀」",
+      "seedId": "s-299",
+      "colors": {
+        "primary": "#0B5C6B",
+        "secondary": "#D7E5E3",
+        "accent": "#C2307A",
+        "background": "#F7FBFB",
+        "text": "#142729"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "鮮やか#1",
+      "word": "鮮やか",
+      "index": 1,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "label": "暖色系 × 「ブーゲンビリア」",
+      "seedId": "s-305",
+      "colors": {
+        "primary": "#C2187A",
+        "secondary": "#F3DBE7",
+        "accent": "#F08A24",
+        "background": "#FFFAFC",
+        "text": "#2C1B25"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "鮮やか#2",
+      "word": "鮮やか",
+      "index": 2,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "complementary"
+      },
+      "label": "寒色・緑系 × 「ターコイズと赤」",
+      "seedId": "s-091",
+      "colors": {
+        "primary": "#00838F",
+        "secondary": "#D3EAED",
+        "accent": "#E53935",
+        "background": "#FAFFFF",
+        "text": "#132A2C"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "鮮やか#3",
+      "word": "鮮やか",
+      "index": 3,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「黒線と三原色」",
+      "seedId": "s-078",
+      "colors": {
+        "primary": "#111111",
+        "secondary": "#FFD43B",
+        "accent": "#E03131",
+        "background": "#FFFFFF",
+        "text": "#111111"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "鮮やか#4",
+      "word": "鮮やか",
+      "index": 4,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "label": "暖色系 × 「紫と黄」",
+      "seedId": "s-090",
+      "colors": {
+        "primary": "#6A1B9A",
+        "secondary": "#F2E891",
+        "accent": "#DF9D00",
+        "background": "#FFFEF8",
+        "text": "#241A2C"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "鮮やか#5",
+      "word": "鮮やか",
+      "index": 5,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「ロイヤルブルーと黄色の面」",
+      "seedId": "s-092",
+      "colors": {
+        "primary": "#1A3FBF",
+        "secondary": "#FFE45C",
+        "accent": "#E8344A",
+        "background": "#FFFFFF",
+        "text": "#1A1F33"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "鮮やか#6",
+      "word": "鮮やか",
+      "index": 6,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "label": "暖色系 × 「ビビッドオレンジと青」",
+      "seedId": "s-089",
+      "colors": {
+        "primary": "#E65100",
+        "secondary": "#D8E7F2",
+        "accent": "#1565C0",
+        "background": "#FFFDFB",
+        "text": "#2A1E14"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "鮮やか#7",
+      "word": "鮮やか",
+      "index": 7,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "暖色系 × 「マゼンタ」",
+      "seedId": "s-088",
+      "colors": {
+        "primary": "#C2185B",
+        "secondary": "#F3DBE3",
+        "accent": "#1E88E5",
+        "background": "#FFFAFC",
+        "text": "#2A1A21"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "鮮やか#8",
+      "word": "鮮やか",
+      "index": 8,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「虹」",
+      "seedId": "s-094",
+      "colors": {
+        "primary": "#7C3AED",
+        "secondary": "#BBF7D0",
+        "accent": "#F97316",
+        "background": "#FFFDF9",
+        "text": "#221C33"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "鮮やか#9",
+      "word": "鮮やか",
+      "index": 9,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "label": "寒色・緑系 × 「エメラルド」",
+      "seedId": "s-087",
+      "colors": {
+        "primary": "#008F5A",
+        "secondary": "#CCEDDE",
+        "accent": "#E0115F",
+        "background": "#F8FFFB",
+        "text": "#14281F"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "鮮やか#10",
+      "word": "鮮やか",
+      "index": 10,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "暖色系 × 「原色の赤」",
+      "seedId": "s-085",
+      "colors": {
+        "primary": "#D90429",
+        "secondary": "#E2E7E9",
+        "accent": "#2B2D42",
+        "background": "#FFFFFF",
+        "text": "#2B2D42"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "鮮やか#11",
+      "word": "鮮やか",
+      "index": 11,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "label": "寒色・緑系 × 「ロイヤルブルーと黄」",
+      "seedId": "s-240",
+      "colors": {
+        "primary": "#1236A8",
+        "secondary": "#F3E49C",
+        "accent": "#DC9F00",
+        "background": "#FBFBFF",
+        "text": "#161D33"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "カラフル#0",
+      "word": "カラフル",
+      "index": 0,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "label": "寒色・緑系 × 「絵の具」",
+      "seedId": "s-100",
+      "colors": {
+        "primary": "#2563EB",
+        "secondary": "#FBCFE8",
+        "accent": "#D3A100",
+        "background": "#FAFCFF",
+        "text": "#1B2233"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "カラフル#1",
+      "word": "カラフル",
+      "index": 1,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "暖色系 × 「サイケ」",
+      "seedId": "s-293",
+      "colors": {
+        "primary": "#8E3B9E",
+        "secondary": "#F6DDA1",
+        "accent": "#E5742B",
+        "background": "#FDF8EE",
+        "text": "#2A1F2E"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "カラフル#2",
+      "word": "カラフル",
+      "index": 2,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "complementary"
+      },
+      "label": "寒色・緑系 × 「南国」",
+      "seedId": "s-096",
+      "colors": {
+        "primary": "#0F766E",
+        "secondary": "#FED7AA",
+        "accent": "#E11D48",
+        "background": "#F8FFFE",
+        "text": "#14282A"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "カラフル#3",
+      "word": "カラフル",
+      "index": 3,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "暖色系 × 「お祭り」",
+      "seedId": "s-069",
+      "colors": {
+        "primary": "#D6336C",
+        "secondary": "#F6DFC3",
+        "accent": "#1971C2",
+        "background": "#FFFBF7",
+        "text": "#2B1D24"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "カラフル#4",
+      "word": "カラフル",
+      "index": 4,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "暖色系 × 「積み木」",
+      "seedId": "s-097",
+      "colors": {
+        "primary": "#C2410C",
+        "secondary": "#BAE6FD",
+        "accent": "#16A34A",
+        "background": "#FFFCF7",
+        "text": "#2A1F18"
+      },
+      "rating": "good",
+      "tags": [
+        "clash"
+      ]
+    },
+    {
+      "key": "カラフル#5",
+      "word": "カラフル",
+      "index": 5,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「虹」",
+      "seedId": "s-094",
+      "colors": {
+        "primary": "#7C3AED",
+        "secondary": "#BBF7D0",
+        "accent": "#F97316",
+        "background": "#FFFDF9",
+        "text": "#221C33"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "カラフル#6",
+      "word": "カラフル",
+      "index": 6,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "label": "寒色・緑系 × 「三色旗」",
+      "seedId": "s-093",
+      "colors": {
+        "primary": "#1D4ED8",
+        "secondary": "#FDE68A",
+        "accent": "#DC2626",
+        "background": "#FFFFFF",
+        "text": "#1E2230"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "カラフル#7",
+      "word": "カラフル",
+      "index": 7,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "label": "暖色系 × 「マーブル」",
+      "seedId": "s-098",
+      "colors": {
+        "primary": "#9333EA",
+        "secondary": "#F4E680",
+        "accent": "#0EA5E9",
+        "background": "#FDFBFF",
+        "text": "#231B30"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "カラフル#8",
+      "word": "カラフル",
+      "index": 8,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「黒線と三原色」",
+      "seedId": "s-078",
+      "colors": {
+        "primary": "#111111",
+        "secondary": "#FFD43B",
+        "accent": "#E03131",
+        "background": "#FFFFFF",
+        "text": "#111111"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "カラフル#9",
+      "word": "カラフル",
+      "index": 9,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「遊園地」",
+      "seedId": "s-071",
+      "colors": {
+        "primary": "#7048E8",
+        "secondary": "#F1E5B1",
+        "accent": "#F03E3E",
+        "background": "#FFFDF7",
+        "text": "#231D33"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "カラフル#10",
+      "word": "カラフル",
+      "index": 10,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "暖色系 × 「フルーツ」",
+      "seedId": "s-099",
+      "colors": {
+        "primary": "#E11D48",
+        "secondary": "#EEE3B8",
+        "accent": "#65A30D",
+        "background": "#FFFAFB",
+        "text": "#2B1D22"
+      },
+      "star": true
+    },
+    {
+      "key": "カラフル#11",
+      "word": "カラフル",
+      "index": 11,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "label": "暖色系 × 「花束」",
+      "seedId": "s-297",
+      "colors": {
+        "primary": "#C2185B",
+        "secondary": "#DAE7CF",
+        "accent": "#7B4BC4",
+        "background": "#FFF9FB",
+        "text": "#2C1C24"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "親しみやすい#0",
+      "word": "親しみやすい",
+      "index": 0,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "complementary"
+      },
+      "label": "寒色・緑系 × 「ブルーグレーとオレンジ」",
+      "seedId": "s-111",
+      "colors": {
+        "primary": "#3F5F7F",
+        "secondary": "#DBE2E8",
+        "accent": "#E8833A",
+        "background": "#F8FAFC",
+        "text": "#1D2631"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "親しみやすい#1",
+      "word": "親しみやすい",
+      "index": 1,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「こもれび」",
+      "seedId": "s-112",
+      "colors": {
+        "primary": "#5C7F3A",
+        "secondary": "#E8E4BE",
+        "accent": "#C8693B",
+        "background": "#FCFBF4",
+        "text": "#232A1C"
+      },
+      "rating": "meh"
+    },
+    {
+      "key": "親しみやすい#2",
+      "word": "親しみやすい",
+      "index": 2,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "暖色系 × 「積み木」",
+      "seedId": "s-097",
+      "colors": {
+        "primary": "#C2410C",
+        "secondary": "#BAE6FD",
+        "accent": "#16A34A",
+        "background": "#FFFCF7",
+        "text": "#2A1F18"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "親しみやすい#3",
+      "word": "親しみやすい",
+      "index": 3,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "mono"
+      },
+      "label": "暖色系 × 「ミルクティー」",
+      "seedId": "s-106",
+      "colors": {
+        "primary": "#8C6249",
+        "secondary": "#EADED1",
+        "accent": "#C9733A",
+        "background": "#FCF8F4",
+        "text": "#2B221C"
+      },
+      "tags": [
+        "muddy"
+      ]
+    },
+    {
+      "key": "親しみやすい#4",
+      "word": "親しみやすい",
+      "index": 4,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "label": "寒色・緑系 × 「青と黄の看板」",
+      "seedId": "s-108",
+      "colors": {
+        "primary": "#1F5FAD",
+        "secondary": "#F2E3AC",
+        "accent": "#E8892B",
+        "background": "#FAFCFF",
+        "text": "#1C2433"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "親しみやすい#5",
+      "word": "親しみやすい",
+      "index": 5,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "label": "暖色系 × 「トマト」",
+      "seedId": "s-105",
+      "colors": {
+        "primary": "#D1423B",
+        "secondary": "#F7DCD1",
+        "accent": "#3B8E5A",
+        "background": "#FFFAF8",
+        "text": "#2B1F1C"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "親しみやすい#6",
+      "word": "親しみやすい",
+      "index": 6,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "label": "暖色系 × 「クレヨン」",
+      "seedId": "s-072",
+      "colors": {
+        "primary": "#E8590C",
+        "secondary": "#C9EFCE",
+        "accent": "#4263EB",
+        "background": "#FFFCF5",
+        "text": "#2A2118"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "親しみやすい#7",
+      "word": "親しみやすい",
+      "index": 7,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "label": "暖色系 × 「みかん」",
+      "seedId": "s-110",
+      "colors": {
+        "primary": "#D46A12",
+        "secondary": "#F1E2C8",
+        "accent": "#2F7FB5",
+        "background": "#FFFCF7",
+        "text": "#2B2116"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "親しみやすい#8",
+      "word": "親しみやすい",
+      "index": 8,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「若葉と空」",
+      "seedId": "s-102",
+      "colors": {
+        "primary": "#2F8F5B",
+        "secondary": "#D4E7F4",
+        "accent": "#F08C3A",
+        "background": "#FBFEFA",
+        "text": "#1E2A22"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "親しみやすい#9",
+      "word": "親しみやすい",
+      "index": 9,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "mono"
+      },
+      "label": "寒色・緑系 × 「芝生」に「いちごミルク」の差し色",
+      "seedId": "s-107",
+      "colors": {
+        "primary": "#3E8E41",
+        "secondary": "#E0E8CA",
+        "accent": "#4A9A6A",
+        "background": "#FBFDF7",
+        "text": "#1F2A1F"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "親しみやすい#10",
+      "word": "親しみやすい",
+      "index": 10,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "mono"
+      },
+      "label": "暖色系 × 「クレヨン」に「青とオレンジの安心」の差し色",
+      "seedId": "s-072",
+      "colors": {
+        "primary": "#E8590C",
+        "secondary": "#C9EFCE",
+        "accent": "#E8761F",
+        "background": "#FFFCF5",
+        "text": "#2A2118"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "親しみやすい#11",
+      "word": "親しみやすい",
+      "index": 11,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "label": "暖色系 × 「いちごミルク」に「ブルーグレーとオレンジ」の差し色",
+      "seedId": "s-109",
+      "colors": {
+        "primary": "#C8456C",
+        "secondary": "#F3DBE2",
+        "accent": "#E8833A",
+        "background": "#FFF9FA",
+        "text": "#2B1F24"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "かわいい#0",
+      "word": "かわいい",
+      "index": 0,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "analogous"
+      },
+      "label": "暖色系 × 「くまのぬいぐるみ」",
+      "seedId": "s-137",
+      "colors": {
+        "primary": "#9C6644",
+        "secondary": "#F3DFD0",
+        "accent": "#E86A8A",
+        "background": "#FFFBF7",
+        "text": "#2C221C"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "かわいい#1",
+      "word": "かわいい",
+      "index": 1,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "triad"
+      },
+      "label": "暖色系 × 「シャンパンとピンク」",
+      "seedId": "s-300",
+      "colors": {
+        "primary": "#9C4C6E",
+        "secondary": "#EEE0D5",
+        "accent": "#C59A55",
+        "background": "#FFFBF8",
+        "text": "#2C2026"
+      },
+      "rating": "meh"
+    },
+    {
+      "key": "かわいい#2",
+      "word": "かわいい",
+      "index": 2,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "暖色系 × 「わたあめ」",
+      "seedId": "s-127",
+      "colors": {
+        "primary": "#C0569A",
+        "secondary": "#DFE7F4",
+        "accent": "#6FB0E3",
+        "background": "#FFFFFF",
+        "text": "#2C1F29"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "かわいい#3",
+      "word": "かわいい",
+      "index": 3,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "label": "暖色系 × 「桃とレモン」",
+      "seedId": "s-129",
+      "colors": {
+        "primary": "#DD5C86",
+        "secondary": "#F1E7BA",
+        "accent": "#76BA9F",
+        "background": "#FFFFFF",
+        "text": "#2D1F26"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "かわいい#4",
+      "word": "かわいい",
+      "index": 4,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "label": "暖色系 × 「いちごミルク」",
+      "seedId": "s-109",
+      "colors": {
+        "primary": "#C8456C",
+        "secondary": "#F3DBE2",
+        "accent": "#4A9A6A",
+        "background": "#FFF9FA",
+        "text": "#2B1F24"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "かわいい#5",
+      "word": "かわいい",
+      "index": 5,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "label": "暖色系 × 「ピンク地に赤と緑」",
+      "seedId": "s-057",
+      "colors": {
+        "primary": "#C81C5C",
+        "secondary": "#FFC4D6",
+        "accent": "#1E8A4C",
+        "background": "#FFEAF1",
+        "text": "#2E1A22"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "かわいい#6",
+      "word": "かわいい",
+      "index": 6,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "label": "寒色・緑系 × 「レモンと水色」",
+      "seedId": "s-249",
+      "colors": {
+        "primary": "#1E7FB8",
+        "secondary": "#EDE4AE",
+        "accent": "#DAA000",
+        "background": "#F7FCFF",
+        "text": "#172633"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "かわいい#7",
+      "word": "かわいい",
+      "index": 7,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "label": "寒色・緑系 × 「インディゴとピーチ」",
+      "seedId": "s-231",
+      "colors": {
+        "primary": "#2E3A87",
+        "secondary": "#F6DBCF",
+        "accent": "#F28C6B",
+        "background": "#FAFAFD",
+        "text": "#1C2133"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "かわいい#8",
+      "word": "かわいい",
+      "index": 8,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "暖色系 × 「フルーツ」",
+      "seedId": "s-099",
+      "colors": {
+        "primary": "#E11D48",
+        "secondary": "#EEE3B8",
+        "accent": "#65A30D",
+        "background": "#FFFAFB",
+        "text": "#2B1D22"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "かわいい#9",
+      "word": "かわいい",
+      "index": 9,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "label": "暖色系 × 「ゆめかわ」",
+      "seedId": "s-138",
+      "colors": {
+        "primary": "#9B5DE5",
+        "secondary": "#CDE8F4",
+        "accent": "#F15BB5",
+        "background": "#FDFBFF",
+        "text": "#261F33"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "かわいい#10",
+      "word": "かわいい",
+      "index": 10,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「グレーとコーラル」",
+      "seedId": "s-227",
+      "colors": {
+        "primary": "#2F3437",
+        "secondary": "#DEDFE0",
+        "accent": "#FF6B5E",
+        "background": "#F8F8F8",
+        "text": "#1F2224"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "かわいい#11",
+      "word": "かわいい",
+      "index": 11,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "label": "暖色系 × 「花束」",
+      "seedId": "s-297",
+      "colors": {
+        "primary": "#C2185B",
+        "secondary": "#DAE7CF",
+        "accent": "#7B4BC4",
+        "background": "#FFF9FB",
+        "text": "#2C1C24"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "シック#0",
+      "word": "シック",
+      "index": 0,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "split"
+      },
+      "label": "寒色・緑系 × 「喫茶店の緑」",
+      "seedId": "s-295",
+      "colors": {
+        "primary": "#2F5A44",
+        "secondary": "#E7DBC2",
+        "accent": "#B5433A",
+        "background": "#FAF5E8",
+        "text": "#1F2823"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "シック#1",
+      "word": "シック",
+      "index": 1,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「墨色とテラコッタ」",
+      "seedId": "s-162",
+      "colors": {
+        "primary": "#2C2C2E",
+        "secondary": "#E4DCD5",
+        "accent": "#B65A3C",
+        "background": "#F7F6F4",
+        "text": "#202022"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "シック#2",
+      "word": "シック",
+      "index": 2,
+      "cell": {
+        "temp": "neutral",
+        "sat": "mid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「夜のブルー」",
+      "seedId": "s-163",
+      "colors": {
+        "primary": "#E3E7EE",
+        "secondary": "#2A3346",
+        "accent": "#C39A5A",
+        "background": "#161B26",
+        "text": "#E8ECF2"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "シック#3",
+      "word": "シック",
+      "index": 3,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「スレート」",
+      "seedId": "s-158",
+      "colors": {
+        "primary": "#3D4852",
+        "secondary": "#D9DEE2",
+        "accent": "#B3563E",
+        "background": "#F5F6F7",
+        "text": "#1F252B"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "シック#4",
+      "word": "シック",
+      "index": 4,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「深緑と金」",
+      "seedId": "s-034",
+      "colors": {
+        "primary": "#163A2E",
+        "secondary": "#D6DDD6",
+        "accent": "#A8873F",
+        "background": "#F4F4F0",
+        "text": "#1C2420"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "シック#5",
+      "word": "シック",
+      "index": 5,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "mono"
+      },
+      "label": "暖色系 × 「ボルドーとグレー」",
+      "seedId": "s-157",
+      "colors": {
+        "primary": "#6B1F33",
+        "secondary": "#DFDDDE",
+        "accent": "#4E5A64",
+        "background": "#F7F6F6",
+        "text": "#2A1E22"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "シック#6",
+      "word": "シック",
+      "index": 6,
+      "cell": {
+        "temp": "neutral",
+        "sat": "mid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「ベージュと黒」",
+      "seedId": "s-310",
+      "colors": {
+        "primary": "#1E1D1B",
+        "secondary": "#E4DFD7",
+        "accent": "#8A6A4A",
+        "background": "#FAF8F5",
+        "text": "#1E1D1B"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "シック#7",
+      "word": "シック",
+      "index": 7,
+      "cell": {
+        "temp": "warm",
+        "sat": "muted",
+        "harm": "split"
+      },
+      "label": "暖色系 × 「スモーキーパープル」",
+      "seedId": "s-159",
+      "colors": {
+        "primary": "#5A4A6A",
+        "secondary": "#E1DDE6",
+        "accent": "#9E7B4F",
+        "background": "#F8F7F9",
+        "text": "#252130"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "シック#8",
+      "word": "シック",
+      "index": 8,
+      "cell": {
+        "temp": "neutral",
+        "sat": "muted",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「ストーン」",
+      "seedId": "s-230",
+      "colors": {
+        "primary": "#3F3B37",
+        "secondary": "#E0DCD6",
+        "accent": "#5C7D8A",
+        "background": "#F6F5F3",
+        "text": "#24221F"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "シック#9",
+      "word": "シック",
+      "index": 9,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「グレージュとボルドー」",
+      "seedId": "s-037",
+      "colors": {
+        "primary": "#3B3630",
+        "secondary": "#DAD3C8",
+        "accent": "#8C1C2B",
+        "background": "#F2EFEA",
+        "text": "#24201C"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "シック#10",
+      "word": "シック",
+      "index": 10,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「ミリタリー」",
+      "seedId": "s-222",
+      "colors": {
+        "primary": "#3E4A2E",
+        "secondary": "#DADCD0",
+        "accent": "#C26A2B",
+        "background": "#F4F4EF",
+        "text": "#22261C"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "シック#11",
+      "word": "シック",
+      "index": 11,
+      "cell": {
+        "temp": "neutral",
+        "sat": "mid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「夜の海」",
+      "seedId": "s-211",
+      "colors": {
+        "primary": "#DDE8F2",
+        "secondary": "#1D2C40",
+        "accent": "#38B6D9",
+        "background": "#0F1826",
+        "text": "#E3ECF5"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "上品#0",
+      "word": "上品",
+      "index": 0,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "label": "寒色・緑系 × 「インディゴとピーチ」",
+      "seedId": "s-231",
+      "colors": {
+        "primary": "#2E3A87",
+        "secondary": "#F6DBCF",
+        "accent": "#F28C6B",
+        "background": "#FAFAFD",
+        "text": "#1C2133"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "上品#1",
+      "word": "上品",
+      "index": 1,
+      "cell": {
+        "temp": "warm",
+        "sat": "muted",
+        "harm": "triad"
+      },
+      "label": "暖色系 × 「モーヴ」",
+      "seedId": "s-164",
+      "colors": {
+        "primary": "#7E5C76",
+        "secondary": "#E7DFE5",
+        "accent": "#B8956A",
+        "background": "#FCFAFB",
+        "text": "#2A2229"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "上品#2",
+      "word": "上品",
+      "index": 2,
+      "cell": {
+        "temp": "warm",
+        "sat": "muted",
+        "harm": "mono"
+      },
+      "label": "暖色系 × 「シャンパンゴールド」",
+      "seedId": "s-165",
+      "colors": {
+        "primary": "#6B5A3E",
+        "secondary": "#E9E1D4",
+        "accent": "#B4884A",
+        "background": "#FDFBF7",
+        "text": "#2A251D"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "上品#3",
+      "word": "上品",
+      "index": 3,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "label": "寒色・緑系 × 「ラベンダーとピンク」",
+      "seedId": "s-133",
+      "colors": {
+        "primary": "#8A63C7",
+        "secondary": "#F6DBE6",
+        "accent": "#E66E9A",
+        "background": "#FDFBFF",
+        "text": "#272033"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "上品#4",
+      "word": "上品",
+      "index": 4,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "mono"
+      },
+      "label": "寒色・緑系 × 「白磁」",
+      "seedId": "s-261",
+      "colors": {
+        "primary": "#2D4F7C",
+        "secondary": "#E0E5EA",
+        "accent": "#6B8FB8",
+        "background": "#FDFDFB",
+        "text": "#1C2431"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "上品#5",
+      "word": "上品",
+      "index": 5,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "split"
+      },
+      "label": "暖色系 × 「くすみローズ」",
+      "seedId": "s-149",
+      "colors": {
+        "primary": "#8C5A63",
+        "secondary": "#E8DCDC",
+        "accent": "#5E7C86",
+        "background": "#FAF7F6",
+        "text": "#2B2224"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "上品#6",
+      "word": "上品",
+      "index": 6,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "mono"
+      },
+      "label": "暖色系 × 「パールピンク」",
+      "seedId": "s-170",
+      "colors": {
+        "primary": "#A4506E",
+        "secondary": "#EEDFE5",
+        "accent": "#8E9AAF",
+        "background": "#FFFBFC",
+        "text": "#2C2026"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "上品#7",
+      "word": "上品",
+      "index": 7,
+      "cell": {
+        "temp": "neutral",
+        "sat": "mid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「黒とシャンパン」",
+      "seedId": "s-040",
+      "colors": {
+        "primary": "#1C1B19",
+        "secondary": "#E7DECB",
+        "accent": "#9C7835",
+        "background": "#FAF7F0",
+        "text": "#1E1D1A"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "上品#8",
+      "word": "上品",
+      "index": 8,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "label": "暖色系 × 「臙脂と桜鼠」",
+      "seedId": "s-003",
+      "colors": {
+        "primary": "#9E3B45",
+        "secondary": "#ECDCDD",
+        "accent": "#B8862E",
+        "background": "#FBF6F4",
+        "text": "#2E2224"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "上品#9",
+      "word": "上品",
+      "index": 9,
+      "cell": {
+        "temp": "warm",
+        "sat": "muted",
+        "harm": "split"
+      },
+      "label": "暖色系 × 「紫黒地にラベンダー」",
+      "seedId": "s-035",
+      "colors": {
+        "primary": "#D9C9E6",
+        "secondary": "#352A40",
+        "accent": "#C7A35C",
+        "background": "#1A1420",
+        "text": "#EFE9F3"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "上品#10",
+      "word": "上品",
+      "index": 10,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "analogous"
+      },
+      "label": "暖色系 × 「ワインと金」",
+      "seedId": "s-028",
+      "colors": {
+        "primary": "#5E1A2B",
+        "secondary": "#E6D8DA",
+        "accent": "#A7834C",
+        "background": "#F8F4F3",
+        "text": "#2A1C1F"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "上品#11",
+      "word": "上品",
+      "index": 11,
+      "cell": {
+        "temp": "warm",
+        "sat": "muted",
+        "harm": "split"
+      },
+      "label": "暖色系 × 「スモーキーパープル」",
+      "seedId": "s-159",
+      "colors": {
+        "primary": "#5A4A6A",
+        "secondary": "#E1DDE6",
+        "accent": "#9E7B4F",
+        "background": "#F8F7F9",
+        "text": "#252130"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "まじめ#0",
+      "word": "まじめ",
+      "index": 0,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「ペンの青」",
+      "seedId": "s-181",
+      "colors": {
+        "primary": "#1E4FA0",
+        "secondary": "#DEE4ED",
+        "accent": "#2E9C8F",
+        "background": "#FBFCFE",
+        "text": "#1B2333"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "まじめ#1",
+      "word": "まじめ",
+      "index": 1,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "split"
+      },
+      "label": "寒色・緑系 × 「藍と白」",
+      "seedId": "s-184",
+      "colors": {
+        "primary": "#1D3F6E",
+        "secondary": "#DCE3EB",
+        "accent": "#B03A48",
+        "background": "#FAFBFC",
+        "text": "#1A2131"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "まじめ#2",
+      "word": "まじめ",
+      "index": 2,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "mono"
+      },
+      "label": "寒色・緑系 × 「灰と藍」",
+      "seedId": "s-177",
+      "colors": {
+        "primary": "#2E4A6B",
+        "secondary": "#DDDFE1",
+        "accent": "#7D8A96",
+        "background": "#F7F7F8",
+        "text": "#1D2430"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "まじめ#3",
+      "word": "まじめ",
+      "index": 3,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "complementary"
+      },
+      "label": "寒色・緑系 × 「ネイビーとベージュ」",
+      "seedId": "s-150",
+      "colors": {
+        "primary": "#2D3E5C",
+        "secondary": "#E4DDD0",
+        "accent": "#A66B3A",
+        "background": "#F8F6F2",
+        "text": "#1E2330"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "まじめ#4",
+      "word": "まじめ",
+      "index": 4,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "split"
+      },
+      "label": "寒色・緑系 × 「ネイビーと赤」",
+      "seedId": "s-176",
+      "colors": {
+        "primary": "#1A2B4C",
+        "secondary": "#DDE0E6",
+        "accent": "#C0392B",
+        "background": "#F8F9FB",
+        "text": "#1A1F2C"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "まじめ#5",
+      "word": "まじめ",
+      "index": 5,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "complementary"
+      },
+      "label": "寒色・緑系 × 「教科書」",
+      "seedId": "s-178",
+      "colors": {
+        "primary": "#2B5F8C",
+        "secondary": "#EEE3C5",
+        "accent": "#D2691E",
+        "background": "#FDFCF8",
+        "text": "#1E2733"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "まじめ#6",
+      "word": "まじめ",
+      "index": 6,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "split"
+      },
+      "label": "寒色・緑系 × 「ノートの罫線」",
+      "seedId": "s-175",
+      "colors": {
+        "primary": "#2D4E8A",
+        "secondary": "#E0E7F2",
+        "accent": "#C0392B",
+        "background": "#FFFFFF",
+        "text": "#1F2633"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "まじめ#7",
+      "word": "まじめ",
+      "index": 7,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「黒板」",
+      "seedId": "s-174",
+      "colors": {
+        "primary": "#2F4A3A",
+        "secondary": "#DDE2DB",
+        "accent": "#D19A2E",
+        "background": "#F8F9F6",
+        "text": "#1E2620"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "まじめ#8",
+      "word": "まじめ",
+      "index": 8,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "analogous"
+      },
+      "label": "寒色・緑系 × 「紺と白藍」",
+      "seedId": "s-006",
+      "colors": {
+        "primary": "#23396A",
+        "secondary": "#D0E1E7",
+        "accent": "#2E86B8",
+        "background": "#F5F7F7",
+        "text": "#1C2230"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "まじめ#9",
+      "word": "まじめ",
+      "index": 9,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「ダークグリーンとゴールド」",
+      "seedId": "s-179",
+      "colors": {
+        "primary": "#1F3B2F",
+        "secondary": "#E0DDD1",
+        "accent": "#A6863F",
+        "background": "#F7F6F1",
+        "text": "#1C2420"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "まじめ#10",
+      "word": "まじめ",
+      "index": 10,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「チャコールと青」",
+      "seedId": "s-173",
+      "colors": {
+        "primary": "#2E3338",
+        "secondary": "#DCDEE1",
+        "accent": "#2F6DB5",
+        "background": "#F6F7F8",
+        "text": "#1E2226"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "まじめ#11",
+      "word": "まじめ",
+      "index": 11,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "label": "暖色系 × 「ランドセル」",
+      "seedId": "s-279",
+      "colors": {
+        "primary": "#9B2335",
+        "secondary": "#E7DCCC",
+        "accent": "#2D4A6B",
+        "background": "#FAF6EF",
+        "text": "#2A1D20"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "信頼感#0",
+      "word": "信頼感",
+      "index": 0,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "split"
+      },
+      "label": "寒色・緑系 × 「藍と朱」",
+      "seedId": "s-194",
+      "colors": {
+        "primary": "#1C3D6E",
+        "secondary": "#DDE0E5",
+        "accent": "#D2552E",
+        "background": "#F9F9F8",
+        "text": "#1A2131"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "信頼感#1",
+      "word": "信頼感",
+      "index": 1,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "mono"
+      },
+      "label": "寒色・緑系 × 「ティールとグレー」",
+      "seedId": "s-195",
+      "colors": {
+        "primary": "#0F5E68",
+        "secondary": "#DAE0E1",
+        "accent": "#5B6C7A",
+        "background": "#F6F8F8",
+        "text": "#152628"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "信頼感#2",
+      "word": "信頼感",
+      "index": 2,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "label": "寒色・緑系 × 「青とオレンジの安心」",
+      "seedId": "s-190",
+      "colors": {
+        "primary": "#1A5FB4",
+        "secondary": "#F6DFC7",
+        "accent": "#E8761F",
+        "background": "#FAFCFF",
+        "text": "#1A2433"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "信頼感#3",
+      "word": "信頼感",
+      "index": 3,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "mono"
+      },
+      "label": "寒色・緑系 × 「紺とグレー」",
+      "seedId": "s-171",
+      "colors": {
+        "primary": "#1F3A5F",
+        "secondary": "#DCE0E5",
+        "accent": "#3E7CB1",
+        "background": "#F7F8FA",
+        "text": "#1C2330"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "信頼感#4",
+      "word": "信頼感",
+      "index": 4,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「グリーンと白」",
+      "seedId": "s-189",
+      "colors": {
+        "primary": "#1F6B45",
+        "secondary": "#D6E7DD",
+        "accent": "#2F7FC2",
+        "background": "#F8FCF9",
+        "text": "#17271E"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "信頼感#5",
+      "word": "信頼感",
+      "index": 5,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "analogous"
+      },
+      "label": "寒色・緑系 × 「スチールブルー」",
+      "seedId": "s-191",
+      "colors": {
+        "primary": "#2C4A6E",
+        "secondary": "#DAE0E7",
+        "accent": "#4FA3C7",
+        "background": "#F6F8FA",
+        "text": "#1B2431"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "信頼感#6",
+      "word": "信頼感",
+      "index": 6,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "complementary"
+      },
+      "label": "寒色・緑系 × 「銀行の紺と金」",
+      "seedId": "s-188",
+      "colors": {
+        "primary": "#14294F",
+        "secondary": "#DDE0E6",
+        "accent": "#B08A3E",
+        "background": "#F8F9FA",
+        "text": "#19202E"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "信頼感#7",
+      "word": "信頼感",
+      "index": 7,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "analogous"
+      },
+      "label": "寒色・緑系 × 「医療の青緑」",
+      "seedId": "s-187",
+      "colors": {
+        "primary": "#0A6E7A",
+        "secondary": "#D0E7E9",
+        "accent": "#3C8DDB",
+        "background": "#F7FCFC",
+        "text": "#142829"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "信頼感#8",
+      "word": "信頼感",
+      "index": 8,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "analogous"
+      },
+      "label": "寒色・緑系 × 「深緑と銀」",
+      "seedId": "s-192",
+      "colors": {
+        "primary": "#21483C",
+        "secondary": "#DCE1DE",
+        "accent": "#6F8F9E",
+        "background": "#F7F9F8",
+        "text": "#1C2622"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "信頼感#9",
+      "word": "信頼感",
+      "index": 9,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「空と雲」",
+      "seedId": "s-193",
+      "colors": {
+        "primary": "#2A6FB0",
+        "secondary": "#DFE7EF",
+        "accent": "#5FA85F",
+        "background": "#FFFFFF",
+        "text": "#1B2633"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "信頼感#10",
+      "word": "信頼感",
+      "index": 10,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "label": "寒色・緑系 × 「医療のブルー」",
+      "seedId": "s-257",
+      "colors": {
+        "primary": "#1559A0",
+        "secondary": "#DAE6F1",
+        "accent": "#2CB5A8",
+        "background": "#FBFDFF",
+        "text": "#182434"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "信頼感#11",
+      "word": "信頼感",
+      "index": 11,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「ネイビーとシアン」",
+      "seedId": "s-335",
+      "colors": {
+        "primary": "#E6F3FF",
+        "secondary": "#18314F",
+        "accent": "#26C6F9",
+        "background": "#0C1B2E",
+        "text": "#E6F0FA"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "知的#0",
+      "word": "知的",
+      "index": 0,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「データ」",
+      "seedId": "s-328",
+      "colors": {
+        "primary": "#0B5FFF",
+        "secondary": "#D9E1F4",
+        "accent": "#00BEA5",
+        "background": "#F8FAFF",
+        "text": "#141C33"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "知的#1",
+      "word": "知的",
+      "index": 1,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「ラボ」",
+      "seedId": "s-334",
+      "colors": {
+        "primary": "#3A3FD1",
+        "secondary": "#E0E2F5",
+        "accent": "#06C09F",
+        "background": "#FCFCFF",
+        "text": "#1B1C33"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "知的#2",
+      "word": "知的",
+      "index": 2,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "complementary"
+      },
+      "label": "寒色・緑系 × 「紺とからし」",
+      "seedId": "s-204",
+      "colors": {
+        "primary": "#22325A",
+        "secondary": "#EBDFBB",
+        "accent": "#C2902A",
+        "background": "#FBF8EE",
+        "text": "#1C2131"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "知的#3",
+      "word": "知的",
+      "index": 3,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "analogous"
+      },
+      "label": "寒色・緑系 × 「深い紫と灰」",
+      "seedId": "s-197",
+      "colors": {
+        "primary": "#3E2F5B",
+        "secondary": "#E0DDE7",
+        "accent": "#5E8FA8",
+        "background": "#F8F7FA",
+        "text": "#231F2E"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "知的#4",
+      "word": "知的",
+      "index": 4,
+      "cell": {
+        "temp": "neutral",
+        "sat": "mid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「夜の書斎」",
+      "seedId": "s-203",
+      "colors": {
+        "primary": "#E5E2D8",
+        "secondary": "#2E3440",
+        "accent": "#C9A25A",
+        "background": "#1C2028",
+        "text": "#ECEAE3"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "知的#5",
+      "word": "知的",
+      "index": 5,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「ラベンダーグレー」",
+      "seedId": "s-205",
+      "colors": {
+        "primary": "#4F4D7A",
+        "secondary": "#E1E0EA",
+        "accent": "#6EA3A0",
+        "background": "#FAFAFC",
+        "text": "#232233"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "知的#6",
+      "word": "知的",
+      "index": 6,
+      "cell": {
+        "temp": "neutral",
+        "sat": "mid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「グラファイト」",
+      "seedId": "s-202",
+      "colors": {
+        "primary": "#2F3338",
+        "secondary": "#DDDFE1",
+        "accent": "#4C7FB5",
+        "background": "#F7F8F8",
+        "text": "#1E2125"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "知的#7",
+      "word": "知的",
+      "index": 7,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "analogous"
+      },
+      "label": "寒色・緑系 × 「インクブルー」",
+      "seedId": "s-201",
+      "colors": {
+        "primary": "#233C72",
+        "secondary": "#DEE2EC",
+        "accent": "#8A6FB8",
+        "background": "#FAFBFD",
+        "text": "#1C2233"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "知的#8",
+      "word": "知的",
+      "index": 8,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "mono"
+      },
+      "label": "寒色・緑系 × 「ティールとグレー」",
+      "seedId": "s-195",
+      "colors": {
+        "primary": "#0F5E68",
+        "secondary": "#DAE0E1",
+        "accent": "#5B6C7A",
+        "background": "#F6F8F8",
+        "text": "#152628"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "知的#9",
+      "word": "知的",
+      "index": 9,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "complementary"
+      },
+      "label": "寒色・緑系 × 「ディープティール」",
+      "seedId": "s-206",
+      "colors": {
+        "primary": "#0B4D52",
+        "secondary": "#D2E5E4",
+        "accent": "#C46A3A",
+        "background": "#F6FAF9",
+        "text": "#132627"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "知的#10",
+      "word": "知的",
+      "index": 10,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "analogous"
+      },
+      "label": "寒色・緑系 × 「研究所」",
+      "seedId": "s-200",
+      "colors": {
+        "primary": "#20507A",
+        "secondary": "#DCE5EC",
+        "accent": "#16A2A2",
+        "background": "#FBFDFE",
+        "text": "#1A2531"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "知的#11",
+      "word": "知的",
+      "index": 11,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "analogous"
+      },
+      "label": "寒色・緑系 × 「ティールとネイビー」",
+      "seedId": "s-198",
+      "colors": {
+        "primary": "#0E4F5C",
+        "secondary": "#D4E4E6",
+        "accent": "#1F3B70",
+        "background": "#F6FAFA",
+        "text": "#142629"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "クール#0",
+      "word": "クール",
+      "index": 0,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "label": "寒色・緑系 × 「空と海」",
+      "seedId": "s-245",
+      "colors": {
+        "primary": "#1565A8",
+        "secondary": "#CEE6F2",
+        "accent": "#19B3B1",
+        "background": "#F6FBFE",
+        "text": "#172532"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "クール#1",
+      "word": "クール",
+      "index": 1,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "mono"
+      },
+      "label": "寒色・緑系 × 「シルバーとネイビー」",
+      "seedId": "s-212",
+      "colors": {
+        "primary": "#1E2B44",
+        "secondary": "#DADFE6",
+        "accent": "#7A8BA3",
+        "background": "#F4F6F8",
+        "text": "#1A2131"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "クール#2",
+      "word": "クール",
+      "index": 2,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "mono"
+      },
+      "label": "寒色・緑系 × 「氷河」",
+      "seedId": "s-213",
+      "colors": {
+        "primary": "#2E6E8E",
+        "secondary": "#DAE7EC",
+        "accent": "#8AA6C1",
+        "background": "#FBFEFF",
+        "text": "#1A2A33"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "クール#3",
+      "word": "クール",
+      "index": 3,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "analogous"
+      },
+      "label": "寒色・緑系 × 「スチールとシアン」",
+      "seedId": "s-208",
+      "colors": {
+        "primary": "#2A3B4D",
+        "secondary": "#D8E0E7",
+        "accent": "#00A6C8",
+        "background": "#F5F8FA",
+        "text": "#1C242D"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "クール#4",
+      "word": "クール",
+      "index": 4,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「スレート」",
+      "seedId": "s-158",
+      "colors": {
+        "primary": "#3D4852",
+        "secondary": "#D9DEE2",
+        "accent": "#B3563E",
+        "background": "#F5F6F7",
+        "text": "#1F252B"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "クール#5",
+      "word": "クール",
+      "index": 5,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "mono"
+      },
+      "label": "寒色・緑系 × 「氷とシルバー」",
+      "seedId": "s-263",
+      "colors": {
+        "primary": "#3B5266",
+        "secondary": "#E0E5E9",
+        "accent": "#5FB3D9",
+        "background": "#FCFDFE",
+        "text": "#1D2630"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "クール#6",
+      "word": "クール",
+      "index": 6,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "split"
+      },
+      "label": "寒色・緑系 × 「マリン」",
+      "seedId": "s-248",
+      "colors": {
+        "primary": "#1A4F8B",
+        "secondary": "#D8E5EF",
+        "accent": "#E5484D",
+        "background": "#FAFCFE",
+        "text": "#18233A"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "クール#7",
+      "word": "クール",
+      "index": 7,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "mono"
+      },
+      "label": "寒色・緑系 × 「ディープブルー」",
+      "seedId": "s-209",
+      "colors": {
+        "primary": "#0D2B52",
+        "secondary": "#D7E0EC",
+        "accent": "#4DA3FF",
+        "background": "#F6F8FC",
+        "text": "#16203A"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "クール#8",
+      "word": "クール",
+      "index": 8,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「宇宙」",
+      "seedId": "s-326",
+      "colors": {
+        "primary": "#7CE7FF",
+        "secondary": "#1C2440",
+        "accent": "#B57BFF",
+        "background": "#0B1020",
+        "text": "#E6ECFF"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "クール#9",
+      "word": "クール",
+      "index": 9,
+      "cell": {
+        "temp": "neutral",
+        "sat": "muted",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「黒地に白と灰」",
+      "seedId": "s-041",
+      "colors": {
+        "primary": "#F4F4F4",
+        "secondary": "#2E2E30",
+        "accent": "#9A9AA0",
+        "background": "#151516",
+        "text": "#EDEDED"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "クール#10",
+      "word": "クール",
+      "index": 10,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "analogous"
+      },
+      "label": "寒色・緑系 × 「ミントブルー」",
+      "seedId": "s-210",
+      "colors": {
+        "primary": "#00707A",
+        "secondary": "#CCE8E6",
+        "accent": "#3E7BD6",
+        "background": "#F5FCFC",
+        "text": "#122A2B"
+      },
+      "rating": "meh"
+    },
+    {
+      "key": "クール#11",
+      "word": "クール",
+      "index": 11,
+      "cell": {
+        "temp": "neutral",
+        "sat": "mid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「夜のブルー」",
+      "seedId": "s-163",
+      "colors": {
+        "primary": "#E3E7EE",
+        "secondary": "#2A3346",
+        "accent": "#C39A5A",
+        "background": "#161B26",
+        "text": "#E8ECF2"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "かっこいい#0",
+      "word": "かっこいい",
+      "index": 0,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「レコードジャケット」",
+      "seedId": "s-289",
+      "colors": {
+        "primary": "#F1E6CF",
+        "secondary": "#3A2F2A",
+        "accent": "#E07A2E",
+        "background": "#221C19",
+        "text": "#F2EADB"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "かっこいい#1",
+      "word": "かっこいい",
+      "index": 1,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「ネイビー地にライム」",
+      "seedId": "s-221",
+      "colors": {
+        "primary": "#E8EEF7",
+        "secondary": "#24324D",
+        "accent": "#B6E51F",
+        "background": "#141C2C",
+        "text": "#EDF1F7"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "かっこいい#2",
+      "word": "かっこいい",
+      "index": 2,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「ミリタリー」",
+      "seedId": "s-222",
+      "colors": {
+        "primary": "#3E4A2E",
+        "secondary": "#DADCD0",
+        "accent": "#C26A2B",
+        "background": "#F4F4EF",
+        "text": "#22261C"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "かっこいい#3",
+      "word": "かっこいい",
+      "index": 3,
+      "cell": {
+        "temp": "neutral",
+        "sat": "mid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「夜の海」",
+      "seedId": "s-211",
+      "colors": {
+        "primary": "#DDE8F2",
+        "secondary": "#1D2C40",
+        "accent": "#38B6D9",
+        "background": "#0F1826",
+        "text": "#E3ECF5"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "かっこいい#4",
+      "word": "かっこいい",
+      "index": 4,
+      "cell": {
+        "temp": "neutral",
+        "sat": "muted",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「チャコールと鋼」",
+      "seedId": "s-030",
+      "colors": {
+        "primary": "#2B2D31",
+        "secondary": "#DADBDD",
+        "accent": "#4A6378",
+        "background": "#F3F3F2",
+        "text": "#1E1F22"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "かっこいい#5",
+      "word": "かっこいい",
+      "index": 5,
+      "cell": {
+        "temp": "neutral",
+        "sat": "muted",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「黒地に白」",
+      "seedId": "s-320",
+      "colors": {
+        "primary": "#F2F2F2",
+        "secondary": "#2A2A2A",
+        "accent": "#8C8C8C",
+        "background": "#111111",
+        "text": "#EDEDED"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "かっこいい#6",
+      "word": "かっこいい",
+      "index": 6,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「蛍光イエローと黒」",
+      "seedId": "s-338",
+      "colors": {
+        "primary": "#E6FF2E",
+        "secondary": "#262626",
+        "accent": "#FF4D8D",
+        "background": "#111111",
+        "text": "#F2F2F2"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "かっこいい#7",
+      "word": "かっこいい",
+      "index": 7,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "mono"
+      },
+      "label": "寒色・緑系 × 「ディープブルー」",
+      "seedId": "s-209",
+      "colors": {
+        "primary": "#0D2B52",
+        "secondary": "#D7E0EC",
+        "accent": "#4DA3FF",
+        "background": "#F6F8FC",
+        "text": "#16203A"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "かっこいい#8",
+      "word": "かっこいい",
+      "index": 8,
+      "cell": {
+        "temp": "warm",
+        "sat": "muted",
+        "harm": "triad"
+      },
+      "label": "暖色系 × 「夜会」",
+      "seedId": "s-304",
+      "colors": {
+        "primary": "#F2C6D6",
+        "secondary": "#3A2440",
+        "accent": "#D9B15C",
+        "background": "#1E1422",
+        "text": "#F5ECF2"
+      },
+      "rating": "meh"
+    },
+    {
+      "key": "かっこいい#9",
+      "word": "かっこいい",
+      "index": 9,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "mono"
+      },
+      "label": "暖色系 × 「黒と黄色」",
+      "seedId": "s-218",
+      "colors": {
+        "primary": "#FFD21F",
+        "secondary": "#2B2B2B",
+        "accent": "#E8E8E8",
+        "background": "#121212",
+        "text": "#F0F0F0"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "かっこいい#10",
+      "word": "かっこいい",
+      "index": 10,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "label": "暖色系 × 「黒地に黄と赤」",
+      "seedId": "s-239",
+      "colors": {
+        "primary": "#FFD000",
+        "secondary": "#2E2E2E",
+        "accent": "#FF3B30",
+        "background": "#111111",
+        "text": "#F2F2F2"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "かっこいい#11",
+      "word": "かっこいい",
+      "index": 11,
+      "cell": {
+        "temp": "neutral",
+        "sat": "mid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「オリーブブラック」",
+      "seedId": "s-160",
+      "colors": {
+        "primary": "#2E3326",
+        "secondary": "#DCDDD3",
+        "accent": "#A65A3A",
+        "background": "#F5F5F1",
+        "text": "#22251E"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "モダン#0",
+      "word": "モダン",
+      "index": 0,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「ダークネイビーとミント」",
+      "seedId": "s-228",
+      "colors": {
+        "primary": "#14213D",
+        "secondary": "#D1E7E0",
+        "accent": "#1BBAAD",
+        "background": "#F8FAFB",
+        "text": "#161D2E"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "モダン#1",
+      "word": "モダン",
+      "index": 1,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「メタリック」",
+      "seedId": "s-330",
+      "colors": {
+        "primary": "#2B3340",
+        "secondary": "#D7DCE3",
+        "accent": "#00A3FF",
+        "background": "#F2F4F7",
+        "text": "#1C222B"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "モダン#2",
+      "word": "モダン",
+      "index": 2,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "mono"
+      },
+      "label": "寒色・緑系 × 「シルバーとネイビー」",
+      "seedId": "s-212",
+      "colors": {
+        "primary": "#1E2B44",
+        "secondary": "#DADFE6",
+        "accent": "#7A8BA3",
+        "background": "#F4F6F8",
+        "text": "#1A2131"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "モダン#3",
+      "word": "モダン",
+      "index": 3,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「チャコールと青」",
+      "seedId": "s-173",
+      "colors": {
+        "primary": "#2E3338",
+        "secondary": "#DCDEE1",
+        "accent": "#2F6DB5",
+        "background": "#F6F7F8",
+        "text": "#1E2226"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "モダン#4",
+      "word": "モダン",
+      "index": 4,
+      "cell": {
+        "temp": "neutral",
+        "sat": "mid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「ガンメタルとブロンズ」",
+      "seedId": "s-039",
+      "colors": {
+        "primary": "#22262B",
+        "secondary": "#CBCFD5",
+        "accent": "#8E6F3C",
+        "background": "#ECEDEF",
+        "text": "#1B1E22"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "モダン#5",
+      "word": "モダン",
+      "index": 5,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「黒と白の対比」",
+      "seedId": "s-242",
+      "colors": {
+        "primary": "#0A0A0A",
+        "secondary": "#E6E6E6",
+        "accent": "#D7263D",
+        "background": "#FFFFFF",
+        "text": "#0F0F0F"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "モダン#6",
+      "word": "モダン",
+      "index": 6,
+      "cell": {
+        "temp": "neutral",
+        "sat": "muted",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「ストーン」",
+      "seedId": "s-230",
+      "colors": {
+        "primary": "#3F3B37",
+        "secondary": "#E0DCD6",
+        "accent": "#5C7D8A",
+        "background": "#F6F5F3",
+        "text": "#24221F"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "モダン#7",
+      "word": "モダン",
+      "index": 7,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "mono"
+      },
+      "label": "寒色・緑系 × 「ブルーとグレー」",
+      "seedId": "s-234",
+      "colors": {
+        "primary": "#1D4ED8",
+        "secondary": "#DFE1E5",
+        "accent": "#111827",
+        "background": "#F9FAFB",
+        "text": "#111827"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "モダン#8",
+      "word": "モダン",
+      "index": 8,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「墨色とテラコッタ」",
+      "seedId": "s-162",
+      "colors": {
+        "primary": "#2C2C2E",
+        "secondary": "#E4DCD5",
+        "accent": "#B65A3C",
+        "background": "#F7F6F4",
+        "text": "#202022"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "モダン#9",
+      "word": "モダン",
+      "index": 9,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「チャコールとイエロー」",
+      "seedId": "s-229",
+      "colors": {
+        "primary": "#2B2D2F",
+        "secondary": "#EDDFA4",
+        "accent": "#D19C00",
+        "background": "#F7F7F6",
+        "text": "#1F2022"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "モダン#10",
+      "word": "モダン",
+      "index": 10,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "analogous"
+      },
+      "label": "寒色・緑系 × 「スチールブルー」",
+      "seedId": "s-191",
+      "colors": {
+        "primary": "#2C4A6E",
+        "secondary": "#DAE0E7",
+        "accent": "#4FA3C7",
+        "background": "#F6F8FA",
+        "text": "#1B2431"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "モダン#11",
+      "word": "モダン",
+      "index": 11,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「白と黒にブルー」",
+      "seedId": "s-226",
+      "colors": {
+        "primary": "#111111",
+        "secondary": "#E6E6E6",
+        "accent": "#2F6BFF",
+        "background": "#FFFFFF",
+        "text": "#141414"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "力強い#0",
+      "word": "力強い",
+      "index": 0,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "label": "暖色系 × 「ポスターの赤と紺」",
+      "seedId": "s-292",
+      "colors": {
+        "primary": "#B3261E",
+        "secondary": "#E7DBBF",
+        "accent": "#22345C",
+        "background": "#FAF4E6",
+        "text": "#2A1D19"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "力強い#1",
+      "word": "力強い",
+      "index": 1,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "complementary"
+      },
+      "label": "寒色・緑系 × 「紺とオレンジ」",
+      "seedId": "s-236",
+      "colors": {
+        "primary": "#14213D",
+        "secondary": "#F6DDBE",
+        "accent": "#EA9400",
+        "background": "#FBFAF8",
+        "text": "#161C2B"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "力強い#2",
+      "word": "力強い",
+      "index": 2,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "label": "暖色系 × 「炎」",
+      "seedId": "s-237",
+      "colors": {
+        "primary": "#C62E0F",
+        "secondary": "#FADEBD",
+        "accent": "#E39500",
+        "background": "#FFFBF5",
+        "text": "#2B1A14"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "力強い#3",
+      "word": "力強い",
+      "index": 3,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「ガンメタと赤」",
+      "seedId": "s-220",
+      "colors": {
+        "primary": "#2A2D33",
+        "secondary": "#D9DCE1",
+        "accent": "#D62839",
+        "background": "#F2F3F5",
+        "text": "#1E2025"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "力強い#4",
+      "word": "力強い",
+      "index": 4,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「黒と黄の看板色」",
+      "seedId": "s-054",
+      "colors": {
+        "primary": "#1F2937",
+        "secondary": "#FFD43B",
+        "accent": "#F2512E",
+        "background": "#FFFFFF",
+        "text": "#1F2328"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "力強い#5",
+      "word": "力強い",
+      "index": 5,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "mono"
+      },
+      "label": "暖色系 × 「白と赤」",
+      "seedId": "s-315",
+      "colors": {
+        "primary": "#C8102E",
+        "secondary": "#E6E6E6",
+        "accent": "#1A1A1A",
+        "background": "#FFFFFF",
+        "text": "#1A1A1A"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "力強い#6",
+      "word": "力強い",
+      "index": 6,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "mono"
+      },
+      "label": "暖色系 × 「黒とオレンジ」",
+      "seedId": "s-219",
+      "colors": {
+        "primary": "#F26B1D",
+        "secondary": "#2A2A2C",
+        "accent": "#D9D9D9",
+        "background": "#141416",
+        "text": "#EFEFEF"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "力強い#7",
+      "word": "力強い",
+      "index": 7,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "mono"
+      },
+      "label": "暖色系 × 「黒と赤のスポーツ」",
+      "seedId": "s-224",
+      "colors": {
+        "primary": "#E0242F",
+        "secondary": "#2C2C2C",
+        "accent": "#F5F5F5",
+        "background": "#151515",
+        "text": "#F2F2F2"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "力強い#8",
+      "word": "力強い",
+      "index": 8,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「黒と白の対比」",
+      "seedId": "s-242",
+      "colors": {
+        "primary": "#0A0A0A",
+        "secondary": "#E6E6E6",
+        "accent": "#D7263D",
+        "background": "#FFFFFF",
+        "text": "#0F0F0F"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "力強い#9",
+      "word": "力強い",
+      "index": 9,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "mono"
+      },
+      "label": "暖色系 × 「黒と黄色」",
+      "seedId": "s-218",
+      "colors": {
+        "primary": "#FFD21F",
+        "secondary": "#2B2B2B",
+        "accent": "#E8E8E8",
+        "background": "#121212",
+        "text": "#F0F0F0"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "力強い#10",
+      "word": "力強い",
+      "index": 10,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "label": "暖色系 × 「漆の黒と朱」",
+      "seedId": "s-019",
+      "colors": {
+        "primary": "#E04A2C",
+        "secondary": "#3A2B27",
+        "accent": "#C8A04A",
+        "background": "#1E1B1A",
+        "text": "#EEE6DA"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "力強い#11",
+      "word": "力強い",
+      "index": 11,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "暖色系 × 「原色の赤」",
+      "seedId": "s-085",
+      "colors": {
+        "primary": "#D90429",
+        "secondary": "#E2E7E9",
+        "accent": "#2B2D42",
+        "background": "#FFFFFF",
+        "text": "#2B2D42"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "爽やか#0",
+      "word": "爽やか",
+      "index": 0,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "analogous"
+      },
+      "label": "寒色・緑系 × 「ミントとホワイト」",
+      "seedId": "s-244",
+      "colors": {
+        "primary": "#0F7C73",
+        "secondary": "#CFE9E4",
+        "accent": "#2D8FD5",
+        "background": "#F7FDFC",
+        "text": "#132926"
+      },
+      "rating": "meh"
+    },
+    {
+      "key": "爽やか#1",
+      "word": "爽やか",
+      "index": 1,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "complementary"
+      },
+      "label": "寒色・緑系 × 「ラムネ」",
+      "seedId": "s-282",
+      "colors": {
+        "primary": "#24708A",
+        "secondary": "#D3E6E6",
+        "accent": "#C9453A",
+        "background": "#F8FBF6",
+        "text": "#172830"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "爽やか#2",
+      "word": "爽やか",
+      "index": 2,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "complementary"
+      },
+      "label": "寒色・緑系 × 「ミントとレモン」",
+      "seedId": "s-132",
+      "colors": {
+        "primary": "#239E86",
+        "secondary": "#EFE6B3",
+        "accent": "#F27E9A",
+        "background": "#F9FFFD",
+        "text": "#18292A"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "爽やか#3",
+      "word": "爽やか",
+      "index": 3,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "label": "寒色・緑系 × 「ソーダ」",
+      "seedId": "s-135",
+      "colors": {
+        "primary": "#1D8FCB",
+        "secondary": "#F7D9E7",
+        "accent": "#E79900",
+        "background": "#F7FCFF",
+        "text": "#1A2733"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "爽やか#4",
+      "word": "爽やか",
+      "index": 4,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「若葉と空」",
+      "seedId": "s-102",
+      "colors": {
+        "primary": "#2F8F5B",
+        "secondary": "#D4E7F4",
+        "accent": "#F08C3A",
+        "background": "#FBFEFA",
+        "text": "#1E2A22"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "爽やか#5",
+      "word": "爽やか",
+      "index": 5,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「水色地に青と黄」",
+      "seedId": "s-056",
+      "colors": {
+        "primary": "#0B5EBF",
+        "secondary": "#F5D870",
+        "accent": "#E8455E",
+        "background": "#E3F5FF",
+        "text": "#13263A"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "爽やか#6",
+      "word": "爽やか",
+      "index": 6,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "split"
+      },
+      "label": "寒色・緑系 × 「ソーダ水」",
+      "seedId": "s-251",
+      "colors": {
+        "primary": "#0A84B5",
+        "secondary": "#CBE9ED",
+        "accent": "#FF7A85",
+        "background": "#F6FDFF",
+        "text": "#14283A"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "爽やか#7",
+      "word": "爽やか",
+      "index": 7,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "label": "寒色・緑系 × 「青りんご」",
+      "seedId": "s-246",
+      "colors": {
+        "primary": "#3E8E1E",
+        "secondary": "#DDEAC5",
+        "accent": "#E89A00",
+        "background": "#FAFEF5",
+        "text": "#1D2A1A"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "爽やか#8",
+      "word": "爽やか",
+      "index": 8,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「朝の森」",
+      "seedId": "s-250",
+      "colors": {
+        "primary": "#2C7A4B",
+        "secondary": "#D5E7DC",
+        "accent": "#4E9BD1",
+        "background": "#F7FCF8",
+        "text": "#18281E"
+      },
+      "rating": "meh"
+    },
+    {
+      "key": "爽やか#9",
+      "word": "爽やか",
+      "index": 9,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "label": "寒色・緑系 × 「エメラルド」",
+      "seedId": "s-087",
+      "colors": {
+        "primary": "#008F5A",
+        "secondary": "#CCEDDE",
+        "accent": "#E0115F",
+        "background": "#F8FFFB",
+        "text": "#14281F"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "爽やか#10",
+      "word": "爽やか",
+      "index": 10,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "label": "寒色・緑系 × 「夏のシャツ」",
+      "seedId": "s-253",
+      "colors": {
+        "primary": "#2364AA",
+        "secondary": "#DEE7F0",
+        "accent": "#3FA79E",
+        "background": "#FFFFFF",
+        "text": "#1A2433"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "爽やか#11",
+      "word": "爽やか",
+      "index": 11,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "label": "暖色系 × 「ミントとピンク」",
+      "seedId": "s-079",
+      "colors": {
+        "primary": "#D6336C",
+        "secondary": "#B9F0DE",
+        "accent": "#12B886",
+        "background": "#FFF9FB",
+        "text": "#2A1E24"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "清潔#0",
+      "word": "清潔",
+      "index": 0,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "analogous"
+      },
+      "label": "寒色・緑系 × 「ブルーグリーン」",
+      "seedId": "s-260",
+      "colors": {
+        "primary": "#00727A",
+        "secondary": "#D3E9E9",
+        "accent": "#4A90D9",
+        "background": "#F9FEFE",
+        "text": "#122A2B"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "清潔#1",
+      "word": "清潔",
+      "index": 1,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "split"
+      },
+      "label": "寒色・緑系 × 「ソーダ水」",
+      "seedId": "s-251",
+      "colors": {
+        "primary": "#0A84B5",
+        "secondary": "#CBE9ED",
+        "accent": "#FF7A85",
+        "background": "#F6FDFF",
+        "text": "#14283A"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "清潔#2",
+      "word": "清潔",
+      "index": 2,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「ペパーミント」",
+      "seedId": "s-252",
+      "colors": {
+        "primary": "#138A72",
+        "secondary": "#D3EAE2",
+        "accent": "#5A7FD6",
+        "background": "#FAFEFC",
+        "text": "#142A24"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "清潔#3",
+      "word": "清潔",
+      "index": 3,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "analogous"
+      },
+      "label": "寒色・緑系 × 「アイスブルー」",
+      "seedId": "s-207",
+      "colors": {
+        "primary": "#1F5F8B",
+        "secondary": "#D3E5EE",
+        "accent": "#22B3C9",
+        "background": "#F7FBFD",
+        "text": "#18262F"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "清潔#4",
+      "word": "清潔",
+      "index": 4,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「ラボ」",
+      "seedId": "s-334",
+      "colors": {
+        "primary": "#3A3FD1",
+        "secondary": "#E0E2F5",
+        "accent": "#06C09F",
+        "background": "#FCFCFF",
+        "text": "#1B1C33"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "清潔#5",
+      "word": "清潔",
+      "index": 5,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "mono"
+      },
+      "label": "寒色・緑系 × 「雲とスカイ」",
+      "seedId": "s-262",
+      "colors": {
+        "primary": "#3A7EC1",
+        "secondary": "#DDE8F1",
+        "accent": "#5DA5DA",
+        "background": "#FFFFFF",
+        "text": "#1B2734"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "清潔#6",
+      "word": "清潔",
+      "index": 6,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「白い宇宙船」",
+      "seedId": "s-332",
+      "colors": {
+        "primary": "#1E2A3A",
+        "secondary": "#E2E7EC",
+        "accent": "#00B3D6",
+        "background": "#FFFFFF",
+        "text": "#1A2330"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "清潔#7",
+      "word": "清潔",
+      "index": 7,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "mono"
+      },
+      "label": "寒色・緑系 × 「白磁」",
+      "seedId": "s-261",
+      "colors": {
+        "primary": "#2D4F7C",
+        "secondary": "#E0E5EA",
+        "accent": "#6B8FB8",
+        "background": "#FDFDFB",
+        "text": "#1C2431"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "清潔#8",
+      "word": "清潔",
+      "index": 8,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "mono"
+      },
+      "label": "寒色・緑系 × 「氷河」",
+      "seedId": "s-213",
+      "colors": {
+        "primary": "#2E6E8E",
+        "secondary": "#DAE7EC",
+        "accent": "#8AA6C1",
+        "background": "#FBFEFF",
+        "text": "#1A2A33"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "清潔#9",
+      "word": "清潔",
+      "index": 9,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「空と雲」",
+      "seedId": "s-193",
+      "colors": {
+        "primary": "#2A6FB0",
+        "secondary": "#DFE7EF",
+        "accent": "#5FA85F",
+        "background": "#FFFFFF",
+        "text": "#1B2633"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "清潔#10",
+      "word": "清潔",
+      "index": 10,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「白と一点の青」",
+      "seedId": "s-322",
+      "colors": {
+        "primary": "#1A1A1A",
+        "secondary": "#E4E6E9",
+        "accent": "#1F6FEB",
+        "background": "#FFFFFF",
+        "text": "#1A1A1A"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "清潔#11",
+      "word": "清潔",
+      "index": 11,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "mono"
+      },
+      "label": "寒色・緑系 × 「青と白」",
+      "seedId": "s-311",
+      "colors": {
+        "primary": "#1E5AA8",
+        "secondary": "#DFE7F0",
+        "accent": "#2B8FD6",
+        "background": "#FFFFFF",
+        "text": "#1A2433"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "あたたかい#0",
+      "word": "あたたかい",
+      "index": 0,
+      "cell": {
+        "temp": "warm",
+        "sat": "muted",
+        "harm": "mono"
+      },
+      "label": "暖色系 × 「ココア」",
+      "seedId": "s-273",
+      "colors": {
+        "primary": "#5E3A2B",
+        "secondary": "#EADCCF",
+        "accent": "#C9763F",
+        "background": "#F9F4EF",
+        "text": "#28201B"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "あたたかい#1",
+      "word": "あたたかい",
+      "index": 1,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "analogous"
+      },
+      "label": "暖色系 × 「マスタード」",
+      "seedId": "s-265",
+      "colors": {
+        "primary": "#8A6412",
+        "secondary": "#F2E3B4",
+        "accent": "#C0452B",
+        "background": "#FFFCF2",
+        "text": "#2B2414"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "あたたかい#2",
+      "word": "あたたかい",
+      "index": 2,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "暖色系 × 「夕焼け」",
+      "seedId": "s-266",
+      "colors": {
+        "primary": "#D2491E",
+        "secondary": "#FADBBD",
+        "accent": "#7A3FA0",
+        "background": "#FFF9F4",
+        "text": "#2C1E16"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "あたたかい#3",
+      "word": "あたたかい",
+      "index": 3,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "split"
+      },
+      "label": "暖色系 × 「紅茶」",
+      "seedId": "s-154",
+      "colors": {
+        "primary": "#7D3F2F",
+        "secondary": "#E9DBD0",
+        "accent": "#5F7F6E",
+        "background": "#FAF6F3",
+        "text": "#2A1F1C"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "あたたかい#4",
+      "word": "あたたかい",
+      "index": 4,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "暖色系 × 「オレンジとクリーム」",
+      "seedId": "s-101",
+      "colors": {
+        "primary": "#C2561A",
+        "secondary": "#F1E0C8",
+        "accent": "#2E8B57",
+        "background": "#FFFBF5",
+        "text": "#2B2118"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "あたたかい#5",
+      "word": "あたたかい",
+      "index": 5,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "label": "暖色系 × 「夕暮れの町」",
+      "seedId": "s-281",
+      "colors": {
+        "primary": "#A0482D",
+        "secondary": "#EEDAC2",
+        "accent": "#4B5F7A",
+        "background": "#FBF5EC",
+        "text": "#2B201A"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "あたたかい#6",
+      "word": "あたたかい",
+      "index": 6,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "label": "暖色系 × 「陽だまりの黄」",
+      "seedId": "s-274",
+      "colors": {
+        "primary": "#B8641C",
+        "secondary": "#F1E2BC",
+        "accent": "#D9566A",
+        "background": "#FFFCF4",
+        "text": "#2B2216"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "あたたかい#7",
+      "word": "あたたかい",
+      "index": 7,
+      "cell": {
+        "temp": "neutral",
+        "sat": "muted",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「モカ」",
+      "seedId": "s-161",
+      "colors": {
+        "primary": "#4E3B31",
+        "secondary": "#E4DAD2",
+        "accent": "#7A8C8C",
+        "background": "#F7F4F1",
+        "text": "#27201C"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "あたたかい#8",
+      "word": "あたたかい",
+      "index": 8,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "label": "暖色系 × 「あんず」",
+      "seedId": "s-126",
+      "colors": {
+        "primary": "#D0703A",
+        "secondary": "#F8E2CF",
+        "accent": "#5FA3C2",
+        "background": "#FFFFFF",
+        "text": "#2C211A"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "あたたかい#9",
+      "word": "あたたかい",
+      "index": 9,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "label": "暖色系 × 「炎」",
+      "seedId": "s-237",
+      "colors": {
+        "primary": "#C62E0F",
+        "secondary": "#FADEBD",
+        "accent": "#E39500",
+        "background": "#FFFBF5",
+        "text": "#2B1A14"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "あたたかい#10",
+      "word": "あたたかい",
+      "index": 10,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "triad"
+      },
+      "label": "暖色系 × 「ひだまり」",
+      "seedId": "s-115",
+      "colors": {
+        "primary": "#B66A3E",
+        "secondary": "#F1E1CB",
+        "accent": "#7FA66A",
+        "background": "#FFFCF7",
+        "text": "#2C231C"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "あたたかい#11",
+      "word": "あたたかい",
+      "index": 11,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "analogous"
+      },
+      "label": "暖色系 × 「キャンドル」",
+      "seedId": "s-272",
+      "colors": {
+        "primary": "#7A4A2E",
+        "secondary": "#EDE1CF",
+        "accent": "#D6922F",
+        "background": "#FFFBF4",
+        "text": "#2A2018"
+      }
+    },
+    {
+      "key": "懐かしい#0",
+      "word": "懐かしい",
+      "index": 0,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "split"
+      },
+      "label": "寒色・緑系 × 「喫茶店の緑」",
+      "seedId": "s-295",
+      "colors": {
+        "primary": "#2F5A44",
+        "secondary": "#E7DBC2",
+        "accent": "#B5433A",
+        "background": "#FAF5E8",
+        "text": "#1F2823"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "懐かしい#1",
+      "word": "懐かしい",
+      "index": 1,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "complementary"
+      },
+      "label": "寒色・緑系 × 「古い写真の青」",
+      "seedId": "s-278",
+      "colors": {
+        "primary": "#43667A",
+        "secondary": "#DFDDD1",
+        "accent": "#B5704A",
+        "background": "#F8F5EC",
+        "text": "#1F2830"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "懐かしい#2",
+      "word": "懐かしい",
+      "index": 2,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "label": "暖色系 × 「ランドセル」",
+      "seedId": "s-279",
+      "colors": {
+        "primary": "#9B2335",
+        "secondary": "#E7DCCC",
+        "accent": "#2D4A6B",
+        "background": "#FAF6EF",
+        "text": "#2A1D20"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "懐かしい#3",
+      "word": "懐かしい",
+      "index": 3,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "暖色系 × 「こたつとみかん」",
+      "seedId": "s-271",
+      "colors": {
+        "primary": "#C65A1E",
+        "secondary": "#ECDEC8",
+        "accent": "#5E7B3A",
+        "background": "#FDF8EF",
+        "text": "#2B2117"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "懐かしい#4",
+      "word": "懐かしい",
+      "index": 4,
+      "cell": {
+        "temp": "neutral",
+        "sat": "mid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「黄土と藍鉄」",
+      "seedId": "s-024",
+      "colors": {
+        "primary": "#393F4C",
+        "secondary": "#EEDDB8",
+        "accent": "#B8862F",
+        "background": "#FBF6EA",
+        "text": "#24262C"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "懐かしい#5",
+      "word": "懐かしい",
+      "index": 5,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "analogous"
+      },
+      "label": "暖色系 × 「焼きたてのパン」",
+      "seedId": "s-267",
+      "colors": {
+        "primary": "#9A5B2A",
+        "secondary": "#F0DFC7",
+        "accent": "#C7402E",
+        "background": "#FFFAF2",
+        "text": "#2B2017"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "懐かしい#6",
+      "word": "懐かしい",
+      "index": 6,
+      "cell": {
+        "temp": "warm",
+        "sat": "muted",
+        "harm": "analogous"
+      },
+      "label": "暖色系 × 「セピア」",
+      "seedId": "s-275",
+      "colors": {
+        "primary": "#6B4A31",
+        "secondary": "#E4D9C5",
+        "accent": "#9C3D2E",
+        "background": "#F8F2E6",
+        "text": "#2A2219"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "懐かしい#7",
+      "word": "懐かしい",
+      "index": 7,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「黒板」",
+      "seedId": "s-174",
+      "colors": {
+        "primary": "#2F4A3A",
+        "secondary": "#DDE2DB",
+        "accent": "#D19A2E",
+        "background": "#F8F9F6",
+        "text": "#1E2620"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "懐かしい#8",
+      "word": "懐かしい",
+      "index": 8,
+      "cell": {
+        "temp": "warm",
+        "sat": "muted",
+        "harm": "mono"
+      },
+      "label": "暖色系 × 「焦茶と抹茶」",
+      "seedId": "s-009",
+      "colors": {
+        "primary": "#5B3A29",
+        "secondary": "#DCDCAE",
+        "accent": "#C9602D",
+        "background": "#FAF6EC",
+        "text": "#2A211B"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "懐かしい#9",
+      "word": "懐かしい",
+      "index": 9,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "complementary"
+      },
+      "label": "暖色系 × 「昭和の喫茶」",
+      "seedId": "s-276",
+      "colors": {
+        "primary": "#7A2E2A",
+        "secondary": "#E8D9BD",
+        "accent": "#2F6B5E",
+        "background": "#FAF3E4",
+        "text": "#2A1E1B"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "懐かしい#10",
+      "word": "懐かしい",
+      "index": 10,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "triad"
+      },
+      "label": "暖色系 × 「大地」",
+      "seedId": "s-145",
+      "colors": {
+        "primary": "#7A5230",
+        "secondary": "#E8DCC8",
+        "accent": "#4C7A5A",
+        "background": "#FAF6EF",
+        "text": "#2A2119"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "懐かしい#11",
+      "word": "懐かしい",
+      "index": 11,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "label": "暖色系 × 「駄菓子屋」",
+      "seedId": "s-277",
+      "colors": {
+        "primary": "#C23B32",
+        "secondary": "#F2E0AF",
+        "accent": "#2A7FA8",
+        "background": "#FFFAEC",
+        "text": "#2B1F1A"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "レトロ#0",
+      "word": "レトロ",
+      "index": 0,
+      "cell": {
+        "temp": "warm",
+        "sat": "muted",
+        "harm": "split"
+      },
+      "label": "暖色系 × 「チョコミント」",
+      "seedId": "s-291",
+      "colors": {
+        "primary": "#5A3A2B",
+        "secondary": "#CEE7DB",
+        "accent": "#38A889",
+        "background": "#FBF8F4",
+        "text": "#29201B"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "レトロ#1",
+      "word": "レトロ",
+      "index": 1,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "label": "暖色系 × 「ポスターの赤と紺」",
+      "seedId": "s-292",
+      "colors": {
+        "primary": "#B3261E",
+        "secondary": "#E7DBBF",
+        "accent": "#22345C",
+        "background": "#FAF4E6",
+        "text": "#2A1D19"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "レトロ#2",
+      "word": "レトロ",
+      "index": 2,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "analogous"
+      },
+      "label": "暖色系 × 「からしとオリーブ」",
+      "seedId": "s-287",
+      "colors": {
+        "primary": "#6B6A1E",
+        "secondary": "#EBDEAE",
+        "accent": "#B4502C",
+        "background": "#FBF7E8",
+        "text": "#26261A"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "レトロ#3",
+      "word": "レトロ",
+      "index": 3,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "label": "暖色系 × 「ダイナー」",
+      "seedId": "s-286",
+      "colors": {
+        "primary": "#C8283B",
+        "secondary": "#CFE9E5",
+        "accent": "#1E8C84",
+        "background": "#FFFBF5",
+        "text": "#2A1D20"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "レトロ#4",
+      "word": "レトロ",
+      "index": 4,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "complementary"
+      },
+      "label": "寒色・緑系 × 「ビンテージブルー」",
+      "seedId": "s-288",
+      "colors": {
+        "primary": "#2F5D7C",
+        "secondary": "#E6DCC7",
+        "accent": "#D07A2E",
+        "background": "#FAF6EA",
+        "text": "#1D2833"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "レトロ#5",
+      "word": "レトロ",
+      "index": 5,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "label": "暖色系 × 「70年代」",
+      "seedId": "s-285",
+      "colors": {
+        "primary": "#B5541B",
+        "secondary": "#EDDAAE",
+        "accent": "#2E7A72",
+        "background": "#FBF4E2",
+        "text": "#2C2117"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "レトロ#6",
+      "word": "レトロ",
+      "index": 6,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "complementary"
+      },
+      "label": "寒色・緑系 × 「ブリキのおもちゃ」",
+      "seedId": "s-280",
+      "colors": {
+        "primary": "#2D6E8E",
+        "secondary": "#ECDDB6",
+        "accent": "#D9452B",
+        "background": "#FBF6EA",
+        "text": "#1D2830"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "レトロ#7",
+      "word": "レトロ",
+      "index": 7,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「レコードジャケット」",
+      "seedId": "s-289",
+      "colors": {
+        "primary": "#F1E6CF",
+        "secondary": "#3A2F2A",
+        "accent": "#E07A2E",
+        "background": "#221C19",
+        "text": "#F2EADB"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "レトロ#8",
+      "word": "レトロ",
+      "index": 8,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "label": "暖色系 × 「駄菓子屋」",
+      "seedId": "s-277",
+      "colors": {
+        "primary": "#C23B32",
+        "secondary": "#F2E0AF",
+        "accent": "#2A7FA8",
+        "background": "#FFFAEC",
+        "text": "#2B1F1A"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "レトロ#9",
+      "word": "レトロ",
+      "index": 9,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "analogous"
+      },
+      "label": "暖色系 × 「れんが」",
+      "seedId": "s-269",
+      "colors": {
+        "primary": "#8E3B2A",
+        "secondary": "#EBD9CD",
+        "accent": "#C99A3E",
+        "background": "#FAF5F0",
+        "text": "#2A1D19"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "レトロ#10",
+      "word": "レトロ",
+      "index": 10,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "split"
+      },
+      "label": "寒色・緑系 × 「ターコイズとオレンジ」",
+      "seedId": "s-290",
+      "colors": {
+        "primary": "#0F7C7A",
+        "secondary": "#F5DBB9",
+        "accent": "#E8732A",
+        "background": "#FBF8F0",
+        "text": "#142928"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "レトロ#11",
+      "word": "レトロ",
+      "index": 11,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "split"
+      },
+      "label": "暖色系 × 「くすみピンクと茶」",
+      "seedId": "s-294",
+      "colors": {
+        "primary": "#9C4A55",
+        "secondary": "#EFD8D2",
+        "accent": "#6B8F71",
+        "background": "#FBF5F0",
+        "text": "#2B2022"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "華やか#0",
+      "word": "華やか",
+      "index": 0,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "split"
+      },
+      "label": "寒色・緑系 × 「オーロラ」",
+      "seedId": "s-331",
+      "colors": {
+        "primary": "#B4F8E8",
+        "secondary": "#1F2A44",
+        "accent": "#C69CFF",
+        "background": "#0E1528",
+        "text": "#EAF2FF"
+      }
+    },
+    {
+      "key": "華やか#1",
+      "word": "華やか",
+      "index": 1,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "label": "暖色系 × 「コーラルとターコイズ」",
+      "seedId": "s-298",
+      "colors": {
+        "primary": "#D9474B",
+        "secondary": "#CFE9E6",
+        "accent": "#14918C",
+        "background": "#FFFAF8",
+        "text": "#2B1E1F"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "華やか#2",
+      "word": "華やか",
+      "index": 2,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "split"
+      },
+      "label": "寒色・緑系 × 「孔雀」",
+      "seedId": "s-299",
+      "colors": {
+        "primary": "#0B5C6B",
+        "secondary": "#D7E5E3",
+        "accent": "#C2307A",
+        "background": "#F7FBFB",
+        "text": "#142729"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "華やか#3",
+      "word": "華やか",
+      "index": 3,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "mono"
+      },
+      "label": "暖色系 × 「パールピンク」",
+      "seedId": "s-170",
+      "colors": {
+        "primary": "#A4506E",
+        "secondary": "#EEDFE5",
+        "accent": "#8E9AAF",
+        "background": "#FFFBFC",
+        "text": "#2C2026"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "華やか#4",
+      "word": "華やか",
+      "index": 4,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "label": "暖色系 × 「ピンク地に赤と緑」",
+      "seedId": "s-057",
+      "colors": {
+        "primary": "#C81C5C",
+        "secondary": "#FFC4D6",
+        "accent": "#1E8A4C",
+        "background": "#FFEAF1",
+        "text": "#2E1A22"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "華やか#5",
+      "word": "華やか",
+      "index": 5,
+      "cell": {
+        "temp": "warm",
+        "sat": "muted",
+        "harm": "mono"
+      },
+      "label": "暖色系 × 「シャンパンゴールド」",
+      "seedId": "s-165",
+      "colors": {
+        "primary": "#6B5A3E",
+        "secondary": "#E9E1D4",
+        "accent": "#B4884A",
+        "background": "#FDFBF7",
+        "text": "#2A251D"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "華やか#6",
+      "word": "華やか",
+      "index": 6,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "label": "暖色系 × 「深紅と金」",
+      "seedId": "s-238",
+      "colors": {
+        "primary": "#8B0F1E",
+        "secondary": "#EADCCD",
+        "accent": "#C49A3A",
+        "background": "#FBF7F2",
+        "text": "#2A1A1A"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "華やか#7",
+      "word": "華やか",
+      "index": 7,
+      "cell": {
+        "temp": "warm",
+        "sat": "muted",
+        "harm": "triad"
+      },
+      "label": "暖色系 × 「夜会」",
+      "seedId": "s-304",
+      "colors": {
+        "primary": "#F2C6D6",
+        "secondary": "#3A2440",
+        "accent": "#D9B15C",
+        "background": "#1E1422",
+        "text": "#F5ECF2"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "華やか#8",
+      "word": "華やか",
+      "index": 8,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "暖色系 × 「マカロン」",
+      "seedId": "s-136",
+      "colors": {
+        "primary": "#C45A8E",
+        "secondary": "#D7E8DF",
+        "accent": "#DE9A31",
+        "background": "#FFFAFC",
+        "text": "#2D2028"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "華やか#9",
+      "word": "華やか",
+      "index": 9,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "暖色系 × 「ブーケ」",
+      "seedId": "s-095",
+      "colors": {
+        "primary": "#DB2777",
+        "secondary": "#D1F195",
+        "accent": "#2563EB",
+        "background": "#FFFAFC",
+        "text": "#2A1D25"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "華やか#10",
+      "word": "華やか",
+      "index": 10,
+      "cell": {
+        "temp": "neutral",
+        "sat": "mid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「ボルドー地にシャンパン」",
+      "seedId": "s-036",
+      "colors": {
+        "primary": "#F2E6E0",
+        "secondary": "#4E2230",
+        "accent": "#D4AF6A",
+        "background": "#2A0F17",
+        "text": "#F2E9E5"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "華やか#11",
+      "word": "華やか",
+      "index": 11,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "暖色系 × 「ローズと金」",
+      "seedId": "s-296",
+      "colors": {
+        "primary": "#A8234F",
+        "secondary": "#F2DCE2",
+        "accent": "#C49A45",
+        "background": "#FFFAFB",
+        "text": "#2D1C22"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "シンプル#0",
+      "word": "シンプル",
+      "index": 0,
+      "cell": {
+        "temp": "neutral",
+        "sat": "mid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「紙とインク」",
+      "seedId": "s-323",
+      "colors": {
+        "primary": "#23262B",
+        "secondary": "#E3E1DB",
+        "accent": "#3C5A80",
+        "background": "#FBFAF7",
+        "text": "#1F2226"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "シンプル#1",
+      "word": "シンプル",
+      "index": 1,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「白とオレンジ」",
+      "seedId": "s-309",
+      "colors": {
+        "primary": "#2A2A2A",
+        "secondary": "#E6E6E6",
+        "accent": "#E8641E",
+        "background": "#FFFFFF",
+        "text": "#1E1E1E"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "シンプル#2",
+      "word": "シンプル",
+      "index": 2,
+      "cell": {
+        "temp": "neutral",
+        "sat": "mid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「ベージュと黒」",
+      "seedId": "s-310",
+      "colors": {
+        "primary": "#1E1D1B",
+        "secondary": "#E4DFD7",
+        "accent": "#8A6A4A",
+        "background": "#FAF8F5",
+        "text": "#1E1D1B"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "シンプル#3",
+      "word": "シンプル",
+      "index": 3,
+      "cell": {
+        "temp": "neutral",
+        "sat": "mid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「ホワイトとグレー」",
+      "seedId": "s-256",
+      "colors": {
+        "primary": "#3A4148",
+        "secondary": "#E4E7E9",
+        "accent": "#3C8DBC",
+        "background": "#FFFFFF",
+        "text": "#1E2328"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "シンプル#4",
+      "word": "シンプル",
+      "index": 4,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "split"
+      },
+      "label": "寒色・緑系 × 「ノートの罫線」",
+      "seedId": "s-175",
+      "colors": {
+        "primary": "#2D4E8A",
+        "secondary": "#E0E7F2",
+        "accent": "#C0392B",
+        "background": "#FFFFFF",
+        "text": "#1F2633"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "シンプル#5",
+      "word": "シンプル",
+      "index": 5,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "analogous"
+      },
+      "label": "寒色・緑系 × 「白と水色」",
+      "seedId": "s-254",
+      "colors": {
+        "primary": "#2770A8",
+        "secondary": "#DBE8F1",
+        "accent": "#36B3C7",
+        "background": "#FFFFFF",
+        "text": "#1A2733"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "シンプル#6",
+      "word": "シンプル",
+      "index": 6,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「白い宇宙船」",
+      "seedId": "s-332",
+      "colors": {
+        "primary": "#1E2A3A",
+        "secondary": "#E2E7EC",
+        "accent": "#00B3D6",
+        "background": "#FFFFFF",
+        "text": "#1A2330"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "シンプル#7",
+      "word": "シンプル",
+      "index": 7,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "mono"
+      },
+      "label": "暖色系 × 「白と赤」",
+      "seedId": "s-315",
+      "colors": {
+        "primary": "#C8102E",
+        "secondary": "#E6E6E6",
+        "accent": "#1A1A1A",
+        "background": "#FFFFFF",
+        "text": "#1A1A1A"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "シンプル#8",
+      "word": "シンプル",
+      "index": 8,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「黒と白の対比」",
+      "seedId": "s-242",
+      "colors": {
+        "primary": "#0A0A0A",
+        "secondary": "#E6E6E6",
+        "accent": "#D7263D",
+        "background": "#FFFFFF",
+        "text": "#0F0F0F"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "シンプル#9",
+      "word": "シンプル",
+      "index": 9,
+      "cell": {
+        "temp": "neutral",
+        "sat": "muted",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「黒・白・グレー」",
+      "seedId": "s-033",
+      "colors": {
+        "primary": "#0F0F10",
+        "secondary": "#D6D6D4",
+        "accent": "#5A5A5C",
+        "background": "#FBFBFA",
+        "text": "#1A1A1A"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "シンプル#10",
+      "word": "シンプル",
+      "index": 10,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「白と黒にブルー」",
+      "seedId": "s-226",
+      "colors": {
+        "primary": "#111111",
+        "secondary": "#E6E6E6",
+        "accent": "#2F6BFF",
+        "background": "#FFFFFF",
+        "text": "#141414"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "シンプル#11",
+      "word": "シンプル",
+      "index": 11,
+      "cell": {
+        "temp": "neutral",
+        "sat": "mid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「グラファイト」",
+      "seedId": "s-202",
+      "colors": {
+        "primary": "#2F3338",
+        "secondary": "#DDDFE1",
+        "accent": "#4C7FB5",
+        "background": "#F7F8F8",
+        "text": "#1E2125"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "ミニマル#0",
+      "word": "ミニマル",
+      "index": 0,
+      "cell": {
+        "temp": "neutral",
+        "sat": "mid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「石と苔」",
+      "seedId": "s-325",
+      "colors": {
+        "primary": "#3D403A",
+        "secondary": "#DDDFD9",
+        "accent": "#6F8A5A",
+        "background": "#F7F7F4",
+        "text": "#22241F"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "ミニマル#1",
+      "word": "ミニマル",
+      "index": 1,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「白と一点の赤」",
+      "seedId": "s-321",
+      "colors": {
+        "primary": "#1A1A1A",
+        "secondary": "#E6E6E6",
+        "accent": "#D0021B",
+        "background": "#FFFFFF",
+        "text": "#1A1A1A"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "ミニマル#2",
+      "word": "ミニマル",
+      "index": 2,
+      "cell": {
+        "temp": "neutral",
+        "sat": "mid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「ホワイトとグレー」",
+      "seedId": "s-256",
+      "colors": {
+        "primary": "#3A4148",
+        "secondary": "#E4E7E9",
+        "accent": "#3C8DBC",
+        "background": "#FFFFFF",
+        "text": "#1E2328"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "ミニマル#3",
+      "word": "ミニマル",
+      "index": 3,
+      "cell": {
+        "temp": "neutral",
+        "sat": "muted",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「黒地に白」",
+      "seedId": "s-320",
+      "colors": {
+        "primary": "#F2F2F2",
+        "secondary": "#2A2A2A",
+        "accent": "#8C8C8C",
+        "background": "#111111",
+        "text": "#EDEDED"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "ミニマル#4",
+      "word": "ミニマル",
+      "index": 4,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「白と一点の青」",
+      "seedId": "s-322",
+      "colors": {
+        "primary": "#1A1A1A",
+        "secondary": "#E4E6E9",
+        "accent": "#1F6FEB",
+        "background": "#FFFFFF",
+        "text": "#1A1A1A"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "ミニマル#5",
+      "word": "ミニマル",
+      "index": 5,
+      "cell": {
+        "temp": "neutral",
+        "sat": "muted",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「クールグレー」",
+      "seedId": "s-319",
+      "colors": {
+        "primary": "#2F343A",
+        "secondary": "#DDE1E5",
+        "accent": "#6B7785",
+        "background": "#F8F9FA",
+        "text": "#1D2125"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "ミニマル#6",
+      "word": "ミニマル",
+      "index": 6,
+      "cell": {
+        "temp": "neutral",
+        "sat": "muted",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「黒・白・グレー」",
+      "seedId": "s-033",
+      "colors": {
+        "primary": "#0F0F10",
+        "secondary": "#D6D6D4",
+        "accent": "#5A5A5C",
+        "background": "#FBFBFA",
+        "text": "#1A1A1A"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "ミニマル#7",
+      "word": "ミニマル",
+      "index": 7,
+      "cell": {
+        "temp": "neutral",
+        "sat": "mid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「紙とインク」",
+      "seedId": "s-323",
+      "colors": {
+        "primary": "#23262B",
+        "secondary": "#E3E1DB",
+        "accent": "#3C5A80",
+        "background": "#FBFAF7",
+        "text": "#1F2226"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "ミニマル#8",
+      "word": "ミニマル",
+      "index": 8,
+      "cell": {
+        "temp": "neutral",
+        "sat": "muted",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「真っ白と黒」",
+      "seedId": "s-316",
+      "colors": {
+        "primary": "#0E0E0E",
+        "secondary": "#E6E6E6",
+        "accent": "#7A7A7A",
+        "background": "#FFFFFF",
+        "text": "#111111"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "ミニマル#9",
+      "word": "ミニマル",
+      "index": 9,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「ウォームグレー」に「墨と白」の差し色",
+      "seedId": "s-318",
+      "colors": {
+        "primary": "#3B3835",
+        "secondary": "#E6E3DF",
+        "accent": "#C0392B",
+        "background": "#FAF9F7",
+        "text": "#22201E"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "ミニマル#10",
+      "word": "ミニマル",
+      "index": 10,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "split"
+      },
+      "label": "暖色系 × 中間 × 分裂補色",
+      "seedId": null,
+      "colors": {
+        "primary": "#817666",
+        "secondary": "#C7A491",
+        "accent": "#A098F3",
+        "background": "#F9F4EE",
+        "text": "#272017"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "ミニマル#11",
+      "word": "ミニマル",
+      "index": 11,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "label": "暖色系 × 鮮やか × 補色",
+      "seedId": null,
+      "colors": {
+        "primary": "#88718D",
+        "secondary": "#BBA7C8",
+        "accent": "#7FAC53",
+        "background": "#F8EFFA",
+        "text": "#261F28"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "未来的#0",
+      "word": "未来的",
+      "index": 0,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「白い宇宙船」",
+      "seedId": "s-332",
+      "colors": {
+        "primary": "#1E2A3A",
+        "secondary": "#E2E7EC",
+        "accent": "#00B3D6",
+        "background": "#FFFFFF",
+        "text": "#1A2330"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "未来的#1",
+      "word": "未来的",
+      "index": 1,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "暖色系 × 「紫の夜」",
+      "seedId": "s-333",
+      "colors": {
+        "primary": "#C77DFF",
+        "secondary": "#2A1B3D",
+        "accent": "#5EE6FF",
+        "background": "#120A1C",
+        "text": "#F0E6FF"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "未来的#2",
+      "word": "未来的",
+      "index": 2,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「データ」",
+      "seedId": "s-328",
+      "colors": {
+        "primary": "#0B5FFF",
+        "secondary": "#D9E1F4",
+        "accent": "#00BEA5",
+        "background": "#F8FAFF",
+        "text": "#141C33"
+      },
+      "rating": "meh"
+    },
+    {
+      "key": "未来的#3",
+      "word": "未来的",
+      "index": 3,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "analogous"
+      },
+      "label": "寒色・緑系 × 「研究所」",
+      "seedId": "s-200",
+      "colors": {
+        "primary": "#20507A",
+        "secondary": "#DCE5EC",
+        "accent": "#16A2A2",
+        "background": "#FBFDFE",
+        "text": "#1A2531"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "未来的#4",
+      "word": "未来的",
+      "index": 4,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "label": "寒色・緑系 × 「ホログラム」",
+      "seedId": "s-327",
+      "colors": {
+        "primary": "#6A5CFF",
+        "secondary": "#D7E5ED",
+        "accent": "#FF5FD2",
+        "background": "#FBFBFF",
+        "text": "#1C1C33"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "未来的#5",
+      "word": "未来的",
+      "index": 5,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "label": "寒色・緑系 × 「サイバーグリーン」",
+      "seedId": "s-329",
+      "colors": {
+        "primary": "#39FF88",
+        "secondary": "#16261E",
+        "accent": "#00D4FF",
+        "background": "#0A120E",
+        "text": "#E3F5EB"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "未来的#6",
+      "word": "未来的",
+      "index": 6,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「宇宙」",
+      "seedId": "s-326",
+      "colors": {
+        "primary": "#7CE7FF",
+        "secondary": "#1C2440",
+        "accent": "#B57BFF",
+        "background": "#0B1020",
+        "text": "#E6ECFF"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "未来的#7",
+      "word": "未来的",
+      "index": 7,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「黒地にミント」",
+      "seedId": "s-232",
+      "colors": {
+        "primary": "#E9F5F2",
+        "secondary": "#25292B",
+        "accent": "#3DDBB4",
+        "background": "#141617",
+        "text": "#EDF3F1"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "未来的#8",
+      "word": "未来的",
+      "index": 8,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "label": "寒色・緑系 × 「ゲーム」",
+      "seedId": "s-075",
+      "colors": {
+        "primary": "#5F3DC4",
+        "secondary": "#BAEBEF",
+        "accent": "#F08C00",
+        "background": "#F9F8FF",
+        "text": "#211C32"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "未来的#9",
+      "word": "未来的",
+      "index": 9,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「メタリック」",
+      "seedId": "s-330",
+      "colors": {
+        "primary": "#2B3340",
+        "secondary": "#D7DCE3",
+        "accent": "#00A3FF",
+        "background": "#F2F4F7",
+        "text": "#1C222B"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "未来的#10",
+      "word": "未来的",
+      "index": 10,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「カーボン」",
+      "seedId": "s-223",
+      "colors": {
+        "primary": "#ECECEC",
+        "secondary": "#2E3033",
+        "accent": "#00B4D8",
+        "background": "#18191B",
+        "text": "#F0F0F0"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "未来的#11",
+      "word": "未来的",
+      "index": 11,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "split"
+      },
+      "label": "寒色・緑系 × 「オーロラ」",
+      "seedId": "s-331",
+      "colors": {
+        "primary": "#B4F8E8",
+        "secondary": "#1F2A44",
+        "accent": "#C69CFF",
+        "background": "#0E1528",
+        "text": "#EAF2FF"
+      },
+      "rating": "good"
+    }
+  ]
+}

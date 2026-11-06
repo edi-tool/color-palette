@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>配色の一覧（開発用）｜配色提案さん</title>
+<style>
+  /* 評価の組（docs/eval/sets/*.json）を一覧で見る開発用ページ。?file=名前&from=0&n=20 */
+  body { margin: 0; background: #e9e9ec; font-family: system-ui, "Yu Gothic UI", sans-serif; }
+  .grid { display: grid; grid-template-columns: repeat(5, 300px); gap: 10px; padding: 10px; }
+  .c { border-radius: 8px; overflow: hidden; box-shadow: 0 0 0 1px rgba(0,0,0,.15); }
+  .c .tag { font-size: 13px; padding: 3px 8px; background: #fff; color: #111; display: flex; justify-content: space-between; }
+  .p { padding: 10px 12px 0; height: 150px; box-sizing: border-box; }
+  .t { font-weight: 800; font-size: 22px; display: flex; justify-content: space-between; align-items: center; }
+  .d { width: 16px; height: 16px; border-radius: 50%; }
+  .b { font-size: 12px; margin: 6px 0; line-height: 1.5; }
+  .band { margin: 0 -12px; padding: 6px 12px; font-size: 12px; font-weight: 700; }
+  .btn { display: inline-block; margin-top: 6px; padding: 3px 10px; border-radius: 6px; font-size: 12px; font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="grid" id="g"></div>
+<script type="module">
+  const q = new URLSearchParams(location.search);
+  const file = /^[a-z0-9-]+$/.test(q.get('file') ?? '') ? q.get('file') : 'calib';
+  const from = Number(q.get('from')) || 0;
+  const n = Number(q.get('n')) || 20;
+  const set = await (await fetch(`sets/${file}.json`, { cache: 'no-cache' })).json();
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  document.getElementById('g').innerHTML = set.items.slice(from, from + n).map((it, i) => {
+    const c = it.colors;
+    return `<div class="c"><div class="tag"><span>${from + i + 1}. ${esc(it.word)}</span><span>${q.get('names') === '1' ? esc(it.label ?? '') : ''}</span></div>
+      <div class="p" style="background:${c.background};color:${c.text}">
+        <div class="t" style="color:${c.primary}">見出しの例<span class="d" style="background:${c.accent}"></span></div>
+        <div class="b">本文の例です。文字と背景の組み合わせ。</div>
+        <div class="band" style="background:${c.secondary};color:${c.text}">サブの帯・囲み</div>
+        <span class="btn" style="background:${c.accent};color:${c.background}">差し色</span>
+      </div></div>`;
+  }).join('');
+</script>
+</body>
+</html>

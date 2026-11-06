@@ -1,0 +1,1126 @@
+{
+ "schema": "color-palette-eval-set/1",
+ "name": "family-check",
+ "items": [
+  {
+   "key": "やさしいpink0",
+   "word": "やさしい×pink",
+   "index": 0,
+   "label": "暖色系 × 「シャーベット」",
+   "seedId": "s-122",
+   "colors": {
+    "primary": "#D9668A",
+    "secondary": "#D8ECE4",
+    "accent": "#DF9F2D",
+    "background": "#FFFFFF",
+    "text": "#2D1F26"
+   }
+  },
+  {
+   "key": "やさしいpink1",
+   "word": "やさしい×pink",
+   "index": 1,
+   "label": "暖色系 × 「ベビーピンク」",
+   "seedId": "s-131",
+   "colors": {
+    "primary": "#D04F7F",
+    "secondary": "#F2DBE4",
+    "accent": "#5AB4C3",
+    "background": "#FFF9FB",
+    "text": "#2D1F26"
+   }
+  },
+  {
+   "key": "やさしいpink2",
+   "word": "やさしい×pink",
+   "index": 2,
+   "label": "暖色系 × 「桜とミント」",
+   "seedId": "s-113",
+   "colors": {
+    "primary": "#B5577A",
+    "secondary": "#D4E7DF",
+    "accent": "#5FAF8E",
+    "background": "#FFF9FA",
+    "text": "#2C2226"
+   }
+  },
+  {
+   "key": "やさしいpink3",
+   "word": "やさしい×pink",
+   "index": 3,
+   "label": "暖色系 × 「桃とレモン」",
+   "seedId": "s-129",
+   "colors": {
+    "primary": "#DD5C86",
+    "secondary": "#F1E7BA",
+    "accent": "#76BA9F",
+    "background": "#FFFFFF",
+    "text": "#2D1F26"
+   }
+  },
+  {
+   "key": "やさしいpink4",
+   "word": "やさしい×pink",
+   "index": 4,
+   "label": "暖色系 × 「桜吹雪」",
+   "seedId": "s-302",
+   "colors": {
+    "primary": "#B03A5B",
+    "secondary": "#F2DCE2",
+    "accent": "#6E9E4A",
+    "background": "#FFFAFB",
+    "text": "#2D1F24"
+   }
+  },
+  {
+   "key": "やさしいpink5",
+   "word": "やさしい×pink",
+   "index": 5,
+   "label": "暖色系 × 「生成りとこげ茶」のピンク系版",
+   "seedId": "s-312",
+   "colors": {
+    "primary": "#5E2A3D",
+    "secondary": "#E7E1D7",
+    "accent": "#B07A4A",
+    "background": "#FCFAF6",
+    "text": "#2A221C"
+   }
+  },
+  {
+   "key": "やさしいpink6",
+   "word": "やさしい×pink",
+   "index": 6,
+   "label": "暖色系 × 「桜と空」の色調違い",
+   "seedId": "s-520",
+   "colors": {
+    "primary": "#E95D85",
+    "secondary": "#D4E3ED",
+    "accent": "#4BA1DF",
+    "background": "#FFFFFF",
+    "text": "#2D1F26"
+   }
+  },
+  {
+   "key": "やさしいpink7",
+   "word": "やさしい×pink",
+   "index": 7,
+   "label": "暖色系 × 「桜吹雪」に「わたあめ」の差し色",
+   "seedId": "s-302",
+   "colors": {
+    "primary": "#B03A5B",
+    "secondary": "#F2DCE2",
+    "accent": "#6FB0E3",
+    "background": "#FFFAFB",
+    "text": "#2D1F24"
+   }
+  },
+  {
+   "key": "やさしいpink8",
+   "word": "やさしい×pink",
+   "index": 8,
+   "label": "暖色系 × 「ゆめかわ」のピンク系版",
+   "seedId": "s-138",
+   "colors": {
+    "primary": "#D83F8B",
+    "secondary": "#CDE8F4",
+    "accent": "#F15BB5",
+    "background": "#FDFBFF",
+    "text": "#261F33"
+   }
+  },
+  {
+   "key": "やさしいpink9",
+   "word": "やさしい×pink",
+   "index": 9,
+   "label": "暖色系 × 「やさしいのお手本2」のピンク系版",
+   "seedId": "s-531",
+   "colors": {
+    "primary": "#BA6E88",
+    "secondary": "#EEC0CE",
+    "accent": "#D17EBC",
+    "background": "#FDF4FD",
+    "text": "#271E27"
+   }
+  },
+  {
+   "key": "やさしいpink10",
+   "word": "やさしい×pink",
+   "index": 10,
+   "label": "暖色系 × 「夜明けの青」のピンク系版",
+   "seedId": "s-477",
+   "colors": {
+    "primary": "#8F4169",
+    "secondary": "#DCE5F0",
+    "accent": "#8A7FC8",
+    "background": "#FCFDFF",
+    "text": "#1C2634"
+   }
+  },
+  {
+   "key": "やさしいpink11",
+   "word": "やさしい×pink",
+   "index": 11,
+   "label": "暖色系 × 「ミントとレモン水」のピンク系版",
+   "seedId": "s-518",
+   "colors": {
+    "primary": "#A96182",
+    "secondary": "#EFE7BD",
+    "accent": "#ED9777",
+    "background": "#FFFFFF",
+    "text": "#152A25"
+   }
+  },
+  {
+   "key": "やさしいpink12",
+   "word": "やさしい×pink",
+   "index": 12,
+   "label": "暖色系 × 「ミルクティー」のピンク系版",
+   "seedId": "s-106",
+   "colors": {
+    "primary": "#935969",
+    "secondary": "#EEDADF",
+    "accent": "#C9733A",
+    "background": "#FCF8F4",
+    "text": "#2B221C"
+   }
+  },
+  {
+   "key": "やさしいpink13",
+   "word": "やさしい×pink",
+   "index": 13,
+   "label": "暖色系 × 「雲とスカイ」のピンク系版",
+   "seedId": "s-262",
+   "colors": {
+    "primary": "#B15983",
+    "secondary": "#DDE8F1",
+    "accent": "#5DA5DA",
+    "background": "#FFFFFF",
+    "text": "#1B2734"
+   }
+  },
+  {
+   "key": "やさしいpink14",
+   "word": "やさしい×pink",
+   "index": 14,
+   "label": "暖色系 × 「若草とピンク」のピンク系版",
+   "seedId": "s-503",
+   "colors": {
+    "primary": "#C7588E",
+    "secondary": "#F6DCE4",
+    "accent": "#D9537E",
+    "background": "#FBFEF9",
+    "text": "#1F2A1E"
+   }
+  },
+  {
+   "key": "やさしいpink15",
+   "word": "やさしい×pink",
+   "index": 15,
+   "label": "暖色系 × 「医療のミント」のピンク系版",
+   "seedId": "s-397",
+   "colors": {
+    "primary": "#8F5372",
+    "secondary": "#F2DEE7",
+    "accent": "#3A86C8",
+    "background": "#FBFEFD",
+    "text": "#132A26"
+   }
+  },
+  {
+   "key": "やさしいpink16",
+   "word": "やさしい×pink",
+   "index": 16,
+   "label": "暖色系 × 「春の空」のピンク系版",
+   "seedId": "s-130",
+   "colors": {
+    "primary": "#C26690",
+    "secondary": "#F6DFE7",
+    "accent": "#7DBA61",
+    "background": "#FFFFFF",
+    "text": "#1B2734"
+   }
+  },
+  {
+   "key": "やさしいpink17",
+   "word": "やさしい×pink",
+   "index": 17,
+   "label": "暖色系 × 「淡いラベンダーと黄」のピンク系版",
+   "seedId": "s-519",
+   "colors": {
+    "primary": "#AD3E77",
+    "secondary": "#F1E6C2",
+    "accent": "#E194AE",
+    "background": "#FFFFFF",
+    "text": "#262033"
+   }
+  },
+  {
+   "key": "やさしいpink18",
+   "word": "やさしい×pink",
+   "index": 18,
+   "label": "暖色系 × 「やさしいのお手本4」のピンク系版",
+   "seedId": "s-532",
+   "colors": {
+    "primary": "#B36A83",
+    "secondary": "#DFC2CB",
+    "accent": "#9B75CA",
+    "background": "#F1F6ED",
+    "text": "#1F2419"
+   }
+  },
+  {
+   "key": "やさしいpink19",
+   "word": "やさしい×pink",
+   "index": 19,
+   "label": "暖色系 × 「ミルクホール」のピンク系版",
+   "seedId": "s-434",
+   "colors": {
+    "primary": "#8A536C",
+    "secondary": "#F1D8E2",
+    "accent": "#4E8A7A",
+    "background": "#FDF8EE",
+    "text": "#2B2119"
+   }
+  },
+  {
+   "key": "シックyellow0",
+   "word": "シック×yellow",
+   "index": 0,
+   "label": "無彩色＋差し色 × 「スレートとマスタード」",
+   "seedId": "s-364",
+   "colors": {
+    "primary": "#384450",
+    "secondary": "#DCDEE0",
+    "accent": "#C29A2E",
+    "background": "#F6F6F7",
+    "text": "#1F252B"
+   }
+  },
+  {
+   "key": "シックyellow1",
+   "word": "シック×yellow",
+   "index": 1,
+   "label": "寒色・緑系 × 「喫茶店の緑」の黄系版",
+   "seedId": "s-295",
+   "colors": {
+    "primary": "#2F5A44",
+    "secondary": "#F1DE73",
+    "accent": "#B5433A",
+    "background": "#FAF5E8",
+    "text": "#1F2823"
+   }
+  },
+  {
+   "key": "シックyellow2",
+   "word": "シック×yellow",
+   "index": 2,
+   "label": "無彩色＋差し色 × 「白とブラウン」の黄系版",
+   "seedId": "s-472",
+   "colors": {
+    "primary": "#1E1C1A",
+    "secondary": "#FDE67B",
+    "accent": "#7A5A45",
+    "background": "#FFFFFF",
+    "text": "#1E1C1A"
+   }
+  },
+  {
+   "key": "シックyellow3",
+   "word": "シック×yellow",
+   "index": 3,
+   "label": "暖色系 × 「ローズグレー」の黄系版",
+   "seedId": "s-167",
+   "colors": {
+    "primary": "#7A5560",
+    "secondary": "#F9E176",
+    "accent": "#6B7F86",
+    "background": "#FBF9F9",
+    "text": "#2A2226"
+   }
+  },
+  {
+   "key": "シックyellow4",
+   "word": "シック×yellow",
+   "index": 4,
+   "label": "暖色系 × 「ワインと墨」の黄系版",
+   "seedId": "s-360",
+   "colors": {
+    "primary": "#5A1E2C",
+    "secondary": "#F4E176",
+    "accent": "#2E2E30",
+    "background": "#F7F6F6",
+    "text": "#241A1D"
+   }
+  },
+  {
+   "key": "シックyellow5",
+   "word": "シック×yellow",
+   "index": 5,
+   "label": "暖色系 × 「夜の書斎」の黄系版",
+   "seedId": "s-203",
+   "colors": {
+    "primary": "#FFDF87",
+    "secondary": "#2E3440",
+    "accent": "#C9A25A",
+    "background": "#1C2028",
+    "text": "#ECEAE3"
+   }
+  },
+  {
+   "key": "シックyellow6",
+   "word": "シック×yellow",
+   "index": 6,
+   "label": "無彩色＋差し色 × 「モカ」の黄系版",
+   "seedId": "s-161",
+   "colors": {
+    "primary": "#28353B",
+    "secondary": "#F3DD72",
+    "accent": "#7A8C8C",
+    "background": "#F7F4F1",
+    "text": "#27201C"
+   }
+  },
+  {
+   "key": "シックyellow7",
+   "word": "シック×yellow",
+   "index": 7,
+   "label": "暖色系 × 「スモーキーパープル」の黄系版",
+   "seedId": "s-159",
+   "colors": {
+    "primary": "#5A4A6A",
+    "secondary": "#FFDC78",
+    "accent": "#9E7B4F",
+    "background": "#F8F7F9",
+    "text": "#252130"
+   }
+  },
+  {
+   "key": "シックyellow8",
+   "word": "シック×yellow",
+   "index": 8,
+   "label": "寒色・緑系 × 「深緑と黒」の黄系版",
+   "seedId": "s-359",
+   "colors": {
+    "primary": "#1E3A2F",
+    "secondary": "#F4DE73",
+    "accent": "#C08A3E",
+    "background": "#F5F6F4",
+    "text": "#18201C"
+   }
+  },
+  {
+   "key": "シックyellow9",
+   "word": "シック×yellow",
+   "index": 9,
+   "label": "無彩色＋差し色 × 「黒と金」の黄系版",
+   "seedId": "s-025",
+   "colors": {
+    "primary": "#1A1A1C",
+    "secondary": "#FCDA71",
+    "accent": "#A98635",
+    "background": "#F7F5F1",
+    "text": "#1E1E20"
+   }
+  },
+  {
+   "key": "シックyellow10",
+   "word": "シック×yellow",
+   "index": 10,
+   "label": "寒色・緑系 × 「ネイビーとワイン」の黄系版",
+   "seedId": "s-405",
+   "colors": {
+    "primary": "#1F2A48",
+    "secondary": "#FDDD74",
+    "accent": "#8A2E45",
+    "background": "#F8F7F8",
+    "text": "#1C2130"
+   }
+  },
+  {
+   "key": "シックyellow11",
+   "word": "シック×yellow",
+   "index": 11,
+   "label": "暖色系 × 「ボルドーとグレー」の黄系版",
+   "seedId": "s-157",
+   "colors": {
+    "primary": "#6B1F33",
+    "secondary": "#FDDB72",
+    "accent": "#4E5A64",
+    "background": "#F7F6F6",
+    "text": "#2A1E22"
+   }
+  },
+  {
+   "key": "シックyellow12",
+   "word": "シック×yellow",
+   "index": 12,
+   "label": "無彩色＋差し色 × 「スレート」の黄系版",
+   "seedId": "s-158",
+   "colors": {
+    "primary": "#3D4852",
+    "secondary": "#FFD976",
+    "accent": "#B3563E",
+    "background": "#F5F6F7",
+    "text": "#1F252B"
+   }
+  },
+  {
+   "key": "シックyellow13",
+   "word": "シック×yellow",
+   "index": 13,
+   "label": "寒色・緑系 × 「ダスティブルー」の黄系版",
+   "seedId": "s-147",
+   "colors": {
+    "primary": "#4A6378",
+    "secondary": "#FDDC72",
+    "accent": "#B07C5A",
+    "background": "#F6F7F7",
+    "text": "#20262C"
+   }
+  },
+  {
+   "key": "シックyellow14",
+   "word": "シック×yellow",
+   "index": 14,
+   "label": "寒色・緑系 × 「ミリタリー」の黄系版",
+   "seedId": "s-222",
+   "colors": {
+    "primary": "#3E4A2E",
+    "secondary": "#F3DB70",
+    "accent": "#C26A2B",
+    "background": "#F4F4EF",
+    "text": "#22261C"
+   }
+  },
+  {
+   "key": "シックyellow15",
+   "word": "シック×yellow",
+   "index": 15,
+   "label": "無彩色＋差し色 × 「オリーブブラック」の黄系版",
+   "seedId": "s-160",
+   "colors": {
+    "primary": "#2E3326",
+    "secondary": "#F7DB71",
+    "accent": "#A65A3A",
+    "background": "#F5F5F1",
+    "text": "#22251E"
+   }
+  },
+  {
+   "key": "シックyellow16",
+   "word": "シック×yellow",
+   "index": 16,
+   "label": "無彩色＋差し色 × 「グレージュとボルドー」の黄系版",
+   "seedId": "s-037",
+   "colors": {
+    "primary": "#3B3630",
+    "secondary": "#EFD368",
+    "accent": "#8C1C2B",
+    "background": "#F2EFEA",
+    "text": "#24201C"
+   }
+  },
+  {
+   "key": "シックyellow17",
+   "word": "シック×yellow",
+   "index": 17,
+   "label": "寒色・緑系 × 「ネイビーとキャメル」の黄系版",
+   "seedId": "s-156",
+   "colors": {
+    "primary": "#1F2E4A",
+    "secondary": "#FCDA70",
+    "accent": "#B07A3F",
+    "background": "#F7F5F1",
+    "text": "#1C2130"
+   }
+  },
+  {
+   "key": "シックyellow18",
+   "word": "シック×yellow",
+   "index": 18,
+   "label": "暖色系 × 「ローズと金」（近い印象）",
+   "seedId": "s-296",
+   "colors": {
+    "primary": "#A8234F",
+    "secondary": "#F2DCE2",
+    "accent": "#C49A45",
+    "background": "#FFFAFB",
+    "text": "#2D1C22"
+   }
+  },
+  {
+   "key": "シックyellow19",
+   "word": "シック×yellow",
+   "index": 19,
+   "label": "暖色系 × 「紫と金の祝祭」（近い印象）",
+   "seedId": "s-301",
+   "colors": {
+    "primary": "#5B2A86",
+    "secondary": "#E9DEED",
+    "accent": "#C9A13B",
+    "background": "#FDFAFE",
+    "text": "#241B30"
+   }
+  },
+  {
+   "key": "高級感orange0",
+   "word": "高級感×orange",
+   "index": 0,
+   "label": "無彩色＋差し色 × 「レコードジャケット」（近い印象）",
+   "seedId": "s-289",
+   "colors": {
+    "primary": "#F1E6CF",
+    "secondary": "#3A2F2A",
+    "accent": "#E07A2E",
+    "background": "#221C19",
+    "text": "#F2EADB"
+   }
+  },
+  {
+   "key": "高級感orange1",
+   "word": "高級感×orange",
+   "index": 1,
+   "label": "暖色系 × 「こたつとみかん」（近い印象）",
+   "seedId": "s-271",
+   "colors": {
+    "primary": "#C65A1E",
+    "secondary": "#ECDEC8",
+    "accent": "#5E7B3A",
+    "background": "#FDF8EF",
+    "text": "#2B2117"
+   }
+  },
+  {
+   "key": "高級感orange2",
+   "word": "高級感×orange",
+   "index": 2,
+   "label": "暖色系 × 「漆の黒と朱」の橙系版",
+   "seedId": "s-019",
+   "colors": {
+    "primary": "#C76800",
+    "secondary": "#392C24",
+    "accent": "#C8A04A",
+    "background": "#1E1B1A",
+    "text": "#EEE6DA"
+   }
+  },
+  {
+   "key": "高級感orange3",
+   "word": "高級感×orange",
+   "index": 3,
+   "label": "無彩色＋差し色 × 「黒と金」の橙系版",
+   "seedId": "s-025",
+   "colors": {
+    "primary": "#1A1A1C",
+    "secondary": "#E1DCD2",
+    "accent": "#C57443",
+    "background": "#F7F5F1",
+    "text": "#1E1E20"
+   }
+  },
+  {
+   "key": "高級感orange4",
+   "word": "高級感×orange",
+   "index": 4,
+   "label": "暖色系 × 「柿と藍」（近い印象）",
+   "seedId": "s-429",
+   "colors": {
+    "primary": "#C2561E",
+    "secondary": "#ECDECD",
+    "accent": "#1F4A72",
+    "background": "#FDF9F2",
+    "text": "#2B2016"
+   }
+  },
+  {
+   "key": "高級感orange5",
+   "word": "高級感×orange",
+   "index": 5,
+   "label": "無彩色＋差し色 × 「墨地に金」の橙系版",
+   "seedId": "s-011",
+   "colors": {
+    "primary": "#F2EEE4",
+    "secondary": "#45413D",
+    "accent": "#DF8F53",
+    "background": "#2A2826",
+    "text": "#EDE7DC"
+   }
+  },
+  {
+   "key": "高級感orange6",
+   "word": "高級感×orange",
+   "index": 6,
+   "label": "無彩色＋差し色 × 「漆黒地に金」の橙系版",
+   "seedId": "s-026",
+   "colors": {
+    "primary": "#E9E4DA",
+    "secondary": "#2C2C30",
+    "accent": "#E18D5D",
+    "background": "#121214",
+    "text": "#ECE8E0"
+   }
+  },
+  {
+   "key": "高級感orange7",
+   "word": "高級感×orange",
+   "index": 7,
+   "label": "暖色系 × 「ネイビーと金」の橙系版",
+   "seedId": "s-032",
+   "colors": {
+    "primary": "#B26331",
+    "secondary": "#D9DEE6",
+    "accent": "#A8843A",
+    "background": "#F5F6F8",
+    "text": "#1A1F2B"
+   }
+  },
+  {
+   "key": "高級感orange8",
+   "word": "高級感×orange",
+   "index": 8,
+   "label": "暖色系 × 「白とロイヤルパープル」の橙系版",
+   "seedId": "s-038",
+   "colors": {
+    "primary": "#B26411",
+    "secondary": "#E6E0ED",
+    "accent": "#A51D45",
+    "background": "#FCFBFD",
+    "text": "#221B2C"
+   }
+  },
+  {
+   "key": "高級感orange9",
+   "word": "高級感×orange",
+   "index": 9,
+   "label": "暖色系 × 「ローズと金」の橙系版",
+   "seedId": "s-296",
+   "colors": {
+    "primary": "#B85F00",
+    "secondary": "#F1DFD3",
+    "accent": "#C49A45",
+    "background": "#FFFAFB",
+    "text": "#2D1C22"
+   }
+  },
+  {
+   "key": "高級感orange10",
+   "word": "高級感×orange",
+   "index": 10,
+   "label": "無彩色＋差し色 × 「黒地に赤」の橙系版",
+   "seedId": "s-031",
+   "colors": {
+    "primary": "#F1EEEA",
+    "secondary": "#2D2828",
+    "accent": "#BB5D00",
+    "background": "#111111",
+    "text": "#EEEAE6"
+   }
+  },
+  {
+   "key": "高級感orange11",
+   "word": "高級感×orange",
+   "index": 11,
+   "label": "無彩色＋差し色 × 「グレージュとボルドー」の橙系版",
+   "seedId": "s-037",
+   "colors": {
+    "primary": "#3B3630",
+    "secondary": "#DAD3C8",
+    "accent": "#B76000",
+    "background": "#F2EFEA",
+    "text": "#24201C"
+   }
+  },
+  {
+   "key": "高級感orange12",
+   "word": "高級感×orange",
+   "index": 12,
+   "label": "暖色系 × 「明るいのお手本2」（近い印象）",
+   "seedId": "s-528",
+   "colors": {
+    "primary": "#C9721C",
+    "secondary": "#F0DF39",
+    "accent": "#DD9415",
+    "background": "#F8F8F0",
+    "text": "#232217"
+   }
+  },
+  {
+   "key": "高級感orange13",
+   "word": "高級感×orange",
+   "index": 13,
+   "label": "暖色系 × 「黒とオレンジ」（近い印象）",
+   "seedId": "s-219",
+   "colors": {
+    "primary": "#F26B1D",
+    "secondary": "#2A2A2C",
+    "accent": "#D9D9D9",
+    "background": "#141416",
+    "text": "#EFEFEF"
+   }
+  },
+  {
+   "key": "高級感orange14",
+   "word": "高級感×orange",
+   "index": 14,
+   "label": "暖色系 × 「みかん」（近い印象）",
+   "seedId": "s-110",
+   "colors": {
+    "primary": "#D46A12",
+    "secondary": "#F1E2C8",
+    "accent": "#2F7FB5",
+    "background": "#FFFCF7",
+    "text": "#2B2116"
+   }
+  },
+  {
+   "key": "高級感orange15",
+   "word": "高級感×orange",
+   "index": 15,
+   "label": "無彩色＋差し色 × 「白とオレンジ」（近い印象）",
+   "seedId": "s-309",
+   "colors": {
+    "primary": "#2A2A2A",
+    "secondary": "#E6E6E6",
+    "accent": "#E8641E",
+    "background": "#FFFFFF",
+    "text": "#1E1E1E"
+   }
+  },
+  {
+   "key": "高級感orange16",
+   "word": "高級感×orange",
+   "index": 16,
+   "label": "暖色系 × 「親しみやすいのお手本1」（近い印象）",
+   "seedId": "s-566",
+   "colors": {
+    "primary": "#C8456C",
+    "secondary": "#F3DBE2",
+    "accent": "#E8833A",
+    "background": "#FFF9FA",
+    "text": "#2B1F24"
+   }
+  },
+  {
+   "key": "高級感orange17",
+   "word": "高級感×orange",
+   "index": 17,
+   "label": "暖色系 × 「ナチュラルのお手本3」（近い印象）",
+   "seedId": "s-549",
+   "colors": {
+    "primary": "#B57166",
+    "secondary": "#F5D495",
+    "accent": "#C46C38",
+    "background": "#F3F0E9",
+    "text": "#262117"
+   }
+  },
+  {
+   "key": "高級感orange18",
+   "word": "高級感×orange",
+   "index": 18,
+   "label": "寒色・緑系 × 「緑とオレンジ」（近い印象）",
+   "seedId": "s-049",
+   "colors": {
+    "primary": "#1E9A4B",
+    "secondary": "#CDF0BA",
+    "accent": "#FF8A1F",
+    "background": "#F8FFF6",
+    "text": "#1C2A20"
+   }
+  },
+  {
+   "key": "高級感orange19",
+   "word": "高級感×orange",
+   "index": 19,
+   "label": "寒色・緑系 × 「夏空とオレンジ」（近い印象）",
+   "seedId": "s-065",
+   "colors": {
+    "primary": "#1C7ED6",
+    "secondary": "#F9DEBD",
+    "accent": "#FD7E14",
+    "background": "#F8FCFF",
+    "text": "#1A2633"
+   }
+  },
+  {
+   "key": "和風purple0",
+   "word": "和風×purple",
+   "index": 0,
+   "label": "暖色系 × 「江戸紫と鳥の子」",
+   "seedId": "s-005",
+   "colors": {
+    "primary": "#6A4C8F",
+    "secondary": "#E1DCEE",
+    "accent": "#B58A2F",
+    "background": "#FBF5E6",
+    "text": "#2A2530"
+   }
+  },
+  {
+   "key": "和風purple1",
+   "word": "和風×purple",
+   "index": 1,
+   "label": "無彩色＋差し色 × 「墨と藤」",
+   "seedId": "s-353",
+   "colors": {
+    "primary": "#33313A",
+    "secondary": "#E1DDE6",
+    "accent": "#7D6AA8",
+    "background": "#F8F7F9",
+    "text": "#222028"
+   }
+  },
+  {
+   "key": "和風purple2",
+   "word": "和風×purple",
+   "index": 2,
+   "label": "寒色・緑系 × 「藤と若草」",
+   "seedId": "s-016",
+   "colors": {
+    "primary": "#6E64A8",
+    "secondary": "#E4DFF1",
+    "accent": "#8AA22A",
+    "background": "#FAF9F6",
+    "text": "#262433"
+   }
+  },
+  {
+   "key": "和風purple3",
+   "word": "和風×purple",
+   "index": 3,
+   "label": "寒色・緑系 × 「藤鼠」",
+   "seedId": "s-169",
+   "colors": {
+    "primary": "#6A6487",
+    "secondary": "#E3E1EA",
+    "accent": "#B07A8C",
+    "background": "#FBFBFC",
+    "text": "#262433"
+   }
+  },
+  {
+   "key": "和風purple4",
+   "word": "和風×purple",
+   "index": 4,
+   "label": "寒色・緑系 × 「高級感のお手本1」（近い印象）",
+   "seedId": "s-545",
+   "colors": {
+    "primary": "#5F538C",
+    "secondary": "#7A8BB5",
+    "accent": "#D376A6",
+    "background": "#E3E2E9",
+    "text": "#22202B"
+   }
+  },
+  {
+   "key": "和風purple5",
+   "word": "和風×purple",
+   "index": 5,
+   "label": "寒色・緑系 × 「白とロイヤルパープル」（近い印象）",
+   "seedId": "s-038",
+   "colors": {
+    "primary": "#4B2A7B",
+    "secondary": "#E6E0ED",
+    "accent": "#A51D45",
+    "background": "#FCFBFD",
+    "text": "#221B2C"
+   }
+  },
+  {
+   "key": "和風purple6",
+   "word": "和風×purple",
+   "index": 6,
+   "label": "暖色系 × 「和風のお手本1」の紫系版",
+   "seedId": "s-554",
+   "colors": {
+    "primary": "#765498",
+    "secondary": "#E4BF6C",
+    "accent": "#239CD0",
+    "background": "#E3E1DC",
+    "text": "#262117"
+   }
+  },
+  {
+   "key": "和風purple7",
+   "word": "和風×purple",
+   "index": 7,
+   "label": "寒色・緑系 × 「砂地に弁柄」の紫系版",
+   "seedId": "s-018",
+   "colors": {
+    "primary": "#584390",
+    "secondary": "#D9C8AE",
+    "accent": "#22577A",
+    "background": "#EEE5D3",
+    "text": "#2A2018"
+   }
+  },
+  {
+   "key": "和風purple8",
+   "word": "和風×purple",
+   "index": 8,
+   "label": "無彩色＋差し色 × 「墨地に金」の紫系版",
+   "seedId": "s-011",
+   "colors": {
+    "primary": "#F2EEE4",
+    "secondary": "#45413D",
+    "accent": "#BF91E2",
+    "background": "#2A2826",
+    "text": "#EDE7DC"
+   }
+  },
+  {
+   "key": "和風purple9",
+   "word": "和風×purple",
+   "index": 9,
+   "label": "暖色系 × 「柿と藍」の紫系版",
+   "seedId": "s-429",
+   "colors": {
+    "primary": "#975CBD",
+    "secondary": "#E6DCEE",
+    "accent": "#1F4A72",
+    "background": "#FDF9F2",
+    "text": "#2B2016"
+   }
+  },
+  {
+   "key": "和風purple10",
+   "word": "和風×purple",
+   "index": 10,
+   "label": "暖色系 × 「漆の黒と朱」の紫系版",
+   "seedId": "s-019",
+   "colors": {
+    "primary": "#A75CDA",
+    "secondary": "#332C38",
+    "accent": "#C8A04A",
+    "background": "#1E1B1A",
+    "text": "#EEE6DA"
+   }
+  },
+  {
+   "key": "和風purple11",
+   "word": "和風×purple",
+   "index": 11,
+   "label": "暖色系 × 「江戸紫と鳥の子」に「墨と藤」の差し色",
+   "seedId": "s-005",
+   "colors": {
+    "primary": "#6A4C8F",
+    "secondary": "#E1DCEE",
+    "accent": "#7D6AA8",
+    "background": "#FBF5E6",
+    "text": "#2A2530"
+   }
+  },
+  {
+   "key": "和風purple12",
+   "word": "和風×purple",
+   "index": 12,
+   "label": "暖色系 × 「スモーキーパープル」（近い印象）",
+   "seedId": "s-159",
+   "colors": {
+    "primary": "#5A4A6A",
+    "secondary": "#E1DDE6",
+    "accent": "#9E7B4F",
+    "background": "#F8F7F9",
+    "text": "#252130"
+   }
+  },
+  {
+   "key": "和風purple13",
+   "word": "和風×purple",
+   "index": 13,
+   "label": "寒色・緑系 × 「深い紫と灰」（近い印象）",
+   "seedId": "s-197",
+   "colors": {
+    "primary": "#3E2F5B",
+    "secondary": "#E0DDE7",
+    "accent": "#5E8FA8",
+    "background": "#F8F7FA",
+    "text": "#231F2E"
+   }
+  },
+  {
+   "key": "和風purple14",
+   "word": "和風×purple",
+   "index": 14,
+   "label": "寒色・緑系 × 「ラベンダー」（近い印象）",
+   "seedId": "s-114",
+   "colors": {
+    "primary": "#7A6AAE",
+    "secondary": "#E4E0ED",
+    "accent": "#D58BA6",
+    "background": "#FCFBFE",
+    "text": "#272433"
+   }
+  },
+  {
+   "key": "和風purple15",
+   "word": "和風×purple",
+   "index": 15,
+   "label": "暖色系 × 「濃紫と金」（近い印象）",
+   "seedId": "s-029",
+   "colors": {
+    "primary": "#3C2457",
+    "secondary": "#DFD9E8",
+    "accent": "#AA8E4F",
+    "background": "#F6F4F8",
+    "text": "#241C2E"
+   }
+  },
+  {
+   "key": "和風purple16",
+   "word": "和風×purple",
+   "index": 16,
+   "label": "無彩色＋差し色 × 「黄土と藍鉄」の紫系版",
+   "seedId": "s-024",
+   "colors": {
+    "primary": "#393F4C",
+    "secondary": "#EEDDB8",
+    "accent": "#9C7FCD",
+    "background": "#FBF6EA",
+    "text": "#24262C"
+   }
+  },
+  {
+   "key": "和風purple17",
+   "word": "和風×purple",
+   "index": 17,
+   "label": "暖色系 × 「濃緑と赤」の紫系版",
+   "seedId": "s-241",
+   "colors": {
+    "primary": "#4A3360",
+    "secondary": "#DCE1DA",
+    "accent": "#C3272B",
+    "background": "#F7F8F5",
+    "text": "#1B2620"
+   }
+  },
+  {
+   "key": "和風purple18",
+   "word": "和風×purple",
+   "index": 18,
+   "label": "暖色系 × 「藍と弁柄」の紫系版",
+   "seedId": "s-001",
+   "colors": {
+    "primary": "#66487D",
+    "secondary": "#E4DCEB",
+    "accent": "#9A3A1F",
+    "background": "#FAF7EF",
+    "text": "#2E2B28"
+   }
+  },
+  {
+   "key": "和風purple19",
+   "word": "和風×purple",
+   "index": 19,
+   "label": "暖色系 × 「白磁」の紫系版",
+   "seedId": "s-261",
+   "colors": {
+    "primary": "#5D4070",
+    "secondary": "#E0E5EA",
+    "accent": "#6B8FB8",
+    "background": "#FDFDFB",
+    "text": "#1C2431"
+   }
+  }
+ ]
+}

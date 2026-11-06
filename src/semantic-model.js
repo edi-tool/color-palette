@@ -14,14 +14,19 @@ export function toKey(s) {
     .replace(/[ァ-ヶ]/g, (c) => String.fromCharCode(c.charCodeAt(0) - 0x60));
 }
 
-export function buildIndex(vocab) {
+/** 語彙辞書（と任意でシード配色 src/seeds.json）から検索用のインデックスを作る */
+export function buildIndex(vocab, seedData = null) {
   const words = vocab.words;
   const lookup = new Map();
   for (const [name, def] of Object.entries(words)) {
     lookup.set(toKey(name), name);
     for (const s of def.syn ?? []) if (!lookup.has(toKey(s))) lookup.set(toKey(s), name);
   }
-  return { words, lookup, names: Object.keys(words) };
+  const ROLE_ORDER = ['primary', 'secondary', 'accent', 'background', 'text'];
+  const seeds = (seedData?.seeds ?? [])
+    .filter((x) => x.words.some((w) => w in words))
+    .map((x) => ({ ...x, colors: Object.fromEntries(ROLE_ORDER.map((r, i) => [r, x.c[i]])) }));
+  return { words, lookup, names: Object.keys(words), seeds };
 }
 
 function editDistance(a, b) {
@@ -106,8 +111,10 @@ export function mergeProfile(index, moodNames) {
  */
 export const HUE_FAMILIES = {
   red: { label: '赤系', hue: [[27, 14]], swatch: '#D93A3A' },
-  orange: { label: '橙系', hue: [[58, 14]], swatch: '#EE8A1E' },
-  yellow: { label: '黄系', hue: [[95, 14]], swatch: '#E8C21C' },
+  // 橙・黄は茶と色相が重なるので、茶は茶系に任せ、暗い・くすんだ色（minL・minC 未満）は含めない（2026-11-06 ユーザー要望で幅を狭めた）。
+  // roles: その系統の色として数える役割。黄は淡い地では面（サブ）に使うことが多いのでサブも数える
+  orange: { label: '橙系', hue: [[54, 11]], minL: 0.58, minC: 0.12, roles: ['primary', 'accent'], swatch: '#EE8A1E' },
+  yellow: { label: '黄系', hue: [[94, 12]], minL: 0.7, minC: 0.11, roles: ['primary', 'secondary', 'accent'], swatch: '#E8C21C' },
   green: { label: '緑系', hue: [[148, 32]], swatch: '#2E9E50' },
   blue: { label: '青系', hue: [[245, 32]], swatch: '#2F6FD0' },
   purple: { label: '紫系', hue: [[302, 20]], swatch: '#8A4FC8' },
@@ -123,9 +130,10 @@ export function applyHueFamily(profile, key) {
     ...profile,
     family: key,
     hue: f.hue,
-    // 茶系は明度・彩度で決まるので、印象語の範囲より系統の範囲を優先する
-    pL: f.pL ?? profile.pL,
-    pC: f.pC ?? profile.pC,
+    // 茶系は明度・彩度で決まるので、印象語の範囲より系統の範囲を優先する。
+    // 橙は茶にならないよう、主役色の彩度と明度の下限を上げる（黄は淡い地でメインを濃くずらすので明度は触らない）
+    pL: f.pL ?? (key === 'orange' ? [Math.max(profile.pL[0], f.minL), Math.max(profile.pL[1], f.minL + 0.12)] : profile.pL),
+    pC: f.pC ?? (f.minC ? [Math.max(profile.pC[0], f.minC), Math.max(profile.pC[1], f.minC + 0.06)] : profile.pC),
   };
 }
 
