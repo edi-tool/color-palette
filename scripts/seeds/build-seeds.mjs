@@ -32,14 +32,16 @@ const starCount = {};
 const resDir = new URL('docs/eval/results/', ROOT);
 for (const f of readdirSync(resDir).filter((x) => /^eval-.*\.json$/.test(x)).sort()) {
   const j = JSON.parse(readFileSync(new URL(f, resDir), 'utf8'));
-  for (const it of j.items) {
+  for (const it0 of j.items) {
+    // 評価が無くても理由（濁る等）が付いていれば微妙として扱う。評価が付いていれば評価を優先する
+    const it = !it0.rating && it0.tags?.length ? { ...it0, rating: 'meh' } : it0;
     const m = /× 「(.+?)」(.*)$/.exec(it.label ?? '');
     const seed = m && it.seedId && m[2] === '' ? byName.get(m[1]) : null;
-    if (seed && it.rating) {
-      if (it.rating !== 'good' && seed.words.includes(it.word)) {
+    if (seed && (it.rating || it.star)) {
+      if (it.rating && it.rating !== 'good' && seed.words.includes(it.word)) {
         seed.words = seed.words.filter((w) => w !== it.word);
         feedback.push(`− 外した: ${seed.name} から「${it.word}」（${f} で${it.rating === 'bad' ? '悪い' : '微妙'}）`);
-      } else if (it.rating === 'good' && it.star) {
+      } else if (it.star && (!it.rating || it.rating === 'good')) {
         (seed.endorsed ??= []).includes(it.word) || seed.endorsed.push(it.word);
       }
     }
