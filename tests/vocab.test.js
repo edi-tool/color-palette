@@ -3,10 +3,10 @@ import assert from 'node:assert/strict';
 import { index } from './helpers-engine.js';
 import { resolveTerm, mergeProfile, MAX_MOODS } from '../src/semantic-model.js';
 
-const REQUIRED = ['明るい','元気','楽しい','ポップ','親しみやすい','やさしい','かわいい','ナチュラル','落ち着いた','シック','上品','高級感','まじめ','誠実','信頼感','知的','クール','かっこいい','モダン','力強い','爽やか','清潔','あたたかい','懐かしい','レトロ','華やか','シンプル','ミニマル','和風','未来的','鮮やか','カラフル'];
+const REQUIRED = ['明るい','元気','楽しい','ポップ','親しみやすい','やさしい','かわいい','ナチュラル','落ち着いた','シック','上品','高級感','まじめ','誠実','信頼感','知的','クール','かっこいい','モダン','力強い','爽やか','清潔','あたたかい','懐かしい','レトロ','華やか','シンプル','ミニマル','和風','未来的','鮮やか','カラフル','ネオン'];
 
-test('語彙は要件の30語＋追加2語（鮮やか・カラフル）ちょうど（件数を固定）', () => {
-  assert.equal(index.names.length, 32);
+test('語彙は要件の30語＋追加3語（鮮やか・カラフル・ネオン）ちょうど（件数を固定）', () => {
+  assert.equal(index.names.length, 33);
   assert.deepEqual([...index.names].sort(), [...REQUIRED].sort());
 });
 
@@ -24,6 +24,7 @@ test('同義語・表記ゆれを辞書の語へ束ねる', () => {
   assert.equal(resolveTerm(index, 'さわやか').word, '爽やか');
   assert.equal(resolveTerm(index, 'カワイイ').word, 'かわいい');
   assert.equal(resolveTerm(index, 'ＳＦ').word, '未来的');
+  assert.equal(resolveTerm(index, '蛍光色').word, 'ネオン');
 });
 
 test('未知語は理解したふりをせず、近い候補を示す', () => {
@@ -42,4 +43,11 @@ test('複数語の合成: 範囲は積集合、空なら中心平均。最大3�
   assert.ok(p.pL[0] <= p.pL[1] && p.pC[0] <= p.pC[1]);
   assert.equal(mergeProfile(index, ['明るい', '知的', '和風', 'シック']).moods.length, MAX_MOODS);
   assert.throws(() => mergeProfile(index, ['存在しない語']));
+});
+
+test('濃い地の語（ネオン）は淡い地の語と平均せず、濃い地を採る', () => {
+  const p = mergeProfile(index, ['ネオン', '明るい']);
+  assert.ok(p.bgL[1] < 0.5, `bgL ${p.bgL}`);
+  const light = mergeProfile(index, ['明るい', '清潔']);
+  assert.ok(light.bgL[0] > 0.9);
 });
