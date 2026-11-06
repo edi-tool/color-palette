@@ -375,7 +375,10 @@ export function adaptSeed(colors, { usage = 'general', mode = 'rgb' } = {}) {
     if (bg.L < 0.5) return null; // 濃い地のシードは、淡い地を指定する用途には使わない
     const [cLo, cHi] = t.bgC ?? [0, 1];
     const h = bg.C > 0.01 ? bg.h : hexToOklch(c.primary).h;
-    c.background = oklchToHex(clamp(bg.L, t.bgL[0], t.bgL[1]), clamp(bg.C, cLo, cHi), h);
+    // 淡い地（明度 0.88〜1）を用途の範囲の中へ写す。上端に寄せるだけだと、カバーの「色のついた地」にならない
+    const u = clamp((bg.L - 0.88) / 0.12, 0, 1);
+    const L = t.bgL[0] + 0.02 + (t.bgL[1] - t.bgL[0] - 0.03) * u;
+    c.background = oklchToHex(L, clamp(bg.C, cLo, cHi), h);
   }
   if (mode === 'print') {
     for (const r of ['primary', 'secondary', 'accent']) {
@@ -449,8 +452,10 @@ function seedCandidates(index, moods, profile, { usage, mode, hue, rng }) {
     if (m < moods.length && fit < MIN_SEED_FIT) continue;
     matched.push({ seed: s, colors, fit, m });
   }
-  // 語に多く当てはまるシードを先に。同じ数なら seed ごとに並びを変える（押し直すたびに順番が変わる）
-  const order = matched.map((x) => ({ x, k: x.m + rng.next() })).sort((a, b) => b.k - a.k).map((y) => y.x);
+  // 語に多く当てはまるシードを先に。評価で★の付いた語（endorsed）があるシードはその次に優先し、
+  // 残りは seed ごとに並びを変える（押し直すたびに順番が変わる。お墨付きでも毎回すべて先頭とは限らない）
+  const endorsedFor = (s) => (s.endorsed ?? []).some((w) => moods.includes(w));
+  const order = matched.map((x) => ({ x, k: x.m * 2 + (endorsedFor(x.seed) ? 0.8 : 0) + rng.next() })).sort((a, b) => b.k - a.k).map((y) => y.x);
   const originals = order.map(({ seed, colors, fit }) => ({ colors, fit, label: `「${seed.name}」`, seedId: seed.id }));
   const variants = [];
   for (const kind of ['paper', 'accent', 'tone']) {
