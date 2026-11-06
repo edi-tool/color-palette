@@ -1,0 +1,2569 @@
+{
+ "schema": "color-palette-eval-set/1",
+ "name": "new-seeds-1",
+ "title": "追加した配色（Claude の確認用）",
+ "items": [
+  {
+   "key": "new#0",
+   "word": "落ち着いた",
+   "index": 0,
+   "label": "「深緑とベージュ」 落ち着いた・ナチュラル・シック",
+   "seedId": "s-345",
+   "colors": {
+    "primary": "#2E4A3E",
+    "secondary": "#E2DCCE",
+    "accent": "#B07A4A",
+    "background": "#F7F5F0",
+    "text": "#1F2621"
+   }
+  },
+  {
+   "key": "new#1",
+   "word": "落ち着いた",
+   "index": 1,
+   "label": "「藍鼠と生成り」 落ち着いた・和風",
+   "seedId": "s-346",
+   "colors": {
+    "primary": "#3E5468",
+    "secondary": "#E0DED6",
+    "accent": "#A65F45",
+    "background": "#F8F7F2",
+    "text": "#1E252D"
+   }
+  },
+  {
+   "key": "new#2",
+   "word": "落ち着いた",
+   "index": 2,
+   "label": "「チャコールとマスタード」 落ち着いた・シック・モダン",
+   "seedId": "s-347",
+   "colors": {
+    "primary": "#33363A",
+    "secondary": "#E3DCC9",
+    "accent": "#B8902F",
+    "background": "#F6F5F2",
+    "text": "#212326"
+   }
+  },
+  {
+   "key": "new#3",
+   "word": "落ち着いた",
+   "index": 3,
+   "label": "「ボルドーとグレージュ」 落ち着いた・上品",
+   "seedId": "s-348",
+   "colors": {
+    "primary": "#6E2E3A",
+    "secondary": "#E6DED8",
+    "accent": "#5E7A80",
+    "background": "#F8F6F4",
+    "text": "#2A1F22"
+   }
+  },
+  {
+   "key": "new#4",
+   "word": "落ち着いた",
+   "index": 4,
+   "label": "「ネイビーとセージ」 落ち着いた・誠実・まじめ",
+   "seedId": "s-349",
+   "colors": {
+    "primary": "#243650",
+    "secondary": "#D9E0D9",
+    "accent": "#6F8F72",
+    "background": "#F6F7F5",
+    "text": "#1C2230"
+   }
+  },
+  {
+   "key": "new#5",
+   "word": "落ち着いた",
+   "index": 5,
+   "label": "「ブラウンとティール」 落ち着いた・レトロ・懐かしい",
+   "seedId": "s-350",
+   "colors": {
+    "primary": "#5A3E2E",
+    "secondary": "#E2DCD0",
+    "accent": "#2F7072",
+    "background": "#F8F5F0",
+    "text": "#28201B"
+   }
+  },
+  {
+   "key": "new#6",
+   "word": "落ち着いた",
+   "index": 6,
+   "label": "「スモークブルーと砂」 落ち着いた・知的",
+   "seedId": "s-351",
+   "colors": {
+    "primary": "#3F5B72",
+    "secondary": "#E3DDD1",
+    "accent": "#B98D52",
+    "background": "#F8F6F2",
+    "text": "#1E2731"
+   }
+  },
+  {
+   "key": "new#7",
+   "word": "落ち着いた",
+   "index": 7,
+   "label": "「オリーブとレンガ」 落ち着いた・ナチュラル・あたたかい",
+   "seedId": "s-352",
+   "colors": {
+    "primary": "#4F5A35",
+    "secondary": "#E3DDCB",
+    "accent": "#A5503A",
+    "background": "#F7F6F0",
+    "text": "#23261C"
+   }
+  },
+  {
+   "key": "new#8",
+   "word": "落ち着いた",
+   "index": 8,
+   "label": "「墨と藤」 落ち着いた・上品・和風",
+   "seedId": "s-353",
+   "colors": {
+    "primary": "#33313A",
+    "secondary": "#E1DDE6",
+    "accent": "#7D6AA8",
+    "background": "#F8F7F9",
+    "text": "#222028"
+   }
+  },
+  {
+   "key": "new#9",
+   "word": "落ち着いた",
+   "index": 9,
+   "label": "「深い青緑と金茶」 落ち着いた・高級感",
+   "seedId": "s-354",
+   "colors": {
+    "primary": "#1F4B4F",
+    "secondary": "#DAE1DE",
+    "accent": "#A87F3C",
+    "background": "#F6F8F7",
+    "text": "#172425"
+   }
+  },
+  {
+   "key": "new#10",
+   "word": "落ち着いた",
+   "index": 10,
+   "label": "「紺とテラコッタ」 落ち着いた・あたたかい・モダン",
+   "seedId": "s-355",
+   "colors": {
+    "primary": "#22324F",
+    "secondary": "#EADDD3",
+    "accent": "#B85B3C",
+    "background": "#F8F6F3",
+    "text": "#1C2131"
+   }
+  },
+  {
+   "key": "new#11",
+   "word": "シック",
+   "index": 11,
+   "label": "「ブラックとキャメル」 シック・かっこいい・上品",
+   "seedId": "s-356",
+   "colors": {
+    "primary": "#1B1B1C",
+    "secondary": "#E4DBCE",
+    "accent": "#A8784A",
+    "background": "#F7F5F2",
+    "text": "#1C1C1D"
+   }
+  },
+  {
+   "key": "new#12",
+   "word": "シック",
+   "index": 12,
+   "label": "「チャコールとローズ」 シック・上品",
+   "seedId": "s-357",
+   "colors": {
+    "primary": "#2F2E33",
+    "secondary": "#E6DCDD",
+    "accent": "#B45F6E",
+    "background": "#F8F7F7",
+    "text": "#222124"
+   }
+  },
+  {
+   "key": "new#13",
+   "word": "シック",
+   "index": 13,
+   "label": "「ネイビーとグレージュ」 シック・モダン",
+   "seedId": "s-358",
+   "colors": {
+    "primary": "#1E2B42",
+    "secondary": "#E3DFD8",
+    "accent": "#8C7A64",
+    "background": "#F6F5F3",
+    "text": "#1B2130"
+   }
+  },
+  {
+   "key": "new#14",
+   "word": "シック",
+   "index": 14,
+   "label": "「深緑と黒」 シック・かっこいい",
+   "seedId": "s-359",
+   "colors": {
+    "primary": "#1E3A2F",
+    "secondary": "#D9DFDA",
+    "accent": "#C08A3E",
+    "background": "#F5F6F4",
+    "text": "#18201C"
+   }
+  },
+  {
+   "key": "new#15",
+   "word": "シック",
+   "index": 15,
+   "label": "「ワインと墨」 シック・高級感",
+   "seedId": "s-360",
+   "colors": {
+    "primary": "#5A1E2C",
+    "secondary": "#E3DEDF",
+    "accent": "#2E2E30",
+    "background": "#F7F6F6",
+    "text": "#241A1D"
+   }
+  },
+  {
+   "key": "new#16",
+   "word": "シック",
+   "index": 16,
+   "label": "「グレーとくすみ青」 シック・クール",
+   "seedId": "s-361",
+   "colors": {
+    "primary": "#3A3F45",
+    "secondary": "#DCDEE1",
+    "accent": "#5F7FA0",
+    "background": "#F6F7F8",
+    "text": "#202327"
+   }
+  },
+  {
+   "key": "new#17",
+   "word": "シック",
+   "index": 17,
+   "label": "「チョコとピンクベージュ」 シック・かわいい",
+   "seedId": "s-362",
+   "colors": {
+    "primary": "#4A3027",
+    "secondary": "#EADBD4",
+    "accent": "#C27A78",
+    "background": "#FAF7F5",
+    "text": "#271D19"
+   }
+  },
+  {
+   "key": "new#18",
+   "word": "シック",
+   "index": 18,
+   "label": "「夜の緑」 シック・落ち着いた",
+   "seedId": "s-363",
+   "colors": {
+    "primary": "#E5EBE6",
+    "secondary": "#2A3A33",
+    "accent": "#C8A15E",
+    "background": "#18211D",
+    "text": "#E9EEEA"
+   }
+  },
+  {
+   "key": "new#19",
+   "word": "シック",
+   "index": 19,
+   "label": "「スレートとマスタード」 シック・モダン",
+   "seedId": "s-364",
+   "colors": {
+    "primary": "#384450",
+    "secondary": "#DCDEE0",
+    "accent": "#C29A2E",
+    "background": "#F6F6F7",
+    "text": "#1F252B"
+   }
+  },
+  {
+   "key": "new#20",
+   "word": "シック",
+   "index": 20,
+   "label": "「墨紫と銀」 シック・上品・高級感",
+   "seedId": "s-365",
+   "colors": {
+    "primary": "#3A3045",
+    "secondary": "#E2DFE6",
+    "accent": "#8F8A9C",
+    "background": "#F7F6F8",
+    "text": "#232029"
+   }
+  },
+  {
+   "key": "new#21",
+   "word": "上品",
+   "index": 21,
+   "label": "「アイボリーとネイビー」 上品・誠実",
+   "seedId": "s-366",
+   "colors": {
+    "primary": "#24334F",
+    "secondary": "#E7E1D5",
+    "accent": "#B08E5A",
+    "background": "#FCFAF5",
+    "text": "#1C2231"
+   }
+  },
+  {
+   "key": "new#22",
+   "word": "上品",
+   "index": 22,
+   "label": "「ラベンダーグレーと金」 上品・やさしい",
+   "seedId": "s-367",
+   "colors": {
+    "primary": "#5E5878",
+    "secondary": "#E4E1EA",
+    "accent": "#B69458",
+    "background": "#FCFBFD",
+    "text": "#252331"
+   }
+  },
+  {
+   "key": "new#23",
+   "word": "上品",
+   "index": 23,
+   "label": "「ローズベージュ」 上品・かわいい",
+   "seedId": "s-368",
+   "colors": {
+    "primary": "#8E5463",
+    "secondary": "#EBDDDD",
+    "accent": "#A99073",
+    "background": "#FDF9F8",
+    "text": "#2C2125"
+   }
+  },
+  {
+   "key": "new#24",
+   "word": "上品",
+   "index": 24,
+   "label": "「グリーングレーとゴールド」 上品・ナチュラル",
+   "seedId": "s-369",
+   "colors": {
+    "primary": "#4A5E55",
+    "secondary": "#DEE3DF",
+    "accent": "#B38E4A",
+    "background": "#FAFBF9",
+    "text": "#20271F"
+   }
+  },
+  {
+   "key": "new#25",
+   "word": "上品",
+   "index": 25,
+   "label": "「ワインとパール」 上品・高級感",
+   "seedId": "s-370",
+   "colors": {
+    "primary": "#6A2438",
+    "secondary": "#E9DFE1",
+    "accent": "#9C8C9A",
+    "background": "#FDFAFB",
+    "text": "#2A1C21"
+   }
+  },
+  {
+   "key": "new#26",
+   "word": "上品",
+   "index": 26,
+   "label": "「藍とアイボリー」 上品・和風",
+   "seedId": "s-371",
+   "colors": {
+    "primary": "#22416B",
+    "secondary": "#E7E1D3",
+    "accent": "#B2834A",
+    "background": "#FCFAF4",
+    "text": "#1B2231"
+   }
+  },
+  {
+   "key": "new#27",
+   "word": "上品",
+   "index": 27,
+   "label": "「トープとローズ」 上品・落ち着いた",
+   "seedId": "s-372",
+   "colors": {
+    "primary": "#5C5048",
+    "secondary": "#E5DED8",
+    "accent": "#B5707C",
+    "background": "#FAF8F6",
+    "text": "#26211D"
+   }
+  },
+  {
+   "key": "new#28",
+   "word": "上品",
+   "index": 28,
+   "label": "「ミストブルー」 上品・清潔",
+   "seedId": "s-373",
+   "colors": {
+    "primary": "#3D5A78",
+    "secondary": "#DDE5EC",
+    "accent": "#C49AA6",
+    "background": "#FCFDFE",
+    "text": "#1E2731"
+   }
+  },
+  {
+   "key": "new#29",
+   "word": "上品",
+   "index": 29,
+   "label": "「プラムと金」 上品・華やか",
+   "seedId": "s-374",
+   "colors": {
+    "primary": "#5B2C55",
+    "secondary": "#E9DEE7",
+    "accent": "#B9944A",
+    "background": "#FDFAFC",
+    "text": "#271C26"
+   }
+  },
+  {
+   "key": "new#30",
+   "word": "上品",
+   "index": 30,
+   "label": "「真珠と墨」 上品・シンプル",
+   "seedId": "s-375",
+   "colors": {
+    "primary": "#2B2A2E",
+    "secondary": "#E5E2DF",
+    "accent": "#A08C7A",
+    "background": "#FCFBFA",
+    "text": "#1F1E21"
+   }
+  },
+  {
+   "key": "new#31",
+   "word": "まじめ",
+   "index": 31,
+   "label": "「紺と白と緑」 まじめ・信頼感",
+   "seedId": "s-376",
+   "colors": {
+    "primary": "#1E3A63",
+    "secondary": "#DCE4EC",
+    "accent": "#2E8B6E",
+    "background": "#FBFCFD",
+    "text": "#1A2231"
+   }
+  },
+  {
+   "key": "new#32",
+   "word": "まじめ",
+   "index": 32,
+   "label": "「灰青と黄土」 まじめ・落ち着いた",
+   "seedId": "s-377",
+   "colors": {
+    "primary": "#34495E",
+    "secondary": "#E8E0CB",
+    "accent": "#B5893A",
+    "background": "#FAF9F6",
+    "text": "#1E2630"
+   }
+  },
+  {
+   "key": "new#33",
+   "word": "まじめ",
+   "index": 33,
+   "label": "「ネイビーとオレンジ」 まじめ・親しみやすい",
+   "seedId": "s-378",
+   "colors": {
+    "primary": "#1C2E4F",
+    "secondary": "#EFDECC",
+    "accent": "#D2691E",
+    "background": "#FBFAF8",
+    "text": "#1A2030"
+   }
+  },
+  {
+   "key": "new#34",
+   "word": "まじめ",
+   "index": 34,
+   "label": "「深緑と赤」 まじめ・和風",
+   "seedId": "s-379",
+   "colors": {
+    "primary": "#1F4A37",
+    "secondary": "#DCE3DD",
+    "accent": "#B03A3A",
+    "background": "#F8FAF8",
+    "text": "#1B2620"
+   }
+  },
+  {
+   "key": "new#35",
+   "word": "まじめ",
+   "index": 35,
+   "label": "「インクと罫線の青」 まじめ・シンプル",
+   "seedId": "s-380",
+   "colors": {
+    "primary": "#1A2433",
+    "secondary": "#E3EAF3",
+    "accent": "#2F6FB5",
+    "background": "#FFFFFF",
+    "text": "#1A2433"
+   }
+  },
+  {
+   "key": "new#36",
+   "word": "まじめ",
+   "index": 36,
+   "label": "「青緑と灰」 まじめ・清潔",
+   "seedId": "s-381",
+   "colors": {
+    "primary": "#145A63",
+    "secondary": "#D9E4E5",
+    "accent": "#5E6E7A",
+    "background": "#F8FBFB",
+    "text": "#152629"
+   }
+  },
+  {
+   "key": "new#37",
+   "word": "まじめ",
+   "index": 37,
+   "label": "「紺と金」 まじめ・高級感",
+   "seedId": "s-382",
+   "colors": {
+    "primary": "#1A2A4A",
+    "secondary": "#DDDFE5",
+    "accent": "#A6843E",
+    "background": "#F8F8FA",
+    "text": "#191F2D"
+   }
+  },
+  {
+   "key": "new#38",
+   "word": "まじめ",
+   "index": 38,
+   "label": "「チャコールと赤」 まじめ・力強い",
+   "seedId": "s-383",
+   "colors": {
+    "primary": "#2E3135",
+    "secondary": "#DDDEE0",
+    "accent": "#B5302E",
+    "background": "#F7F7F8",
+    "text": "#1F2124"
+   }
+  },
+  {
+   "key": "new#39",
+   "word": "まじめ",
+   "index": 39,
+   "label": "「藍と若草」 まじめ・ナチュラル",
+   "seedId": "s-384",
+   "colors": {
+    "primary": "#1F3F66",
+    "secondary": "#DCE5D7",
+    "accent": "#5E8A2E",
+    "background": "#FAFBF9",
+    "text": "#1A2231"
+   }
+  },
+  {
+   "key": "new#40",
+   "word": "まじめ",
+   "index": 40,
+   "label": "「濃紺と水色」 まじめ・爽やか",
+   "seedId": "s-385",
+   "colors": {
+    "primary": "#172F57",
+    "secondary": "#D5E6F0",
+    "accent": "#2D8FCF",
+    "background": "#FAFCFE",
+    "text": "#18213A"
+   }
+  },
+  {
+   "key": "new#41",
+   "word": "誠実",
+   "index": 41,
+   "label": "「紺と生成り」 誠実・落ち着いた",
+   "seedId": "s-386",
+   "colors": {
+    "primary": "#1F3557",
+    "secondary": "#E6E0D2",
+    "accent": "#A8743E",
+    "background": "#FBF9F4",
+    "text": "#1C2231"
+   }
+  },
+  {
+   "key": "new#42",
+   "word": "誠実",
+   "index": 42,
+   "label": "「青と白と灰」 誠実・シンプル・清潔",
+   "seedId": "s-387",
+   "colors": {
+    "primary": "#1F5FA8",
+    "secondary": "#E5EAF0",
+    "accent": "#5E6B78",
+    "background": "#FFFFFF",
+    "text": "#1B2433"
+   }
+  },
+  {
+   "key": "new#43",
+   "word": "誠実",
+   "index": 43,
+   "label": "「深緑と白」 誠実・ナチュラル",
+   "seedId": "s-388",
+   "colors": {
+    "primary": "#1E5A43",
+    "secondary": "#D8E5DE",
+    "accent": "#3B7FB5",
+    "background": "#F9FBFA",
+    "text": "#17261F"
+   }
+  },
+  {
+   "key": "new#44",
+   "word": "誠実",
+   "index": 44,
+   "label": "「ネイビーとコーラル」 誠実・親しみやすい",
+   "seedId": "s-389",
+   "colors": {
+    "primary": "#1E3558",
+    "secondary": "#F5DFD8",
+    "accent": "#D8604F",
+    "background": "#FBFAF9",
+    "text": "#1A2131"
+   }
+  },
+  {
+   "key": "new#45",
+   "word": "誠実",
+   "index": 45,
+   "label": "「藍鉄と銀」 誠実・かっこいい",
+   "seedId": "s-390",
+   "colors": {
+    "primary": "#2B3848",
+    "secondary": "#DCE0E5",
+    "accent": "#7F8C9A",
+    "background": "#F7F8F9",
+    "text": "#1D232B"
+   }
+  },
+  {
+   "key": "new#46",
+   "word": "誠実",
+   "index": 46,
+   "label": "「紺とミント」 誠実・爽やか",
+   "seedId": "s-391",
+   "colors": {
+    "primary": "#1B3A64",
+    "secondary": "#D2E8E2",
+    "accent": "#2AA58C",
+    "background": "#F9FCFC",
+    "text": "#1A2333"
+   }
+  },
+  {
+   "key": "new#47",
+   "word": "信頼感",
+   "index": 47,
+   "label": "「ブルーとホワイト」 信頼感・清潔・シンプル",
+   "seedId": "s-392",
+   "colors": {
+    "primary": "#1556A6",
+    "secondary": "#DEE7F1",
+    "accent": "#2F9BD7",
+    "background": "#FFFFFF",
+    "text": "#182434"
+   }
+  },
+  {
+   "key": "new#48",
+   "word": "信頼感",
+   "index": 48,
+   "label": "「紺と緑の安心」 信頼感・ナチュラル",
+   "seedId": "s-393",
+   "colors": {
+    "primary": "#1A3A63",
+    "secondary": "#D8E6DC",
+    "accent": "#2E8B57",
+    "background": "#F9FBFA",
+    "text": "#1A2231"
+   }
+  },
+  {
+   "key": "new#49",
+   "word": "信頼感",
+   "index": 49,
+   "label": "「ネイビーとゴールド」 信頼感・高級感",
+   "seedId": "s-394",
+   "colors": {
+    "primary": "#13284A",
+    "secondary": "#E2DFD5",
+    "accent": "#B38B3E",
+    "background": "#F9F8F5",
+    "text": "#18202D"
+   }
+  },
+  {
+   "key": "new#50",
+   "word": "信頼感",
+   "index": 50,
+   "label": "「ティールとオレンジ」 信頼感・親しみやすい",
+   "seedId": "s-395",
+   "colors": {
+    "primary": "#0E5E6B",
+    "secondary": "#F3DDCB",
+    "accent": "#E57A2E",
+    "background": "#F9FBFB",
+    "text": "#142729"
+   }
+  },
+  {
+   "key": "new#51",
+   "word": "信頼感",
+   "index": 51,
+   "label": "「青と灰の企業」 信頼感・モダン",
+   "seedId": "s-396",
+   "colors": {
+    "primary": "#1E4E8C",
+    "secondary": "#DDE1E5",
+    "accent": "#3A4552",
+    "background": "#F8F9FA",
+    "text": "#1B2330"
+   }
+  },
+  {
+   "key": "new#52",
+   "word": "信頼感",
+   "index": 52,
+   "label": "「医療のミント」 信頼感・清潔・やさしい",
+   "seedId": "s-397",
+   "colors": {
+    "primary": "#127A6E",
+    "secondary": "#D5EAE4",
+    "accent": "#3A86C8",
+    "background": "#FBFEFD",
+    "text": "#132A26"
+   }
+  },
+  {
+   "key": "new#53",
+   "word": "信頼感",
+   "index": 53,
+   "label": "「深い青と空」 信頼感・クール",
+   "seedId": "s-398",
+   "colors": {
+    "primary": "#123A6B",
+    "secondary": "#D5E4F0",
+    "accent": "#3FA2E0",
+    "background": "#F8FBFE",
+    "text": "#172234"
+   }
+  },
+  {
+   "key": "new#54",
+   "word": "信頼感",
+   "index": 54,
+   "label": "「紺と赤の公共」 信頼感・まじめ・力強い",
+   "seedId": "s-399",
+   "colors": {
+    "primary": "#1A2E52",
+    "secondary": "#DEE1E7",
+    "accent": "#C8323A",
+    "background": "#FAFAFB",
+    "text": "#191F2E"
+   }
+  },
+  {
+   "key": "new#55",
+   "word": "信頼感",
+   "index": 55,
+   "label": "「緑と青の地域」 信頼感・爽やか",
+   "seedId": "s-400",
+   "colors": {
+    "primary": "#1F7A4D",
+    "secondary": "#D5E7F0",
+    "accent": "#1C6FB8",
+    "background": "#FAFDFB",
+    "text": "#17271F"
+   }
+  },
+  {
+   "key": "new#56",
+   "word": "信頼感",
+   "index": 56,
+   "label": "「ネイビーとベージュの安心」 信頼感・落ち着いた",
+   "seedId": "s-401",
+   "colors": {
+    "primary": "#1F3050",
+    "secondary": "#E6DFD2",
+    "accent": "#8E7350",
+    "background": "#FAF8F4",
+    "text": "#1C2131"
+   }
+  },
+  {
+   "key": "new#57",
+   "word": "知的",
+   "index": 57,
+   "label": "「濃紺とシアン」 知的・未来的・クール",
+   "seedId": "s-402",
+   "colors": {
+    "primary": "#152A4E",
+    "secondary": "#D7E3EC",
+    "accent": "#1FA3C2",
+    "background": "#F8FAFC",
+    "text": "#18213A"
+   }
+  },
+  {
+   "key": "new#58",
+   "word": "知的",
+   "index": 58,
+   "label": "「深緑と金の学術」 知的・高級感・落ち着いた",
+   "seedId": "s-403",
+   "colors": {
+    "primary": "#1D3D33",
+    "secondary": "#E1DED1",
+    "accent": "#AE8A43",
+    "background": "#F8F7F2",
+    "text": "#1A241F"
+   }
+  },
+  {
+   "key": "new#59",
+   "word": "知的",
+   "index": 59,
+   "label": "「インディゴとグレー」 知的・モダン",
+   "seedId": "s-404",
+   "colors": {
+    "primary": "#2A2F6B",
+    "secondary": "#E1E2EA",
+    "accent": "#5B6577",
+    "background": "#F8F8FA",
+    "text": "#1F2133"
+   }
+  },
+  {
+   "key": "new#60",
+   "word": "知的",
+   "index": 60,
+   "label": "「ネイビーとワイン」 知的・シック",
+   "seedId": "s-405",
+   "colors": {
+    "primary": "#1F2A48",
+    "secondary": "#E4DDDF",
+    "accent": "#8A2E45",
+    "background": "#F8F7F8",
+    "text": "#1C2130"
+   }
+  },
+  {
+   "key": "new#61",
+   "word": "知的",
+   "index": 61,
+   "label": "「ティールと砂」 知的・落ち着いた",
+   "seedId": "s-406",
+   "colors": {
+    "primary": "#145560",
+    "secondary": "#E5DFD1",
+    "accent": "#B7863F",
+    "background": "#F9F8F4",
+    "text": "#142629"
+   }
+  },
+  {
+   "key": "new#62",
+   "word": "知的",
+   "index": 62,
+   "label": "「紫紺とラベンダー」 知的・上品",
+   "seedId": "s-407",
+   "colors": {
+    "primary": "#2E2A5A",
+    "secondary": "#E2DFEE",
+    "accent": "#7D6FC2",
+    "background": "#FAFAFD",
+    "text": "#1F1E33"
+   }
+  },
+  {
+   "key": "new#63",
+   "word": "知的",
+   "index": 63,
+   "label": "「墨と青」 知的・シンプル",
+   "seedId": "s-408",
+   "colors": {
+    "primary": "#25282D",
+    "secondary": "#DFE2E6",
+    "accent": "#2F64B0",
+    "background": "#FAFAFB",
+    "text": "#1E2125"
+   }
+  },
+  {
+   "key": "new#64",
+   "word": "知的",
+   "index": 64,
+   "label": "「ペトロールとオレンジ」 知的・モダン・力強い",
+   "seedId": "s-409",
+   "colors": {
+    "primary": "#16404A",
+    "secondary": "#EEDECE",
+    "accent": "#D86A2B",
+    "background": "#F8FAFA",
+    "text": "#142529"
+   }
+  },
+  {
+   "key": "new#65",
+   "word": "知的",
+   "index": 65,
+   "label": "「深い青とミント」 知的・爽やか",
+   "seedId": "s-410",
+   "colors": {
+    "primary": "#183D6E",
+    "secondary": "#D4E8E2",
+    "accent": "#2BA68E",
+    "background": "#F9FCFC",
+    "text": "#182334"
+   }
+  },
+  {
+   "key": "new#66",
+   "word": "知的",
+   "index": 66,
+   "label": "「オックスフォード」 知的・まじめ・懐かしい",
+   "seedId": "s-411",
+   "colors": {
+    "primary": "#1E2F4F",
+    "secondary": "#E6DFCE",
+    "accent": "#8E3B3B",
+    "background": "#FAF8F2",
+    "text": "#1C2131"
+   }
+  },
+  {
+   "key": "new#67",
+   "word": "清潔",
+   "index": 67,
+   "label": "「白と水色とミント」 清潔・爽やか・やさしい",
+   "seedId": "s-412",
+   "colors": {
+    "primary": "#1F74A8",
+    "secondary": "#D6ECE8",
+    "accent": "#2BA88E",
+    "background": "#FFFFFF",
+    "text": "#182733"
+   }
+  },
+  {
+   "key": "new#68",
+   "word": "清潔",
+   "index": 68,
+   "label": "「ブルーと白の歯科」 清潔・信頼感",
+   "seedId": "s-413",
+   "colors": {
+    "primary": "#1A64B0",
+    "secondary": "#DDE8F3",
+    "accent": "#46B5D8",
+    "background": "#FFFFFF",
+    "text": "#182534"
+   }
+  },
+  {
+   "key": "new#69",
+   "word": "清潔",
+   "index": 69,
+   "label": "「グレーとアクア」 清潔・モダン",
+   "seedId": "s-414",
+   "colors": {
+    "primary": "#2F3A44",
+    "secondary": "#E3E9EC",
+    "accent": "#1FA6B8",
+    "background": "#FFFFFF",
+    "text": "#1E242A"
+   }
+  },
+  {
+   "key": "new#70",
+   "word": "清潔",
+   "index": 70,
+   "label": "「白とペールグリーン」 清潔・ナチュラル",
+   "seedId": "s-415",
+   "colors": {
+    "primary": "#2E7D5A",
+    "secondary": "#DCEAE1",
+    "accent": "#4B8FCB",
+    "background": "#FFFFFF",
+    "text": "#18281F"
+   }
+  },
+  {
+   "key": "new#71",
+   "word": "清潔",
+   "index": 71,
+   "label": "「ネイビーと白」 清潔・まじめ・シンプル",
+   "seedId": "s-416",
+   "colors": {
+    "primary": "#1B2F55",
+    "secondary": "#E2E7EE",
+    "accent": "#3B82C4",
+    "background": "#FFFFFF",
+    "text": "#1A2133"
+   }
+  },
+  {
+   "key": "new#72",
+   "word": "清潔",
+   "index": 72,
+   "label": "「ラベンダーと白」 清潔・上品・やさしい",
+   "seedId": "s-417",
+   "colors": {
+    "primary": "#5A5FA8",
+    "secondary": "#E6E5F1",
+    "accent": "#4AA5C8",
+    "background": "#FFFFFF",
+    "text": "#222433"
+   }
+  },
+  {
+   "key": "new#73",
+   "word": "清潔",
+   "index": 73,
+   "label": "「ティールと白」 清潔・爽やか",
+   "seedId": "s-418",
+   "colors": {
+    "primary": "#0E6E78",
+    "secondary": "#D7EBEC",
+    "accent": "#F0846B",
+    "background": "#FFFFFF",
+    "text": "#132829"
+   }
+  },
+  {
+   "key": "new#74",
+   "word": "清潔",
+   "index": 74,
+   "label": "「空色と灰」 清潔・クール",
+   "seedId": "s-419",
+   "colors": {
+    "primary": "#2C6A9E",
+    "secondary": "#DDE5EB",
+    "accent": "#6E7C8A",
+    "background": "#FCFDFE",
+    "text": "#1B2733"
+   }
+  },
+  {
+   "key": "new#75",
+   "word": "清潔",
+   "index": 75,
+   "label": "「白とシアン」 清潔・未来的",
+   "seedId": "s-420",
+   "colors": {
+    "primary": "#0F5D85",
+    "secondary": "#D6EAF0",
+    "accent": "#00A9C9",
+    "background": "#FFFFFF",
+    "text": "#152633"
+   }
+  },
+  {
+   "key": "new#76",
+   "word": "清潔",
+   "index": 76,
+   "label": "「リネンと紺」 清潔・ナチュラル・シンプル",
+   "seedId": "s-421",
+   "colors": {
+    "primary": "#24395E",
+    "secondary": "#E6E4DD",
+    "accent": "#5D8FB8",
+    "background": "#FDFDFB",
+    "text": "#1C2232"
+   }
+  },
+  {
+   "key": "new#77",
+   "word": "あたたかい",
+   "index": 77,
+   "label": "「橙と生成り」 あたたかい・親しみやすい",
+   "seedId": "s-422",
+   "colors": {
+    "primary": "#C65A1E",
+    "secondary": "#F0E1CD",
+    "accent": "#3E7F5A",
+    "background": "#FFFCF6",
+    "text": "#2B2016"
+   }
+  },
+  {
+   "key": "new#78",
+   "word": "あたたかい",
+   "index": 78,
+   "label": "「朱とクリーム」 あたたかい・元気",
+   "seedId": "s-423",
+   "colors": {
+    "primary": "#C8412A",
+    "secondary": "#F3E0C4",
+    "accent": "#2E6F95",
+    "background": "#FFFBF4",
+    "text": "#2B1D18"
+   }
+  },
+  {
+   "key": "new#79",
+   "word": "あたたかい",
+   "index": 79,
+   "label": "「テラコッタと緑」 あたたかい・ナチュラル",
+   "seedId": "s-424",
+   "colors": {
+    "primary": "#A9502F",
+    "secondary": "#E0E5D4",
+    "accent": "#4E7A4A",
+    "background": "#FDFBF6",
+    "text": "#2B201A"
+   }
+  },
+  {
+   "key": "new#80",
+   "word": "あたたかい",
+   "index": 80,
+   "label": "「蜂蜜」 あたたかい・やさしい",
+   "seedId": "s-425",
+   "colors": {
+    "primary": "#A86A14",
+    "secondary": "#F2E2BD",
+    "accent": "#C2504A",
+    "background": "#FFFCF3",
+    "text": "#2B2214"
+   }
+  },
+  {
+   "key": "new#81",
+   "word": "あたたかい",
+   "index": 81,
+   "label": "「れんがと紺」 あたたかい・レトロ",
+   "seedId": "s-426",
+   "colors": {
+    "primary": "#9A3E2A",
+    "secondary": "#EBDCCD",
+    "accent": "#24365C",
+    "background": "#FBF7F1",
+    "text": "#2A1D19"
+   }
+  },
+  {
+   "key": "new#82",
+   "word": "あたたかい",
+   "index": 82,
+   "label": "「暖炉」 あたたかい・落ち着いた",
+   "seedId": "s-427",
+   "colors": {
+    "primary": "#7A3A24",
+    "secondary": "#F0DCC8",
+    "accent": "#C9892F",
+    "background": "#FBF6EF",
+    "text": "#2A1E18"
+   }
+  },
+  {
+   "key": "new#83",
+   "word": "あたたかい",
+   "index": 83,
+   "label": "「オレンジとピンク」 あたたかい・かわいい・楽しい",
+   "seedId": "s-428",
+   "colors": {
+    "primary": "#D45A2A",
+    "secondary": "#F7DBD7",
+    "accent": "#D6457A",
+    "background": "#FFFAF7",
+    "text": "#2C1E19"
+   }
+  },
+  {
+   "key": "new#84",
+   "word": "あたたかい",
+   "index": 84,
+   "label": "「柿と藍」 あたたかい・和風",
+   "seedId": "s-429",
+   "colors": {
+    "primary": "#C2561E",
+    "secondary": "#ECDECD",
+    "accent": "#1F4A72",
+    "background": "#FDF9F2",
+    "text": "#2B2016"
+   }
+  },
+  {
+   "key": "new#85",
+   "word": "あたたかい",
+   "index": 85,
+   "label": "「キャラメルと赤」 あたたかい・懐かしい",
+   "seedId": "s-430",
+   "colors": {
+    "primary": "#8C5A2A",
+    "secondary": "#F2E2CA",
+    "accent": "#C23B32",
+    "background": "#FFFAF1",
+    "text": "#2B2117"
+   }
+  },
+  {
+   "key": "new#86",
+   "word": "あたたかい",
+   "index": 86,
+   "label": "「夕日と紫」 あたたかい・華やか",
+   "seedId": "s-431",
+   "colors": {
+    "primary": "#D2541E",
+    "secondary": "#F5DDC9",
+    "accent": "#7B3F98",
+    "background": "#FFFAF5",
+    "text": "#2C1E16"
+   }
+  },
+  {
+   "key": "new#87",
+   "word": "懐かしい",
+   "index": 87,
+   "label": "「セピアと朱」 懐かしい・レトロ",
+   "seedId": "s-432",
+   "colors": {
+    "primary": "#6B4A31",
+    "secondary": "#E6DBC3",
+    "accent": "#C24B2C",
+    "background": "#FAF4E7",
+    "text": "#2A2219"
+   }
+  },
+  {
+   "key": "new#88",
+   "word": "懐かしい",
+   "index": 88,
+   "label": "「昭和の青」 懐かしい・レトロ・まじめ",
+   "seedId": "s-433",
+   "colors": {
+    "primary": "#2D5A7E",
+    "secondary": "#E6DCC5",
+    "accent": "#C2452E",
+    "background": "#FAF5E8",
+    "text": "#1D2833"
+   }
+  },
+  {
+   "key": "new#89",
+   "word": "懐かしい",
+   "index": 89,
+   "label": "「ミルクホール」 懐かしい・あたたかい・やさしい",
+   "seedId": "s-434",
+   "colors": {
+    "primary": "#8A5A3A",
+    "secondary": "#EBDECA",
+    "accent": "#4E8A7A",
+    "background": "#FDF8EE",
+    "text": "#2B2119"
+   }
+  },
+  {
+   "key": "new#90",
+   "word": "懐かしい",
+   "index": 90,
+   "label": "「ブリキの赤」 懐かしい・楽しい",
+   "seedId": "s-435",
+   "colors": {
+    "primary": "#B5302B",
+    "secondary": "#E7DCC3",
+    "accent": "#2E6E6A",
+    "background": "#FAF5E9",
+    "text": "#2A1D1A"
+   }
+  },
+  {
+   "key": "new#91",
+   "word": "懐かしい",
+   "index": 91,
+   "label": "「焼き物」 懐かしい・和風・ナチュラル",
+   "seedId": "s-436",
+   "colors": {
+    "primary": "#7A4A2E",
+    "secondary": "#E4DAC6",
+    "accent": "#3E6B5A",
+    "background": "#F8F3E8",
+    "text": "#28201B"
+   }
+  },
+  {
+   "key": "new#92",
+   "word": "懐かしい",
+   "index": 92,
+   "label": "「古い絵本」 懐かしい・かわいい",
+   "seedId": "s-437",
+   "colors": {
+    "primary": "#A64B4B",
+    "secondary": "#E8DCC5",
+    "accent": "#4A7A9A",
+    "background": "#FBF6EA",
+    "text": "#2B1E1E"
+   }
+  },
+  {
+   "key": "new#93",
+   "word": "懐かしい",
+   "index": 93,
+   "label": "「銭湯」 懐かしい・爽やか・和風",
+   "seedId": "s-438",
+   "colors": {
+    "primary": "#1F5C7A",
+    "secondary": "#D6E2E2",
+    "accent": "#C2452E",
+    "background": "#F9F8F2",
+    "text": "#172830"
+   }
+  },
+  {
+   "key": "new#94",
+   "word": "懐かしい",
+   "index": 94,
+   "label": "「喫茶のオレンジ」 懐かしい・レトロ・あたたかい",
+   "seedId": "s-439",
+   "colors": {
+    "primary": "#B8561E",
+    "secondary": "#EBDABB",
+    "accent": "#5A3A2B",
+    "background": "#FBF4E4",
+    "text": "#2B2016"
+   }
+  },
+  {
+   "key": "new#95",
+   "word": "レトロ",
+   "index": 95,
+   "label": "「オレンジと茶の70s」 レトロ・あたたかい",
+   "seedId": "s-440",
+   "colors": {
+    "primary": "#C45A1E",
+    "secondary": "#EBD9BB",
+    "accent": "#5A3A2A",
+    "background": "#FBF4E4",
+    "text": "#2C2117"
+   }
+  },
+  {
+   "key": "new#96",
+   "word": "レトロ",
+   "index": 96,
+   "label": "「からしとティール」 レトロ・楽しい",
+   "seedId": "s-441",
+   "colors": {
+    "primary": "#1F6E6E",
+    "secondary": "#EEDCAB",
+    "accent": "#B8822A",
+    "background": "#FBF6E8",
+    "text": "#142828"
+   }
+  },
+  {
+   "key": "new#97",
+   "word": "レトロ",
+   "index": 97,
+   "label": "「ミッドセンチュリー」 レトロ・モダン",
+   "seedId": "s-442",
+   "colors": {
+    "primary": "#C2472E",
+    "secondary": "#E2DBC9",
+    "accent": "#2C6E7A",
+    "background": "#F8F4EA",
+    "text": "#2A1D19"
+   }
+  },
+  {
+   "key": "new#98",
+   "word": "レトロ",
+   "index": 98,
+   "label": "「ダイナーの水色」 レトロ・ポップ・かわいい",
+   "seedId": "s-443",
+   "colors": {
+    "primary": "#C8283B",
+    "secondary": "#CDE9EB",
+    "accent": "#DB9C1F",
+    "background": "#FFFBF5",
+    "text": "#2A1D20"
+   }
+  },
+  {
+   "key": "new#99",
+   "word": "レトロ",
+   "index": 99,
+   "label": "「ビンテージグリーン」 レトロ・ナチュラル・懐かしい",
+   "seedId": "s-444",
+   "colors": {
+    "primary": "#3E6B4A",
+    "secondary": "#E7DCC1",
+    "accent": "#C2602E",
+    "background": "#FAF5E8",
+    "text": "#1F2821"
+   }
+  },
+  {
+   "key": "new#100",
+   "word": "レトロ",
+   "index": 100,
+   "label": "「くすみ紫とからし」 レトロ・シック",
+   "seedId": "s-445",
+   "colors": {
+    "primary": "#5E3E6E",
+    "secondary": "#ECDEB8",
+    "accent": "#B8902A",
+    "background": "#FBF7EC",
+    "text": "#26202C"
+   }
+  },
+  {
+   "key": "new#101",
+   "word": "レトロ",
+   "index": 101,
+   "label": "「ポスターの青」 レトロ・力強い",
+   "seedId": "s-446",
+   "colors": {
+    "primary": "#1E3F7A",
+    "secondary": "#EADBBA",
+    "accent": "#D2402A",
+    "background": "#FBF5E6",
+    "text": "#1B2233"
+   }
+  },
+  {
+   "key": "new#102",
+   "word": "レトロ",
+   "index": 102,
+   "label": "「ソーダ水のレトロ」 レトロ・爽やか",
+   "seedId": "s-447",
+   "colors": {
+    "primary": "#1F7A8C",
+    "secondary": "#F4D8CF",
+    "accent": "#E27A3A",
+    "background": "#FBF8F0",
+    "text": "#14282C"
+   }
+  },
+  {
+   "key": "new#103",
+   "word": "レトロ",
+   "index": 103,
+   "label": "「チョコとクリーム」 レトロ・あたたかい・かわいい",
+   "seedId": "s-448",
+   "colors": {
+    "primary": "#5A3424",
+    "secondary": "#ECDEC6",
+    "accent": "#D46A6A",
+    "background": "#FDF8EE",
+    "text": "#29201B"
+   }
+  },
+  {
+   "key": "new#104",
+   "word": "レトロ",
+   "index": 104,
+   "label": "「オリーブと朱」 レトロ・懐かしい",
+   "seedId": "s-449",
+   "colors": {
+    "primary": "#5E6420",
+    "secondary": "#E8DEBC",
+    "accent": "#C8412A",
+    "background": "#FAF7EA",
+    "text": "#25271A"
+   }
+  },
+  {
+   "key": "new#105",
+   "word": "レトロ",
+   "index": 105,
+   "label": "「紺とからしのレトロ」 レトロ・落ち着いた",
+   "seedId": "s-450",
+   "colors": {
+    "primary": "#24345E",
+    "secondary": "#ECDEB4",
+    "accent": "#B8862A",
+    "background": "#FBF7EC",
+    "text": "#1C2131"
+   }
+  },
+  {
+   "key": "new#106",
+   "word": "レトロ",
+   "index": 106,
+   "label": "「赤とクリームのチェック」 レトロ・ポップ",
+   "seedId": "s-451",
+   "colors": {
+    "primary": "#B8262E",
+    "secondary": "#EFE0C8",
+    "accent": "#2A5F8A",
+    "background": "#FFFAF0",
+    "text": "#2A1C1D"
+   }
+  },
+  {
+   "key": "new#107",
+   "word": "シンプル",
+   "index": 107,
+   "label": "「白とグレーと緑」 シンプル・ナチュラル・清潔",
+   "seedId": "s-452",
+   "colors": {
+    "primary": "#2E3330",
+    "secondary": "#E4E7E4",
+    "accent": "#3E9A6A",
+    "background": "#FFFFFF",
+    "text": "#1F2220"
+   }
+  },
+  {
+   "key": "new#108",
+   "word": "シンプル",
+   "index": 108,
+   "label": "「白と黒と黄」 シンプル・元気",
+   "seedId": "s-453",
+   "colors": {
+    "primary": "#151515",
+    "secondary": "#E6E6E6",
+    "accent": "#D9A300",
+    "background": "#FFFFFF",
+    "text": "#151515"
+   }
+  },
+  {
+   "key": "new#109",
+   "word": "シンプル",
+   "index": 109,
+   "label": "「白と紺とオレンジ」 シンプル・親しみやすい",
+   "seedId": "s-454",
+   "colors": {
+    "primary": "#1E2F4F",
+    "secondary": "#E3E6EB",
+    "accent": "#E8762A",
+    "background": "#FFFFFF",
+    "text": "#1A2131"
+   }
+  },
+  {
+   "key": "new#110",
+   "word": "シンプル",
+   "index": 110,
+   "label": "「生成りと墨と朱」 シンプル・和風",
+   "seedId": "s-455",
+   "colors": {
+    "primary": "#2A2826",
+    "secondary": "#E5E1D9",
+    "accent": "#C8432A",
+    "background": "#FCFAF6",
+    "text": "#22201E"
+   }
+  },
+  {
+   "key": "new#111",
+   "word": "シンプル",
+   "index": 111,
+   "label": "「白と灰とピンク」 シンプル・かわいい",
+   "seedId": "s-456",
+   "colors": {
+    "primary": "#2E2E32",
+    "secondary": "#E7E6E8",
+    "accent": "#E0507E",
+    "background": "#FFFFFF",
+    "text": "#1F1F22"
+   }
+  },
+  {
+   "key": "new#112",
+   "word": "シンプル",
+   "index": 112,
+   "label": "「白と黒と紫」 シンプル・モダン",
+   "seedId": "s-457",
+   "colors": {
+    "primary": "#141414",
+    "secondary": "#E6E6E6",
+    "accent": "#6A4BD6",
+    "background": "#FFFFFF",
+    "text": "#141414"
+   }
+  },
+  {
+   "key": "new#113",
+   "word": "シンプル",
+   "index": 113,
+   "label": "「白とティール」 シンプル・爽やか",
+   "seedId": "s-458",
+   "colors": {
+    "primary": "#1E2A30",
+    "secondary": "#E1E7E9",
+    "accent": "#0E8C92",
+    "background": "#FFFFFF",
+    "text": "#1A2329"
+   }
+  },
+  {
+   "key": "new#114",
+   "word": "シンプル",
+   "index": 114,
+   "label": "「グレージュと黒」 シンプル・シック",
+   "seedId": "s-459",
+   "colors": {
+    "primary": "#1F1E1C",
+    "secondary": "#E2DDD6",
+    "accent": "#7A6A58",
+    "background": "#F8F6F2",
+    "text": "#1F1E1C"
+   }
+  },
+  {
+   "key": "new#115",
+   "word": "ミニマル",
+   "index": 115,
+   "label": "「白と黒と灰」 ミニマル・シンプル",
+   "seedId": "s-460",
+   "colors": {
+    "primary": "#111111",
+    "secondary": "#E8E8E8",
+    "accent": "#8A8A8A",
+    "background": "#FFFFFF",
+    "text": "#111111"
+   }
+  },
+  {
+   "key": "new#116",
+   "word": "ミニマル",
+   "index": 116,
+   "label": "「白と黒と一点の黄」 ミニマル・モダン",
+   "seedId": "s-461",
+   "colors": {
+    "primary": "#111111",
+    "secondary": "#E6E6E6",
+    "accent": "#D9A300",
+    "background": "#FFFFFF",
+    "text": "#111111"
+   }
+  },
+  {
+   "key": "new#117",
+   "word": "ミニマル",
+   "index": 117,
+   "label": "「白と黒と一点の緑」 ミニマル・ナチュラル",
+   "seedId": "s-462",
+   "colors": {
+    "primary": "#151515",
+    "secondary": "#E5E6E5",
+    "accent": "#2E8B57",
+    "background": "#FFFFFF",
+    "text": "#151515"
+   }
+  },
+  {
+   "key": "new#118",
+   "word": "ミニマル",
+   "index": 118,
+   "label": "「白と黒と一点のオレンジ」 ミニマル・元気",
+   "seedId": "s-463",
+   "colors": {
+    "primary": "#141414",
+    "secondary": "#E6E6E6",
+    "accent": "#EE6A1E",
+    "background": "#FFFFFF",
+    "text": "#141414"
+   }
+  },
+  {
+   "key": "new#119",
+   "word": "ミニマル",
+   "index": 119,
+   "label": "「オフホワイトと墨」 ミニマル・和風・シンプル",
+   "seedId": "s-464",
+   "colors": {
+    "primary": "#262422",
+    "secondary": "#E3E0DA",
+    "accent": "#7A746C",
+    "background": "#FAF9F6",
+    "text": "#221F1D"
+   }
+  },
+  {
+   "key": "new#120",
+   "word": "ミニマル",
+   "index": 120,
+   "label": "「ペールグレーと紺」 ミニマル・まじめ",
+   "seedId": "s-465",
+   "colors": {
+    "primary": "#1C2638",
+    "secondary": "#DDE0E4",
+    "accent": "#6F7B8C",
+    "background": "#F8F9FA",
+    "text": "#1C2230"
+   }
+  },
+  {
+   "key": "new#121",
+   "word": "ミニマル",
+   "index": 121,
+   "label": "「黒地に一点の赤」 ミニマル・かっこいい・力強い",
+   "seedId": "s-466",
+   "colors": {
+    "primary": "#F2F2F2",
+    "secondary": "#2A2A2A",
+    "accent": "#E0243A",
+    "background": "#111111",
+    "text": "#EDEDED"
+   }
+  },
+  {
+   "key": "new#122",
+   "word": "ミニマル",
+   "index": 122,
+   "label": "「黒地に一点の青」 ミニマル・未来的・クール",
+   "seedId": "s-467",
+   "colors": {
+    "primary": "#F2F2F2",
+    "secondary": "#282A2E",
+    "accent": "#3C8DFF",
+    "background": "#121314",
+    "text": "#EDEDED"
+   }
+  },
+  {
+   "key": "new#123",
+   "word": "ミニマル",
+   "index": 123,
+   "label": "「ストーングレー」 ミニマル・落ち着いた",
+   "seedId": "s-468",
+   "colors": {
+    "primary": "#3A3835",
+    "secondary": "#E3E0DC",
+    "accent": "#6E6A64",
+    "background": "#F7F6F4",
+    "text": "#22211F"
+   }
+  },
+  {
+   "key": "new#124",
+   "word": "ミニマル",
+   "index": 124,
+   "label": "「白とくすみ青」 ミニマル・知的",
+   "seedId": "s-469",
+   "colors": {
+    "primary": "#262A30",
+    "secondary": "#E4E8ED",
+    "accent": "#4F6F94",
+    "background": "#FFFFFF",
+    "text": "#1E2126"
+   }
+  },
+  {
+   "key": "new#125",
+   "word": "ミニマル",
+   "index": 125,
+   "label": "「白とテラコッタ」 ミニマル・あたたかい",
+   "seedId": "s-470",
+   "colors": {
+    "primary": "#232120",
+    "secondary": "#ECE7E2",
+    "accent": "#B85A3C",
+    "background": "#FFFFFF",
+    "text": "#211F1E"
+   }
+  },
+  {
+   "key": "new#126",
+   "word": "ミニマル",
+   "index": 126,
+   "label": "「ライトグレーと黒」 ミニマル・モダン",
+   "seedId": "s-471",
+   "colors": {
+    "primary": "#0F0F10",
+    "secondary": "#DADADA",
+    "accent": "#4A4A4C",
+    "background": "#F2F2F2",
+    "text": "#141415"
+   }
+  },
+  {
+   "key": "new#127",
+   "word": "ミニマル",
+   "index": 127,
+   "label": "「白とブラウン」 ミニマル・シック",
+   "seedId": "s-472",
+   "colors": {
+    "primary": "#1E1C1A",
+    "secondary": "#E9E4DF",
+    "accent": "#7A5A45",
+    "background": "#FFFFFF",
+    "text": "#1E1C1A"
+   }
+  },
+  {
+   "key": "new#128",
+   "word": "クール",
+   "index": 128,
+   "label": "「ネイビーとアイス」 クール・清潔",
+   "seedId": "s-473",
+   "colors": {
+    "primary": "#14305A",
+    "secondary": "#D8E5EE",
+    "accent": "#3E9ED6",
+    "background": "#FAFCFE",
+    "text": "#172236"
+   }
+  },
+  {
+   "key": "new#129",
+   "word": "クール",
+   "index": 129,
+   "label": "「グラファイトとシアン」 クール・かっこいい・未来的",
+   "seedId": "s-474",
+   "colors": {
+    "primary": "#26292E",
+    "secondary": "#DBDFE3",
+    "accent": "#00A8D0",
+    "background": "#F6F7F8",
+    "text": "#1E2125"
+   }
+  },
+  {
+   "key": "new#130",
+   "word": "クール",
+   "index": 130,
+   "label": "「藍と銀」 クール・和風・上品",
+   "seedId": "s-475",
+   "colors": {
+    "primary": "#1F3A5F",
+    "secondary": "#DDE1E5",
+    "accent": "#8A97A8",
+    "background": "#F8F9FA",
+    "text": "#1C2231"
+   }
+  },
+  {
+   "key": "new#131",
+   "word": "クール",
+   "index": 131,
+   "label": "「ブルーグリーンと紺」 クール・落ち着いた",
+   "seedId": "s-476",
+   "colors": {
+    "primary": "#0F5560",
+    "secondary": "#D6E4E6",
+    "accent": "#22355E",
+    "background": "#F7FAFA",
+    "text": "#142629"
+   }
+  },
+  {
+   "key": "new#132",
+   "word": "クール",
+   "index": 132,
+   "label": "「夜明けの青」 クール・やさしい",
+   "seedId": "s-477",
+   "colors": {
+    "primary": "#3060A0",
+    "secondary": "#DCE5F0",
+    "accent": "#8A7FC8",
+    "background": "#FCFDFF",
+    "text": "#1C2634"
+   }
+  },
+  {
+   "key": "new#133",
+   "word": "クール",
+   "index": 133,
+   "label": "「黒地に氷」 クール・かっこいい・モダン",
+   "seedId": "s-478",
+   "colors": {
+    "primary": "#E3F0F8",
+    "secondary": "#1F2A33",
+    "accent": "#5CC8F0",
+    "background": "#10161C",
+    "text": "#E6EEF4"
+   }
+  },
+  {
+   "key": "new#134",
+   "word": "鮮やか",
+   "index": 134,
+   "label": "「エメラルドとピンク」 鮮やか・華やか",
+   "seedId": "s-479",
+   "colors": {
+    "primary": "#008B6B",
+    "secondary": "#FFDDEB",
+    "accent": "#E0287A",
+    "background": "#FBFFFD",
+    "text": "#142820"
+   }
+  },
+  {
+   "key": "new#135",
+   "word": "鮮やか",
+   "index": 135,
+   "label": "「オレンジと紫のビビッド」 鮮やか・元気・カラフル",
+   "seedId": "s-480",
+   "colors": {
+    "primary": "#E2560E",
+    "secondary": "#ECE0FA",
+    "accent": "#6A2BC4",
+    "background": "#FFFCF9",
+    "text": "#2A1E14"
+   }
+  },
+  {
+   "key": "new#136",
+   "word": "鮮やか",
+   "index": 136,
+   "label": "「ブルーとライムのビビッド」 鮮やか・爽やか",
+   "seedId": "s-481",
+   "colors": {
+    "primary": "#1546C0",
+    "secondary": "#DAECB8",
+    "accent": "#4E9A0E",
+    "background": "#FBFCFF",
+    "text": "#18203A"
+   }
+  },
+  {
+   "key": "new#137",
+   "word": "鮮やか",
+   "index": 137,
+   "label": "「赤と黄色」 鮮やか・力強い・元気",
+   "seedId": "s-482",
+   "colors": {
+    "primary": "#D7191F",
+    "secondary": "#FFE97A",
+    "accent": "#1A1A1A",
+    "background": "#FFFFFF",
+    "text": "#1E1A1A"
+   }
+  },
+  {
+   "key": "new#138",
+   "word": "鮮やか",
+   "index": 138,
+   "label": "「マゼンタとシアン」 鮮やか・ポップ",
+   "seedId": "s-483",
+   "colors": {
+    "primary": "#C4157A",
+    "secondary": "#C9EAF1",
+    "accent": "#0094C4",
+    "background": "#FFFAFD",
+    "text": "#2A1A23"
+   }
+  },
+  {
+   "key": "new#139",
+   "word": "鮮やか",
+   "index": 139,
+   "label": "「ターコイズとオレンジのビビッド」 鮮やか・楽しい",
+   "seedId": "s-484",
+   "colors": {
+    "primary": "#008A94",
+    "secondary": "#FFE1C4",
+    "accent": "#F2711A",
+    "background": "#F8FEFE",
+    "text": "#132A2C"
+   }
+  },
+  {
+   "key": "new#140",
+   "word": "鮮やか",
+   "index": 140,
+   "label": "「緑と赤紫」 鮮やか・カラフル",
+   "seedId": "s-485",
+   "colors": {
+    "primary": "#16884A",
+    "secondary": "#F5DBEA",
+    "accent": "#B8237A",
+    "background": "#FAFEFB",
+    "text": "#17281E"
+   }
+  },
+  {
+   "key": "new#141",
+   "word": "鮮やか",
+   "index": 141,
+   "label": "「紫と緑」 鮮やか・華やか・カラフル",
+   "seedId": "s-486",
+   "colors": {
+    "primary": "#6B21A8",
+    "secondary": "#D3EDBF",
+    "accent": "#2E9E3E",
+    "background": "#FDFBFF",
+    "text": "#241A30"
+   }
+  },
+  {
+   "key": "new#142",
+   "word": "カラフル",
+   "index": 142,
+   "label": "「青・黄・ピンク」 カラフル・楽しい・ポップ",
+   "seedId": "s-487",
+   "colors": {
+    "primary": "#1F54D6",
+    "secondary": "#FFE97A",
+    "accent": "#E8338A",
+    "background": "#FFFFFF",
+    "text": "#1C2133"
+   }
+  },
+  {
+   "key": "new#143",
+   "word": "カラフル",
+   "index": 143,
+   "label": "「緑・オレンジ・紫」 カラフル・元気",
+   "seedId": "s-488",
+   "colors": {
+    "primary": "#14874E",
+    "secondary": "#FFE0C2",
+    "accent": "#7A3CC4",
+    "background": "#FBFFFC",
+    "text": "#17271E"
+   }
+  },
+  {
+   "key": "new#144",
+   "word": "カラフル",
+   "index": 144,
+   "label": "「赤・水色・黄」 カラフル・明るい",
+   "seedId": "s-489",
+   "colors": {
+    "primary": "#D7263D",
+    "secondary": "#C9EBF6",
+    "accent": "#DE9C00",
+    "background": "#FFFDFC",
+    "text": "#2A1D20"
+   }
+  },
+  {
+   "key": "new#145",
+   "word": "カラフル",
+   "index": 145,
+   "label": "「紫・ミント・オレンジ」 カラフル・かわいい",
+   "seedId": "s-490",
+   "colors": {
+    "primary": "#7A3AD6",
+    "secondary": "#C7EDE0",
+    "accent": "#F2761D",
+    "background": "#FDFBFF",
+    "text": "#231C33"
+   }
+  },
+  {
+   "key": "new#146",
+   "word": "カラフル",
+   "index": 146,
+   "label": "「ティール・ピンク・黄」 カラフル・華やか",
+   "seedId": "s-491",
+   "colors": {
+    "primary": "#0E7C86",
+    "secondary": "#FFD9E6",
+    "accent": "#D99A00",
+    "background": "#F8FEFE",
+    "text": "#14282A"
+   }
+  },
+  {
+   "key": "new#147",
+   "word": "カラフル",
+   "index": 147,
+   "label": "「紺・黄・赤」 カラフル・力強い",
+   "seedId": "s-492",
+   "colors": {
+    "primary": "#1A2E5E",
+    "secondary": "#FFE58A",
+    "accent": "#E2382E",
+    "background": "#FFFFFF",
+    "text": "#1A2033"
+   }
+  },
+  {
+   "key": "new#148",
+   "word": "カラフル",
+   "index": 148,
+   "label": "「ピンク・緑・青」 カラフル・楽しい",
+   "seedId": "s-493",
+   "colors": {
+    "primary": "#D8327A",
+    "secondary": "#D0EDC2",
+    "accent": "#1E6FD9",
+    "background": "#FFFAFC",
+    "text": "#2A1C24"
+   }
+  },
+  {
+   "key": "new#149",
+   "word": "カラフル",
+   "index": 149,
+   "label": "「橙・青・緑」 カラフル・親しみやすい",
+   "seedId": "s-494",
+   "colors": {
+    "primary": "#D5590F",
+    "secondary": "#D4E9FB",
+    "accent": "#2A9A4E",
+    "background": "#FFFCF8",
+    "text": "#2A1F16"
+   }
+  },
+  {
+   "key": "new#150",
+   "word": "親しみやすい",
+   "index": 150,
+   "label": "「空と若草」 親しみやすい・爽やか",
+   "seedId": "s-495",
+   "colors": {
+    "primary": "#2471B8",
+    "secondary": "#DCE9CF",
+    "accent": "#E8873A",
+    "background": "#FBFDFF",
+    "text": "#1A2633"
+   }
+  },
+  {
+   "key": "new#151",
+   "word": "親しみやすい",
+   "index": 151,
+   "label": "「オレンジと水色の街」 親しみやすい・元気・楽しい",
+   "seedId": "s-496",
+   "colors": {
+    "primary": "#D9661A",
+    "secondary": "#D3E8F2",
+    "accent": "#2F7FB5",
+    "background": "#FFFCF8",
+    "text": "#2B2116"
+   }
+  },
+  {
+   "key": "new#152",
+   "word": "親しみやすい",
+   "index": 152,
+   "label": "「緑と黄色の公園」 親しみやすい・ナチュラル・元気",
+   "seedId": "s-497",
+   "colors": {
+    "primary": "#2E8B4A",
+    "secondary": "#F1E4B5",
+    "accent": "#E2643A",
+    "background": "#FBFEF9",
+    "text": "#1C2A1F"
+   }
+  },
+  {
+   "key": "new#153",
+   "word": "親しみやすい",
+   "index": 153,
+   "label": "「ピンクとオレンジ」 親しみやすい・かわいい",
+   "seedId": "s-498",
+   "colors": {
+    "primary": "#D04B6E",
+    "secondary": "#F6DEC9",
+    "accent": "#E8892A",
+    "background": "#FFFAF9",
+    "text": "#2C1E23"
+   }
+  },
+  {
+   "key": "new#154",
+   "word": "親しみやすい",
+   "index": 154,
+   "label": "「青と赤の看板」 親しみやすい・楽しい",
+   "seedId": "s-499",
+   "colors": {
+    "primary": "#1E5FB4",
+    "secondary": "#F6DDD9",
+    "accent": "#DB3A34",
+    "background": "#FBFCFF",
+    "text": "#1A2433"
+   }
+  },
+  {
+   "key": "new#155",
+   "word": "親しみやすい",
+   "index": 155,
+   "label": "「ティールとたまご」 親しみやすい・やさしい",
+   "seedId": "s-500",
+   "colors": {
+    "primary": "#127A80",
+    "secondary": "#F1E3BB",
+    "accent": "#E8743B",
+    "background": "#F9FEFE",
+    "text": "#132A2C"
+   }
+  },
+  {
+   "key": "new#156",
+   "word": "親しみやすい",
+   "index": 156,
+   "label": "「赤とミント」 親しみやすい・かわいい・楽しい",
+   "seedId": "s-501",
+   "colors": {
+    "primary": "#D33F3F",
+    "secondary": "#CDEBDF",
+    "accent": "#2E8F72",
+    "background": "#FFFBFA",
+    "text": "#2B1E1E"
+   }
+  },
+  {
+   "key": "new#157",
+   "word": "親しみやすい",
+   "index": 157,
+   "label": "「紺と黄色」 親しみやすい・まじめ",
+   "seedId": "s-502",
+   "colors": {
+    "primary": "#21386A",
+    "secondary": "#F2E2AC",
+    "accent": "#E09A10",
+    "background": "#FBFBFD",
+    "text": "#1B2232"
+   }
+  },
+  {
+   "key": "new#158",
+   "word": "親しみやすい",
+   "index": 158,
+   "label": "「若草とピンク」 親しみやすい・やさしい・かわいい",
+   "seedId": "s-503",
+   "colors": {
+    "primary": "#4C9A3A",
+    "secondary": "#F6DCE4",
+    "accent": "#D9537E",
+    "background": "#FBFEF9",
+    "text": "#1F2A1E"
+   }
+  },
+  {
+   "key": "new#159",
+   "word": "親しみやすい",
+   "index": 159,
+   "label": "「オレンジと茶」 親しみやすい・あたたかい",
+   "seedId": "s-504",
+   "colors": {
+    "primary": "#D2671E",
+    "secondary": "#F2E2CC",
+    "accent": "#6B4A30",
+    "background": "#FFFBF5",
+    "text": "#2B2116"
+   }
+  },
+  {
+   "key": "new#160",
+   "word": "未来的",
+   "index": 160,
+   "label": "「白とバイオレット」 未来的・清潔",
+   "seedId": "s-505",
+   "colors": {
+    "primary": "#3A2FC4",
+    "secondary": "#E8E6FB",
+    "accent": "#00B5D6",
+    "background": "#FFFFFF",
+    "text": "#1C1B33"
+   }
+  },
+  {
+   "key": "new#161",
+   "word": "未来的",
+   "index": 161,
+   "label": "「黒地にマゼンタ」 未来的・かっこいい・ネオン",
+   "seedId": "s-506",
+   "colors": {
+    "primary": "#F2E6FF",
+    "secondary": "#2A1F38",
+    "accent": "#FF3DCB",
+    "background": "#100A18",
+    "text": "#F0EAFA"
+   }
+  },
+  {
+   "key": "new#162",
+   "word": "未来的",
+   "index": 162,
+   "label": "「銀と青」 未来的・モダン・クール",
+   "seedId": "s-507",
+   "colors": {
+    "primary": "#1F2A3A",
+    "secondary": "#D9DEE5",
+    "accent": "#2F7BFF",
+    "background": "#F4F6F9",
+    "text": "#1A2230"
+   }
+  },
+  {
+   "key": "new#163",
+   "word": "未来的",
+   "index": 163,
+   "label": "「深い紺と緑の光」 未来的・クール",
+   "seedId": "s-508",
+   "colors": {
+    "primary": "#DFFBF2",
+    "secondary": "#16283A",
+    "accent": "#2EE6A8",
+    "background": "#0B1622",
+    "text": "#E3F2EF"
+   }
+  },
+  {
+   "key": "new#164",
+   "word": "未来的",
+   "index": 164,
+   "label": "「白と蛍光の青」 未来的・ネオン・シンプル",
+   "seedId": "s-509",
+   "colors": {
+    "primary": "#141824",
+    "secondary": "#DFE7F5",
+    "accent": "#2A5CFF",
+    "background": "#FFFFFF",
+    "text": "#141824"
+   }
+  },
+  {
+   "key": "new#165",
+   "word": "未来的",
+   "index": 165,
+   "label": "「紫と青の夜」 未来的・華やか",
+   "seedId": "s-510",
+   "colors": {
+    "primary": "#B9A6FF",
+    "secondary": "#22204A",
+    "accent": "#4FC3FF",
+    "background": "#0F0D24",
+    "text": "#ECEAFF"
+   }
+  },
+  {
+   "key": "new#166",
+   "word": "明るい",
+   "index": 166,
+   "label": "「赤と黄と白」 明るい・元気・鮮やか",
+   "seedId": "s-511",
+   "colors": {
+    "primary": "#E02F2A",
+    "secondary": "#F6E89F",
+    "accent": "#1F6FD6",
+    "background": "#FFFFFF",
+    "text": "#2A2220"
+   }
+  },
+  {
+   "key": "new#167",
+   "word": "明るい",
+   "index": 167,
+   "label": "「オレンジと青空」 明るい・爽やか",
+   "seedId": "s-512",
+   "colors": {
+    "primary": "#E8640F",
+    "secondary": "#D1E9F7",
+    "accent": "#1C77D2",
+    "background": "#FFFDFB",
+    "text": "#2A2118"
+   }
+  },
+  {
+   "key": "new#168",
+   "word": "明るい",
+   "index": 168,
+   "label": "「ピンクと黄緑」 明るい・かわいい・楽しい",
+   "seedId": "s-513",
+   "colors": {
+    "primary": "#E23D7E",
+    "secondary": "#DBEABB",
+    "accent": "#4FA82E",
+    "background": "#FFFAFC",
+    "text": "#2B1F25"
+   }
+  },
+  {
+   "key": "new#169",
+   "word": "明るい",
+   "index": 169,
+   "label": "「青と黄緑」 明るい・元気",
+   "seedId": "s-514",
+   "colors": {
+    "primary": "#1C62D6",
+    "secondary": "#DCECB9",
+    "accent": "#4E9E10",
+    "background": "#FBFDFF",
+    "text": "#1A2333"
+   }
+  },
+  {
+   "key": "new#170",
+   "word": "明るい",
+   "index": 170,
+   "label": "「ひまわりと空」 明るい・元気・爽やか",
+   "seedId": "s-515",
+   "colors": {
+    "primary": "#D9690C",
+    "secondary": "#F3E6AC",
+    "accent": "#1E86D2",
+    "background": "#FFFEF8",
+    "text": "#2B2114"
+   }
+  },
+  {
+   "key": "new#171",
+   "word": "明るい",
+   "index": 171,
+   "label": "「トマトとレモン」 明るい・楽しい",
+   "seedId": "s-516",
+   "colors": {
+    "primary": "#E23A2E",
+    "secondary": "#F3E8A4",
+    "accent": "#2E9E52",
+    "background": "#FFFFFA",
+    "text": "#2A2220"
+   }
+  },
+  {
+   "key": "new#172",
+   "word": "やさしい",
+   "index": 172,
+   "label": "「白と水色とピンク」 やさしい・かわいい・清潔",
+   "seedId": "s-517",
+   "colors": {
+    "primary": "#3A82C4",
+    "secondary": "#F5DFE7",
+    "accent": "#E87FA2",
+    "background": "#FFFFFF",
+    "text": "#1B2734"
+   }
+  },
+  {
+   "key": "new#173",
+   "word": "やさしい",
+   "index": 173,
+   "label": "「ミントとレモン水」 やさしい・爽やか",
+   "seedId": "s-518",
+   "colors": {
+    "primary": "#1E8F7A",
+    "secondary": "#EFE7BD",
+    "accent": "#ED9777",
+    "background": "#FFFFFF",
+    "text": "#152A25"
+   }
+  },
+  {
+   "key": "new#174",
+   "word": "やさしい",
+   "index": 174,
+   "label": "「淡いラベンダーと黄」 やさしい・上品",
+   "seedId": "s-519",
+   "colors": {
+    "primary": "#7058C0",
+    "secondary": "#F1E6C2",
+    "accent": "#E194AE",
+    "background": "#FFFFFF",
+    "text": "#262033"
+   }
+  },
+  {
+   "key": "new#175",
+   "word": "やさしい",
+   "index": 175,
+   "label": "「桜と空」 やさしい・かわいい",
+   "seedId": "s-520",
+   "colors": {
+    "primary": "#D45A84",
+    "secondary": "#DAE8F4",
+    "accent": "#5AA0DA",
+    "background": "#FFFFFF",
+    "text": "#2D1F26"
+   }
+  },
+  {
+   "key": "new#176",
+   "word": "やさしい",
+   "index": 176,
+   "label": "「若葉とクリーム」 やさしい・ナチュラル",
+   "seedId": "s-521",
+   "colors": {
+    "primary": "#4A9A52",
+    "secondary": "#F0E5CC",
+    "accent": "#E89A5A",
+    "background": "#FFFFFF",
+    "text": "#1F2A1F"
+   }
+  },
+  {
+   "key": "new#177",
+   "word": "やさしい",
+   "index": 177,
+   "label": "「水色と珊瑚」 やさしい・爽やか・かわいい",
+   "seedId": "s-522",
+   "colors": {
+    "primary": "#2A86C0",
+    "secondary": "#F9E0D8",
+    "accent": "#EE7F6A",
+    "background": "#FFFFFF",
+    "text": "#1A2733"
+   }
+  },
+  {
+   "key": "new#178",
+   "word": "華やか",
+   "index": 178,
+   "label": "「ローズとミント」 華やか・かわいい",
+   "seedId": "s-523",
+   "colors": {
+    "primary": "#C41E5A",
+    "secondary": "#D0EADF",
+    "accent": "#D99A2E",
+    "background": "#FFFAFB",
+    "text": "#2C1B22"
+   }
+  },
+  {
+   "key": "new#179",
+   "word": "華やか",
+   "index": 179,
+   "label": "「マゼンタと金」 華やか・高級感",
+   "seedId": "s-524",
+   "colors": {
+    "primary": "#A3155E",
+    "secondary": "#EEDEE3",
+    "accent": "#C19A3E",
+    "background": "#FFFAFC",
+    "text": "#2B1A23"
+   }
+  },
+  {
+   "key": "new#180",
+   "word": "華やか",
+   "index": 180,
+   "label": "「紫とピンク」 華やか・鮮やか",
+   "seedId": "s-525",
+   "colors": {
+    "primary": "#6E2AB8",
+    "secondary": "#FCDCEA",
+    "accent": "#E5408A",
+    "background": "#FDFBFF",
+    "text": "#241A30"
+   }
+  },
+  {
+   "key": "new#181",
+   "word": "華やか",
+   "index": 181,
+   "label": "「赤と金の祝い」 華やか・和風・力強い",
+   "seedId": "s-526",
+   "colors": {
+    "primary": "#B4142E",
+    "secondary": "#EFE0C8",
+    "accent": "#C9A23A",
+    "background": "#FFFAF5",
+    "text": "#2C1A1C"
+   }
+  },
+  {
+   "key": "new#182",
+   "word": "華やか",
+   "index": 182,
+   "label": "「コーラルとネイビー」 華やか・モダン",
+   "seedId": "s-527",
+   "colors": {
+    "primary": "#E0524F",
+    "secondary": "#DDE3EE",
+    "accent": "#1E2F55",
+    "background": "#FFFAF9",
+    "text": "#2B1E1F"
+   }
+  }
+ ]
+}

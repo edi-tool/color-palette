@@ -90,7 +90,7 @@ test('印象語を足すと、カードの系統ラベルも新しい候補に�
     const seed = Number(new URLSearchParams(location.hash.slice(1)).get('s'));
     const { buildIndex } = await import('/src/semantic-model.js');
     const { generateWide } = await import('/src/palette-engine.js');
-    const index = buildIndex(await (await fetch('/src/vocab.json')).json());
+    const index = buildIndex(await (await fetch('/src/vocab.json')).json(), await (await fetch('/src/seeds.json')).json());
     return generateWide({ index, moods: ['明るい', '知的'], seed, page: 0, count: 24 }).map((c) => c.label);
   });
   await expect(page.locator('.card-label')).toHaveText(expected);

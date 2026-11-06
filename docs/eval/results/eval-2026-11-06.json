@@ -1,0 +1,3682 @@
+{
+  "schema": "color-palette-eval/1",
+  "exportedAt": "2026-11-06T03:27:53.362Z",
+  "seed": 20261106,
+  "words": [
+    "明るい",
+    "やさしい",
+    "誠実",
+    "落ち着いた",
+    "高級感",
+    "ナチュラル",
+    "和風",
+    "ネオン"
+  ],
+  "overall": {},
+  "items": [
+    {
+      "key": "明るい#0",
+      "word": "明るい",
+      "index": 0,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "colors": {
+        "primary": "#BF7100",
+        "secondary": "#63440D",
+        "accent": "#1DB0C3",
+        "background": "#FBF2EA",
+        "text": "#292018"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood",
+        "unreadable"
+      ]
+    },
+    {
+      "key": "明るい#1",
+      "word": "明るい",
+      "index": 1,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#907AD6",
+        "secondary": "#B7C5F5",
+        "accent": "#E155B9",
+        "background": "#FBFAFF",
+        "text": "#22202B"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "明るい#2",
+      "word": "明るい",
+      "index": 2,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "colors": {
+        "primary": "#2F392B",
+        "secondary": "#BEC2BC",
+        "accent": "#63BB39",
+        "background": "#F8FDF7",
+        "text": "#1D241B"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "明るい#3",
+      "word": "明るい",
+      "index": 3,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "split"
+      },
+      "colors": {
+        "primary": "#D25A5D",
+        "secondary": "#EFA6BB",
+        "accent": "#2392BB",
+        "background": "#F4EBEA",
+        "text": "#2B1E1D"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "明るい#4",
+      "word": "明るい",
+      "index": 4,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#00958D",
+        "secondary": "#0D4B53",
+        "accent": "#EA6B89",
+        "background": "#EDF9F8",
+        "text": "#162523"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood",
+        "unreadable"
+      ]
+    },
+    {
+      "key": "明るい#5",
+      "word": "明るい",
+      "index": 5,
+      "cell": {
+        "temp": "warm",
+        "sat": "muted",
+        "harm": "triad"
+      },
+      "colors": {
+        "primary": "#B471A4",
+        "secondary": "#CCC5A6",
+        "accent": "#1FB2D0",
+        "background": "#F8F6F8",
+        "text": "#281E25"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood"
+      ]
+    },
+    {
+      "key": "明るい#6",
+      "word": "明るい",
+      "index": 6,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#6D9351",
+        "secondary": "#3B512B",
+        "accent": "#8DAF5D",
+        "background": "#F6FBF4",
+        "text": "#1E241A"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood",
+        "unreadable"
+      ]
+    },
+    {
+      "key": "明るい#7",
+      "word": "明るい",
+      "index": 7,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "colors": {
+        "primary": "#534A55",
+        "secondary": "#CAC1CC",
+        "accent": "#B564C9",
+        "background": "#F7EFF9",
+        "text": "#261F28"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "明るい#8",
+      "word": "明るい",
+      "index": 8,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#C9721C",
+        "secondary": "#F0DF39",
+        "accent": "#DD9415",
+        "background": "#F8F8F0",
+        "text": "#232217"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "明るい#9",
+      "word": "明るい",
+      "index": 9,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#7576F6",
+        "secondary": "#173499",
+        "accent": "#ED8D21",
+        "background": "#F9F9FE",
+        "text": "#1F212B"
+      },
+      "rating": "good",
+      "tags": [
+        "unreadable"
+      ]
+    },
+    {
+      "key": "明るい#10",
+      "word": "明るい",
+      "index": 10,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#BF5E90",
+        "secondary": "#6E2437",
+        "accent": "#07B08A",
+        "background": "#F2E9ED",
+        "text": "#291E23"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood",
+        "unreadable"
+      ]
+    },
+    {
+      "key": "明るい#11",
+      "word": "明るい",
+      "index": 11,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#008ABA",
+        "secondary": "#0D485D",
+        "accent": "#2393B1",
+        "background": "#E4F0F7",
+        "text": "#18232A"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood",
+        "unreadable"
+      ]
+    },
+    {
+      "key": "明るい#12",
+      "word": "明るい",
+      "index": 12,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#D85054",
+        "secondary": "#771331",
+        "accent": "#B77C20",
+        "background": "#F1E9E8",
+        "text": "#2B1E1D"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood",
+        "unreadable"
+      ]
+    },
+    {
+      "key": "明るい#13",
+      "word": "明るい",
+      "index": 13,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "split"
+      },
+      "colors": {
+        "primary": "#4785BF",
+        "secondary": "#96C5DF",
+        "accent": "#D09038",
+        "background": "#ECF0F5",
+        "text": "#1A232B"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "明るい#14",
+      "word": "明るい",
+      "index": 14,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "colors": {
+        "primary": "#9277BB",
+        "secondary": "#6C3E0D",
+        "accent": "#1EB1A0",
+        "background": "#F2F1F6",
+        "text": "#231F2A"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood",
+        "unreadable"
+      ]
+    },
+    {
+      "key": "明るい#15",
+      "word": "明るい",
+      "index": 15,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "colors": {
+        "primary": "#009B0E",
+        "secondary": "#B6D589",
+        "accent": "#F95CA3",
+        "background": "#EEF7ED",
+        "text": "#1C241B"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "明るい#16",
+      "word": "明るい",
+      "index": 16,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#0396B3",
+        "secondary": "#B3E2EB",
+        "accent": "#DB7960",
+        "background": "#F6FAFB",
+        "text": "#172428"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "明るい#17",
+      "word": "明るい",
+      "index": 17,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#009C92",
+        "secondary": "#89D7E8",
+        "accent": "#40A534",
+        "background": "#EFFFFD",
+        "text": "#162523"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "明るい#18",
+      "word": "明るい",
+      "index": 18,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "colors": {
+        "primary": "#BD54CC",
+        "secondary": "#F1A2C7",
+        "accent": "#C28C25",
+        "background": "#F3EBF4",
+        "text": "#261E27"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "明るい#19",
+      "word": "明るい",
+      "index": 19,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "colors": {
+        "primary": "#8C6AF2",
+        "secondary": "#A8BDFA",
+        "accent": "#1DBA16",
+        "background": "#F3F1FE",
+        "text": "#22202B"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "明るい#20",
+      "word": "明るい",
+      "index": 20,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#E4538B",
+        "secondary": "#FCC4D0",
+        "accent": "#F5488D",
+        "background": "#FFF7F9",
+        "text": "#2A1E21"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "明るい#21",
+      "word": "明るい",
+      "index": 21,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "split"
+      },
+      "colors": {
+        "primary": "#A77800",
+        "secondary": "#B7D750",
+        "accent": "#7A97EE",
+        "background": "#EBEDE9",
+        "text": "#202319"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "明るい#22",
+      "word": "明るい",
+      "index": 22,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#D8661C",
+        "secondary": "#FCD47A",
+        "accent": "#7288F7",
+        "background": "#FAF6EF",
+        "text": "#262117"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "明るい#23",
+      "word": "明るい",
+      "index": 23,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#9B70E9",
+        "secondary": "#563884",
+        "accent": "#866BF6",
+        "background": "#F8F7FB",
+        "text": "#23202A"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "やさしい#0",
+      "word": "やさしい",
+      "index": 0,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "colors": {
+        "primary": "#A78152",
+        "secondary": "#D7DD98",
+        "accent": "#C88BDB",
+        "background": "#F8F9EF",
+        "text": "#222318"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "やさしい#1",
+      "word": "やさしい",
+      "index": 1,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#379484",
+        "secondary": "#11575C",
+        "accent": "#86B053",
+        "background": "#EBF8F5",
+        "text": "#172522"
+      },
+      "rating": "meh"
+    },
+    {
+      "key": "やさしい#2",
+      "word": "やさしい",
+      "index": 2,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "colors": {
+        "primary": "#33262A",
+        "secondary": "#C4B8BB",
+        "accent": "#D486A2",
+        "background": "#FBECF0",
+        "text": "#2A1E22"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "やさしい#3",
+      "word": "やさしい",
+      "index": 3,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "split"
+      },
+      "colors": {
+        "primary": "#AF7690",
+        "secondary": "#5E4062",
+        "accent": "#269E9E",
+        "background": "#FCF4F7",
+        "text": "#291E23"
+      }
+    },
+    {
+      "key": "やさしい#4",
+      "word": "やさしい",
+      "index": 4,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#6D8C66",
+        "secondary": "#2F5343",
+        "accent": "#C68DDF",
+        "background": "#F0F6EF",
+        "text": "#1D241B"
+      },
+      "rating": "meh"
+    },
+    {
+      "key": "やさしい#5",
+      "word": "やさしい",
+      "index": 5,
+      "cell": {
+        "temp": "warm",
+        "sat": "muted",
+        "harm": "triad"
+      },
+      "colors": {
+        "primary": "#9B7875",
+        "secondary": "#C0D1C0",
+        "accent": "#849ED8",
+        "background": "#FBEBEA",
+        "text": "#2B1E1D"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "やさしい#6",
+      "word": "やさしい",
+      "index": 6,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#6C8D6E",
+        "secondary": "#C8DACA",
+        "accent": "#649D70",
+        "background": "#ECF6EC",
+        "text": "#1B241C"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "やさしい#7",
+      "word": "やさしい",
+      "index": 7,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#A873AA",
+        "secondary": "#E2C3E3",
+        "accent": "#D17EBC",
+        "background": "#FDF4FD",
+        "text": "#271E27"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "やさしい#8",
+      "word": "やさしい",
+      "index": 8,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#3C968E",
+        "secondary": "#ACD5C7",
+        "accent": "#C7668C",
+        "background": "#EEFEFB",
+        "text": "#162523"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "やさしい#9",
+      "word": "やさしい",
+      "index": 9,
+      "cell": {
+        "temp": "warm",
+        "sat": "muted",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#9C7E68",
+        "secondary": "#58382E",
+        "accent": "#A4904D",
+        "background": "#F7F0EA",
+        "text": "#291F18"
+      },
+      "rating": "meh"
+    },
+    {
+      "key": "やさしい#10",
+      "word": "やさしい",
+      "index": 10,
+      "cell": {
+        "temp": "neutral",
+        "sat": "mid",
+        "harm": "neutralAccent"
+      },
+      "colors": {
+        "primary": "#41473E",
+        "secondary": "#BBC5B6",
+        "accent": "#81AB6C",
+        "background": "#ECF2E9",
+        "text": "#1D241A"
+      },
+      "rating": "meh"
+    },
+    {
+      "key": "やさしい#11",
+      "word": "やさしい",
+      "index": 11,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#AD784F",
+        "secondary": "#DABBAD",
+        "accent": "#C9962E",
+        "background": "#F8EFE8",
+        "text": "#291F18"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "やさしい#12",
+      "word": "やさしい",
+      "index": 12,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "triad"
+      },
+      "colors": {
+        "primary": "#5E8D82",
+        "secondary": "#5E432E",
+        "accent": "#8A77B2",
+        "background": "#EFF5F4",
+        "text": "#172522"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood"
+      ]
+    },
+    {
+      "key": "やさしい#13",
+      "word": "やさしい",
+      "index": 13,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#AA7B8B",
+        "secondary": "#DDC7D4",
+        "accent": "#E89154",
+        "background": "#FFF8FA",
+        "text": "#2A1E22"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "やさしい#14",
+      "word": "やさしい",
+      "index": 14,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#239186",
+        "secondary": "#A4D4DD",
+        "accent": "#80A344",
+        "background": "#E7F2F0",
+        "text": "#172523"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "やさしい#15",
+      "word": "やさしい",
+      "index": 15,
+      "cell": {
+        "temp": "neutral",
+        "sat": "muted",
+        "harm": "neutralAccent"
+      },
+      "colors": {
+        "primary": "#5F5052",
+        "secondary": "#CAB5B8",
+        "accent": "#E190A0",
+        "background": "#FFFAFB",
+        "text": "#2A1E20"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "やさしい#16",
+      "word": "やさしい",
+      "index": 16,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "colors": {
+        "primary": "#B76C88",
+        "secondary": "#DAB2B7",
+        "accent": "#569F56",
+        "background": "#FBEEF2",
+        "text": "#2A1E22"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "やさしい#17",
+      "word": "やさしい",
+      "index": 17,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#699477",
+        "secondary": "#B4D1CC",
+        "accent": "#C66DA3",
+        "background": "#F2FEF5",
+        "text": "#1A251D"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "やさしい#18",
+      "word": "やさしい",
+      "index": 18,
+      "cell": {
+        "temp": "neutral",
+        "sat": "mid",
+        "harm": "neutralAccent"
+      },
+      "colors": {
+        "primary": "#495654",
+        "secondary": "#B9CFCC",
+        "accent": "#49B5AB",
+        "background": "#F6FAF9",
+        "text": "#162523"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "やさしい#19",
+      "word": "やさしい",
+      "index": 19,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "split"
+      },
+      "colors": {
+        "primary": "#B07C72",
+        "secondary": "#D9BFAB",
+        "accent": "#13B99A",
+        "background": "#FFF8F7",
+        "text": "#2B1E1C"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "やさしい#20",
+      "word": "やさしい",
+      "index": 20,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#688F8A",
+        "secondary": "#C2DED9",
+        "accent": "#58B3A4",
+        "background": "#ECFCFA",
+        "text": "#162523"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "やさしい#21",
+      "word": "やさしい",
+      "index": 21,
+      "cell": {
+        "temp": "neutral",
+        "sat": "muted",
+        "harm": "neutralAccent"
+      },
+      "colors": {
+        "primary": "#56524A",
+        "secondary": "#C2BBAF",
+        "accent": "#C39A55",
+        "background": "#F8F0E5",
+        "text": "#272117"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "やさしい#22",
+      "word": "やさしい",
+      "index": 22,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#BF7484",
+        "secondary": "#5E313B",
+        "accent": "#ED86A3",
+        "background": "#FFF8F9",
+        "text": "#2A1E20"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "やさしい#23",
+      "word": "やさしい",
+      "index": 23,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#738F4D",
+        "secondary": "#D0CCB3",
+        "accent": "#9B75CA",
+        "background": "#F1F6ED",
+        "text": "#1F2419"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "誠実#0",
+      "word": "誠実",
+      "index": 0,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "colors": {
+        "primary": "#125679",
+        "secondary": "#AED5FB",
+        "accent": "#ED6F72",
+        "background": "#EEF4F9",
+        "text": "#19232A"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "誠実#1",
+      "word": "誠実",
+      "index": 1,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "colors": {
+        "primary": "#252930",
+        "secondary": "#C7D0DD",
+        "accent": "#3460AF",
+        "background": "#F3F7FF",
+        "text": "#1C222B"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "誠実#2",
+      "word": "誠実",
+      "index": 2,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "split"
+      },
+      "colors": {
+        "primary": "#156681",
+        "secondary": "#07353E",
+        "accent": "#BA7820",
+        "background": "#E4EEF2",
+        "text": "#172429"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "誠実#3",
+      "word": "誠実",
+      "index": 3,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "triad"
+      },
+      "colors": {
+        "primary": "#19727C",
+        "secondary": "#DEC4DD",
+        "accent": "#DA9065",
+        "background": "#EFF6F7",
+        "text": "#162426"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "誠実#4",
+      "word": "誠実",
+      "index": 4,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#354A94",
+        "secondary": "#162862",
+        "accent": "#7F9AEB",
+        "background": "#EEF1F9",
+        "text": "#1E212B"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "誠実#5",
+      "word": "誠実",
+      "index": 5,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#4D65A8",
+        "secondary": "#CBC8F2",
+        "accent": "#C56D38",
+        "background": "#F6F8FD",
+        "text": "#1D212B"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "誠実#6",
+      "word": "誠実",
+      "index": 6,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "triad"
+      },
+      "colors": {
+        "primary": "#5573B3",
+        "secondary": "#6E3734",
+        "accent": "#69B36A",
+        "background": "#F5F7FC",
+        "text": "#1D222B"
+      },
+      "rating": "meh",
+      "tags": [
+        "clash"
+      ]
+    },
+    {
+      "key": "誠実#7",
+      "word": "誠実",
+      "index": 7,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#3E8399",
+        "secondary": "#1A4954",
+        "accent": "#60ADCE",
+        "background": "#F3F9FC",
+        "text": "#172429"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "誠実#8",
+      "word": "誠実",
+      "index": 8,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#10545C",
+        "secondary": "#92DCE2",
+        "accent": "#00B5B8",
+        "background": "#E8F7F9",
+        "text": "#162426"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "誠実#9",
+      "word": "誠実",
+      "index": 9,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#3C7DB4",
+        "secondary": "#A2C5E7",
+        "accent": "#4CA1E5",
+        "background": "#E9ECEF",
+        "text": "#1A232B"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "誠実#10",
+      "word": "誠実",
+      "index": 10,
+      "cell": {
+        "temp": "neutral",
+        "sat": "mid",
+        "harm": "neutralAccent"
+      },
+      "colors": {
+        "primary": "#48565D",
+        "secondary": "#AEC0CA",
+        "accent": "#186B91",
+        "background": "#E3F0F8",
+        "text": "#18232A"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "誠実#11",
+      "word": "誠実",
+      "index": 11,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#184688",
+        "secondary": "#C1CBEA",
+        "accent": "#2BAEC4",
+        "background": "#F2F7FF",
+        "text": "#1C222B"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "誠実#12",
+      "word": "誠実",
+      "index": 12,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#115579",
+        "secondary": "#07343D",
+        "accent": "#8E77CF",
+        "background": "#F0F9FF",
+        "text": "#19232A"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "誠実#13",
+      "word": "誠実",
+      "index": 13,
+      "cell": {
+        "temp": "neutral",
+        "sat": "muted",
+        "harm": "neutralAccent"
+      },
+      "colors": {
+        "primary": "#26363C",
+        "secondary": "#A3B4BB",
+        "accent": "#186E86",
+        "background": "#E4EFF4",
+        "text": "#172429"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "誠実#14",
+      "word": "誠実",
+      "index": 14,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "split"
+      },
+      "colors": {
+        "primary": "#424B7B",
+        "secondary": "#2E2848",
+        "accent": "#C7935F",
+        "background": "#EBEDF2",
+        "text": "#1F212B"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "誠実#15",
+      "word": "誠実",
+      "index": 15,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#2A7F8F",
+        "secondary": "#9FCCD3",
+        "accent": "#49AEBD",
+        "background": "#F0F5F6",
+        "text": "#162427"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "誠実#16",
+      "word": "誠実",
+      "index": 16,
+      "cell": {
+        "temp": "neutral",
+        "sat": "mid",
+        "harm": "neutralAccent"
+      },
+      "colors": {
+        "primary": "#424A56",
+        "secondary": "#C2C9D2",
+        "accent": "#4A74B4",
+        "background": "#F3F6FB",
+        "text": "#1C222B"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "誠実#17",
+      "word": "誠実",
+      "index": 17,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "colors": {
+        "primary": "#3F6FB1",
+        "secondary": "#0D4966",
+        "accent": "#CF8F29",
+        "background": "#E9ECF2",
+        "text": "#1C222B"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "誠実#18",
+      "word": "誠実",
+      "index": 18,
+      "cell": {
+        "temp": "neutral",
+        "sat": "mid",
+        "harm": "neutralAccent"
+      },
+      "colors": {
+        "primary": "#384347",
+        "secondary": "#B0C0C6",
+        "accent": "#1F84A1",
+        "background": "#E7EFF2",
+        "text": "#172429"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "誠実#19",
+      "word": "誠実",
+      "index": 19,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "split"
+      },
+      "colors": {
+        "primary": "#0F5262",
+        "secondary": "#94C0BF",
+        "accent": "#D58E31",
+        "background": "#EAEEEF",
+        "text": "#172428"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "誠実#20",
+      "word": "誠実",
+      "index": 20,
+      "cell": {
+        "temp": "neutral",
+        "sat": "mid",
+        "harm": "neutralAccent"
+      },
+      "colors": {
+        "primary": "#393D47",
+        "secondary": "#C2C5CE",
+        "accent": "#495FA1",
+        "background": "#E8EDFA",
+        "text": "#1E212B"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "誠実#21",
+      "word": "誠実",
+      "index": 21,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#4D71C2",
+        "secondary": "#254179",
+        "accent": "#4D91EC",
+        "background": "#F2F7FF",
+        "text": "#1D222B"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "誠実#22",
+      "word": "誠実",
+      "index": 22,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#394485",
+        "secondary": "#D2D4FC",
+        "accent": "#E78D57",
+        "background": "#F3F6FE",
+        "text": "#1E212B"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "誠実#23",
+      "word": "誠実",
+      "index": 23,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#437598",
+        "secondary": "#C3CEE9",
+        "accent": "#C59561",
+        "background": "#E9F0F5",
+        "text": "#19232A"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "落ち着いた#0",
+      "word": "落ち着いた",
+      "index": 0,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "colors": {
+        "primary": "#976737",
+        "secondary": "#604518",
+        "accent": "#00A7BA",
+        "background": "#EFE6DF",
+        "text": "#292018"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "落ち着いた#1",
+      "word": "落ち着いた",
+      "index": 1,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#6E6494",
+        "secondary": "#B6BCD1",
+        "accent": "#C872AC",
+        "background": "#F0EFF7",
+        "text": "#22202B"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "落ち着いた#2",
+      "word": "落ち着いた",
+      "index": 2,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "colors": {
+        "primary": "#233833",
+        "secondary": "#AFC0BC",
+        "accent": "#1F8A78",
+        "background": "#DCE9E6",
+        "text": "#172522"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "落ち着いた#3",
+      "word": "落ち着いた",
+      "index": 3,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "split"
+      },
+      "colors": {
+        "primary": "#A77267",
+        "secondary": "#D5B1AF",
+        "accent": "#38A3DB",
+        "background": "#F4E9E6",
+        "text": "#2A1E1C"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "落ち着いた#4",
+      "word": "落ち着いた",
+      "index": 4,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#588984",
+        "secondary": "#1D4A50",
+        "accent": "#DD768C",
+        "background": "#E2EEEC",
+        "text": "#162523"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "落ち着いた#5",
+      "word": "落ち着いた",
+      "index": 5,
+      "cell": {
+        "temp": "warm",
+        "sat": "muted",
+        "harm": "triad"
+      },
+      "colors": {
+        "primary": "#89676B",
+        "secondary": "#2C435A",
+        "accent": "#7E9B5F",
+        "background": "#E9DFE0",
+        "text": "#2A1E1F"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "落ち着いた#6",
+      "word": "落ち着いた",
+      "index": 6,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#4F5A48",
+        "secondary": "#26351A",
+        "accent": "#8BA668",
+        "background": "#ECF0E9",
+        "text": "#1E241A"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "落ち着いた#7",
+      "word": "落ち着いた",
+      "index": 7,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#68466D",
+        "secondary": "#3B243C",
+        "accent": "#BE80CE",
+        "background": "#EAE4EB",
+        "text": "#261F27"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "落ち着いた#8",
+      "word": "落ち着いた",
+      "index": 8,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#2E85A0",
+        "secondary": "#9DBDC0",
+        "accent": "#E07A65",
+        "background": "#DBE9EE",
+        "text": "#172428"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "落ち着いた#9",
+      "word": "落ち着いた",
+      "index": 9,
+      "cell": {
+        "temp": "warm",
+        "sat": "muted",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#89765A",
+        "secondary": "#CBD194",
+        "accent": "#A590CD",
+        "background": "#EBEDE1",
+        "text": "#222318"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "落ち着いた#10",
+      "word": "落ち着いた",
+      "index": 10,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#2E5670",
+        "secondary": "#143145",
+        "accent": "#3192D2",
+        "background": "#E4EEF4",
+        "text": "#19232A"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "落ち着いた#11",
+      "word": "落ち着いた",
+      "index": 11,
+      "cell": {
+        "temp": "warm",
+        "sat": "muted",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#6F5D70",
+        "secondary": "#BFB8CD",
+        "accent": "#C67F77",
+        "background": "#E2DEE2",
+        "text": "#271E27"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "落ち着いた#12",
+      "word": "落ち着いた",
+      "index": 12,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "split"
+      },
+      "colors": {
+        "primary": "#697B4E",
+        "secondary": "#A6B3A0",
+        "accent": "#8B8DE6",
+        "background": "#DFE4D9",
+        "text": "#1F2319"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "落ち着いた#13",
+      "word": "落ち着いた",
+      "index": 13,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#753A4D",
+        "secondary": "#E5BABA",
+        "accent": "#B386DB",
+        "background": "#EFEBEC",
+        "text": "#2A1E21"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "落ち着いた#14",
+      "word": "落ち着いた",
+      "index": 14,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#58556A",
+        "secondary": "#372640",
+        "accent": "#AC8149",
+        "background": "#F0EFF8",
+        "text": "#22202B"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "落ち着いた#15",
+      "word": "落ち着いた",
+      "index": 15,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#7B4131",
+        "secondary": "#DAC285",
+        "accent": "#DE7A5F",
+        "background": "#E7E5DE",
+        "text": "#252117"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "落ち着いた#16",
+      "word": "落ち着いた",
+      "index": 16,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#49726A",
+        "secondary": "#B1CDD0",
+        "accent": "#B69959",
+        "background": "#E4F3F0",
+        "text": "#172522"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "落ち着いた#17",
+      "word": "落ち着いた",
+      "index": 17,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#5E789D",
+        "secondary": "#C3C5DE",
+        "accent": "#AE7C1F",
+        "background": "#E7ECF2",
+        "text": "#1C222B"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "落ち着いた#18",
+      "word": "落ち着いた",
+      "index": 18,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#6B4738",
+        "secondary": "#402713",
+        "accent": "#E17DA3",
+        "background": "#F5EDEA",
+        "text": "#2A1F1A"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "落ち着いた#19",
+      "word": "落ち着いた",
+      "index": 19,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#105955",
+        "secondary": "#073532",
+        "accent": "#259BA1",
+        "background": "#DEEAE9",
+        "text": "#162524"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "落ち着いた#20",
+      "word": "落ち着いた",
+      "index": 20,
+      "cell": {
+        "temp": "warm",
+        "sat": "muted",
+        "harm": "split"
+      },
+      "colors": {
+        "primary": "#926D79",
+        "secondary": "#DABFC2",
+        "accent": "#639260",
+        "background": "#E9E3E5",
+        "text": "#2A1E22"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "落ち着いた#21",
+      "word": "落ち着いた",
+      "index": 21,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#355067",
+        "secondary": "#B6CED9",
+        "accent": "#AD80D4",
+        "background": "#E6F0F9",
+        "text": "#1A232B"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "落ち着いた#22",
+      "word": "落ち着いた",
+      "index": 22,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "colors": {
+        "primary": "#744D10",
+        "secondary": "#87B9B6",
+        "accent": "#AC78CA",
+        "background": "#E5DFD8",
+        "text": "#282017"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "落ち着いた#23",
+      "word": "落ち着いた",
+      "index": 23,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#76826E",
+        "secondary": "#CCCCB6",
+        "accent": "#53AFA3",
+        "background": "#EFF1ED",
+        "text": "#1E241A"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "高級感#0",
+      "word": "高級感",
+      "index": 0,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "colors": {
+        "primary": "#8A4A42",
+        "secondary": "#D8B1BB",
+        "accent": "#29A4DA",
+        "background": "#F4E9E7",
+        "text": "#2B1E1C"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood"
+      ]
+    },
+    {
+      "key": "高級感#1",
+      "word": "高級感",
+      "index": 1,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#5F538C",
+        "secondary": "#263357",
+        "accent": "#D376A6",
+        "background": "#E3E2E9",
+        "text": "#22202B"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "高級感#2",
+      "word": "高級感",
+      "index": 2,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "colors": {
+        "primary": "#27292F",
+        "secondary": "#A9ADBD",
+        "accent": "#555D9C",
+        "background": "#E3E6F2",
+        "text": "#1F212B"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "高級感#3",
+      "word": "高級感",
+      "index": 3,
+      "cell": {
+        "temp": "warm",
+        "sat": "muted",
+        "harm": "triad"
+      },
+      "colors": {
+        "primary": "#755D46",
+        "secondary": "#463A56",
+        "accent": "#4EAB9F",
+        "background": "#F0EAE4",
+        "text": "#282018"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood"
+      ]
+    },
+    {
+      "key": "高級感#4",
+      "word": "高級感",
+      "index": 4,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#5A577F",
+        "secondary": "#C8C4D9",
+        "accent": "#B58121",
+        "background": "#EDEDF5",
+        "text": "#21202B"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "高級感#5",
+      "word": "高級感",
+      "index": 5,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#481A05",
+        "secondary": "#DCC188",
+        "accent": "#C58A25",
+        "background": "#E7E2D9",
+        "text": "#262117"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood"
+      ]
+    },
+    {
+      "key": "高級感#6",
+      "word": "高級感",
+      "index": 6,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#614926",
+        "secondary": "#D5C7B4",
+        "accent": "#CB8C2E",
+        "background": "#F5EDE3",
+        "text": "#272017"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood"
+      ]
+    },
+    {
+      "key": "高級感#7",
+      "word": "高級感",
+      "index": 7,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "colors": {
+        "primary": "#292052",
+        "secondary": "#4B2006",
+        "accent": "#06A780",
+        "background": "#E0E0EA",
+        "text": "#21202B"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "高級感#8",
+      "word": "高級感",
+      "index": 8,
+      "cell": {
+        "temp": "warm",
+        "sat": "muted",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#614842",
+        "secondary": "#422616",
+        "accent": "#BB7EA3",
+        "background": "#E3DDDB",
+        "text": "#2A1E1B"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood"
+      ]
+    },
+    {
+      "key": "高級感#9",
+      "word": "高級感",
+      "index": 9,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#853F55",
+        "secondary": "#532732",
+        "accent": "#C36592",
+        "background": "#E6DEE0",
+        "text": "#2A1E21"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood"
+      ]
+    },
+    {
+      "key": "高級感#10",
+      "word": "高級感",
+      "index": 10,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#6B516D",
+        "secondary": "#D7C6D7",
+        "accent": "#D081C4",
+        "background": "#F2EAF3",
+        "text": "#271E27"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "高級感#11",
+      "word": "高級感",
+      "index": 11,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#794B7A",
+        "secondary": "#4D2A3A",
+        "accent": "#509B52",
+        "background": "#E5DBE5",
+        "text": "#271E27"
+      },
+      "rating": "meh",
+      "tags": [
+        "clash"
+      ]
+    },
+    {
+      "key": "高級感#12",
+      "word": "高級感",
+      "index": 12,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#44274B",
+        "secondary": "#D1BDCB",
+        "accent": "#59B06C",
+        "background": "#F2EEF3",
+        "text": "#261F28"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "高級感#13",
+      "word": "高級感",
+      "index": 13,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#5D2E3D",
+        "secondary": "#C4ABB2",
+        "accent": "#D87391",
+        "background": "#E6E0E2",
+        "text": "#2A1E21"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "高級感#14",
+      "word": "高級感",
+      "index": 14,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#2D305D",
+        "secondary": "#C1C7E0",
+        "accent": "#7D9CEB",
+        "background": "#EFF0F3",
+        "text": "#1F212B"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "高級感#15",
+      "word": "高級感",
+      "index": 15,
+      "cell": {
+        "temp": "neutral",
+        "sat": "muted",
+        "harm": "neutralAccent"
+      },
+      "colors": {
+        "primary": "#555449",
+        "secondary": "#A7A59D",
+        "accent": "#716414",
+        "background": "#E2E0D5",
+        "text": "#242217"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "高級感#16",
+      "word": "高級感",
+      "index": 16,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#7B4337",
+        "secondary": "#F2D29A",
+        "accent": "#77A043",
+        "background": "#F0EEEB",
+        "text": "#272117"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood"
+      ]
+    },
+    {
+      "key": "高級感#17",
+      "word": "高級感",
+      "index": 17,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#4C516C",
+        "secondary": "#B2ABBF",
+        "accent": "#3392A3",
+        "background": "#DBDEE8",
+        "text": "#1F212B"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "高級感#18",
+      "word": "高級感",
+      "index": 18,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "colors": {
+        "primary": "#352724",
+        "secondary": "#C6BBB8",
+        "accent": "#934C3A",
+        "background": "#FAEDE9",
+        "text": "#2A1E1B"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "高級感#19",
+      "word": "高級感",
+      "index": 19,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#7C5335",
+        "secondary": "#C0A993",
+        "accent": "#CB6A92",
+        "background": "#E3DFDC",
+        "text": "#291F18"
+      },
+      "rating": "meh"
+    },
+    {
+      "key": "高級感#20",
+      "word": "高級感",
+      "index": 20,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#50558A",
+        "secondary": "#A0B4D1",
+        "accent": "#C476B8",
+        "background": "#E1E3EE",
+        "text": "#1F212B"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "高級感#21",
+      "word": "高級感",
+      "index": 21,
+      "cell": {
+        "temp": "neutral",
+        "sat": "mid",
+        "harm": "neutralAccent"
+      },
+      "colors": {
+        "primary": "#4B3F4A",
+        "secondary": "#C7B9C5",
+        "accent": "#824D7F",
+        "background": "#F4EEF3",
+        "text": "#271E26"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "高級感#22",
+      "word": "高級感",
+      "index": 22,
+      "cell": {
+        "temp": "warm",
+        "sat": "muted",
+        "harm": "split"
+      },
+      "colors": {
+        "primary": "#604030",
+        "secondary": "#E0C58C",
+        "accent": "#4789B0",
+        "background": "#EEEAE3",
+        "text": "#262117"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood"
+      ]
+    },
+    {
+      "key": "高級感#23",
+      "word": "高級感",
+      "index": 23,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#3E3F61",
+        "secondary": "#B0B7CD",
+        "accent": "#C38723",
+        "background": "#E1E2E8",
+        "text": "#20212B"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "ナチュラル#0",
+      "word": "ナチュラル",
+      "index": 0,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "colors": {
+        "primary": "#B17034",
+        "secondary": "#CFBD9C",
+        "accent": "#00A9BB",
+        "background": "#EEE9E6",
+        "text": "#291F18"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "ナチュラル#1",
+      "word": "ナチュラル",
+      "index": 1,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#648C40",
+        "secondary": "#2B5436",
+        "accent": "#E0884D",
+        "background": "#E9EFE5",
+        "text": "#1E241A"
+      },
+      "rating": "good",
+      "tags": [
+        "unreadable"
+      ],
+      "star": true
+    },
+    {
+      "key": "ナチュラル#2",
+      "word": "ナチュラル",
+      "index": 2,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "colors": {
+        "primary": "#363C38",
+        "secondary": "#A7B5AC",
+        "accent": "#1E794D",
+        "background": "#E9ECEA",
+        "text": "#1A251E"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "ナチュラル#3",
+      "word": "ナチュラル",
+      "index": 3,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "split"
+      },
+      "colors": {
+        "primary": "#8F6935",
+        "secondary": "#5E3B16",
+        "accent": "#9D8DE7",
+        "background": "#EDEAE5",
+        "text": "#272017"
+      },
+      "rating": "good",
+      "tags": [
+        "unreadable"
+      ]
+    },
+    {
+      "key": "ナチュラル#4",
+      "word": "ナチュラル",
+      "index": 4,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#398765",
+        "secondary": "#275A3A",
+        "accent": "#E385B7",
+        "background": "#F0F7F3",
+        "text": "#19251F"
+      },
+      "rating": "good",
+      "tags": [
+        "unreadable"
+      ],
+      "star": true
+    },
+    {
+      "key": "ナチュラル#5",
+      "word": "ナチュラル",
+      "index": 5,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#B57166",
+        "secondary": "#F5D495",
+        "accent": "#C46C38",
+        "background": "#F3F0E9",
+        "text": "#262117"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "ナチュラル#6",
+      "word": "ナチュラル",
+      "index": 6,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#65907A",
+        "secondary": "#B6CDC0",
+        "accent": "#619A6D",
+        "background": "#EDFAF2",
+        "text": "#19251F"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "ナチュラル#7",
+      "word": "ナチュラル",
+      "index": 7,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "split"
+      },
+      "colors": {
+        "primary": "#687A52",
+        "secondary": "#B3C7B3",
+        "accent": "#899AD6",
+        "background": "#F0F3ED",
+        "text": "#1F2419"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "ナチュラル#8",
+      "word": "ナチュラル",
+      "index": 8,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#B96B4F",
+        "secondary": "#692F0A",
+        "accent": "#D87EB4",
+        "background": "#F1ECEB",
+        "text": "#2A1E1A"
+      },
+      "rating": "good",
+      "tags": [
+        "unreadable"
+      ]
+    },
+    {
+      "key": "ナチュラル#9",
+      "word": "ナチュラル",
+      "index": 9,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "colors": {
+        "primary": "#975F26",
+        "secondary": "#DCE797",
+        "accent": "#BB5C85",
+        "background": "#F4F5EF",
+        "text": "#212318"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "ナチュラル#10",
+      "word": "ナチュラル",
+      "index": 10,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "triad"
+      },
+      "colors": {
+        "primary": "#36805D",
+        "secondary": "#DEC1B7",
+        "accent": "#8D91E1",
+        "background": "#DFECE5",
+        "text": "#19251E"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "ナチュラル#11",
+      "word": "ナチュラル",
+      "index": 11,
+      "cell": {
+        "temp": "neutral",
+        "sat": "muted",
+        "harm": "neutralAccent"
+      },
+      "colors": {
+        "primary": "#574E46",
+        "secondary": "#CAC5C1",
+        "accent": "#A77038",
+        "background": "#FAF1EA",
+        "text": "#282018"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "ナチュラル#12",
+      "word": "ナチュラル",
+      "index": 12,
+      "cell": {
+        "temp": "warm",
+        "sat": "muted",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#A48061",
+        "secondary": "#D8D89B",
+        "accent": "#9B8845",
+        "background": "#F9F9F0",
+        "text": "#222217"
+      }
+    },
+    {
+      "key": "ナチュラル#13",
+      "word": "ナチュラル",
+      "index": 13,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#49775D",
+        "secondary": "#264938",
+        "accent": "#559A76",
+        "background": "#EEF2EF",
+        "text": "#1A251E"
+      },
+      "rating": "good",
+      "tags": [
+        "unreadable"
+      ]
+    },
+    {
+      "key": "ナチュラル#14",
+      "word": "ナチュラル",
+      "index": 14,
+      "cell": {
+        "temp": "neutral",
+        "sat": "muted",
+        "harm": "neutralAccent"
+      },
+      "colors": {
+        "primary": "#372A25",
+        "secondary": "#BAADA7",
+        "accent": "#D18968",
+        "background": "#F5EBE7",
+        "text": "#2A1F1A"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "ナチュラル#15",
+      "word": "ナチュラル",
+      "index": 15,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#A4762C",
+        "secondary": "#65490E",
+        "accent": "#CC8C2F",
+        "background": "#F1E9DF",
+        "text": "#272017"
+      },
+      "rating": "good",
+      "tags": [
+        "unreadable"
+      ]
+    },
+    {
+      "key": "ナチュラル#16",
+      "word": "ナチュラル",
+      "index": 16,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#866717",
+        "secondary": "#B7D47A",
+        "accent": "#AA84E1",
+        "background": "#EAEBE7",
+        "text": "#202319"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "ナチュラル#17",
+      "word": "ナチュラル",
+      "index": 17,
+      "cell": {
+        "temp": "neutral",
+        "sat": "muted",
+        "harm": "neutralAccent"
+      },
+      "colors": {
+        "primary": "#3A4137",
+        "secondary": "#BBC0B9",
+        "accent": "#83AD6E",
+        "background": "#F1F5F0",
+        "text": "#1D241A"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "ナチュラル#18",
+      "word": "ナチュラル",
+      "index": 18,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#885C1C",
+        "secondary": "#E2C5AD",
+        "accent": "#60A4EF",
+        "background": "#FCF7F2",
+        "text": "#282017"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "ナチュラル#19",
+      "word": "ナチュラル",
+      "index": 19,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#778F51",
+        "secondary": "#CADFBC",
+        "accent": "#85B258",
+        "background": "#F5FAEF",
+        "text": "#1F2319"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "ナチュラル#20",
+      "word": "ナチュラル",
+      "index": 20,
+      "cell": {
+        "temp": "neutral",
+        "sat": "mid",
+        "harm": "neutralAccent"
+      },
+      "colors": {
+        "primary": "#4B584F",
+        "secondary": "#BEC8C1",
+        "accent": "#337F55",
+        "background": "#E6F3EA",
+        "text": "#1A251E"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "ナチュラル#21",
+      "word": "ナチュラル",
+      "index": 21,
+      "cell": {
+        "temp": "warm",
+        "sat": "muted",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#825C4E",
+        "secondary": "#E5D397",
+        "accent": "#838ECA",
+        "background": "#FAF7ED",
+        "text": "#252217"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "ナチュラル#22",
+      "word": "ナチュラル",
+      "index": 22,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "split"
+      },
+      "colors": {
+        "primary": "#7B8C6A",
+        "secondary": "#454D2E",
+        "accent": "#B47FAC",
+        "background": "#F6F9F3",
+        "text": "#1E241A"
+      },
+      "rating": "good",
+      "tags": [
+        "unreadable"
+      ]
+    },
+    {
+      "key": "ナチュラル#23",
+      "word": "ナチュラル",
+      "index": 23,
+      "cell": {
+        "temp": "neutral",
+        "sat": "muted",
+        "harm": "neutralAccent"
+      },
+      "colors": {
+        "primary": "#2E2823",
+        "secondary": "#C2BAB3",
+        "accent": "#955C27",
+        "background": "#EEEBE8",
+        "text": "#292018"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "和風#0",
+      "word": "和風",
+      "index": 0,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "colors": {
+        "primary": "#9B4C36",
+        "secondary": "#E4BF6C",
+        "accent": "#239CD0",
+        "background": "#E3E1DC",
+        "text": "#262117"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "和風#1",
+      "word": "和風",
+      "index": 1,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#3F5893",
+        "secondary": "#17355E",
+        "accent": "#C780C9",
+        "background": "#E3E7EF",
+        "text": "#1D222B"
+      },
+      "rating": "good",
+      "tags": [
+        "unreadable"
+      ]
+    },
+    {
+      "key": "和風#2",
+      "word": "和風",
+      "index": 2,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "colors": {
+        "primary": "#272B20",
+        "secondary": "#AEB0AB",
+        "accent": "#586D1A",
+        "background": "#E9EEE1",
+        "text": "#202319"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "和風#3",
+      "word": "和風",
+      "index": 3,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "split"
+      },
+      "colors": {
+        "primary": "#8F6734",
+        "secondary": "#DEBFB2",
+        "accent": "#9693E8",
+        "background": "#F3EDE6",
+        "text": "#282017"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood"
+      ]
+    },
+    {
+      "key": "和風#4",
+      "word": "和風",
+      "index": 4,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#455629",
+        "secondary": "#2D310E",
+        "accent": "#C18CDF",
+        "background": "#EEF4E7",
+        "text": "#1F2319"
+      },
+      "rating": "bad",
+      "tags": [
+        "off-mood",
+        "unreadable"
+      ]
+    },
+    {
+      "key": "和風#5",
+      "word": "和風",
+      "index": 5,
+      "cell": {
+        "temp": "warm",
+        "sat": "muted",
+        "harm": "triad"
+      },
+      "colors": {
+        "primary": "#754545",
+        "secondary": "#1F2E47",
+        "accent": "#78A570",
+        "background": "#F0E8E8",
+        "text": "#2B1E1D"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood",
+        "unreadable"
+      ]
+    },
+    {
+      "key": "和風#6",
+      "word": "和風",
+      "index": 6,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#657791",
+        "secondary": "#B7C2D5",
+        "accent": "#7F9FD7",
+        "background": "#E8EFF8",
+        "text": "#1C222B"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "和風#7",
+      "word": "和風",
+      "index": 7,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#8D485F",
+        "secondary": "#D9B6BF",
+        "accent": "#CA698E",
+        "background": "#F8EBEE",
+        "text": "#2A1E21"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "和風#8",
+      "word": "和風",
+      "index": 8,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#597F45",
+        "secondary": "#B2CBBB",
+        "accent": "#A674C6",
+        "background": "#E6E9E5",
+        "text": "#1D241A"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood"
+      ]
+    },
+    {
+      "key": "和風#9",
+      "word": "和風",
+      "index": 9,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#875D15",
+        "secondary": "#453C09",
+        "accent": "#DF726F",
+        "background": "#E1DED9",
+        "text": "#272017"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood",
+        "unreadable"
+      ]
+    },
+    {
+      "key": "和風#10",
+      "word": "和風",
+      "index": 10,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "colors": {
+        "primary": "#334484",
+        "secondary": "#A7CEAD",
+        "accent": "#C86456",
+        "background": "#DBDFEA",
+        "text": "#1E212B"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood"
+      ]
+    },
+    {
+      "key": "和風#11",
+      "word": "和風",
+      "index": 11,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#58390A",
+        "secondary": "#D4C1A2",
+        "accent": "#E17877",
+        "background": "#E9E5E0",
+        "text": "#282017"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood"
+      ]
+    },
+    {
+      "key": "和風#12",
+      "word": "和風",
+      "index": 12,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#557C38",
+        "secondary": "#3A4F25",
+        "accent": "#64A04F",
+        "background": "#DDE0DB",
+        "text": "#1E241A"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood",
+        "unreadable"
+      ]
+    },
+    {
+      "key": "和風#13",
+      "word": "和風",
+      "index": 13,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "split"
+      },
+      "colors": {
+        "primary": "#986062",
+        "secondary": "#603741",
+        "accent": "#12ABD9",
+        "background": "#F8ECEB",
+        "text": "#2B1E1E"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood",
+        "unreadable"
+      ]
+    },
+    {
+      "key": "和風#14",
+      "word": "和風",
+      "index": 14,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#7B5719",
+        "secondary": "#BCCD8B",
+        "accent": "#28A37F",
+        "background": "#E5E7E1",
+        "text": "#202318"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood"
+      ]
+    },
+    {
+      "key": "和風#15",
+      "word": "和風",
+      "index": 15,
+      "cell": {
+        "temp": "neutral",
+        "sat": "mid",
+        "harm": "neutralAccent"
+      },
+      "colors": {
+        "primary": "#383F4C",
+        "secondary": "#A0A7B6",
+        "accent": "#46619C",
+        "background": "#D9DFE9",
+        "text": "#1D222B"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood"
+      ]
+    },
+    {
+      "key": "和風#16",
+      "word": "和風",
+      "index": 16,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#7F3722",
+        "secondary": "#E2C4B9",
+        "accent": "#E38657",
+        "background": "#FAEDE9",
+        "text": "#2A1E1B"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood"
+      ]
+    },
+    {
+      "key": "和風#17",
+      "word": "和風",
+      "index": 17,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#32462F",
+        "secondary": "#B0B8A3",
+        "accent": "#43A4A7",
+        "background": "#E0E8DF",
+        "text": "#1C241B"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood"
+      ]
+    },
+    {
+      "key": "和風#18",
+      "word": "和風",
+      "index": 18,
+      "cell": {
+        "temp": "neutral",
+        "sat": "muted",
+        "harm": "neutralAccent"
+      },
+      "colors": {
+        "primary": "#423232",
+        "secondary": "#C4AFAE",
+        "accent": "#944A4B",
+        "background": "#F9EDEC",
+        "text": "#2B1E1E"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood"
+      ]
+    },
+    {
+      "key": "和風#19",
+      "word": "和風",
+      "index": 19,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#632823",
+        "secondary": "#C9A9AB",
+        "accent": "#00A1BF",
+        "background": "#ECDEDC",
+        "text": "#2B1E1C"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood"
+      ]
+    },
+    {
+      "key": "和風#20",
+      "word": "和風",
+      "index": 20,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#164D7B",
+        "secondary": "#C3CDF2",
+        "accent": "#28A79D",
+        "background": "#E9F0F7",
+        "text": "#1A232B"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood"
+      ]
+    },
+    {
+      "key": "和風#21",
+      "word": "和風",
+      "index": 21,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "colors": {
+        "primary": "#5B5547",
+        "secondary": "#B2AB9A",
+        "accent": "#7B5F14",
+        "background": "#E2DFD8",
+        "text": "#262117"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood"
+      ]
+    },
+    {
+      "key": "和風#22",
+      "word": "和風",
+      "index": 22,
+      "cell": {
+        "temp": "warm",
+        "sat": "muted",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#53332E",
+        "secondary": "#EACC94",
+        "accent": "#7E9ED6",
+        "background": "#F2F0EC",
+        "text": "#262117"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood"
+      ]
+    },
+    {
+      "key": "和風#23",
+      "word": "和風",
+      "index": 23,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#6277A9",
+        "secondary": "#2B4B70",
+        "accent": "#C28E23",
+        "background": "#E3E6ED",
+        "text": "#1D222B"
+      },
+      "rating": "meh",
+      "tags": [
+        "off-mood",
+        "unreadable"
+      ]
+    },
+    {
+      "key": "ネオン#0",
+      "word": "ネオン",
+      "index": 0,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "colors": {
+        "primary": "#211A16",
+        "secondary": "#F87E28",
+        "accent": "#1846F3",
+        "background": "#FFF5EF",
+        "text": "#2A1F19"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "ネオン#1",
+      "word": "ネオン",
+      "index": 1,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#79FA39",
+        "secondary": "#042817",
+        "accent": "#F7C534",
+        "background": "#050904",
+        "text": "#E8F2E5"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "ネオン#2",
+      "word": "ネオン",
+      "index": 2,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "colors": {
+        "primary": "#D6D3DB",
+        "secondary": "#333036",
+        "accent": "#9A25EC",
+        "background": "#120E16",
+        "text": "#F1EBFA"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "ネオン#3",
+      "word": "ネオン",
+      "index": 3,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "split"
+      },
+      "colors": {
+        "primary": "#9B2AEF",
+        "secondary": "#353971",
+        "accent": "#3FF98D",
+        "background": "#19161D",
+        "text": "#F1EBFA"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "ネオン#4",
+      "word": "ネオン",
+      "index": 4,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#1F85F3",
+        "secondary": "#1B2E65",
+        "accent": "#F72A36",
+        "background": "#F5F9FF",
+        "text": "#1B222B"
+      },
+      "rating": "good",
+      "tags": [
+        "unreadable"
+      ],
+      "star": true
+    },
+    {
+      "key": "ネオン#5",
+      "word": "ネオン",
+      "index": 5,
+      "cell": {
+        "temp": "neutral",
+        "sat": "mid",
+        "harm": "neutralAccent"
+      },
+      "colors": {
+        "primary": "#2B272A",
+        "secondary": "#F830E4",
+        "accent": "#F82DA7",
+        "background": "#F7F4F7",
+        "text": "#281E26"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "ネオン#6",
+      "word": "ネオン",
+      "index": 6,
+      "cell": {
+        "temp": "warm",
+        "sat": "muted",
+        "harm": "triad"
+      },
+      "colors": {
+        "primary": "#F16223",
+        "secondary": "#2A2A56",
+        "accent": "#3EF6AB",
+        "background": "#0D0807",
+        "text": "#FBEAE4"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "ネオン#7",
+      "word": "ネオン",
+      "index": 7,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "split"
+      },
+      "colors": {
+        "primary": "#2085E7",
+        "secondary": "#052D46",
+        "accent": "#F3E23A",
+        "background": "#0A0E13",
+        "text": "#E5F0FC"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "ネオン#8",
+      "word": "ネオン",
+      "index": 8,
+      "cell": {
+        "temp": "neutral",
+        "sat": "muted",
+        "harm": "neutralAccent"
+      },
+      "colors": {
+        "primary": "#131D10",
+        "secondary": "#73FC39",
+        "accent": "#F72A36",
+        "background": "#F6FBF5",
+        "text": "#1D241B"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "ネオン#9",
+      "word": "ネオン",
+      "index": 9,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#F42A9A",
+        "secondary": "#51061A",
+        "accent": "#41F5D5",
+        "background": "#130B0E",
+        "text": "#FAE9EF"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "ネオン#10",
+      "word": "ネオン",
+      "index": 10,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#40F6A6",
+        "secondary": "#0B4A11",
+        "accent": "#F72FE1",
+        "background": "#151816",
+        "text": "#E4F3EA"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "ネオン#11",
+      "word": "ネオン",
+      "index": 11,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "colors": {
+        "primary": "#CFEAE7",
+        "secondary": "#1C2B2A",
+        "accent": "#40F4E9",
+        "background": "#050D0C",
+        "text": "#E0F3F1"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "ネオン#12",
+      "word": "ネオン",
+      "index": 12,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#F52DC8",
+        "secondary": "#450522",
+        "accent": "#1846F3",
+        "background": "#FFFCFE",
+        "text": "#281E25"
+      },
+      "rating": "good",
+      "tags": [
+        "unreadable"
+      ],
+      "star": true
+    },
+    {
+      "key": "ネオン#13",
+      "word": "ネオン",
+      "index": 13,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "split"
+      },
+      "colors": {
+        "primary": "#6827F3",
+        "secondary": "#46245C",
+        "accent": "#F72A36",
+        "background": "#FBFBFF",
+        "text": "#21202B"
+      },
+      "rating": "good",
+      "tags": [
+        "unreadable"
+      ],
+      "star": true
+    },
+    {
+      "key": "ネオン#14",
+      "word": "ネオン",
+      "index": 14,
+      "cell": {
+        "temp": "warm",
+        "sat": "muted",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#E75F0E",
+        "secondary": "#4E2906",
+        "accent": "#1846F3",
+        "background": "#FFF8F5",
+        "text": "#2A1F1A"
+      },
+      "rating": "good",
+      "tags": [
+        "unreadable"
+      ]
+    },
+    {
+      "key": "ネオン#15",
+      "word": "ネオン",
+      "index": 15,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#5857E5",
+        "secondary": "#2A2E5D",
+        "accent": "#5530DE",
+        "background": "#12131C",
+        "text": "#EBEEFC"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "ネオン#16",
+      "word": "ネオン",
+      "index": 16,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#DC2DF3",
+        "secondary": "#43164B",
+        "accent": "#EB2CD5",
+        "background": "#080709",
+        "text": "#F5EAF7"
+      }
+    },
+    {
+      "key": "ネオン#17",
+      "word": "ネオン",
+      "index": 17,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "colors": {
+        "primary": "#BEF43B",
+        "secondary": "#373506",
+        "accent": "#F22CC6",
+        "background": "#121210",
+        "text": "#EBF1E3"
+      }
+    },
+    {
+      "key": "ネオン#18",
+      "word": "ネオン",
+      "index": 18,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "triad"
+      },
+      "colors": {
+        "primary": "#9D27F5",
+        "secondary": "#381F04",
+        "accent": "#1846F3",
+        "background": "#F9F7FC",
+        "text": "#241F2A"
+      },
+      "rating": "meh",
+      "tags": [
+        "unreadable"
+      ]
+    },
+    {
+      "key": "ネオン#19",
+      "word": "ネオン",
+      "index": 19,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "mono"
+      },
+      "colors": {
+        "primary": "#171420",
+        "secondary": "#7D25F3",
+        "accent": "#7F25F1",
+        "background": "#FBFAFF",
+        "text": "#22202A"
+      }
+    },
+    {
+      "key": "ネオン#20",
+      "word": "ネオン",
+      "index": 20,
+      "cell": {
+        "temp": "warm",
+        "sat": "muted",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#F28728",
+        "secondary": "#493407",
+        "accent": "#EF2997",
+        "background": "#1F1814",
+        "text": "#FAEBE2"
+      },
+      "rating": "good"
+    },
+    {
+      "key": "ネオン#21",
+      "word": "ネオン",
+      "index": 21,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "complementary"
+      },
+      "colors": {
+        "primary": "#40F2E8",
+        "secondary": "#07363D",
+        "accent": "#F32A4D",
+        "background": "#081413",
+        "text": "#E0F3F1"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "ネオン#22",
+      "word": "ネオン",
+      "index": 22,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "analogous"
+      },
+      "colors": {
+        "primary": "#F52A80",
+        "secondary": "#5D1B23",
+        "accent": "#8D23E3",
+        "background": "#1F1618",
+        "text": "#FBE9ED"
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "ネオン#23",
+      "word": "ネオン",
+      "index": 23,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "triad"
+      },
+      "colors": {
+        "primary": "#3C51E5",
+        "secondary": "#032A10",
+        "accent": "#EF2F1E",
+        "background": "#06080E",
+        "text": "#E9EEFC"
+      },
+      "rating": "good"
+    }
+  ]
+}

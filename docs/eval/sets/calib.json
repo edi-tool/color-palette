@@ -1,0 +1,1307 @@
+{
+ "schema": "color-palette-eval-set/1",
+ "name": "calib",
+ "title": "Claude の目の試し（伏せ字）",
+ "items": [
+  {
+   "key": "calib#0",
+   "word": "ネオン",
+   "index": 0,
+   "colors": {
+    "primary": "#211A16",
+    "secondary": "#F87E28",
+    "accent": "#1846F3",
+    "background": "#FFF5EF",
+    "text": "#2A1F19"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#1",
+   "word": "爽やか",
+   "index": 1,
+   "colors": {
+    "primary": "#2C7A4B",
+    "secondary": "#D5E7DC",
+    "accent": "#4E9BD1",
+    "background": "#F7FCF8",
+    "text": "#18281E"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#2",
+   "word": "かっこいい",
+   "index": 2,
+   "colors": {
+    "primary": "#F2C6D6",
+    "secondary": "#3A2440",
+    "accent": "#D9B15C",
+    "background": "#1E1422",
+    "text": "#F5ECF2"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#3",
+   "word": "上品",
+   "index": 3,
+   "colors": {
+    "primary": "#1C1B19",
+    "secondary": "#E7DECB",
+    "accent": "#9C7835",
+    "background": "#FAF7F0",
+    "text": "#1E1D1A"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#4",
+   "word": "かっこいい",
+   "index": 4,
+   "colors": {
+    "primary": "#3E4A2E",
+    "secondary": "#DADCD0",
+    "accent": "#C26A2B",
+    "background": "#F4F4EF",
+    "text": "#22261C"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#5",
+   "word": "親しみやすい",
+   "index": 5,
+   "colors": {
+    "primary": "#C8456C",
+    "secondary": "#F3DBE2",
+    "accent": "#E8833A",
+    "background": "#FFF9FA",
+    "text": "#2B1F24"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#6",
+   "word": "鮮やか",
+   "index": 6,
+   "colors": {
+    "primary": "#C2187A",
+    "secondary": "#F3DBE7",
+    "accent": "#F08A24",
+    "background": "#FFFAFC",
+    "text": "#2C1B25"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#7",
+   "word": "上品",
+   "index": 7,
+   "colors": {
+    "primary": "#D9C9E6",
+    "secondary": "#352A40",
+    "accent": "#C7A35C",
+    "background": "#1A1420",
+    "text": "#EFE9F3"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#8",
+   "word": "清潔",
+   "index": 8,
+   "colors": {
+    "primary": "#2E6E8E",
+    "secondary": "#DAE7EC",
+    "accent": "#8AA6C1",
+    "background": "#FBFEFF",
+    "text": "#1A2A33"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#9",
+   "word": "高級感",
+   "index": 9,
+   "colors": {
+    "primary": "#0B5C6B",
+    "secondary": "#D7E5E3",
+    "accent": "#C2307A",
+    "background": "#F7FBFB",
+    "text": "#142729"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#10",
+   "word": "ネオン",
+   "index": 10,
+   "colors": {
+    "primary": "#F52DC8",
+    "secondary": "#BF758D",
+    "accent": "#1846F3",
+    "background": "#FFFCFE",
+    "text": "#281E25"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#11",
+   "word": "レトロ",
+   "index": 11,
+   "colors": {
+    "primary": "#B3261E",
+    "secondary": "#E7DBBF",
+    "accent": "#22345C",
+    "background": "#FAF4E6",
+    "text": "#2A1D19"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#12",
+   "word": "まじめ",
+   "index": 12,
+   "colors": {
+    "primary": "#2D4E8A",
+    "secondary": "#E0E7F2",
+    "accent": "#C0392B",
+    "background": "#FFFFFF",
+    "text": "#1F2633"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#13",
+   "word": "やさしい",
+   "index": 13,
+   "colors": {
+    "primary": "#43667A",
+    "secondary": "#DFDDD1",
+    "accent": "#B5704A",
+    "background": "#F8F5EC",
+    "text": "#1F2830"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#14",
+   "word": "やさしい",
+   "index": 14,
+   "colors": {
+    "primary": "#C86B59",
+    "secondary": "#F4DDD3",
+    "accent": "#7BA7C7",
+    "background": "#FFFAF8",
+    "text": "#2C211E"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#15",
+   "word": "カラフル",
+   "index": 15,
+   "colors": {
+    "primary": "#8E3B9E",
+    "secondary": "#F6DDA1",
+    "accent": "#E5742B",
+    "background": "#FDF8EE",
+    "text": "#2A1F2E"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#16",
+   "word": "爽やか",
+   "index": 16,
+   "colors": {
+    "primary": "#1D8FCB",
+    "secondary": "#F7D9E7",
+    "accent": "#E79900",
+    "background": "#F7FCFF",
+    "text": "#1A2733"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#17",
+   "word": "ミニマル",
+   "index": 17,
+   "colors": {
+    "primary": "#3D403A",
+    "secondary": "#DDDFD9",
+    "accent": "#6F8A5A",
+    "background": "#F7F7F4",
+    "text": "#22241F"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#18",
+   "word": "シンプル",
+   "index": 18,
+   "colors": {
+    "primary": "#23262B",
+    "secondary": "#E3E1DB",
+    "accent": "#3C5A80",
+    "background": "#FBFAF7",
+    "text": "#1F2226"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#19",
+   "word": "モダン",
+   "index": 19,
+   "colors": {
+    "primary": "#2B2D2F",
+    "secondary": "#EDDFA4",
+    "accent": "#D19C00",
+    "background": "#F7F7F6",
+    "text": "#1F2022"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#20",
+   "word": "まじめ",
+   "index": 20,
+   "colors": {
+    "primary": "#1D3F6E",
+    "secondary": "#DCE3EB",
+    "accent": "#B03A48",
+    "background": "#FAFBFC",
+    "text": "#1A2131"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#21",
+   "word": "かわいい",
+   "index": 21,
+   "colors": {
+    "primary": "#DD5C86",
+    "secondary": "#F1E7BA",
+    "accent": "#76BA9F",
+    "background": "#FFFFFF",
+    "text": "#2D1F26"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#22",
+   "word": "シンプル",
+   "index": 22,
+   "colors": {
+    "primary": "#0F0F10",
+    "secondary": "#D6D6D4",
+    "accent": "#5A5A5C",
+    "background": "#FBFBFA",
+    "text": "#1A1A1A"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#23",
+   "word": "ネオン",
+   "index": 23,
+   "colors": {
+    "primary": "#40F6A6",
+    "secondary": "#0B4A11",
+    "accent": "#F72FE1",
+    "background": "#151816",
+    "text": "#E4F3EA"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#24",
+   "word": "まじめ",
+   "index": 24,
+   "colors": {
+    "primary": "#1A2B4C",
+    "secondary": "#DDE0E6",
+    "accent": "#C0392B",
+    "background": "#F8F9FB",
+    "text": "#1A1F2C"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#25",
+   "word": "落ち着いた",
+   "index": 25,
+   "colors": {
+    "primary": "#2E85A0",
+    "secondary": "#9DBDC0",
+    "accent": "#E07A65",
+    "background": "#DBE9EE",
+    "text": "#172428"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#26",
+   "word": "懐かしい",
+   "index": 26,
+   "colors": {
+    "primary": "#43667A",
+    "secondary": "#DFDDD1",
+    "accent": "#B5704A",
+    "background": "#F8F5EC",
+    "text": "#1F2830"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#27",
+   "word": "誠実",
+   "index": 27,
+   "colors": {
+    "primary": "#10545C",
+    "secondary": "#92DCE2",
+    "accent": "#B03A48",
+    "background": "#E8F7F9",
+    "text": "#162426"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#28",
+   "word": "まじめ",
+   "index": 28,
+   "colors": {
+    "primary": "#23396A",
+    "secondary": "#D0E1E7",
+    "accent": "#2E86B8",
+    "background": "#F5F7F7",
+    "text": "#1C2230"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#29",
+   "word": "未来的",
+   "index": 29,
+   "colors": {
+    "primary": "#0B5FFF",
+    "secondary": "#D9E1F4",
+    "accent": "#00BEA5",
+    "background": "#F8FAFF",
+    "text": "#141C33"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#30",
+   "word": "元気",
+   "index": 30,
+   "colors": {
+    "primary": "#E8464F",
+    "secondary": "#F2E3A6",
+    "accent": "#E89700",
+    "background": "#FFFAF7",
+    "text": "#2E1F20"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#31",
+   "word": "シンプル",
+   "index": 31,
+   "colors": {
+    "primary": "#3A4148",
+    "secondary": "#E4E7E9",
+    "accent": "#3C8DBC",
+    "background": "#FFFFFF",
+    "text": "#1E2328"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#32",
+   "word": "クール",
+   "index": 32,
+   "colors": {
+    "primary": "#00707A",
+    "secondary": "#CCE8E6",
+    "accent": "#3E7BD6",
+    "background": "#F5FCFC",
+    "text": "#122A2B"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#33",
+   "word": "やさしい",
+   "index": 33,
+   "colors": {
+    "primary": "#688F8A",
+    "secondary": "#C2DED9",
+    "accent": "#58B3A4",
+    "background": "#ECFCFA",
+    "text": "#162523"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#34",
+   "word": "カラフル",
+   "index": 34,
+   "colors": {
+    "primary": "#2563EB",
+    "secondary": "#FBCFE8",
+    "accent": "#D3A100",
+    "background": "#FAFCFF",
+    "text": "#1B2233"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#35",
+   "word": "カラフル",
+   "index": 35,
+   "colors": {
+    "primary": "#0F766E",
+    "secondary": "#FED7AA",
+    "accent": "#E11D48",
+    "background": "#F8FFFE",
+    "text": "#14282A"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#36",
+   "word": "明るい",
+   "index": 36,
+   "colors": {
+    "primary": "#E4322B",
+    "secondary": "#CCEBF7",
+    "accent": "#0098D6",
+    "background": "#FFFDFC",
+    "text": "#2A2220"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#37",
+   "word": "親しみやすい",
+   "index": 37,
+   "colors": {
+    "primary": "#5C7F3A",
+    "secondary": "#E8E4BE",
+    "accent": "#C8693B",
+    "background": "#FCFBF4",
+    "text": "#232A1C"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#38",
+   "word": "明るい",
+   "index": 38,
+   "colors": {
+    "primary": "#008C8C",
+    "secondary": "#C5EEEA",
+    "accent": "#FF6B5A",
+    "background": "#F7FFFE",
+    "text": "#14282A"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#39",
+   "word": "明るい",
+   "index": 39,
+   "colors": {
+    "primary": "#1F4FD1",
+    "secondary": "#FFE24A",
+    "accent": "#E83A2C",
+    "background": "#FEFEFE",
+    "text": "#1E1F26"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#40",
+   "word": "明るい",
+   "index": 40,
+   "colors": {
+    "primary": "#C92A1E",
+    "secondary": "#F2C94C",
+    "accent": "#1A62C9",
+    "background": "#FFF4B8",
+    "text": "#2A2414"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#41",
+   "word": "清潔",
+   "index": 41,
+   "colors": {
+    "primary": "#2A6FB0",
+    "secondary": "#DFE7EF",
+    "accent": "#5FA85F",
+    "background": "#FFFFFF",
+    "text": "#1B2633"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#42",
+   "word": "明るい",
+   "index": 42,
+   "colors": {
+    "primary": "#138A43",
+    "secondary": "#F6E781",
+    "accent": "#E6402F",
+    "background": "#FBFFF7",
+    "text": "#1A2A1F"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#43",
+   "word": "爽やか",
+   "index": 43,
+   "colors": {
+    "primary": "#0F7C73",
+    "secondary": "#CFE9E4",
+    "accent": "#2D8FD5",
+    "background": "#F7FDFC",
+    "text": "#132926"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#44",
+   "word": "やさしい",
+   "index": 44,
+   "colors": {
+    "primary": "#6C8D6E",
+    "secondary": "#C8DACA",
+    "accent": "#649D70",
+    "background": "#ECF6EC",
+    "text": "#1B241C"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#45",
+   "word": "楽しい",
+   "index": 45,
+   "colors": {
+    "primary": "#1C7ED6",
+    "secondary": "#F9DEBD",
+    "accent": "#FD7E14",
+    "background": "#F8FCFF",
+    "text": "#1A2633"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#46",
+   "word": "落ち着いた",
+   "index": 46,
+   "colors": {
+    "primary": "#8E3B2A",
+    "secondary": "#EBD9CD",
+    "accent": "#C99A3E",
+    "background": "#FAF5F0",
+    "text": "#2A1D19"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#47",
+   "word": "高級感",
+   "index": 47,
+   "colors": {
+    "primary": "#F2C6D6",
+    "secondary": "#3A2440",
+    "accent": "#D9B15C",
+    "background": "#1E1422",
+    "text": "#F5ECF2"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#48",
+   "word": "華やか",
+   "index": 48,
+   "colors": {
+    "primary": "#F2E6E0",
+    "secondary": "#4E2230",
+    "accent": "#D4AF6A",
+    "background": "#2A0F17",
+    "text": "#F2E9E5"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#49",
+   "word": "やさしい",
+   "index": 49,
+   "colors": {
+    "primary": "#5C7F3A",
+    "secondary": "#E8E4BE",
+    "accent": "#C8693B",
+    "background": "#FCFBF4",
+    "text": "#232A1C"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#50",
+   "word": "華やか",
+   "index": 50,
+   "colors": {
+    "primary": "#A8234F",
+    "secondary": "#F2DCE2",
+    "accent": "#C49A45",
+    "background": "#FFFAFB",
+    "text": "#2D1C22"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#51",
+   "word": "楽しい",
+   "index": 51,
+   "colors": {
+    "primary": "#C23B32",
+    "secondary": "#F2E0AF",
+    "accent": "#2A7FA8",
+    "background": "#FFFAEC",
+    "text": "#2B1F1A"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#52",
+   "word": "やさしい",
+   "index": 52,
+   "colors": {
+    "primary": "#2A6FB0",
+    "secondary": "#DFE7EF",
+    "accent": "#5FA85F",
+    "background": "#FFFFFF",
+    "text": "#1B2633"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#53",
+   "word": "高級感",
+   "index": 53,
+   "colors": {
+    "primary": "#F2E6E0",
+    "secondary": "#4E2230",
+    "accent": "#D4AF6A",
+    "background": "#2A0F17",
+    "text": "#F2E9E5"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#54",
+   "word": "落ち着いた",
+   "index": 54,
+   "colors": {
+    "primary": "#696C83",
+    "secondary": "#A9ADC2",
+    "accent": "#7A91CB",
+    "background": "#DEE0ED",
+    "text": "#1F212B"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#55",
+   "word": "楽しい",
+   "index": 55,
+   "colors": {
+    "primary": "#7C3AED",
+    "secondary": "#BBF7D0",
+    "accent": "#F97316",
+    "background": "#FFFDF9",
+    "text": "#221C33"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#56",
+   "word": "モダン",
+   "index": 56,
+   "colors": {
+    "primary": "#1D4ED8",
+    "secondary": "#DFE1E5",
+    "accent": "#111827",
+    "background": "#F9FAFB",
+    "text": "#111827"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#57",
+   "word": "落ち着いた",
+   "index": 57,
+   "colors": {
+    "primary": "#4F6F68",
+    "secondary": "#DAE1DD",
+    "accent": "#9A6A54",
+    "background": "#F6F8F6",
+    "text": "#1F2826"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#58",
+   "word": "知的",
+   "index": 58,
+   "colors": {
+    "primary": "#0B5FFF",
+    "secondary": "#D9E1F4",
+    "accent": "#00BEA5",
+    "background": "#F8FAFF",
+    "text": "#141C33"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#59",
+   "word": "やさしい",
+   "index": 59,
+   "colors": {
+    "primary": "#5E7F64",
+    "secondary": "#F3DDDD",
+    "accent": "#C77A87",
+    "background": "#FBFCF9",
+    "text": "#222A24"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#60",
+   "word": "モダン",
+   "index": 60,
+   "colors": {
+    "primary": "#1E2B44",
+    "secondary": "#DADFE6",
+    "accent": "#7A8BA3",
+    "background": "#F4F6F8",
+    "text": "#1A2131"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#61",
+   "word": "鮮やか",
+   "index": 61,
+   "colors": {
+    "primary": "#1236A8",
+    "secondary": "#F3E49C",
+    "accent": "#DC9F00",
+    "background": "#FBFBFF",
+    "text": "#161D33"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#62",
+   "word": "華やか",
+   "index": 62,
+   "colors": {
+    "primary": "#A4506E",
+    "secondary": "#EEDFE5",
+    "accent": "#8E9AAF",
+    "background": "#FFFBFC",
+    "text": "#2C2026"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#63",
+   "word": "ポップ",
+   "index": 63,
+   "colors": {
+    "primary": "#E8590C",
+    "secondary": "#CAEAF8",
+    "accent": "#1C7ED6",
+    "background": "#FFFCF8",
+    "text": "#2A2118"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#64",
+   "word": "落ち着いた",
+   "index": 64,
+   "colors": {
+    "primary": "#5C4B5E",
+    "secondary": "#E1DCE1",
+    "accent": "#8D9A6A",
+    "background": "#F7F6F7",
+    "text": "#262229"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#65",
+   "word": "上品",
+   "index": 65,
+   "colors": {
+    "primary": "#5A4A6A",
+    "secondary": "#E1DDE6",
+    "accent": "#9E7B4F",
+    "background": "#F8F7F9",
+    "text": "#252130"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#66",
+   "word": "レトロ",
+   "index": 66,
+   "colors": {
+    "primary": "#C23B32",
+    "secondary": "#F2E0AF",
+    "accent": "#2A7FA8",
+    "background": "#FFFAEC",
+    "text": "#2B1F1A"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#67",
+   "word": "明るい",
+   "index": 67,
+   "colors": {
+    "primary": "#D25A5D",
+    "secondary": "#EFA6BB",
+    "accent": "#2392BB",
+    "background": "#F4EBEA",
+    "text": "#2B1E1D"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#68",
+   "word": "ネオン",
+   "index": 68,
+   "colors": {
+    "primary": "#17211A",
+    "secondary": "#5CFF8A",
+    "accent": "#2A5CFF",
+    "background": "#FFFFFF",
+    "text": "#17211A"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#69",
+   "word": "やさしい",
+   "index": 69,
+   "colors": {
+    "primary": "#8B6A55",
+    "secondary": "#E9DFD4",
+    "accent": "#7C9C8E",
+    "background": "#FCF9F6",
+    "text": "#2B241F"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#70",
+   "word": "親しみやすい",
+   "index": 70,
+   "colors": {
+    "primary": "#8C6249",
+    "secondary": "#EADED1",
+    "accent": "#C9733A",
+    "background": "#FCF8F4",
+    "text": "#2B221C"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#71",
+   "word": "誠実",
+   "index": 71,
+   "colors": {
+    "primary": "#1B3A66",
+    "secondary": "#CFE5F1",
+    "accent": "#2C93D1",
+    "background": "#F7FAFD",
+    "text": "#1A2333"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#72",
+   "word": "シンプル",
+   "index": 72,
+   "colors": {
+    "primary": "#2A2A2A",
+    "secondary": "#E6E6E6",
+    "accent": "#E8641E",
+    "background": "#FFFFFF",
+    "text": "#1E1E1E"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#73",
+   "word": "明るい",
+   "index": 73,
+   "colors": {
+    "primary": "#B8641C",
+    "secondary": "#F1E2BC",
+    "accent": "#D9566A",
+    "background": "#FFFCF4",
+    "text": "#2B2216"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#74",
+   "word": "かわいい",
+   "index": 74,
+   "colors": {
+    "primary": "#C8456C",
+    "secondary": "#F3DBE2",
+    "accent": "#4A9A6A",
+    "background": "#FFF9FA",
+    "text": "#2B1F24"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#75",
+   "word": "やさしい",
+   "index": 75,
+   "colors": {
+    "primary": "#1C7F6E",
+    "secondary": "#D8EBE5",
+    "accent": "#5BA3D9",
+    "background": "#FDFFFE",
+    "text": "#142A25"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#76",
+   "word": "シンプル",
+   "index": 76,
+   "colors": {
+    "primary": "#2770A8",
+    "secondary": "#DBE8F1",
+    "accent": "#36B3C7",
+    "background": "#FFFFFF",
+    "text": "#1A2733"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#77",
+   "word": "信頼感",
+   "index": 77,
+   "colors": {
+    "primary": "#1559A0",
+    "secondary": "#DAE6F1",
+    "accent": "#2CB5A8",
+    "background": "#FBFDFF",
+    "text": "#182434"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#78",
+   "word": "鮮やか",
+   "index": 78,
+   "colors": {
+    "primary": "#C2185B",
+    "secondary": "#F3DBE3",
+    "accent": "#1E88E5",
+    "background": "#FFFAFC",
+    "text": "#2A1A21"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#79",
+   "word": "やさしい",
+   "index": 79,
+   "colors": {
+    "primary": "#B03A5B",
+    "secondary": "#F2DCE2",
+    "accent": "#6E9E4A",
+    "background": "#FFFAFB",
+    "text": "#2D1F24"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#80",
+   "word": "ナチュラル",
+   "index": 80,
+   "colors": {
+    "primary": "#65907A",
+    "secondary": "#B6CDC0",
+    "accent": "#619A6D",
+    "background": "#EDFAF2",
+    "text": "#19251F"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#81",
+   "word": "誠実",
+   "index": 81,
+   "colors": {
+    "primary": "#1E82AC",
+    "secondary": "#5FABBE",
+    "accent": "#D09628",
+    "background": "#E6F3FB",
+    "text": "#18232A"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#82",
+   "word": "レトロ",
+   "index": 82,
+   "colors": {
+    "primary": "#6B6A1E",
+    "secondary": "#EBDEAE",
+    "accent": "#B4502C",
+    "background": "#FBF7E8",
+    "text": "#26261A"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#83",
+   "word": "落ち着いた",
+   "index": 83,
+   "colors": {
+    "primary": "#355067",
+    "secondary": "#B6CED9",
+    "accent": "#AD80D4",
+    "background": "#E6F0F9",
+    "text": "#1A232B"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#84",
+   "word": "ナチュラル",
+   "index": 84,
+   "colors": {
+    "primary": "#2F8F5B",
+    "secondary": "#D4E7F4",
+    "accent": "#F08C3A",
+    "background": "#FBFEFA",
+    "text": "#1E2A22"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#85",
+   "word": "やさしい",
+   "index": 85,
+   "colors": {
+    "primary": "#6B6A2C",
+    "secondary": "#EFD9D9",
+    "accent": "#C9344C",
+    "background": "#FBF8F1",
+    "text": "#2B2A22"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#86",
+   "word": "落ち着いた",
+   "index": 86,
+   "colors": {
+    "primary": "#355067",
+    "secondary": "#B6CED9",
+    "accent": "#8C3B2E",
+    "background": "#E6F0F9",
+    "text": "#1A232B"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#87",
+   "word": "ナチュラル",
+   "index": 87,
+   "colors": {
+    "primary": "#3A4137",
+    "secondary": "#BBC0B9",
+    "accent": "#83AD6E",
+    "background": "#F1F5F0",
+    "text": "#1D241A"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#88",
+   "word": "やさしい",
+   "index": 88,
+   "colors": {
+    "primary": "#5D7891",
+    "secondary": "#DFE4E8",
+    "accent": "#B48EAE",
+    "background": "#FBFCFD",
+    "text": "#212830"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#89",
+   "word": "落ち着いた",
+   "index": 89,
+   "colors": {
+    "primary": "#6B4A31",
+    "secondary": "#E4D9C5",
+    "accent": "#9C3D2E",
+    "background": "#F8F2E6",
+    "text": "#2A2219"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#90",
+   "word": "やさしい",
+   "index": 90,
+   "colors": {
+    "primary": "#4F4D7A",
+    "secondary": "#E1E0EA",
+    "accent": "#6EA3A0",
+    "background": "#FAFAFC",
+    "text": "#232233"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#91",
+   "word": "カラフル",
+   "index": 91,
+   "colors": {
+    "primary": "#C2410C",
+    "secondary": "#BAE6FD",
+    "accent": "#16A34A",
+    "background": "#FFFCF7",
+    "text": "#2A1F18"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#92",
+   "word": "元気",
+   "index": 92,
+   "colors": {
+    "primary": "#D1423B",
+    "secondary": "#F7DCD1",
+    "accent": "#3B8E5A",
+    "background": "#FFFAF8",
+    "text": "#2B1F1C"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#93",
+   "word": "クール",
+   "index": 93,
+   "colors": {
+    "primary": "#1A4F8B",
+    "secondary": "#D8E5EF",
+    "accent": "#E5484D",
+    "background": "#FAFCFE",
+    "text": "#18233A"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#94",
+   "word": "鮮やか",
+   "index": 94,
+   "colors": {
+    "primary": "#111111",
+    "secondary": "#FFD43B",
+    "accent": "#E03131",
+    "background": "#FFFFFF",
+    "text": "#111111"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#95",
+   "word": "クール",
+   "index": 95,
+   "colors": {
+    "primary": "#1E2B44",
+    "secondary": "#DADFE6",
+    "accent": "#7A8BA3",
+    "background": "#F4F6F8",
+    "text": "#1A2131"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#96",
+   "word": "かわいい",
+   "index": 96,
+   "colors": {
+    "primary": "#9C4C6E",
+    "secondary": "#EEE0D5",
+    "accent": "#C59A55",
+    "background": "#FFFBF8",
+    "text": "#2C2026"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#97",
+   "word": "和風",
+   "index": 97,
+   "colors": {
+    "primary": "#C65A1E",
+    "secondary": "#ECDEC8",
+    "accent": "#5E7B3A",
+    "background": "#FDF8EF",
+    "text": "#2B2117"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#98",
+   "word": "かっこいい",
+   "index": 98,
+   "colors": {
+    "primary": "#2E3326",
+    "secondary": "#DCDDD3",
+    "accent": "#A65A3A",
+    "background": "#F5F5F1",
+    "text": "#22251E"
+   },
+   "seedId": "hidden"
+  },
+  {
+   "key": "calib#99",
+   "word": "落ち着いた",
+   "index": 99,
+   "colors": {
+    "primary": "#5E3A2B",
+    "secondary": "#EADCCF",
+    "accent": "#C9763F",
+    "background": "#F9F4EF",
+    "text": "#28201B"
+   },
+   "seedId": "hidden"
+  }
+ ]
+}

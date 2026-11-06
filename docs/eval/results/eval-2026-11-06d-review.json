@@ -1,0 +1,695 @@
+{
+  "schema": "color-palette-eval/1",
+  "exportedAt": "2026-11-06T09:22:53.718Z",
+  "seed": 20261106,
+  "set": "file:review-1",
+  "words": [
+    "明るい",
+    "元気",
+    "楽しい",
+    "親しみやすい",
+    "やさしい",
+    "かわいい",
+    "ネオン",
+    "まじめ",
+    "クール",
+    "ポップ",
+    "鮮やか",
+    "未来的",
+    "力強い",
+    "モダン"
+  ],
+  "overall": {},
+  "items": [
+    {
+      "key": "review#1",
+      "word": "明るい",
+      "index": 17,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "label": "暖色系 × 「桃とレモン」",
+      "seedId": "s-129",
+      "colors": {
+        "primary": "#DD5C86",
+        "secondary": "#F1E7BA",
+        "accent": "#76BA9F",
+        "background": "#FFFFFF",
+        "text": "#2D1F26"
+      },
+      "judge": {
+        "verdict": "maybe-meh",
+        "notes": [
+          "淡く、やさしい寄り。明るい（原色・ビタミンカラー）としては弱い"
+        ]
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "review#2",
+      "word": "明るい",
+      "index": 19,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "暖色系 × 「菜の花」",
+      "seedId": "s-123",
+      "colors": {
+        "primary": "#B9720F",
+        "secondary": "#F0E7BD",
+        "accent": "#5BA87A",
+        "background": "#FFFFFC",
+        "text": "#2B2416"
+      },
+      "judge": {
+        "verdict": "maybe-meh",
+        "notes": [
+          "メインがからし色寄りで、明るさが出ない"
+        ]
+      },
+      "rating": "good"
+    },
+    {
+      "key": "review#6",
+      "word": "元気",
+      "index": 13,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "label": "暖色系 × 「黄色地に赤と青」",
+      "seedId": "s-055",
+      "colors": {
+        "primary": "#C92A1E",
+        "secondary": "#F2C94C",
+        "accent": "#1A62C9",
+        "background": "#FFF4B8",
+        "text": "#2A2414"
+      },
+      "judge": {
+        "verdict": "maybe-meh",
+        "notes": [
+          "黄色い地が重い（明るいでも微妙だった配色）"
+        ]
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "review#22",
+      "word": "楽しい",
+      "index": 15,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "label": "暖色系 × 「黄色地に赤と青」",
+      "seedId": "s-055",
+      "colors": {
+        "primary": "#C92A1E",
+        "secondary": "#F2C94C",
+        "accent": "#1A62C9",
+        "background": "#FFF4B8",
+        "text": "#2A2414"
+      },
+      "judge": {
+        "verdict": "maybe-meh",
+        "notes": [
+          "黄色い地が重い（明るいでも微妙だった配色）"
+        ]
+      },
+      "rating": "good"
+    },
+    {
+      "key": "review#69",
+      "word": "親しみやすい",
+      "index": 8,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "analogous"
+      },
+      "label": "暖色系 × 「キャラメル」",
+      "seedId": "s-103",
+      "colors": {
+        "primary": "#8A5A2B",
+        "secondary": "#EFE0C9",
+        "accent": "#D9534F",
+        "background": "#FFFAF3",
+        "text": "#2B2118"
+      },
+      "judge": {
+        "verdict": "maybe-meh",
+        "notes": [
+          "茶色が中心で、親しみやすいより落ち着いた寄り（ミルクティーが微妙だった型）"
+        ]
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "review#70",
+      "word": "親しみやすい",
+      "index": 9,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "complementary"
+      },
+      "label": "暖色系 × 「キャラメル」に「クレヨン」の差し色",
+      "seedId": "s-103",
+      "colors": {
+        "primary": "#8A5A2B",
+        "secondary": "#EFE0C9",
+        "accent": "#4263EB",
+        "background": "#FFFAF3",
+        "text": "#2B2118"
+      },
+      "judge": {
+        "verdict": "maybe-meh",
+        "notes": [
+          "茶色が中心で、親しみやすいより落ち着いた寄り"
+        ]
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "review#85",
+      "word": "やさしい",
+      "index": 1,
+      "cell": {
+        "temp": "cool",
+        "sat": "muted",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「リネンとセージ」",
+      "seedId": "s-144",
+      "colors": {
+        "primary": "#5F7A65",
+        "secondary": "#E1E2D9",
+        "accent": "#B9875A",
+        "background": "#FBFAF6",
+        "text": "#222923"
+      },
+      "judge": {
+        "verdict": "maybe-meh",
+        "notes": [
+          "灰みの緑（やさしいで微妙だった型）"
+        ]
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "review#88",
+      "word": "やさしい",
+      "index": 10,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "label": "暖色系 × 「陽だまりの黄」",
+      "seedId": "s-274",
+      "colors": {
+        "primary": "#B8641C",
+        "secondary": "#F1E2BC",
+        "accent": "#D9566A",
+        "background": "#FFFCF4",
+        "text": "#2B2216"
+      },
+      "judge": {
+        "verdict": "maybe-meh",
+        "notes": [
+          "くすんだ橙（明るいで微妙だった配色）"
+        ]
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "review#89",
+      "word": "やさしい",
+      "index": 11,
+      "cell": {
+        "temp": "neutral",
+        "sat": "muted",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「砂」",
+      "seedId": "s-324",
+      "colors": {
+        "primary": "#4A443C",
+        "secondary": "#E2DCD2",
+        "accent": "#9C8B73",
+        "background": "#F8F5F0",
+        "text": "#2A2620"
+      },
+      "judge": {
+        "verdict": "maybe-meh",
+        "notes": [
+          "灰みのベージュ（やさしいで微妙だった型）"
+        ]
+      },
+      "rating": "meh"
+    },
+    {
+      "key": "review#94",
+      "word": "やさしい",
+      "index": 19,
+      "cell": {
+        "temp": "warm",
+        "sat": "mid",
+        "harm": "mono"
+      },
+      "label": "暖色系 × 「ミルクティー」",
+      "seedId": "s-106",
+      "colors": {
+        "primary": "#8C6249",
+        "secondary": "#EADED1",
+        "accent": "#C9733A",
+        "background": "#FCF8F4",
+        "text": "#2B221C"
+      },
+      "judge": {
+        "verdict": "maybe-meh",
+        "notes": [
+          "茶色・くすみ（親しみやすいで微妙だった配色）"
+        ]
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "review#100",
+      "word": "かわいい",
+      "index": 13,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "暖色系 × 「紅梅と鶯」",
+      "seedId": "s-015",
+      "colors": {
+        "primary": "#B2445F",
+        "secondary": "#F2D9DE",
+        "accent": "#77772E",
+        "background": "#FCF8F6",
+        "text": "#2E2226"
+      },
+      "judge": {
+        "verdict": "maybe-meh",
+        "notes": [
+          "鶯色の差し色が濁って見える"
+        ]
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "review#101",
+      "word": "かわいい",
+      "index": 14,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "label": "暖色系 × 「ピーチ」",
+      "seedId": "s-119",
+      "colors": {
+        "primary": "#C86B59",
+        "secondary": "#F4DDD3",
+        "accent": "#7BA7C7",
+        "background": "#FFFAF8",
+        "text": "#2C211E"
+      },
+      "judge": {
+        "verdict": "maybe-meh",
+        "notes": [
+          "くすんだサーモン（やさしいで微妙だった配色）"
+        ]
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "review#364",
+      "word": "ネオン",
+      "index": 20,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "label": "暖色系 × 「ネオンのお手本7」に「ネオンのお手本8」の差し色",
+      "seedId": "s-375",
+      "colors": {
+        "primary": "#F52DC8",
+        "secondary": "#BF758D",
+        "accent": "#F72A36",
+        "background": "#FFFCFE",
+        "text": "#281E25"
+      },
+      "judge": {
+        "verdict": "maybe-meh",
+        "notes": [
+          "サブがくすんだピンクで、蛍光らしさが落ちる"
+        ]
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "review#98",
+      "word": "かわいい",
+      "index": 8,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "analogous"
+      },
+      "label": "寒色・緑系 × 「ホログラム」",
+      "seedId": "s-327",
+      "colors": {
+        "primary": "#6A5CFF",
+        "secondary": "#D7E5ED",
+        "accent": "#FF5FD2",
+        "background": "#FBFBFF",
+        "text": "#1C1C33"
+      },
+      "judge": {
+        "verdict": "good",
+        "notes": [
+          "抜き取り確認（Claude の見逃しを測るため）"
+        ]
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "review#20",
+      "word": "楽しい",
+      "index": 13,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "暖色系 × 「かぼちゃ」",
+      "seedId": "s-268",
+      "colors": {
+        "primary": "#C8611A",
+        "secondary": "#F3DFC6",
+        "accent": "#4B7F52",
+        "background": "#FFFBF5",
+        "text": "#2B2016"
+      },
+      "judge": {
+        "verdict": "good",
+        "notes": [
+          "抜き取り確認（Claude の見逃しを測るため）"
+        ]
+      },
+      "rating": "meh"
+    },
+    {
+      "key": "review#156",
+      "word": "まじめ",
+      "index": 12,
+      "cell": {
+        "temp": "cool",
+        "sat": "mid",
+        "harm": "mono"
+      },
+      "label": "寒色・緑系 × 「教科書」に「ネイビー1色」の差し色",
+      "seedId": "s-178",
+      "colors": {
+        "primary": "#2B5F8C",
+        "secondary": "#EEE3C5",
+        "accent": "#3F7FBF",
+        "background": "#FDFCF8",
+        "text": "#1E2733"
+      },
+      "judge": {
+        "verdict": "good",
+        "notes": [
+          "抜き取り確認（Claude の見逃しを測るため）"
+        ]
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "review#200",
+      "word": "クール",
+      "index": 15,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "complementary"
+      },
+      "label": "寒色・緑系 × 「コバルト」",
+      "seedId": "s-086",
+      "colors": {
+        "primary": "#0047AB",
+        "secondary": "#DCE7FA",
+        "accent": "#FF8C00",
+        "background": "#FBFCFF",
+        "text": "#1A2236"
+      },
+      "judge": {
+        "verdict": "good",
+        "notes": [
+          "抜き取り確認（Claude の見逃しを測るため）"
+        ]
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "review#37",
+      "word": "ポップ",
+      "index": 19,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「蛍光イエローと黒」",
+      "seedId": "s-338",
+      "colors": {
+        "primary": "#E6FF2E",
+        "secondary": "#262626",
+        "accent": "#FF4D8D",
+        "background": "#111111",
+        "text": "#F2F2F2"
+      },
+      "judge": {
+        "verdict": "good",
+        "notes": [
+          "抜き取り確認（Claude の見逃しを測るため）"
+        ]
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "review#43",
+      "word": "鮮やか",
+      "index": 13,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "split"
+      },
+      "label": "暖色系 × 「マゼンタと黄」",
+      "seedId": "s-050",
+      "colors": {
+        "primary": "#D4237A",
+        "secondary": "#FFE45C",
+        "accent": "#0098C8",
+        "background": "#FFFDF5",
+        "text": "#2A1E24"
+      },
+      "judge": {
+        "verdict": "good",
+        "notes": [
+          "抜き取り確認（Claude の見逃しを測るため）"
+        ]
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "review#352",
+      "word": "未来的",
+      "index": 13,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「ネイビーとシアン」",
+      "seedId": "s-335",
+      "colors": {
+        "primary": "#E6F3FF",
+        "secondary": "#18314F",
+        "accent": "#26C6F9",
+        "background": "#0C1B2E",
+        "text": "#E6F0FA"
+      },
+      "judge": {
+        "verdict": "good",
+        "notes": [
+          "抜き取り確認（Claude の見逃しを測るため）"
+        ]
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "review#68",
+      "word": "親しみやすい",
+      "index": 7,
+      "cell": {
+        "temp": "cool",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "寒色・緑系 × 「芝生」",
+      "seedId": "s-107",
+      "colors": {
+        "primary": "#3E8E41",
+        "secondary": "#E0E8CA",
+        "accent": "#E07B39",
+        "background": "#FBFDF7",
+        "text": "#1F2A1F"
+      },
+      "judge": {
+        "verdict": "good",
+        "notes": [
+          "抜き取り確認（Claude の見逃しを測るため）"
+        ]
+      },
+      "rating": "good"
+    },
+    {
+      "key": "review#87",
+      "word": "やさしい",
+      "index": 6,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "暖色系 × 「シャーベット」",
+      "seedId": "s-122",
+      "colors": {
+        "primary": "#D9668A",
+        "secondary": "#D8ECE4",
+        "accent": "#DF9F2D",
+        "background": "#FFFFFF",
+        "text": "#2D1F26"
+      },
+      "judge": {
+        "verdict": "good",
+        "notes": [
+          "抜き取り確認（Claude の見逃しを測るため）"
+        ]
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "review#238",
+      "word": "力強い",
+      "index": 16,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「黒地に赤」",
+      "seedId": "s-031",
+      "colors": {
+        "primary": "#F1EEEA",
+        "secondary": "#2D2828",
+        "accent": "#D12A43",
+        "background": "#111111",
+        "text": "#EEEAE6"
+      },
+      "judge": {
+        "verdict": "good",
+        "notes": [
+          "抜き取り確認（Claude の見逃しを測るため）"
+        ]
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "review#366",
+      "word": "ネオン",
+      "index": 22,
+      "cell": {
+        "temp": "warm",
+        "sat": "vivid",
+        "harm": "triad"
+      },
+      "label": "暖色系 × 「ネオンのお手本5」に「白地に蛍光グリーン」の差し色",
+      "seedId": "s-374",
+      "colors": {
+        "primary": "#F42A9A",
+        "secondary": "#51061A",
+        "accent": "#2A5CFF",
+        "background": "#130B0E",
+        "text": "#FAE9EF"
+      },
+      "judge": {
+        "verdict": "good",
+        "notes": [
+          "抜き取り確認（Claude の見逃しを測るため）"
+        ]
+      },
+      "rating": "good",
+      "star": true
+    },
+    {
+      "key": "review#230",
+      "word": "モダン",
+      "index": 20,
+      "cell": {
+        "temp": "neutral",
+        "sat": "vivid",
+        "harm": "neutralAccent"
+      },
+      "label": "無彩色＋差し色 × 「黒地にミント」",
+      "seedId": "s-232",
+      "colors": {
+        "primary": "#E9F5F2",
+        "secondary": "#25292B",
+        "accent": "#3DDBB4",
+        "background": "#141617",
+        "text": "#EDF3F1"
+      },
+      "judge": {
+        "verdict": "good",
+        "notes": [
+          "抜き取り確認（Claude の見逃しを測るため）"
+        ]
+      },
+      "rating": "good",
+      "star": true
+    }
+  ]
+}

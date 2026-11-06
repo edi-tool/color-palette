@@ -1,0 +1,502 @@
+[
+ {
+  "key": "calib#0",
+  "word": "ネオン",
+  "rating": "meh"
+ },
+ {
+  "key": "calib#1",
+  "word": "爽やか",
+  "rating": "meh"
+ },
+ {
+  "key": "calib#2",
+  "word": "かっこいい",
+  "rating": "meh"
+ },
+ {
+  "key": "calib#3",
+  "word": "上品",
+  "rating": "good"
+ },
+ {
+  "key": "calib#4",
+  "word": "かっこいい",
+  "rating": "good"
+ },
+ {
+  "key": "calib#5",
+  "word": "親しみやすい",
+  "rating": "good"
+ },
+ {
+  "key": "calib#6",
+  "word": "鮮やか",
+  "rating": "good"
+ },
+ {
+  "key": "calib#7",
+  "word": "上品",
+  "rating": "good"
+ },
+ {
+  "key": "calib#8",
+  "word": "清潔",
+  "rating": "good"
+ },
+ {
+  "key": "calib#9",
+  "word": "高級感",
+  "rating": "good"
+ },
+ {
+  "key": "calib#10",
+  "word": "ネオン",
+  "rating": "good"
+ },
+ {
+  "key": "calib#11",
+  "word": "レトロ",
+  "rating": "good"
+ },
+ {
+  "key": "calib#12",
+  "word": "まじめ",
+  "rating": "good"
+ },
+ {
+  "key": "calib#13",
+  "word": "やさしい",
+  "rating": "meh"
+ },
+ {
+  "key": "calib#14",
+  "word": "やさしい",
+  "rating": "meh"
+ },
+ {
+  "key": "calib#15",
+  "word": "カラフル",
+  "rating": "good"
+ },
+ {
+  "key": "calib#16",
+  "word": "爽やか",
+  "rating": "good"
+ },
+ {
+  "key": "calib#17",
+  "word": "ミニマル",
+  "rating": "good"
+ },
+ {
+  "key": "calib#18",
+  "word": "シンプル",
+  "rating": "good"
+ },
+ {
+  "key": "calib#19",
+  "word": "モダン",
+  "rating": "good"
+ },
+ {
+  "key": "calib#20",
+  "word": "まじめ",
+  "rating": "good"
+ },
+ {
+  "key": "calib#21",
+  "word": "かわいい",
+  "rating": "good"
+ },
+ {
+  "key": "calib#22",
+  "word": "シンプル",
+  "rating": "good"
+ },
+ {
+  "key": "calib#23",
+  "word": "ネオン",
+  "rating": "meh"
+ },
+ {
+  "key": "calib#24",
+  "word": "まじめ",
+  "rating": "good"
+ },
+ {
+  "key": "calib#25",
+  "word": "落ち着いた",
+  "rating": "meh"
+ },
+ {
+  "key": "calib#26",
+  "word": "懐かしい",
+  "rating": "good"
+ },
+ {
+  "key": "calib#27",
+  "word": "誠実",
+  "rating": "meh"
+ },
+ {
+  "key": "calib#28",
+  "word": "まじめ",
+  "rating": "good"
+ },
+ {
+  "key": "calib#29",
+  "word": "未来的",
+  "rating": "meh"
+ },
+ {
+  "key": "calib#30",
+  "word": "元気",
+  "rating": "good"
+ },
+ {
+  "key": "calib#31",
+  "word": "シンプル",
+  "rating": "good"
+ },
+ {
+  "key": "calib#32",
+  "word": "クール",
+  "rating": "meh"
+ },
+ {
+  "key": "calib#33",
+  "word": "やさしい",
+  "rating": "meh"
+ },
+ {
+  "key": "calib#34",
+  "word": "カラフル",
+  "rating": "good"
+ },
+ {
+  "key": "calib#35",
+  "word": "カラフル",
+  "rating": "good"
+ },
+ {
+  "key": "calib#36",
+  "word": "明るい",
+  "rating": "good"
+ },
+ {
+  "key": "calib#37",
+  "word": "親しみやすい",
+  "rating": "meh"
+ },
+ {
+  "key": "calib#38",
+  "word": "明るい",
+  "rating": "good"
+ },
+ {
+  "key": "calib#39",
+  "word": "明るい",
+  "rating": "good"
+ },
+ {
+  "key": "calib#40",
+  "word": "明るい",
+  "rating": "meh"
+ },
+ {
+  "key": "calib#41",
+  "word": "清潔",
+  "rating": "good"
+ },
+ {
+  "key": "calib#42",
+  "word": "明るい",
+  "rating": "good"
+ },
+ {
+  "key": "calib#43",
+  "word": "爽やか",
+  "rating": "meh"
+ },
+ {
+  "key": "calib#44",
+  "word": "やさしい",
+  "rating": "meh"
+ },
+ {
+  "key": "calib#45",
+  "word": "楽しい",
+  "rating": "good"
+ },
+ {
+  "key": "calib#46",
+  "word": "落ち着いた",
+  "rating": "good"
+ },
+ {
+  "key": "calib#47",
+  "word": "高級感",
+  "rating": "meh"
+ },
+ {
+  "key": "calib#48",
+  "word": "華やか",
+  "rating": "good"
+ },
+ {
+  "key": "calib#49",
+  "word": "やさしい",
+  "rating": "meh"
+ },
+ {
+  "key": "calib#50",
+  "word": "華やか",
+  "rating": "good"
+ },
+ {
+  "key": "calib#51",
+  "word": "楽しい",
+  "rating": "meh"
+ },
+ {
+  "key": "calib#52",
+  "word": "やさしい",
+  "rating": "good"
+ },
+ {
+  "key": "calib#53",
+  "word": "高級感",
+  "rating": "meh"
+ },
+ {
+  "key": "calib#54",
+  "word": "落ち着いた",
+  "rating": "good"
+ },
+ {
+  "key": "calib#55",
+  "word": "楽しい",
+  "rating": "good"
+ },
+ {
+  "key": "calib#56",
+  "word": "モダン",
+  "rating": "good"
+ },
+ {
+  "key": "calib#57",
+  "word": "落ち着いた",
+  "rating": "meh"
+ },
+ {
+  "key": "calib#58",
+  "word": "知的",
+  "rating": "good"
+ },
+ {
+  "key": "calib#59",
+  "word": "やさしい",
+  "rating": "meh"
+ },
+ {
+  "key": "calib#60",
+  "word": "モダン",
+  "rating": "good"
+ },
+ {
+  "key": "calib#61",
+  "word": "鮮やか",
+  "rating": "good"
+ },
+ {
+  "key": "calib#62",
+  "word": "華やか",
+  "rating": "good"
+ },
+ {
+  "key": "calib#63",
+  "word": "ポップ",
+  "rating": "good"
+ },
+ {
+  "key": "calib#64",
+  "word": "落ち着いた",
+  "rating": "meh"
+ },
+ {
+  "key": "calib#65",
+  "word": "上品",
+  "rating": "good"
+ },
+ {
+  "key": "calib#66",
+  "word": "レトロ",
+  "rating": "good"
+ },
+ {
+  "key": "calib#67",
+  "word": "明るい",
+  "rating": "meh"
+ },
+ {
+  "key": "calib#68",
+  "word": "ネオン",
+  "rating": "good"
+ },
+ {
+  "key": "calib#69",
+  "word": "やさしい",
+  "rating": "meh"
+ },
+ {
+  "key": "calib#70",
+  "word": "親しみやすい",
+  "rating": "meh"
+ },
+ {
+  "key": "calib#71",
+  "word": "誠実",
+  "rating": "good"
+ },
+ {
+  "key": "calib#72",
+  "word": "シンプル",
+  "rating": "good"
+ },
+ {
+  "key": "calib#73",
+  "word": "明るい",
+  "rating": "meh"
+ },
+ {
+  "key": "calib#74",
+  "word": "かわいい",
+  "rating": "good"
+ },
+ {
+  "key": "calib#75",
+  "word": "やさしい",
+  "rating": "good"
+ },
+ {
+  "key": "calib#76",
+  "word": "シンプル",
+  "rating": "good"
+ },
+ {
+  "key": "calib#77",
+  "word": "信頼感",
+  "rating": "good"
+ },
+ {
+  "key": "calib#78",
+  "word": "鮮やか",
+  "rating": "good"
+ },
+ {
+  "key": "calib#79",
+  "word": "やさしい",
+  "rating": "good"
+ },
+ {
+  "key": "calib#80",
+  "word": "ナチュラル",
+  "rating": "good"
+ },
+ {
+  "key": "calib#81",
+  "word": "誠実",
+  "rating": "meh"
+ },
+ {
+  "key": "calib#82",
+  "word": "レトロ",
+  "rating": "good"
+ },
+ {
+  "key": "calib#83",
+  "word": "落ち着いた",
+  "rating": "meh"
+ },
+ {
+  "key": "calib#84",
+  "word": "ナチュラル",
+  "rating": "good"
+ },
+ {
+  "key": "calib#85",
+  "word": "やさしい",
+  "rating": "meh"
+ },
+ {
+  "key": "calib#86",
+  "word": "落ち着いた",
+  "rating": "meh"
+ },
+ {
+  "key": "calib#87",
+  "word": "ナチュラル",
+  "rating": "good"
+ },
+ {
+  "key": "calib#88",
+  "word": "やさしい",
+  "rating": "meh"
+ },
+ {
+  "key": "calib#89",
+  "word": "落ち着いた",
+  "rating": "meh"
+ },
+ {
+  "key": "calib#90",
+  "word": "やさしい",
+  "rating": "meh"
+ },
+ {
+  "key": "calib#91",
+  "word": "カラフル",
+  "rating": "good"
+ },
+ {
+  "key": "calib#92",
+  "word": "元気",
+  "rating": "good"
+ },
+ {
+  "key": "calib#93",
+  "word": "クール",
+  "rating": "good"
+ },
+ {
+  "key": "calib#94",
+  "word": "鮮やか",
+  "rating": "good"
+ },
+ {
+  "key": "calib#95",
+  "word": "クール",
+  "rating": "good"
+ },
+ {
+  "key": "calib#96",
+  "word": "かわいい",
+  "rating": "meh"
+ },
+ {
+  "key": "calib#97",
+  "word": "和風",
+  "rating": "good"
+ },
+ {
+  "key": "calib#98",
+  "word": "かっこいい",
+  "rating": "good"
+ },
+ {
+  "key": "calib#99",
+  "word": "落ち着いた",
+  "rating": "good"
+ }
+]
