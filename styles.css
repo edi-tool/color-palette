@@ -1,14 +1,15 @@
 /* 配色提案さん — スタイル。edi-tool 共通のデザイントークンに合わせる。 */
 :root {
-  --bg: #f8f6f2;
+  --bg: #f5f5f7;
   --surface: #fff;
-  --border: #d9d5cc;
-  --text: #0f0f0f;
-  --text-sub: #5f5b54;
-  --accent: #f28c06;
-  --accent-dark: #d97a00;
-  --accent-soft: #fff8f0;
-  --accent-text: #b35f00;
+  --border: #dcdce1;
+  --text: #0a0a0a;
+  --text-sub: #52525b;
+  --accent: #ff6a00;
+  --accent-dark: #e85f00;
+  --accent-soft: #f0f0f3;
+  --accent-text: #c2410c;
+  --focus: #c2410c;
   --danger: #c62828;
   --ok: #2e7d32;
   --radius: 12px;
@@ -17,19 +18,20 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #1c1b19;
-    --surface: #26241f;
-    --border: #46423a;
-    --text: #f3f1ec;
-    --text-sub: #b9b4a8;
-    --accent-soft: #33281a;
-    --accent-text: #ffb24d;
+    --bg: #0b0b0c;
+    --surface: #161618;
+    --border: #2a2a2e;
+    --text: #f4f4f5;
+    --text-sub: #a1a1aa;
+    --accent-soft: #222225;
+    --accent-text: #ff8a3d;
+    --focus: #ff8a3d;
     --danger: #ff8a80;
     --ok: #81c784;
   }
 }
 * { box-sizing: border-box; }
-:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
@@ -46,8 +48,6 @@ body.sheet-open { overflow: hidden; }
 .page { max-width: 1480px; margin: 0 auto; padding: 1rem; }
 h1 { font-size: 1.6rem; margin: 0.2rem 0; }
 h2 { font-size: 1.1rem; margin: 0 0 0.5rem; }
-.brand-link { color: var(--accent-text); font-size: 0.85rem; text-decoration: none; font-weight: 600; }
-.brand-link:hover { text-decoration: underline; }
 .lead { margin: 0.2rem 0 1rem; color: var(--text-sub); }
 
 .panel, .results, .detail {
@@ -86,11 +86,11 @@ fieldset.seg { border: 0; padding: 0; margin: 0.8rem 0; }
 
 .btn {
   min-height: 44px; padding: 0 1rem; font: inherit; font-weight: 600; cursor: pointer;
-  border: 2px solid var(--border); border-radius: 10px; background: var(--surface); color: var(--text);
+  border: 2px solid var(--border); border-radius: 12px; background: var(--surface); color: var(--text);
 }
 .btn:hover:not(:disabled) { border-color: var(--accent); }
 .btn:disabled { opacity: 0.5; cursor: not-allowed; }
-.btn-primary { background: var(--accent); border-color: var(--accent-dark); color: #1a1100; }
+.btn-primary { background: var(--accent); border-color: var(--accent-dark); color: #0a0a0a; }
 .btn-primary:hover:not(:disabled) { background: var(--accent-dark); }
 .btn-small { min-height: 44px; font-size: 0.9rem; }
 .btn-ghost { background: transparent; }
@@ -116,7 +116,7 @@ fieldset.seg { border: 0; padding: 0; margin: 0.8rem 0; }
 .cp-title { position: absolute; left: 0.5rem; top: 0.3rem; font-weight: 800; font-size: 1.1rem; color: var(--p); }
 .cp-sub { position: absolute; left: 0.5rem; top: 1.9rem; font-size: 0.65rem; color: var(--t); }
 .cp-dot { position: absolute; right: 0.5rem; top: 0.5rem; width: 1rem; height: 1rem; border-radius: 50%; background: var(--a); }
-.card-sw { display: flex; height: 1.4rem; border-radius: 6px; overflow: hidden; border: 1px solid rgba(0,0,0,.12); }
+.card-sw { display: flex; height: 1.4rem; border-radius: 8px; overflow: hidden; border: 1px solid rgba(0,0,0,.12); }
 .card-sw span { display: block; }
 .card-label { font-size: 0.78rem; color: var(--text-sub); line-height: 1.3; }
 .card-state { font-size: 0.8rem; font-weight: 700; color: var(--accent-text); min-height: 1.2em; }
@@ -141,7 +141,7 @@ fieldset.seg { border: 0; padding: 0; margin: 0.8rem 0; }
 .copy-fallback { margin-top: 0.6rem; }
 .copy-fallback textarea { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.8rem; }
 
-.mock { --bg: #fff; --p: #333; --s: #ccc; --a: #f60; --t: #111; background: var(--bg); border: 1px solid rgba(0,0,0,.15); border-radius: 10px; padding: 0 0 0.9rem; margin: 0.6rem 0; overflow: hidden; }
+.mock { --bg: #fff; --p: #333; --s: #ccc; --a: #f60; --t: #111; background: var(--bg); border: 1px solid rgba(0,0,0,.15); border-radius: 12px; padding: 0 0 0.9rem; margin: 0.6rem 0; overflow: hidden; }
 .mock-band { height: 1.4rem; background: var(--s); }
 .mock-title { margin: 0.7rem 0.9rem 0.2rem; font-weight: 800; font-size: 1.25rem; color: var(--p); }
 .mock-body { margin: 0 0.9rem 0.6rem; color: var(--t); font-size: 0.9rem; }
@@ -151,7 +151,7 @@ fieldset.seg { border: 0; padding: 0; margin: 0.8rem 0; }
 
 .roles { list-style: none; padding: 0; margin: 0.6rem 0; display: grid; gap: 0.5rem; }
 .roles > li { min-width: 0; }
-.role { display: grid; grid-template-columns: 2.4rem minmax(0, 1fr); gap: 0.2rem 0.6rem; align-items: center; border: 1px solid var(--border); border-radius: 10px; padding: 0.5rem; }
+.role { display: grid; grid-template-columns: 2.4rem minmax(0, 1fr); gap: 0.2rem 0.6rem; align-items: center; border: 1px solid var(--border); border-radius: 12px; padding: 0.5rem; }
 .role-sw { width: 2.4rem; height: 2.4rem; border-radius: 8px; border: 1px solid rgba(0,0,0,.2); grid-row: span 2; }
 .role-name { font-weight: 700; font-size: 0.9rem; }
 .role-ctl { display: flex; gap: 0.4rem; flex-wrap: wrap; align-items: center; grid-column: 2; }
@@ -212,9 +212,40 @@ fieldset.seg { border: 0; padding: 0; margin: 0.8rem 0; }
 .mock[data-usage="teaching-material"] { padding: 0.8rem 0.9rem; }
 .mock[data-usage="teaching-material"] .mock-band { display: none; }
 .mock[data-usage="teaching-material"] .mock-title { margin: 0 0 0.5rem; padding: 0.2rem 0 0.2rem 0.6rem; border-left: 0.4rem solid var(--p); font-size: 1.1rem; color: var(--t); }
-.mock[data-usage="teaching-material"] .mock-body { margin: 0 0 0.6rem; padding: 0.5rem 0.6rem; background: var(--s); border-radius: 6px; color: var(--t); }
+.mock[data-usage="teaching-material"] .mock-body { margin: 0 0 0.6rem; padding: 0.5rem 0.6rem; background: var(--s); border-radius: 8px; color: var(--t); }
 .mock[data-usage="teaching-material"] .mock-btn { margin-left: 0; background: transparent; border: 2px solid var(--a); color: var(--t); border-radius: 4px; }
 .mock[data-usage="web"] .mock-band { height: 2rem; background: var(--p); }
 .mock[data-usage="web"] .mock-title { color: var(--t); }
-.mock[data-usage="web"] .mock-body { padding: 0.4rem 0.6rem; margin: 0 0.9rem 0.6rem; background: var(--s); border-radius: 6px; }
-.mock[data-usage="web"] .mock-btn { border-radius: 6px; padding: 0.4rem 1rem; }
+.mock[data-usage="web"] .mock-body { padding: 0.4rem 0.6rem; margin: 0 0.9rem 0.6rem; background: var(--s); border-radius: 8px; }
+.mock[data-usage="web"] .mock-btn { border-radius: 8px; padding: 0.4rem 1rem; }
+
+/* ===== edi-tool 共通: 上部バーと見出し（edi-tool/.github DESIGN.md 2026-11-06「4. 部品」） ===== */
+.et-bar { align-self: stretch; box-sizing: border-box; margin: var(--et-bar-margin, 0 0 16px); padding: var(--et-bar-padding, 0); background: var(--surface, #fff); border-bottom: 1px solid var(--border); }
+.et-bar-inner { box-sizing: border-box; max-width: var(--et-bar-max, 1200px); margin: 0 auto; padding: 6px 8px; min-height: 56px; display: flex; align-items: center; gap: 2px; font-size: 0.9375rem; line-height: 1.4; text-align: left; letter-spacing: normal; }
+.et-home { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 8px; border-radius: 8px; color: var(--text); font-weight: 800; text-decoration: none; transition: background-color 120ms cubic-bezier(.2, .8, .2, 1); }
+.et-home:hover { background: var(--surface-2, #f0f0f3); color: var(--text); text-decoration: none; }
+.et-mark { flex: none; width: 14px; height: 14px; border-radius: 4px; background: var(--accent); }
+.et-sep { flex: none; width: 16px; height: 16px; color: var(--text-sub); }
+.et-current { min-width: 0; padding: 0 8px; font-weight: 700; color: var(--text-sub); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+@media print { .et-bar { display: none; } }
+:root { --et-bar-max: 1480px; --et-bar-margin: 0; }
+.site-header { padding-top: 0.5rem; }
+h1 { font-size: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem); font-weight: 800; letter-spacing: -0.02em; }
+.lead { font-size: 0.9375rem; }
+
+/* スマホでは印象語を語の長さで詰めて並べ、スクロールを短くする */
+@media (max-width: 600px) {
+  .chips { display: flex; flex-wrap: wrap; }
+  .chips .chip { flex: 0 0 auto; }
+}
+/* スマホの結果カード: 389px 以下は2列、390px 以上（幅の広いスマホ）は3列に固定する */
+@media (max-width: 389px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5rem; }
+}
+@media (min-width: 390px) and (max-width: 599px) {
+  .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.5rem; }
+  .card { padding: 0.375rem; }
+  .cp-title { font-size: 0.875rem; left: 0.375rem; }
+  .cp-sub { left: 0.375rem; top: 1.65rem; }
+  .cp-dot { width: 0.75rem; height: 0.75rem; right: 0.375rem; top: 0.375rem; }
+}
