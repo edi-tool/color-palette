@@ -62,6 +62,16 @@ out.push('## 微妙・悪いの理由（複数選択）', '');
 const bads = rated.filter((it) => it.rating !== 'good');
 table(['理由', '件数', '微妙・悪いのうち'], countTags(bads).map(([t, c]) => [REASON_LABEL[t] ?? t, c, pct(c, bads.length)]));
 
+// 2b. 出どころ（配色データベース由来か、自動生成か。seedId の無い古い書き出しは区別しない）
+if (items.some((it) => 'seedId' in it)) {
+  out.push('## 出どころ別', '');
+  const src = (it) => (it.seedId ? (/違い|の差し色/.test(it.label ?? '') ? 'データベースの変化形' : 'データベースの配色') : '自動生成');
+  table(['出どころ', '評価数', '良い率', '悪い率'], ['データベースの配色', 'データベースの変化形', '自動生成'].map((k) => {
+    const r = rated.filter((it) => src(it) === k);
+    return [k, r.length, pct(r.filter((it) => it.rating === 'good').length, r.length), pct(r.filter((it) => it.rating === 'bad').length, r.length)];
+  }));
+}
+
 // 3. 生成の枠ごと（どの温度・彩度・調和が悪いか）
 for (const axis of ['temp', 'sat', 'harm']) {
   out.push(`## 枠ごと: ${{ temp: '温度', sat: '彩度', harm: '調和' }[axis]}`, '');
@@ -90,7 +100,7 @@ table(['特徴', ...Object.values(RATING_LABEL)], Object.entries(feats).map(([na
 // 5. お手本（シード配色の候補）
 const stars = items.filter((it) => it.star);
 out.push(`## ★お手本（${stars.length}案）`, '');
-if (stars.length) table(['語', '番号', '枠', 'メイン', 'サブ', '差し色', '背景', '文字', 'ひとこと'], stars.map((it) => [it.word, it.index + 1, cellText(it.cell), it.colors.primary, it.colors.secondary, it.colors.accent, it.colors.background, it.colors.text, it.note ?? '']));
+if (stars.length) table(['語', '番号', '案', 'メイン', 'サブ', '差し色', '背景', '文字', 'ひとこと'], stars.map((it) => [it.word, it.index + 1, it.label ?? cellText(it.cell), it.colors.primary, it.colors.secondary, it.colors.accent, it.colors.background, it.colors.text, it.note ?? '']));
 
 // 6. 感想
 const notes = items.filter((it) => it.note);

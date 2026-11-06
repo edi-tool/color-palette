@@ -96,7 +96,7 @@ function cardHtml(card) {
   const c = card.colors;
   return `<li class="card" data-key="${card.key}" data-rating="${it.rating ?? ''}">
     ${preview(c)}
-    <div class="meta">${card.index + 1}. ${esc(cellLabel(card.cell))}<br>${[c.primary, c.secondary, c.accent, c.background, c.text].join(' ')}</div>
+    <div class="meta">${card.index + 1}. ${esc(card.label ?? cellLabel(card.cell))}${card.seedId ? '' : '（自動生成）'}<br>${[c.primary, c.secondary, c.accent, c.background, c.text].join(' ')}</div>
     <div class="rate" role="group" aria-label="評価">${RATINGS.map(([v, l, k]) => `<button type="button" data-v="${v}" aria-pressed="${it.rating === v}" title="キー ${k}">${l}</button>`).join('')}</div>
     <div class="tags" role="group" aria-label="理由">${REASONS.map(([v, l]) => `<button type="button" data-tag="${v}" aria-pressed="${!!it.tags?.includes(v)}">${l}</button>`).join('')}
       <button type="button" class="star" data-star aria-pressed="${!!it.star}">★お手本</button></div>
@@ -110,7 +110,7 @@ function render(index) {
   cards = [];
   for (const word of EVAL_WORDS) {
     const ps = generateWide({ index, moods: [word], seed: EVAL_SEED, count: COUNT });
-    const list = ps.map((p, i) => ({ key: `${word}#${i}`, word, index: i, cell: p.cell, colors: p.colors }));
+    const list = ps.map((p, i) => ({ key: `${word}#${i}`, word, index: i, cell: p.cell, label: p.label, seedId: p.seedId, colors: p.colors }));
     cards.push(...list);
     const sec = document.createElement('section');
     sec.className = 'word';
@@ -182,7 +182,7 @@ function exportJson() {
     words: EVAL_WORDS,
     overall: data.overall,
     // 評価の付いた案だけでなく全案を残す（エンジン変更後に同じ案かを照合できるように）
-    items: cards.map((c) => { const { sig, ...it } = itemFor(c); return { key: c.key, word: c.word, index: c.index, cell: c.cell, colors: c.colors, ...it }; }),
+    items: cards.map((c) => { const { sig, ...it } = itemFor(c); return { key: c.key, word: c.word, index: c.index, cell: c.cell, label: c.label, seedId: c.seedId ?? null, colors: c.colors, ...it }; }),
   }, null, 2);
 }
 
