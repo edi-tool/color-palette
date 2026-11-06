@@ -10,13 +10,17 @@ import { generateWide, cellLabel } from '../../src/palette-engine.js';
 export const EVAL_WORDS = ['明るい', 'やさしい', '誠実', '落ち着いた', '高級感', 'ナチュラル', '和風', 'ネオン'];
 const params = new URLSearchParams(location.search);
 const SET = params.get('set') === 'rest' ? 'rest' : 'core';
+// ?file=名前 で docs/eval/sets/<名前>.json の決まった案を評価する（エンジンを変えても同じ案を見られる）。
+// &blind=1 で配色の名前・出どころ・事前判定を隠す（先入観なしに見るため）
+const FILE = /^[a-z0-9-]+$/.test(params.get('file') ?? '') ? params.get('file') : null;
+const BLIND = params.get('blind') === '1';
 let words = EVAL_WORDS;
 export const EVAL_SEED = 20261106;
 const COUNT = Math.min(24, Math.max(1, Number(params.get('count')) || (SET === 'rest' ? 12 : 24)));
 // 保存先。?store=名前 で別の保存先を使える（動作確認で本番の評価に触れないため）
 const STORE_SUFFIX = params.get('store');
 // 組ごとに保存先を分ける（既定の組は以前と同じキー）
-const STORE = `color-palette-eval-v1${SET === 'rest' ? '-rest' : ''}${STORE_SUFFIX ? `-${STORE_SUFFIX}` : ''}`;
+const STORE = `color-palette-eval-v1${FILE ? `-file-${FILE}` : SET === 'rest' ? '-rest' : ''}${STORE_SUFFIX ? `-${STORE_SUFFIX}` : ''}`;
 // 控え: 評価の途中経過を別のキーに残す（誤って消しても戻せるように）。新しい順に最大 MAX_SNAPSHOTS 件
 const BACKUP = `${STORE}-backup`;
 const MAX_SNAPSHOTS = 30;
@@ -96,17 +100,47 @@ const sigOf = (c) => [c.primary, c.secondary, c.accent, c.background, c.text].jo
 const isStale = (card) => { const it = data.items[card.key]; return !!it && it.sig !== sigOf(card.colors); };
 const itemFor = (card) => (isStale(card) ? {} : data.items[card.key] ?? {});
 
+const VERDICT = { good: '良さそう', 'maybe-meh': '微妙の可能性', unsure: '判断材料が少ない' };
+function judgeHtml(card) {
+  const j = card.judge;
+  if (BLIND || !j) return '';
+  const why = [...(j.rules ?? []), ...(j.notes ?? [])];
+  return `<br><strong>Claude の判定: ${esc(VERDICT[j.verdict] ?? j.verdict)}</strong>${why.length ? `（${why.map(esc).join('／')}）` : ''}`;
+}
+
 function cardHtml(card) {
   const it = itemFor(card);
   const c = card.colors;
   return `<li class="card" data-key="${card.key}" data-rating="${it.rating ?? ''}">
     ${preview(c)}
-    <div class="meta">${card.index + 1}. ${esc(card.label ?? cellLabel(card.cell))}${card.seedId ? '' : '（自動生成）'}<br>${[c.primary, c.secondary, c.accent, c.background, c.text].join(' ')}</div>
+    <div class="meta">${BLIND ? `${card.n}.` : `${card.index + 1}. ${esc(card.label ?? cellLabel(card.cell))}${card.seedId ? '' : '（自動生成）'}`}<br>${[c.primary, c.secondary, c.accent, c.background, c.text].join(' ')}${judgeHtml(card)}</div>
     <div class="rate" role="group" aria-label="評価">${RATINGS.map(([v, l, k]) => `<button type="button" data-v="${v}" aria-pressed="${it.rating === v}" title="キー ${k}">${l}</button>`).join('')}</div>
     <div class="tags" role="group" aria-label="理由">${REASONS.map(([v, l]) => `<button type="button" data-tag="${v}" aria-pressed="${!!it.tags?.includes(v)}">${l}</button>`).join('')}
       <button type="button" class="star" data-star aria-pressed="${!!it.star}">★お手本</button></div>
     <input class="note" type="text" placeholder="ひとこと（任意）" value="${esc(it.note ?? '')}" aria-label="ひとこと">
   </li>`;
+}
+
+/** 組のファイルの案を、語ごとにまとめて並べる */
+function renderFile(set) {
+  const root = $('words');
+  root.innerHTML = '';
+  cards = [];
+  const groups = [...new Set(set.items.map((x) => x.word))].map((w) => [w, set.items.filter((x) => x.word === w)]);
+  document.querySelector('h1').textContent = `生成案の評価（${set.title ?? set.name}・${set.items.length}案・開発用）`;
+  words = groups.map(([w]) => w);
+  let n = 0;
+  for (const [word, items] of groups) {
+    const list = items.map((it) => ({ ...it, n: ++n }));
+    cards.push(...list);
+    const sec = document.createElement('section');
+    sec.className = 'word';
+    sec.innerHTML = `<h2>${esc(word)}（${list.length}案）</h2>
+      <ul class="grid">${list.map(cardHtml).join('')}</ul>`;
+    root.append(sec);
+  }
+  if (set.note) $('words').insertAdjacentHTML('beforebegin', `<p class="howto">${esc(set.note)}</p>`);
+  progress();
 }
 
 function render(index) {
@@ -186,12 +220,12 @@ function exportJson() {
     schema: 'color-palette-eval/1',
     exportedAt: new Date().toISOString(),
     seed: EVAL_SEED,
-    set: SET,
+    set: FILE ? `file:${FILE}` : SET,
     count: COUNT,
     words,
     overall: data.overall,
     // 評価の付いた案だけでなく全案を残す（エンジン変更後に同じ案かを照合できるように）
-    items: cards.map((c) => { const { sig, ...it } = itemFor(c); return { key: c.key, word: c.word, index: c.index, cell: c.cell, label: c.label, seedId: c.seedId ?? null, colors: c.colors, ...it }; }),
+    items: cards.map((c) => { const { sig, ...it } = itemFor(c); return { key: c.key, word: c.word, index: c.index, cell: c.cell, label: c.label, seedId: c.seedId ?? null, colors: c.colors, ...(c.judge ? { judge: c.judge } : {}), ...it }; }),
   }, null, 2);
 }
 
@@ -210,7 +244,7 @@ $('copy').addEventListener('click', async () => {
 $('download').addEventListener('click', () => {
   const a = document.createElement('a');
   a.href = URL.createObjectURL(new Blob([exportJson()], { type: 'application/json' }));
-  a.download = `eval-${new Date().toISOString().slice(0, 10)}${SET === 'rest' ? '-rest' : ''}.json`;
+  a.download = `eval-${new Date().toISOString().slice(0, 10)}${FILE ? `-${FILE}` : SET === 'rest' ? '-rest' : ''}.json`;
   a.click();
   URL.revokeObjectURL(a.href);
   localStorage.setItem(`${STORE}-exported`, String(ratedCount(data)));
@@ -239,7 +273,13 @@ window.addEventListener('beforeunload', (e) => {
   if (!reloading && ratedCount(data) > (Number(localStorage.getItem(`${STORE}-exported`)) || 0)) e.preventDefault();
 });
 
-const [res, seedRes] = await Promise.all([fetch('../../src/vocab.json'), fetch('../../src/seeds.json')]);
-render(buildIndex(await res.json(), await seedRes.json()));
+if (FILE) {
+  const r = await fetch(`sets/${FILE}.json`, { cache: 'no-cache' });
+  if (!r.ok) throw new Error(`組のファイルを読めません（HTTP ${r.status}）`);
+  renderFile(await r.json());
+} else {
+  const [res, seedRes] = await Promise.all([fetch('../../src/vocab.json'), fetch('../../src/seeds.json')]);
+  render(buildIndex(await res.json(), await seedRes.json()));
+}
 renderSnapshots();
 if (STORE_SUFFIX) $('progress').insertAdjacentText('afterend', `（保存先: ${STORE_SUFFIX}）`);
