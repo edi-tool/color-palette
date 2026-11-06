@@ -207,3 +207,11 @@ test('ネオンは濃い地と白い地の両方に、蛍光色（明るく高�
     assert.ok(hues.some((h) => Math.abs(((h - c + 540) % 360) - 180) <= 10), `蛍光${name}が出ない`);
   }
 });
+
+test('サブ（帯・囲みの面）の上の本文も 4.5:1 以上（全語。暗い締め色をサブにしない）', () => {
+  for (const w of index.names) {
+    for (const p of generateWide({ index, moods: [w], seed: 7, count: 24 })) {
+      assert.ok(contrastRatio(p.colors.text, p.colors.secondary) >= 4.5, `${w} ${Object.values(p.colors)}`);
+    }
+  }
+});

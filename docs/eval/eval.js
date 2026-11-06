@@ -44,7 +44,7 @@ function save() {
   progress();
 }
 
-const ratedCount = (d) => Object.values(d.items ?? {}).filter((it) => it.rating).length;
+const ratedCount = (d) => Object.entries(d.items ?? {}).filter(([k, it]) => !k.includes('@') && it.rating).length;
 function loadSnapshots() {
   try { return JSON.parse(localStorage.getItem(BACKUP)) ?? []; } catch { return []; }
 }
@@ -71,7 +71,7 @@ function renderSnapshots() {
 }
 
 function progress() {
-  const done = cards.filter((c) => data.items[c.key]?.rating).length;
+  const done = cards.filter((c) => itemFor(c).rating).length;
   $('progress').textContent = `${done} / ${cards.length} 件 評価済み`;
 }
 
@@ -85,8 +85,14 @@ function preview(c) {
   <div class="sw" aria-hidden="true">${[[c.background, 4], [c.primary, 3], [c.secondary, 2], [c.accent, 1], [c.text, 1]].map(([h, f]) => `<span style="flex:${f};background:${h}"></span>`).join('')}</div>`;
 }
 
+// 案の色の署名。エンジンを変えると同じ番号でも別の案になるので、評価は署名が一致するときだけ表示する。
+// 署名の無い評価（2026-11-06 のサブ修正より前）は前のエンジンの案に付いたものとして扱う
+const sigOf = (c) => [c.primary, c.secondary, c.accent, c.background, c.text].join('');
+const isStale = (card) => { const it = data.items[card.key]; return !!it && it.sig !== sigOf(card.colors); };
+const itemFor = (card) => (isStale(card) ? {} : data.items[card.key] ?? {});
+
 function cardHtml(card) {
-  const it = data.items[card.key] ?? {};
+  const it = itemFor(card);
   const c = card.colors;
   return `<li class="card" data-key="${card.key}" data-rating="${it.rating ?? ''}">
     ${preview(c)}
@@ -114,11 +120,16 @@ function render(index) {
     root.append(sec);
   }
   progress();
+  const stale = cards.filter(isStale).length;
+  if (stale) $('words').insertAdjacentHTML('beforebegin', `<p class="howto" role="status">エンジンが変わったため、前に付けた評価のうち ${stale} 件は今の案と色が違います。その案は未評価として表示しています（前の評価は消さずに残しています）。</p>`);
 }
 
 function itemOf(li) {
   const card = cards.find((c) => c.key === li.dataset.key);
-  data.items[card.key] ??= {};
+  const sig = sigOf(card.colors);
+  // 署名の違う古い評価は、上書きせずに別キーへ退避してから新しく始める
+  if (isStale(card)) data.items[`${card.key}@${data.items[card.key].sig ?? 'legacy'}`] = data.items[card.key];
+  if (data.items[card.key]?.sig !== sig) data.items[card.key] = { sig };
   return data.items[card.key];
 }
 
@@ -171,7 +182,7 @@ function exportJson() {
     words: EVAL_WORDS,
     overall: data.overall,
     // 評価の付いた案だけでなく全案を残す（エンジン変更後に同じ案かを照合できるように）
-    items: cards.map((c) => ({ key: c.key, word: c.word, index: c.index, cell: c.cell, colors: c.colors, ...(data.items[c.key] ?? {}) })),
+    items: cards.map((c) => { const { sig, ...it } = itemFor(c); return { key: c.key, word: c.word, index: c.index, cell: c.cell, colors: c.colors, ...it }; }),
   }, null, 2);
 }
 

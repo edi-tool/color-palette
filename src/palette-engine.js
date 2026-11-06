@@ -106,6 +106,7 @@ export const QUALITY = {
   minPrimarySecondaryDE: 12, // メインとサブははっきり別の色
   minSecondaryBgDL: 0.06, // サブの面が背景に溶けない
   maxVivid: 2, // 高彩度（C>0.16）は2色まで
+  textOnSecondary: AA_NORMAL, // サブ（帯・囲みの面）の上の本文も 4.5:1
 };
 
 /**
@@ -147,6 +148,7 @@ export function qualityIssues(c, usage = 'general') {
   if (contrastRatio(c.primary, c.background) < (t.primaryOnBg ?? QUALITY.primaryOnBg)) out.push('primary-weak');
   if (contrastRatio(c.accent, c.background) < (t.accentOnBg ?? QUALITY.accentOnBg)) out.push('accent-weak');
   if (t.textOnBg && contrastRatio(c.text, c.background) < t.textOnBg) out.push('text-weak');
+  if (contrastRatio(c.text, c.secondary) < QUALITY.textOnSecondary) out.push('text-on-secondary-weak');
   if (t.cud && visionIssues(c).some((v) => v.type === 'protan' || v.type === 'deutan')) out.push('cvd-confusable');
   if (deltaE(c.primary, c.secondary) < QUALITY.minPrimarySecondaryDE) out.push('secondary-near-primary');
   if (Math.abs(o.secondary.L - o.background.L) < QUALITY.minSecondaryBgDL) out.push('secondary-near-bg');
@@ -207,11 +209,11 @@ export function generatePalette(cell, profile, rng, { mode = 'rgb', fixed = {} }
     const hInk = nearestInkHue(h0);
     const inkable = hueDiff(h0, hInk) <= 20;
     if (cell.harm !== 'neutralAccent' && inkable && rng.range(0, 1) < 0.6) {
-      // 蛍光色の文字: メイン=白地で読めるマゼンタ・青など、サブ=同系の深い締め色、差し色=別の読める蛍光色
+      // 蛍光色の文字: メイン=白地で読めるマゼンタ・青など、サブ=同系の淡い面、差し色=別の読める蛍光色
       const L0 = glowL(h0, 0.5, 0.8);
       primary = neon(L0, h0);
-      const sL = rng.range(0.25, 0.38);
-      secondary = oklchToHex(sL, capC(sL, 0.1, hS), hS);
+      const sL = clamp(bg.L - rng.range(0.07, 0.13), 0.84, 0.92);
+      secondary = oklchToHex(sL, capC(sL, 0.09, hS), hS);
       const hI = nearestInkHue(hA) === hInk ? GLOW_INK_HUES[(GLOW_INK_HUES.indexOf(hInk) + 1) % GLOW_INK_HUES.length] : nearestInkHue(hA);
       accent = neon(glowL(hI, 0.5, 0.8), hI);
       featured = { L: L0, C: hexToOklch(primary).C, h: h0 };
@@ -252,8 +254,9 @@ export function generatePalette(cell, profile, rng, { mode = 'rgb', fixed = {} }
       const sL = clamp(bg.L - rng.range(0.09, 0.17), 0.74, 0.9);
       secondary = oklchToHex(sL, capC(sL, Math.max(0.03, Cp * rng.range(0.35, 0.6)), hS), hS);
     } else {
-      const pLnow = hexToOklch(primary).L;
-      const sL = clamp(Math.min(pLnow, 0.55) - rng.range(0.12, 0.18), 0.3, 0.45);
+      // 少し濃い面（中間の明るさで色みをはっきり）。以前はメインより暗い締め色にしていたが、
+      // サブは帯・囲みの面に使うので、上の文字が読めず、明るい語の印象も重くなった（docs/eval/2026-11-06-findings.md）
+      const sL = clamp(bg.L - rng.range(0.18, 0.26), 0.66, 0.8);
       secondary = oklchToHex(sL, capC(sL, Math.max(0.05, Cp * rng.range(0.6, 0.9)), hS), hS);
     }
     // 差し色: 3色の中で一番鮮やかに（色域の上限まで）。黄系は濃くすると濁るので橙側へ
@@ -272,6 +275,15 @@ export function generatePalette(cell, profile, rng, { mode = 'rgb', fixed = {} }
 
   let text = fixed.text;
   if (!text) text = ensureContrast(oklchToHex(bg.L > 0.5 ? 0.25 : 0.95, 0.02, h0), background, t.textOnBg ? t.textOnBg + 0.05 : AA_NORMAL);
+  // サブは帯・囲みの面なので、その上の本文も読めるように、サブの明度を文字から遠ざける（ロックしたサブは触らない）
+  if (!fixed.secondary) {
+    secondary = ensureContrast(secondary, text, AA_NORMAL + 0.05);
+    // 明るくした結果メインに近づいたら（淡いメインの語。例: 清潔）、淡い面に寄せて別の色にする
+    if (bg.L > 0.5 && deltaE(primary, secondary) < QUALITY.minPrimarySecondaryDE + 1) {
+      const s = hexToOklch(secondary);
+      secondary = ensureContrast(oklchToHex(clamp(bg.L - 0.08, 0.8, 0.92), Math.min(s.C, 0.06), s.h), text, AA_NORMAL + 0.05);
+    }
+  }
 
   const fit = fitScore(profile, featured, bg.L);
   return { cell, colors: { primary, secondary, accent, background, text }, fit };
