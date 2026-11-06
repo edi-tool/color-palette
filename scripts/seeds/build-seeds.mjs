@@ -36,6 +36,17 @@ for (const f of readdirSync(resDir).filter((x) => /^eval-.*\.json$/.test(x)).sor
     // 評価が無くても理由（濁る等）が付いていれば微妙として扱う。評価が付いていれば評価を優先する
     const it = !it0.rating && it0.tags?.length ? { ...it0, rating: 'meh' } : it0;
     const m = /× 「(.+?)」(.*)$/.exec(it.label ?? '');
+    // 「近い印象」（別の語のシードをそのまま出したもの）に★・良い → その語をシードに足す。微妙なら何もしない
+    const nearSeed = m && it.seedId && m[2] === '（近い印象）' ? byName.get(m[1]) : null;
+    if (nearSeed && it.star && (!it.rating || it.rating === 'good')) {
+      if (!nearSeed.words.includes(it.word)) {
+        nearSeed.words = [...nearSeed.words, it.word];
+        feedback.push(`＋ 足した: ${nearSeed.name} に「${it.word}」（${f} で近い印象に★）`);
+      }
+      (nearSeed.endorsed ??= []).includes(it.word) || nearSeed.endorsed.push(it.word);
+      continue;
+    }
+    if (nearSeed) continue;
     const seed = m && it.seedId && m[2] === '' ? byName.get(m[1]) : null;
     if (seed && (it.rating || it.star)) {
       if (it.rating && it.rating !== 'good' && seed.words.includes(it.word)) {

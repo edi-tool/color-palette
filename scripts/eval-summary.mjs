@@ -65,7 +65,7 @@ table(['理由', '件数', '微妙・悪いのうち'], countTags(bads).map(([t,
 // 2b. 出どころ（配色データベース由来か、自動生成か。seedId の無い古い書き出しは区別しない）
 if (items.some((it) => 'seedId' in it)) {
   out.push('## 出どころ別', '');
-  const src = (it) => (it.seedId ? (/違い|の差し色/.test(it.label ?? '') ? 'データベースの変化形' : 'データベースの配色') : '自動生成');
+  const src = (it) => (it.seedId ? (/違い|の差し色|のサブ$|系版$/.test(it.label ?? '') ? 'データベースの変化形' : 'データベースの配色') : '自動生成');
   table(['出どころ', '評価数', '良い率', '悪い率'], ['データベースの配色', 'データベースの変化形', '自動生成'].map((k) => {
     const r = rated.filter((it) => src(it) === k);
     return [k, r.length, pct(r.filter((it) => it.rating === 'good').length, r.length), pct(r.filter((it) => it.rating === 'bad').length, r.length)];

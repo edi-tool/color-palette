@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { index, proceduralIndex } from './helpers-engine.js';
 import {
-  generateWide, generateDeep, reproposeUnlocked, paletteDistance, qualityIssues, seedIssues, FIT_MIN, MIN_DIST_FLOOR, HARMONY_MAX_SHARE,
+  generateWide, generateDeep, reproposeUnlocked, paletteDistance, qualityIssues, seedIssues, FUZZY_PER_PAGE, FIT_MIN, MIN_DIST_FLOOR, HARMONY_MAX_SHARE,
 } from '../src/palette-engine.js';
 import { ROLES, contrastRatio, hexToOklch, normalizeHex } from '../src/color-utils.js';
 
@@ -47,13 +47,30 @@ test('手続き的な生成: 調和タイプ・彩度も偏らない（3種以�
   assert.equal(new Set(list.map((p) => p.cell.sat)).size, 3);
 });
 
-test('印象適合度: 手続き的に作った案は下限を満たし、シード配色の案は選んだ語のどれかに付いたもの', () => {
+test('印象適合度: 手続き的な案は下限を満たし、シード配色の案は語に付いたものか「近い印象」（適合度0.6以上）', () => {
   for (const moods of REP) {
     for (const p of gen(moods)) {
-      if (p.seedId) assert.ok(index.seeds.find((s) => s.id === p.seedId).words.some((w) => moods.includes(w)), `${moods}: ${p.label}`);
-      else assert.ok(p.fit >= FIT_MIN, `${moods}: ${p.fit}`);
+      if (!p.seedId) assert.ok(p.fit >= FIT_MIN, `${moods}: ${p.fit}`);
+      else if (p.label.includes('（近い印象）')) assert.ok(p.fit >= 0.6, `${moods}: ${p.label} ${p.fit}`);
+      else assert.ok(index.seeds.find((s) => s.id === p.seedId).words.some((w) => moods.includes(w)), `${moods}: ${p.label}`);
     }
   }
+});
+
+test('方針「配色として成立 ＞ 印象に適合」: 全語の1〜2ページ目に自動生成の案が出ず、1ページ目は語の配色が中心で「近い印象」も混ざる', () => {
+  let withFuzzy = 0;
+  for (const w of index.names) {
+    const p0 = generateWide({ index, moods: [w], seed: 1, count: 24 });
+    const p1 = generateWide({ index, moods: [w], seed: 1, page: 1, count: 24, exclude: p0 });
+    assert.equal(p0.length, 24, w);
+    assert.ok([...p0, ...p1].every((p) => p.seedId), `${w}: 自動生成 ${[...p0, ...p1].filter((p) => !p.seedId).length}`);
+    const own = index.seeds.filter((s) => s.words.includes(w)).length;
+    // 語の配色が十分ある語は、1ページ目の大半（20案以上）がその語の配色。「近い印象」は少なくとも1案は混ざる（発見のため）
+    if (own >= 30) assert.ok(p0.filter((p) => !p.label.includes('（近い印象）')).length >= 24 - 2 * FUZZY_PER_PAGE, w);
+    if (p0.some((p) => p.label.includes('（近い印象）'))) withFuzzy++;
+  }
+  // 近い印象が見つかる語では混ざる（範囲の狭い語＝清潔などは無いこともある）
+  assert.ok(withFuzzy >= 28, `近い印象が混ざる語 ${withFuzzy}`);
 });
 
 test('文字と背景は全案で AA（4.5:1）を満たす', () => {
@@ -234,4 +251,21 @@ test('配色データベース（seeds.json）: 全シードが読みやすさ�
   }
   // どの語にも、初期24案の半分以上をまかなえるシードがある
   for (const w of index.names) assert.ok(index.seeds.filter((s) => s.words.includes(w)).length >= 12, w);
+});
+
+test('色の系統: 橙・黄は茶と分ける（メインが茶色の案を出さず、黄は黄の色がどこかに入る）', async () => {
+  const { hueDiff } = await import('../src/color-utils.js');
+  const brownish = (o) => o.C > 0.03 && o.C < 0.12 && o.L < 0.55 && o.h > 35 && o.h < 80;
+  for (const moods of [['明るい'], ['落ち着いた'], ['和風']]) {
+    for (const hue of ['orange', 'yellow']) {
+      const list = generateWide({ index, moods, hue, seed: 3, count: 24 });
+      assert.equal(list.length, 24, `${moods} ${hue}`);
+      const db = list.filter((p) => p.seedId);
+      assert.ok(db.every((p) => !brownish(hexToOklch(p.colors.primary))), `${moods} ${hue}: 茶色のメイン`);
+      if (hue === 'yellow') {
+        const hasY = list.filter((p) => ['primary', 'secondary', 'accent'].some((r) => { const o = hexToOklch(p.colors[r]); return hueDiff(o.h, 94) <= 14 && o.C >= 0.1; }));
+        assert.ok(hasY.length >= 18, `${moods}: 黄が入る ${hasY.length}`);
+      }
+    }
+  }
 });

@@ -243,13 +243,17 @@ export function generatePalette(cell, profile, rng, { mode = 'rgb', fixed = {} }
     // 黄系: メインは暖色側の隣（橙〜赤み）へずらし、黄は淡い面（サブ）に回す
     const hP = !yellow ? h0 : profile.family === 'yellow' ? h0 - rng.range(15, 25) : h0 - rng.range(35, 55);
     primary = fixed.primary ?? oklchToHex(Lp, capC(Lp, Cp, hP), hP);
+    // 黄系を指定したとき: メインをからし色にずらすと茶色に見える（2026-11-06 ユーザー指摘）ので、
+    // メインは暗い色（墨〜紺）にして、黄は面（サブ）で見せる（看板・標識の「黒と黄」の型）
+    if (yellow && profile.family === 'yellow' && !fixed.primary) primary = oklchToHex(rng.range(0.2, 0.32), rng.range(0.01, 0.05), h0 + 180 + rng.range(-30, 30));
     // サブ: 淡い面（帯・囲み）か、メインより暗い締め色。メインの「少し明るい版」は作らない
     if (dark) {
       const sL = clamp(bg.L + rng.range(0.1, 0.18), 0.22, 0.4);
       secondary = oklchToHex(sL, capC(sL, Math.min(0.12, Math.max(0.04, Cp * rng.range(0.3, 0.5))), hS), hS);
     } else if (yellow) {
       const sL = clamp(bg.L - rng.range(0.06, 0.12), 0.82, 0.92);
-      secondary = oklchToHex(sL, capC(sL, Math.max(Cp, 0.08), h0), h0);
+      // 黄系の指定では、面の黄をはっきりさせる（くすむと黄に見えない）
+      secondary = oklchToHex(sL, capC(sL, Math.max(Cp, profile.family === 'yellow' ? 0.13 : 0.08), h0), h0);
     } else if (rng.range(0, 1) < 0.7) {
       const sL = clamp(bg.L - rng.range(0.09, 0.17), 0.74, 0.9);
       secondary = oklchToHex(sL, capC(sL, Math.max(0.03, Cp * rng.range(0.35, 0.6)), hS), hS);
@@ -353,6 +357,12 @@ const makeId = (seed, page, n) => `p${seed.toString(36)}-${page}-${n}`;
 const SEED_CHECKS = new Set(['primary-weak', 'accent-weak', 'text-weak', 'text-on-secondary-weak', 'cvd-confusable', 'secondary-near-primary', 'secondary-near-bg']);
 export const seedIssues = (c, usage = 'general') => qualityIssues(c, usage).filter((q) => SEED_CHECKS.has(q));
 const MIN_SEED_FIT = 0.6; // 複数語のとき、一部の語だけに付いたシードを使う下限
+// 方針（2026-11-06 ユーザー）: 「配色として成立していること ＞ 印象に適合すること」。語のシードが尽きたら、
+// 自動生成より先に、別の語に付いた（＝配色として成立している）シードのうち印象が近いものを「近い印象」として出す。
+// 発見のため、足りていても1ページに少しだけ混ぜる。
+const RELATED_FIT = 0.85; // 近い印象とみなす印象適合度の下限
+const RELATED_FIT_LOOSE = 0.6; // 自動生成に頼る前の最後の埋め合わせで使う下限
+export const FUZZY_PER_PAGE = 2; // 足りていても1ページに混ぜる「近い印象」の数
 const featuredOf = (c) => (hexToOklch(c.primary).C < 0.035 ? hexToOklch(c.accent) : hexToOklch(c.primary));
 
 /** シードの見た目から、生成の枠（温度・彩度・調和）を推定する。ラベル・再提案・深掘りで使う */
@@ -419,6 +429,15 @@ function seedVariant(seed, kind, rng, others) {
     if (deltaE(c.accent, seed.colors.accent) < 15) return null;
     return { colors: c, label: `「${seed.name}」に「${pick.name}」の差し色` };
   }
+  if (kind === 'sub') {
+    // 同じ語の別シードのサブ（帯・囲みの面）に替える。地の明暗が同じシードどうしだけ
+    const dark = o('background').L < 0.5;
+    const cands = others.filter((x) => (hexToOklch(x.colors.background).L < 0.5) === dark && deltaE(x.colors.secondary, seed.colors.secondary) >= 12);
+    if (!cands.length) return null;
+    const pick = rng.pick(cands);
+    c.secondary = pick.colors.secondary;
+    return { colors: c, label: `「${seed.name}」に「${pick.name}」のサブ` };
+  }
   for (const r of ['primary', 'secondary', 'accent']) {
     const x = o(r);
     c[r] = oklchToHex(clamp(x.L + rng.range(-0.05, 0.05), 0.08, 0.97), Math.max(0, x.C * rng.range(0.85, 1.12)), x.h + rng.range(-8, 8));
@@ -426,14 +445,56 @@ function seedVariant(seed, kind, rng, others) {
   return { colors: c, label: `「${seed.name}」の色調違い` };
 }
 
-/** 色の系統（任意）にシードが合うか: メイン（無彩色のメインなら差し色）の色相が系統の範囲にある */
+/** 色の系統（任意）にシードが合うか: メイン（無彩色のメインなら差し色）の色相が系統の範囲にある。
+ * 系統が roles を持つとき（橙・黄）は、その役割のどれかが系統の色（明度・彩度の下限つき）なら合う */
 function seedInFamily(colors, family) {
   const f = family && HUE_FAMILIES[family];
   if (!f) return true;
-  const o = featuredOf(colors);
-  if (o.C < 0.03) return false;
-  if (f.pL && (o.L < f.pL[0] - 0.05 || o.L > f.pL[1] + 0.05)) return false;
-  return f.hue.some(([cc, w]) => hueDiff(o.h, cc) <= w);
+  const ok = (o) => o.C >= (f.minC ?? 0.03) && o.L >= (f.minL ?? 0)
+    && !(f.pL && (o.L < f.pL[0] - 0.05 || o.L > f.pL[1] + 0.05))
+    && f.hue.some(([cc, w]) => hueDiff(o.h, cc) <= w);
+  if (f.roles) {
+    // メインが茶色（橙〜黄の色相で暗く・くすんだ色）の配色は茶系に任せる
+    const p = hexToOklch(colors.primary);
+    if (p.C > 0.03 && p.C < 0.12 && p.L < 0.55 && p.h > 35 && p.h < 80) return false;
+    return f.roles.some((r) => ok(hexToOklch(colors[r])));
+  }
+  return ok(featuredOf(colors));
+}
+
+/**
+ * 色の系統を指定したとき、語のシードの明度・構成はそのままに、主役の色だけ系統の色相へ塗り替える（「〇〇系版」）。
+ * 配色として成立している構成を保つので、系統に合うシードが少ないときも自動生成に頼らずに済む。合わなければ null
+ */
+function recolorToFamily(seed, family, rng) {
+  const f = HUE_FAMILIES[family];
+  if (!f) return null;
+  const c = { ...seed.colors };
+  const [[hc, w]] = f.hue;
+  const h = hc + rng.range(-w * 0.5, w * 0.5);
+  const o = (r) => hexToOklch(c[r]);
+  const set = (r, L, C) => { c[r] = oklchToHex(L, C, h); };
+  const p0 = o('primary');
+  if (family === 'brown') {
+    if (p0.C < 0.03) return null;
+    set('primary', clamp(p0.L, 0.32, 0.52), clamp(p0.C, 0.05, 0.12));
+  } else if (family === 'yellow') {
+    // 黄は面（サブ）で見せる。メインが黄〜橙の暗い色なら墨にして茶色に見えないようにする
+    const s0 = o('secondary');
+    if (o('background').L < 0.5) set('primary', clamp(p0.L, 0.8, 0.92), Math.max(p0.C, 0.16));
+    else {
+      set('secondary', clamp(s0.L, 0.84, 0.93), Math.max(s0.C, 0.13));
+      if (p0.h > 35 && p0.h < 110 && p0.C > 0.03) c.primary = oklchToHex(clamp(p0.L, 0.2, 0.32), 0.02, p0.h + 180);
+    }
+  } else {
+    const r = p0.C >= 0.03 ? 'primary' : 'accent';
+    const x = o(r);
+    set(r, family === 'orange' ? clamp(x.L, 0.58, 0.72) : x.L, Math.max(x.C, f.minC ?? 0.08));
+    // サブがメインと同系の色なら、サブも同じ系統へ（明度・彩度はそのまま）
+    const s0 = o('secondary');
+    if (r === 'primary' && s0.C >= 0.02 && hueDiff(s0.h, p0.h) < 40) set('secondary', s0.L, s0.C);
+  }
+  return { colors: c, label: `「${seed.name}」の${f.label}版` };
 }
 
 // 用途が彩度の枠を絞るとき（チラシ=鮮やか・中間だけ）は、シードも同じ枠に入るものだけ使う
@@ -442,9 +503,11 @@ const satAllowed = (colors, usage) => { const s = tuningOf(usage).sats; return !
 /** 印象語に付いたシードと、その変化形を候補にする（順番: 元のシード → 変化形） */
 function seedCandidates(index, moods, profile, { usage, mode, hue, rng }) {
   const matched = [];
+  const offFamily = []; // 語に付いているが色の系統に合わないシード（系統版に塗り替える）
   for (const s of index.seeds ?? []) {
     const m = s.words.filter((w) => moods.includes(w)).length;
-    if (!m || !seedInFamily(s.colors, hue)) continue;
+    if (!m) continue;
+    if (!seedInFamily(s.colors, hue)) { offFamily.push({ seed: s, m }); continue; }
     const colors = adaptSeed(s.colors, { usage, mode });
     if (!colors || !satAllowed(colors, usage)) continue;
     const fit = fitScore(profile, featuredOf(colors), hexToOklch(colors.background).L);
@@ -458,7 +521,8 @@ function seedCandidates(index, moods, profile, { usage, mode, hue, rng }) {
   const order = matched.map((x) => ({ x, k: x.m * 2 + (endorsedFor(x.seed) ? 0.8 : 0) + rng.next() })).sort((a, b) => b.k - a.k).map((y) => y.x);
   const originals = order.map(({ seed, colors, fit }) => ({ colors, fit, label: `「${seed.name}」`, seedId: seed.id }));
   const variants = [];
-  for (const kind of ['paper', 'accent', 'tone']) {
+  // 変化形の種類。差し色・サブの入れ替えは別の組み合わせを2回ずつ試す（「さらに24案」でも自動生成に頼らないように）
+  for (const kind of ['paper', 'accent', 'sub', 'tone', 'accent', 'sub']) {
     for (const { seed } of order) {
       const others = order.filter((y) => y.seed !== seed).map((y) => y.seed);
       const v = seedVariant(seed, kind, rng, others);
@@ -468,7 +532,38 @@ function seedCandidates(index, moods, profile, { usage, mode, hue, rng }) {
       variants.push({ colors, fit: fitScore(profile, featuredOf(colors), hexToOklch(colors.background).L), label: v.label, seedId: seed.id });
     }
   }
-  return { originals, variants };
+  // 色の系統版（系統を指定したときだけ）: 語に多く当てはまるシードから
+  const recolored = [];
+  if (hue) {
+    for (const { seed: s } of offFamily.map((x) => ({ x, k: x.m * 2 + rng.next() })).sort((a, b) => b.k - a.k).map((y) => y.x)) {
+      const v = recolorToFamily(s, hue, rng);
+      if (!v) continue;
+      const colors = adaptSeed(v.colors, { usage, mode });
+      if (!colors || !satAllowed(colors, usage) || !seedInFamily(colors, hue)) continue;
+      recolored.push({ colors, fit: fitScore(profile, featuredOf(colors), hexToOklch(colors.background).L), label: v.label, seedId: s.id });
+    }
+  }
+  // 近い印象: 選んだ語のどれにも付いていないシードのうち、合成した印象に近いもの。
+  // 「近い」は印象適合度に加えて、語どうしの近さ（データベースで同じシードに一緒に付いている回数）でも測る。
+  // 例: ミニマルにはシンプル・モダン・クールのシードが近く、カラフルのシードは遠い
+  const affinity = new Map();
+  for (const s of index.seeds ?? []) {
+    if (!s.words.some((w) => moods.includes(w))) continue;
+    for (const w of s.words) if (!moods.includes(w)) affinity.set(w, (affinity.get(w) ?? 0) + 1);
+  }
+  const affOf = (s) => Math.max(0, ...s.words.map((w) => affinity.get(w) ?? 0));
+  const related = [];
+  for (const s of index.seeds ?? []) {
+    if (s.words.some((w) => moods.includes(w)) || !seedInFamily(s.colors, hue)) continue;
+    const colors = adaptSeed(s.colors, { usage, mode });
+    if (!colors || !satAllowed(colors, usage)) continue;
+    const fit = fitScore(profile, featuredOf(colors), hexToOklch(colors.background).L);
+    if (fit < RELATED_FIT_LOOSE) continue;
+    const aff = affOf(s);
+    related.push({ colors, fit, aff, label: `「${s.name}」（近い印象）`, seedId: s.id, k: fit + 0.6 * Math.min(1, aff / 3) + (s.endorsed?.length ? 0.3 : 0) + rng.next() * 0.3 });
+  }
+  related.sort((a, b) => b.k - a.k);
+  return { originals, variants, related, recolored };
 }
 
 /**
@@ -488,22 +583,36 @@ export function generateWide({ index, moods, mode = 'rgb', usage = 'general', hu
 function pickSeedCandidates(index, moods, profile, { usage, mode, hue, seed, page, count, exclude }) {
   if (!index.seeds?.length) return [];
   const rng = createRng(mixSeed(seed, page, 6151));
-  const { originals, variants } = seedCandidates(index, moods, profile, { usage, mode, hue, rng });
+  const { originals, variants, related, recolored } = seedCandidates(index, moods, profile, { usage, mode, hue, rng });
   const chosen = [];
   const existing = exclude.map((p) => p.colors ?? p);
-  const take = (list, minD) => {
+  const take = (list, minD, upTo = count) => {
     for (const c of list) {
-      if (chosen.length >= count) return;
+      if (chosen.length >= Math.min(upTo, count)) return;
       if (minDistTo(c.colors, [...existing, ...chosen.map((x) => x.colors)]) < minD) continue;
       const cell = classifySeed(c.colors);
       // カードには方向（暖色系など）も出す。シード由来は配色の名前を添える
       chosen.push({ id: makeId(seed, page, chosen.length), seed, cell, label: `${TEMP_LABEL[cell.temp]} × ${c.label}`, colors: c.colors, fit: c.fit, seedId: c.seedId });
     }
   };
-  // 元のシードは人が選んだ別々の案なので、似た案を避ける下限だけで並べる。変化形は元から十分離れたものだけ
+  // 元のシードは人が選んだ別々の案なので、似た案を避ける下限だけで並べる。変化形は元から十分離れたものだけ。
+  // 発見のため、近い印象を少しだけ先に確保する（元のシードで埋まり切る前に）
+  // 近い印象（優先）: 印象適合度が高く、語どうしも近いもの
+  const near = related.filter((r) => r.fit >= RELATED_FIT && r.aff >= 2);
+  const fuzzy = Math.min(FUZZY_PER_PAGE, near.length);
+  take(originals, MIN_DIST_FLOOR, count - fuzzy);
+  take(near, 9, chosen.length + fuzzy);
   take(originals, MIN_DIST_FLOOR);
+  // 色の系統を指定したときは、語のシードを系統の色に塗り替えた案を、変化形・近い印象より先に
+  take(recolored, 9);
   take(variants, 9);
   take(variants, 6);
+  // 足りなければ、配色として成立している近い印象のシード → 変化形（似た案の下限まで）の順で埋める。自動生成は最後
+  take(near, 9);
+  take(variants, MIN_DIST_FLOOR);
+  take(near, MIN_DIST_FLOOR);
+  take(recolored, MIN_DIST_FLOOR);
+  take(related, 6); // 印象はやや遠いが配色として成立しているもの（印象適合度 0.6 以上、語の近さは問わない）
   return chosen;
 }
 
