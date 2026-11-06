@@ -183,3 +183,27 @@ test('カラフルは多色相の調和（トライアド・分裂補色・補�
   for (const seed of [1, 2, 3]) for (const p of generateWide({ index, moods: ['カラフル'], seed, count: 24 })) cnt[p.cell.harm] = (cnt[p.cell.harm] ?? 0) + 1;
   assert.ok((cnt.triad ?? 0) + (cnt.split ?? 0) + (cnt.complementary ?? 0) > 3 * (cnt.mono ?? 0), JSON.stringify(cnt));
 });
+
+test('ネオンは濃い地と白い地の両方に、蛍光色（明るく高彩度）を載せる。品質の基準も満たす', () => {
+  const hues = [];
+  for (const seed of [1, 2, 3]) {
+    const ps = generateWide({ index, moods: ['ネオン'], seed, count: 24 });
+    assert.equal(ps.length, 24);
+    const light = ps.filter((p) => hexToOklch(p.colors.background).L > 0.9).length;
+    const dark = ps.filter((p) => hexToOklch(p.colors.background).L < 0.3).length;
+    assert.equal(light + dark, 24, '背景は濃い地か白い地のどちらか');
+    assert.ok(light >= 4 && dark >= 12, `白い地 ${light} / 濃い地 ${dark}`);
+    for (const p of ps) {
+      assert.ok(contrastRatio(p.colors.text, p.colors.background) >= 4.5);
+      assert.deepEqual(qualityIssues(p.colors), [], `${Object.values(p.colors)}`);
+      // どの案にも蛍光色（彩度 0.13 以上。水色は色域の上限が低い）が1色以上ある
+      const vivid = ['primary', 'secondary', 'accent'].map((r) => hexToOklch(p.colors[r])).filter((o) => o.C >= 0.13);
+      assert.ok(vivid.length >= 1, `${Object.values(p.colors)}`);
+      hues.push(...vivid.map((o) => o.h));
+    }
+  }
+  // 蛍光ブルー・ライム・イエローも出る
+  for (const [name, c] of [['ブルー', 265], ['ライム', 125], ['イエロー', 106]]) {
+    assert.ok(hues.some((h) => Math.abs(((h - c + 540) % 360) - 180) <= 10), `蛍光${name}が出ない`);
+  }
+});

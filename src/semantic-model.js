@@ -68,6 +68,13 @@ function mergeRange(ranges) {
   return [Math.max(0, center - half), center + half];
 }
 
+// 濃い地（背景の明度の上限が 0.5 未満。例: ネオン）を指定した語があるときは、淡い地の語と平均せずに
+// 濃い地を採る。平均すると明度 0.5 前後の灰色の地になり、どちらの印象にもならないため。
+function mergeBg(ranges) {
+  const dark = ranges.filter((r) => r[1] < 0.5);
+  return mergeRange(dark.length && dark.length < ranges.length ? dark : ranges);
+}
+
 /** 複数の語を1つの「許容範囲プロファイル」に合成する（最大3語） */
 export function mergeProfile(index, moodNames) {
   const defs = moodNames.slice(0, MAX_MOODS).map((m) => {
@@ -83,8 +90,12 @@ export function mergeProfile(index, moodNames) {
     moods: moodNames.slice(0, MAX_MOODS),
     pL: mergeRange(defs.map((d) => d.pL)),
     pC: mergeRange(defs.map((d) => d.pC)),
-    bgL: mergeRange(defs.map((d) => d.bgL)),
+    bgL: mergeBg(defs.map((d) => d.bgL)),
     hue: defs.flatMap((d) => d.hue),
+    glow: defs.some((d) => d.glow),
+    // もう一つの地（例: ネオンの白い地）。最初にそれを持つ語の値を使う
+    bgAlt: defs.find((d) => d.bgAlt)?.bgAlt ?? null,
+    bgAltShare: defs.find((d) => d.bgAlt)?.bgAltShare ?? 0,
     harm: Object.fromEntries(Object.entries(harm).map(([h, ws]) => [h, ws.reduce((a, b) => a + b, 0) / ws.length])),
   };
 }
@@ -131,6 +142,7 @@ export function fitScore(profile, featured, bgL) {
   if (profile.hue.length && featured.C > 0.02) {
     ph = Math.min(1, Math.min(...profile.hue.map(([c, w]) => Math.max(0, hueDiff(featured.h, c) - w))) / 40);
   }
-  const pb = Math.min(1, outside(bgL, profile.bgL) / 0.05);
+  const bgOut = Math.min(outside(bgL, profile.bgL), profile.bgAlt ? outside(bgL, profile.bgAlt) : Infinity);
+  const pb = Math.min(1, bgOut / 0.05);
   return Math.max(0, 1 - 0.3 * pl - 0.3 * pc - 0.25 * ph - 0.15 * pb);
 }

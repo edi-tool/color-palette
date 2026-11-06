@@ -64,7 +64,9 @@ function sampleHue(profile, temp, rng) {
 
 function bgColor(profile, h, rng, fixedBg) {
   if (fixedBg) return fixedBg;
-  const L = rng.range(profile.bgL[0], profile.bgL[1]);
+  // もう一つの地を持つ語（ネオンの白い地）は、その割合だけそちらを使う（その語のときだけ乱数を1つ多く使う）
+  const range = profile.bgAlt && rng.range(0, 1) < profile.bgAltShare ? profile.bgAlt : profile.bgL;
+  const L = rng.range(range[0], range[1]);
   const [cLo, cHi] = tuningOf(profile.usage).bgC ?? [0.004, 0.018];
   return oklchToHex(L, rng.range(cLo, cHi), h);
 }
@@ -75,11 +77,29 @@ export function maxChroma(L, h) {
   return hexToOklch(oklchToHex(L, 0.4, h)).C;
 }
 
+/** 明度 lo〜hi のうち、その色相で最も彩度を出せる明度（色域の頂点に近い明度）。
+ * 濃い地（ネオン）で、色を蛍光色のように光らせるのに使う。マゼンタ・赤は低め、黄緑・水色は高めになる。 */
+export function glowL(h, lo, hi) {
+  let best = lo;
+  let bc = -1;
+  for (let L = lo; L <= hi + 1e-9; L += 0.01) {
+    const c = maxChroma(L, h);
+    if (c > bc + 1e-4) { bc = c; best = L; }
+  }
+  return best;
+}
+
+// 白い地でも読める濃さのまま鮮やかさを保てる蛍光色の色相（マゼンタ・ピンク・紫・青・赤橙）。
+// 黄・ライム・水色・緑の蛍光色は白い地では文字にならないので、面（サブ）で使う。
+const GLOW_INK_HUES = [350, 325, 295, 265, 25];
+const nearestInkHue = (h) => GLOW_INK_HUES.reduce((best, c) => (hueDiff(h, c) < hueDiff(h, best) ? c : best));
+
 // 黄〜黄緑（OKLCH の色相 80〜125°）は、淡い地で読める濃さまで下げるとオリーブに濁る。
 // この色相はメインにせず、淡い面（サブ）で使い、メインは隣の暖色側へずらす。
 const isYellowZone = (h) => mod360(h) >= 80 && mod360(h) <= 125;
 
-// 役割ごとの品質の基準（docs/palette-analysis.md §3）。淡い地を前提にする（語彙の背景はすべて明るい）
+// 役割ごとの品質の基準（docs/palette-analysis.md §3）。淡い地を前提にする（濃い地の語はネオンだけ。
+// コントラスト比は地の明暗によらず同じ基準で見る）
 export const QUALITY = {
   primaryOnBg: 3.2, // メインは見出しの大きさで読める濃さ（大きい文字の AA 3:1 に余裕）
   accentOnBg: 2.2, // 差し色は小さな面でも背景から見分けられる
@@ -112,7 +132,7 @@ export function buildProfile(index, moods, { usage = 'general', hue = null } = {
   const t = tuningOf(usage);
   let p = applyHueFamily(mergeProfile(index, moods), hue);
   if (t.chroma) p = { ...p, pC: [p.pC[0] * t.chroma, p.pC[1] * t.chroma] };
-  if (t.bgL) p = { ...p, bgL: t.bgL };
+  if (t.bgL) p = { ...p, bgL: t.bgL, bgAlt: null };
   return { ...p, usage };
 }
 
@@ -138,7 +158,7 @@ export function qualityIssues(c, usage = 'general') {
 
 /**
  * 1セルから1案を作る。fixed={role: hex} の役割は値をそのまま使う（ロック用）。
- * 手順: 背景（淡い地）→ メイン（色相・彩度は印象から、明度は背景との差を確保）→
+ * 手順: 背景（淡い地。ネオンは濃い地）→ メイン（色相・彩度は印象から、明度は背景との差を確保）→
  * サブ（淡い面か、メインより暗い締め色）→ 差し色（調和の関係は差し色にだけ効かせ、一番鮮やかに）→ 文字。
  * 印象適合度は「読みやすさの補正をする前の主役色」で評価する（補正は可読性のためで、印象の向きは変えない）。
  * 失敗（その温度で使える色相が無い等）は null。
@@ -155,11 +175,16 @@ export function generatePalette(cell, profile, rng, { mode = 'rgb', fixed = {} }
   if (h0 == null) return null;
 
   const [cLo, cHi] = satRange(pC, cell.sat);
-  const Lp = fx ? fx.L : rng.range(profile.pL[0], profile.pL[1]);
+  let Lp = fx ? fx.L : rng.range(profile.pL[0], profile.pL[1]);
   const Cp = fx ? fx.C : rng.range(cLo, cHi);
 
   const background = bgColor(profile, h0, rng, fixed.background);
   const bg = hexToOklch(background);
+  // 濃い地（ネオン）: 色を明るく光らせ、サブは地より少し明るい暗色の面にする
+  const dark = bg.L < 0.5;
+  // 濃い地のメインは、その色相で一番鮮やかになる明度の近く（乱数の消費は変えず、引いた明度を小さな揺らぎに使う）
+  const span = Math.max(1e-6, profile.pL[1] - profile.pL[0]);
+  if (dark && !fx) Lp = glowL(h0, profile.pL[0], profile.pL[1]) - ((Lp - profile.pL[0]) / span) * 0.03;
   const b = rng.pick([-1, 1]);
   const capC = (L, C, h) => Math.min(C, maxChroma(L, h) * 0.92 * scale);
 
@@ -174,23 +199,53 @@ export function generatePalette(cell, profile, rng, { mode = 'rgb', fixed = {} }
   // サブの色相: メインと同系（トライアドだけは3つ目の色相を淡い面で使う）
   const hS = cell.harm === 'triad' ? h0 + 120 * b : h0 + b * rng.range(cell.harm === 'mono' ? 0 : 8, cell.harm === 'mono' ? 6 : 28);
 
-  if (cell.harm === 'neutralAccent') {
+  // 白い地のネオン: 蛍光色を「面」か「読める濃さの色」で使う。くすませて読みやすくはしない
+  const lightGlow = profile.glow && !dark && !fx;
+  const neon = (L, h) => oklchToHex(L, capC(L, 0.4, h), h);
+
+  if (lightGlow) {
+    const hInk = nearestInkHue(h0);
+    const inkable = hueDiff(h0, hInk) <= 20;
+    if (cell.harm !== 'neutralAccent' && inkable && rng.range(0, 1) < 0.6) {
+      // 蛍光色の文字: メイン=白地で読めるマゼンタ・青など、サブ=同系の深い締め色、差し色=別の読める蛍光色
+      const L0 = glowL(h0, 0.5, 0.8);
+      primary = neon(L0, h0);
+      const sL = rng.range(0.25, 0.38);
+      secondary = oklchToHex(sL, capC(sL, 0.1, hS), hS);
+      const hI = nearestInkHue(hA) === hInk ? GLOW_INK_HUES[(GLOW_INK_HUES.indexOf(hInk) + 1) % GLOW_INK_HUES.length] : nearestInkHue(hA);
+      accent = neon(glowL(hI, 0.5, 0.8), hI);
+      featured = { L: L0, C: hexToOklch(primary).C, h: h0 };
+    } else {
+      // 黒文字＋蛍光の面: メイン=ほぼ黒、サブ=蛍光色の面（黄・ライムも可）、差し色=読める蛍光色
+      primary = oklchToHex(rng.range(0.16, 0.28), rng.range(0.005, 0.03), h0);
+      const sL = Math.min(glowL(h0, 0.5, 0.95), bg.L - 0.08);
+      secondary = neon(sL, h0);
+      const hI = nearestInkHue(hA);
+      accent = neon(glowL(hI, 0.5, 0.8), hI);
+      featured = { L: sL, C: hexToOklch(secondary).C, h: h0 };
+    }
+  } else if (cell.harm === 'neutralAccent') {
     // 無彩色寄りの基調に、印象色を差し色として載せる
-    const nL = rng.range(0.28, 0.45);
+    const nL = dark ? rng.range(0.85, 0.95) : rng.range(0.28, 0.45);
     primary = fixed.primary ?? oklchToHex(nL, rng.range(0.008, 0.03), h0);
-    secondary = oklchToHex(clamp(bg.L - rng.range(0.12, 0.2), 0.62, 0.86), rng.range(0.006, 0.025), h0);
-    const aL = clamp(Lp, 0.5, 0.78);
+    const sL = dark ? clamp(bg.L + rng.range(0.1, 0.18), 0.22, 0.4) : clamp(bg.L - rng.range(0.12, 0.2), 0.62, 0.86);
+    secondary = oklchToHex(sL, rng.range(0.006, 0.025), h0);
+    const aL = dark ? Lp : clamp(Lp, 0.5, 0.78);
     accent = oklchToHex(aL, capC(aL, Math.max(Cp, cLo, 0.1), h0), h0);
     featured = { L: Lp, C: Math.max(Cp, cLo), h: h0 };
   } else {
     featured = { L: Lp, C: Cp, h: h0 };
     // 色の系統を指定したときは、その系統の外へはずらさない（黄系だけは、からし色寄りまで小さくずらす）
-    const yellow = !fx && isYellowZone(h0) && (!profile.family || profile.family === 'yellow');
+    // 濃い地では黄〜黄緑も濁らずに光るので、ずらさない
+    const yellow = !fx && !dark && isYellowZone(h0) && (!profile.family || profile.family === 'yellow');
     // 黄系: メインは暖色側の隣（橙〜赤み）へずらし、黄は淡い面（サブ）に回す
     const hP = !yellow ? h0 : profile.family === 'yellow' ? h0 - rng.range(15, 25) : h0 - rng.range(35, 55);
     primary = fixed.primary ?? oklchToHex(Lp, capC(Lp, Cp, hP), hP);
     // サブ: 淡い面（帯・囲み）か、メインより暗い締め色。メインの「少し明るい版」は作らない
-    if (yellow) {
+    if (dark) {
+      const sL = clamp(bg.L + rng.range(0.1, 0.18), 0.22, 0.4);
+      secondary = oklchToHex(sL, capC(sL, Math.min(0.12, Math.max(0.04, Cp * rng.range(0.3, 0.5))), hS), hS);
+    } else if (yellow) {
       const sL = clamp(bg.L - rng.range(0.06, 0.12), 0.82, 0.92);
       secondary = oklchToHex(sL, capC(sL, Math.max(Cp, 0.08), h0), h0);
     } else if (rng.range(0, 1) < 0.7) {
@@ -202,8 +257,10 @@ export function generatePalette(cell, profile, rng, { mode = 'rgb', fixed = {} }
       secondary = oklchToHex(sL, capC(sL, Math.max(0.05, Cp * rng.range(0.6, 0.9)), hS), hS);
     }
     // 差し色: 3色の中で一番鮮やかに（色域の上限まで）。黄系は濃くすると濁るので橙側へ
-    if (isYellowZone(hA)) hA = mod360(hA) - rng.range(25, 40);
-    const aL = rng.range(0.6, 0.78);
+    if (!dark && isYellowZone(hA)) hA = mod360(hA) - rng.range(25, 40);
+    let aL = rng.range(0.6, 0.78);
+    // 濃い地の差し色は、その色相で一番鮮やかになる明度（0.5〜0.95）で光らせる
+    if (dark) aL = glowL(hA, 0.5, 0.95) - ((aL - 0.6) / 0.18) * 0.03;
     const want = Math.max(Cp * 1.15, (cell.sat === 'muted' ? 0.09 : 0.13) * (t.chroma ?? 1)) * scale;
     accent = oklchToHex(aL, capC(aL, want, hA), hA);
   }
