@@ -5,13 +5,18 @@
 import { buildIndex } from '../../src/semantic-model.js';
 import { generateWide, cellLabel } from '../../src/palette-engine.js';
 
-// 評価する語: 明るさ・彩度・温度・地の明暗が散らばるように選んだ8語
+// 評価する語: 明るさ・彩度・温度・地の明暗が散らばるように選んだ8語（既定の組）。
+// ?set=rest で残りの語（辞書の語からこの8語を除いたもの）を評価する。&count= で1語あたりの案の数（既定: 8語は24、残りは12）
 export const EVAL_WORDS = ['明るい', 'やさしい', '誠実', '落ち着いた', '高級感', 'ナチュラル', '和風', 'ネオン'];
+const params = new URLSearchParams(location.search);
+const SET = params.get('set') === 'rest' ? 'rest' : 'core';
+let words = EVAL_WORDS;
 export const EVAL_SEED = 20261106;
-const COUNT = 24;
+const COUNT = Math.min(24, Math.max(1, Number(params.get('count')) || (SET === 'rest' ? 12 : 24)));
 // 保存先。?store=名前 で別の保存先を使える（動作確認で本番の評価に触れないため）
-const STORE_SUFFIX = new URLSearchParams(location.search).get('store');
-const STORE = `color-palette-eval-v1${STORE_SUFFIX ? `-${STORE_SUFFIX}` : ''}`;
+const STORE_SUFFIX = params.get('store');
+// 組ごとに保存先を分ける（既定の組は以前と同じキー）
+const STORE = `color-palette-eval-v1${SET === 'rest' ? '-rest' : ''}${STORE_SUFFIX ? `-${STORE_SUFFIX}` : ''}`;
 // 控え: 評価の途中経過を別のキーに残す（誤って消しても戻せるように）。新しい順に最大 MAX_SNAPSHOTS 件
 const BACKUP = `${STORE}-backup`;
 const MAX_SNAPSHOTS = 30;
@@ -108,7 +113,9 @@ function render(index) {
   const root = $('words');
   root.innerHTML = '';
   cards = [];
-  for (const word of EVAL_WORDS) {
+  if (SET === 'rest') words = index.names.filter((w) => !EVAL_WORDS.includes(w));
+  document.querySelector('h1').textContent = `生成案の評価（${SET === 'rest' ? `残りの${words.length}語` : `${words.length}語`}×${COUNT}案・開発用）`;
+  for (const word of words) {
     const ps = generateWide({ index, moods: [word], seed: EVAL_SEED, count: COUNT });
     const list = ps.map((p, i) => ({ key: `${word}#${i}`, word, index: i, cell: p.cell, label: p.label, seedId: p.seedId, colors: p.colors }));
     cards.push(...list);
@@ -179,7 +186,9 @@ function exportJson() {
     schema: 'color-palette-eval/1',
     exportedAt: new Date().toISOString(),
     seed: EVAL_SEED,
-    words: EVAL_WORDS,
+    set: SET,
+    count: COUNT,
+    words,
     overall: data.overall,
     // 評価の付いた案だけでなく全案を残す（エンジン変更後に同じ案かを照合できるように）
     items: cards.map((c) => { const { sig, ...it } = itemFor(c); return { key: c.key, word: c.word, index: c.index, cell: c.cell, label: c.label, seedId: c.seedId ?? null, colors: c.colors, ...it }; }),
@@ -201,7 +210,7 @@ $('copy').addEventListener('click', async () => {
 $('download').addEventListener('click', () => {
   const a = document.createElement('a');
   a.href = URL.createObjectURL(new Blob([exportJson()], { type: 'application/json' }));
-  a.download = `eval-${new Date().toISOString().slice(0, 10)}.json`;
+  a.download = `eval-${new Date().toISOString().slice(0, 10)}${SET === 'rest' ? '-rest' : ''}.json`;
   a.click();
   URL.revokeObjectURL(a.href);
   localStorage.setItem(`${STORE}-exported`, String(ratedCount(data)));
