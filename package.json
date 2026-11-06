@@ -6,7 +6,8 @@
   "description": "配色提案さん — 印象語から配色を探し、AIに渡す配色指示までコピーできるツール",
   "scripts": {
     "test": "node --test tests/*.test.js",
-    "check": "node scripts/check-static.mjs"
+    "check": "node scripts/check-static.mjs",
+    "eval:summary": "node scripts/eval-summary.mjs"
   },
   "engines": { "node": ">=22" }
 }
